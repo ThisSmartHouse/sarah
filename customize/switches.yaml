@@ -1,3 +1,18 @@
-switch.grow_light_manager:
-  friendly_name: 'Grow Light Manager'
-  icon: mdi:power
+light.bathroom_1:
+  hidden: true
+light.bathroom_2:
+  hidden: true
+light.dining_room_1:
+  hidden: true
+light.dining_room_2:
+  hidden: true
+light.dining_room_corner:
+  hidden: true
+light.office_one:
+  hidden: true
+light.office_two:
+  hidden: true
+light.bedroom_1:
+  hidden: true
+light.bedroom_2:
+  hidden: true

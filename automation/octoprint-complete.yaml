@@ -1,0 +1,12 @@
+- alias: Send Notification when 3d print is complete
+  trigger:
+    platform: state
+    entity_id: sensor.3d_printer_current_state
+    from: "Printing"
+    to: "Operational"
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "The 3D Print Job Has Completed"
+        target:
+          - +19142631049

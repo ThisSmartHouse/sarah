@@ -6,6 +6,8 @@ home-assistant_v2.db
 home-assistant.log
 home-assistant.db-shm
 home-assistant.db-wal
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
 *.conf
 *.sqlite
 secrets.yaml

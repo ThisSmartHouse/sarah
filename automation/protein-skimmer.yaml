@@ -1,0 +1,16 @@
+- alias: Protein Skimmer On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '15:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.protein_skimmer_3
+- alias: Protein Skimmer Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '18:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.protein_skimmer_3

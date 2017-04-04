@@ -1,0 +1,94 @@
+House:
+  entities:
+    - sensor.home_temperature
+    - sensor.main_floor_temperature
+    - sensor.home_humidity
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - binary_sensor.main_floor_occupancy
+    - binary_sensor.home_occupancy
+Who Is Home:
+  entities:
+    - device_tracker.bayleysiphone
+    - device_tracker.johncoggeshallsiphone
+    - device_tracker.a470d670f488
+Outdoors:
+  control: hidden
+  entities:
+    - sun.sun
+    - sensor.owm_temperature
+    - sensor.owm_humidity
+    - sensor.owm_condition
+    - sensor.owm_rain
+    - sensor.owm_snow
+Workshop:
+  control: hidden
+  entities:
+    - sensor.3d_printer_current_state
+    - sensor.3d_printer_job_percentage
+    - sensor.3d_printer_actual_bed_temp
+    - sensor.3d_printer_actual_tool0_temp
+
+Living Room:
+  control: hidden
+  icon: mdi:television-guide
+  view: no
+  entities:
+    - light.living_room
+    - light.bar_light
+    - light.circle_chair
+    - light.couch
+    - light.living_room_wall
+    - light.stairwell
+
+Office:
+  control: hidden
+  view: no
+  entities:
+    - light.office
+
+Upstairs Bathroom:
+  control: hidden
+  entities:
+    - light.bathroom
+    - light.bathtub
+
+Dining Room:
+  control: hidden
+  entities:
+    - light.dining_room
+
+Kitchen:
+  control: hidden
+  entities:
+    - light.kitchen
+    - light.kitchen_center
+    - light.kitchen_doorway
+    - light.kitchen_sink
+
+Master Bedroom:
+  view: no
+  icon: mdi:bed
+  entities:
+    - light.bedroom
+    - light.master_closet
+
+Fish Room:
+  control: hidden
+  entities:
+    - switch.cloner_sprayer_14
+    - switch.freshwater_sump_light_7
+    - switch.grow_lights_15
+    - switch.protein_skimmer_3
+    - switch.saltwater_autotopoff_4
+    - switch.saltwater_return_pump_1
+    - switch.saltwater_sump_light_6
+    - switch.saltwater_uv
+
+Rooms:
+  view: yes
+  name: Rooms
+  entities:
+    - group.living_room
+    - group.master_bedroom

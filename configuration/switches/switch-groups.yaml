@@ -1,0 +1,11 @@
+- platform: template
+  switches:
+    saltwater_uv:
+      friendly_name: 'Saltwater UV'
+      value_template: "{{ states.group.saltwater_uv.state == 'off' }}"
+      turn_on:
+        service: switch.turn_on
+        entity_id: group.saltwater_uv
+      turn_off:
+        service: switch.turn_off
+        entity_id: group.saltwater_uv

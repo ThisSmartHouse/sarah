@@ -15,13 +15,14 @@ discovery:
 sun:
 
 http: !include ./configuration/http.yaml
+octoprint: !include ./configuration/octoprint.yaml
 ecobee: !include ./configuration/ecobee.yaml
 tts: !include ./configuration/tts.yaml
 device_tracker: !include ./configuration/device_tracker.yaml
 weather: !include ./configuration/weather.yaml
 twilio: !include ./configuration/twilio.yaml
-group: !include ./configuration/group.yaml
-switch: !include ./configuration/switches.yaml
+group: !include_dir_merge_named ./configuration/groups
+switch: !include_dir_merge_list ./configuration/switches
 sensor: !include ./configuration/sensors.yaml
 notify: !include ./configuration/notify.yaml
 mqtt: !include ./configuration/mqtt.yaml

@@ -11,3 +11,22 @@
     - upload
 - platform: haveibeenpwned
   email: !secret haveibeenpwned_emails
+- platform: octoprint
+  name: 3D Printer
+  monitored_conditions:
+    - Current State
+    - Temperatures
+    - Job Percentage
+- platform: openweathermap
+  api_key: !secret openweather_api_key
+  monitored_conditions:
+    - weather
+    - temperature
+    - wind_speed
+    - wind_bearing
+    - humidity
+    - pressure
+    - clouds
+    - rain
+    - snow
+

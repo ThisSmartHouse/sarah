@@ -1,14 +1,3 @@
-- platform: template
-  switches:
-    grow_light_manager:
-      value_template: "{{ states.group.grow_light_manager == 'off' }}"
-      turn_on:
-        service: automation.turn_off
-        entity_id: group.grow_light_manager
-      turn_off:
-        service: automation.turn_on
-        entity_id: group.grow_light_manager
-
 - platform: mqtt
   name: Saltwater Return Pump (1)
   command_topic: /coogle-power/in/17

@@ -1,0 +1,16 @@
+- alias: Saltwater UV Purifier On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '15:00:00' 
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.saltwater_uv
+- alias: Saltwater UV Purifier Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '18:00:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id: group.saltwater_uv
