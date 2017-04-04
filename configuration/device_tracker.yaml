@@ -1,0 +1,12 @@
+- platform: ddwrt
+  host: router.coogle.local
+  username: admin
+  password: !secret router_password
+- platform: aruba
+  host: router-outside.coogle.local
+  username: admin
+  password: !secret router_outside_password
+- platform: icloud
+  username: john@coggeshall.org
+  password: !secret icloud_password
+  account_name: Johns iCloud

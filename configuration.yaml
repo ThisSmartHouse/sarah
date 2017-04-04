@@ -1,0 +1,35 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longtiude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: America/Detroit
+  customize: !include_dir_merge_named customize
+
+frontend:
+updater:
+history:
+logbook:
+discovery:
+sun:
+
+http: !include ./configuration/http.yaml
+ecobee: !include ./configuration/ecobee.yaml
+tts: !include ./configuration/tts.yaml
+device_tracker: !include ./configuration/device_tracker.yaml
+weather: !include ./configuration/weather.yaml
+twilio: !include ./configuration/twilio.yaml
+group: !include ./configuration/group.yaml
+switch: !include ./configuration/switches.yaml
+sensor: !include ./configuration/sensors.yaml
+notify: !include ./configuration/notify.yaml
+mqtt: !include ./configuration/mqtt.yaml
+automation: !include_dir_merge_list automation
+light: !include ./configuration/light.yaml
+
+#remote:
+#  - platform: harmony
+#    name: Living Room
+#    host: harmony.coogle.local
+

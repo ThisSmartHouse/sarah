@@ -1,0 +1,7 @@
+override:
+  control: hidden
+  entities:
+    - group.grow_light_manager
+grow_light_manager:
+  - automation.grow_light_manager_on
+  - automation.grow_light_manager_off

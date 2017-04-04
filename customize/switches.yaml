@@ -1,0 +1,3 @@
+switch.grow_light_manager:
+  friendly_name: 'Grow Light Manager'
+  icon: mdi:power

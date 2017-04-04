@@ -1,0 +1,107 @@
+- platform: template
+  switches:
+    grow_light_manager:
+      value_template: "{{ states.group.grow_light_manager == 'off' }}"
+      turn_on:
+        service: automation.turn_off
+        entity_id: group.grow_light_manager
+      turn_off:
+        service: automation.turn_on
+        entity_id: group.grow_light_manager
+
+- platform: mqtt
+  name: Saltwater Return Pump (1)
+  command_topic: /coogle-power/in/17
+  state_topic: /coogle-power/state/17
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Saltwater U.V. Pump (2)
+  command_topic: /coogle-power/in/18
+  state_topic: /coogle-power/state/18
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Protein Skimmer (3)
+  command_topic: /coogle-power/in/27
+  state_topic: /coogle-power/state/27
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Saltwater Auto-Topoff (4)
+  command_topic: /coogle-power/in/22
+  state_topic: /coogle-power/state/22
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Saltwater U.V. Light (5)
+  command_topic: /coogle-power/in/23
+  state_topic: /coogle-power/state/23
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Saltwater Sump Light (6)
+  command_topic: /coogle-power/in/24
+  state_topic: /coogle-power/state/24
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Freshwater Sump Light (7)
+  command_topic: /coogle-power/in/25
+  state_topic: /coogle-power/state/25
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (8)
+  command_topic: /coogle-power/in/4
+  state_topic: /coogle-power/state/4
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (9)
+  command_topic: /coogle-power/in/2
+  state_topic: /coogle-power/state/2
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (10)
+  command_topic: /coogle-power/in/3
+  state_topic: /coogle-power/state/3
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (11)
+  command_topic: /coogle-power/in/8
+  state_topic: /coogle-power/state/8
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (12)
+  command_topic: /coogle-power/in/7
+  state_topic: /coogle-power/state/7
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (13)
+  command_topic: /coogle-power/in/10
+  state_topic: /coogle-power/state/10
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Cloner Sprayer (14)
+  command_topic: /coogle-power/in/9
+  state_topic: /coogle-power/state/9
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Grow Lights (15)
+  command_topic: /coogle-power/in/11
+  state_topic: /coogle-power/state/11
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Unassigned (16)
+  command_topic: /coogle-power/in/14
+  state_topic: /coogle-power/state/14
+  payload_on: "0"
+  payload_off: "1"

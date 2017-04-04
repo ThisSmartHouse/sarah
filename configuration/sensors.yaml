@@ -1,0 +1,13 @@
+- platform: speedtest
+  minute: 30
+  hour:
+    - 0
+    - 3
+    - 12
+    - 15
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+- platform: haveibeenpwned
+  email: !secret haveibeenpwned_emails
