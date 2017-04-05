@@ -1,3 +1,8 @@
+- platform: template
+  sensors:
+    living_room_tv:
+      value_template: '{{ states.remote.living_room.attributes.current_activity }}'
+      friendly_name: 'Living Room TV Activity'
 - platform: speedtest
   minute: 30
   hour:

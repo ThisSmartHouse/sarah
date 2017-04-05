@@ -41,6 +41,7 @@ Living Room:
     - light.couch
     - light.living_room_wall
     - light.stairwell
+    - sensor.living_room_tv
 
 Office:
   control: hidden

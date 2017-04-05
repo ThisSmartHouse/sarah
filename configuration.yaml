@@ -28,9 +28,4 @@ notify: !include ./configuration/notify.yaml
 mqtt: !include ./configuration/mqtt.yaml
 automation: !include_dir_merge_list automation
 light: !include ./configuration/light.yaml
-
-#remote:
-#  - platform: harmony
-#    name: Living Room
-#    host: harmony.coogle.local
-
+remote: !include ./configuration/remote.yaml
