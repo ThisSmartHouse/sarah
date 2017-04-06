@@ -1,0 +1,6 @@
+- platform: command_line
+  switches:
+    catbot:
+      command_on: /home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:catbot-switch on
+      command_off: /home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:catbot-switch off
+      friendly_name: "CatBot"

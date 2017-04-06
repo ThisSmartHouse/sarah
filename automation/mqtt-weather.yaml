@@ -1,0 +1,51 @@
+- alias: Push Weather Updates to MQTT
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_apparent_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_high_apparent_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_high_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_low_apparent_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_low_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_max_precip_intensity
+    - platform: state
+      entity_id: sensor.dark_sky_humidity
+    - platform: state
+      entity_id: sensor.dark_sky_precip
+    - platform: state
+      entity_id: sensor.dark_sky_precip_intensity
+    - platform: state
+      entity_id: sensor.dark_sky_precip_probability
+    - platform: state
+      entity_id: sensor.dark_sky_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_wind_speed
+    - platform: state
+      entity_id: sensor.dark_sky_cloud_coverage
+    - platform: event
+      event_type: homeassistant_start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/weather'
+        retain: true
+        payload: >
+          {
+            "apparent_temperature" : {{ states('sensor.dark_sky_apparent_temperature') }},
+            "daily_high_apparent_temperature" : {{ states('sensor.dark_sky_daily_high_apparent_temperature') }},
+            "daily_high_temperature" : {{ states('sensor.dark_sky_daily_high_temperature') }},
+            "daily_low_apparent_temperature" : {{ states('sensor.dark_sky_daily_low_apparent_temperature') }},
+            "daily_low_temperature" : {{ states('sensor.dark_sky_daily_low_temperature') }},
+            "daily_max_precip_intensity" : {{ states('sensor.dark_sky_daily_max_precip_intensity') }},
+            "humidity" : {{ states('sensor.dark_sky_humidity') }},
+            "precip" : "{{ states('sensor.dark_sky_precip') }}",
+            "precip_intensity" : {{ states('sensor.dark_sky_precip_intensity') }},
+            "precip_probability" : {{ states('sensor.dark_sky_precip_probability') }},
+            "temperature" : {{ states('sensor.dark_sky_temperature') }},
+            "wind_speed" : {{ states('sensor.dark_sky_wind_speed') }},
+            "cloud_coverage" : {{ states('sensor.dark_sky_cloud_coverage') }}         
+          } 

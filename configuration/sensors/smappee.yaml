@@ -1,0 +1,4 @@
+- platform: command_line
+  name: Home Power Consumption
+  command: /home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:poll-smappee
+  unit_of_measurement: "W"

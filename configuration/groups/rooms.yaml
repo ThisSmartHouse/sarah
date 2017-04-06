@@ -6,9 +6,11 @@ House:
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
+    - sensor.home_power_consumption
     - binary_sensor.main_floor_occupancy
     - binary_sensor.home_occupancy
-Who Is Home:
+    
+Where Is Everyone:
   entities:
     - device_tracker.bayleysiphone
     - device_tracker.johncoggeshallsiphone
@@ -41,6 +43,7 @@ Living Room:
     - light.couch
     - light.living_room_wall
     - light.stairwell
+    - switch.catbot
     - sensor.living_room_tv
 
 Office:
@@ -80,7 +83,7 @@ Fish Room:
   entities:
     - switch.cloner_sprayer_14
     - switch.freshwater_sump_light_7
-    - switch.grow_lights_15
+    - switch.grow_lights
     - switch.protein_skimmer_3
     - switch.saltwater_autotopoff_4
     - switch.saltwater_return_pump_1

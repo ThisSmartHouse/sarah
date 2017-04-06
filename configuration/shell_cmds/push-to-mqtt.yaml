@@ -1,0 +1,1 @@
+push_to_mqtt: '/home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:push-to-mqtt "{{ topic }}" "{{ payload }}"'

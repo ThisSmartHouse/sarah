@@ -1,0 +1,4 @@
+sensor.grow_light_combined_state:
+  hidden: true
+sensor.saltwater_uv_combined_state:
+  hidden: true

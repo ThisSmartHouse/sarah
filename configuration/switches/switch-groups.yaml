@@ -1,11 +1,31 @@
 - platform: template
   switches:
-    saltwater_uv:
-      friendly_name: 'Saltwater UV'
-      value_template: "{{ states.group.saltwater_uv.state == 'off' }}"
+    grow_lights:
+      friendly_name: "Grow Lights"
+      value_template: "{{ is_state('sensor.grow_light_combined_state', 'on') }}"
       turn_on:
         service: switch.turn_on
-        entity_id: group.saltwater_uv
+        entity_id: 
+          - switch.grow_lights_1_15
+          - switch.grow_lights_2_13
       turn_off:
         service: switch.turn_off
-        entity_id: group.saltwater_uv
+        entity_id:
+          - switch.grow_lights_1_15
+          - switch.grow_lights_2_13
+
+- platform: template
+  switches:
+    saltwater_uv:
+      friendly_name: 'Saltwater UV'
+      value_template: "{{ is_state('sensor.saltwater_uv_combined_state', 'on') }}"
+      turn_on:
+        service: switch.turn_on
+        entity_id:
+          - switch.saltwater_uv_light_5
+          - switch.saltwater_uv_pump_2
+      turn_off:
+        service: switch.turn_off
+        entity_id:
+          - switch.saltwater_uv_light_5
+          - switch.saltwater_uv_pump_2

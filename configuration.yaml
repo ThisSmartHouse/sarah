@@ -14,18 +14,32 @@ logbook:
 discovery:
 sun:
 
+recorder: !include ./configuration/recorder.yaml
 http: !include ./configuration/http.yaml
 octoprint: !include ./configuration/octoprint.yaml
 ecobee: !include ./configuration/ecobee.yaml
 tts: !include ./configuration/tts.yaml
 device_tracker: !include ./configuration/device_tracker.yaml
-weather: !include ./configuration/weather.yaml
 twilio: !include ./configuration/twilio.yaml
 group: !include_dir_merge_named ./configuration/groups
 switch: !include_dir_merge_list ./configuration/switches
-sensor: !include ./configuration/sensors.yaml
+sensor: !include_dir_merge_list ./configuration/sensors
 notify: !include ./configuration/notify.yaml
 mqtt: !include ./configuration/mqtt.yaml
 automation: !include_dir_merge_list automation
 light: !include ./configuration/light.yaml
 remote: !include ./configuration/remote.yaml
+shell_command: !include_dir_merge_named ./configuration/shell_cmds
+emulated_hue: !include ./configuration/emulated-hue.yaml
+
+zone:
+  name: Bayley's Office
+  latitude: !secret office_latitude
+  longitude: !secret office_longitude
+  radius: 500
+  
+zone 2:
+  name: Authority Office
+  latitude: !secret office2_latitude
+  longitude: !secret office2_longitude
+  radius: 500

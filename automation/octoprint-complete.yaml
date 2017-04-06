@@ -8,5 +8,4 @@
     - service: notify.twilio_sms
       data:
         message: "The 3D Print Job Has Completed"
-        target:
-          - +19142631049
+        target: !secret john_phone

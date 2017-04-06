@@ -16,3 +16,11 @@ light.bedroom_1:
   hidden: true
 light.bedroom_2:
   hidden: true
+switch.grow_lights_1_15:
+  hidden: true
+switch.grow_lights_2_13:
+  hidden: true
+switch.saltwater_uv_light_5:
+  hidden: true
+switch.saltwater_uv_pump_2:
+  hidden: true

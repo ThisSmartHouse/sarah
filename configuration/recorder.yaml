@@ -1,0 +1,2 @@
+purge_days: 30
+db_url: !secret database_dsn

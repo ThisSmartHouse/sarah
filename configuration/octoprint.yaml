@@ -1,2 +1,2 @@
-host: 3dprinter.coogle.local
+host: 3dprinter-1.coogle.local
 api_key: !secret octoprint_api_key
