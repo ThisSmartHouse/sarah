@@ -1,0 +1,26 @@
+- alias: Notify if VPN Failure
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: binary_sensor.vpn_safety_warning
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "I've detected the VPN is no longer protecting our network."
+        target: !secret both_phones
+
+- alias: Notify of VPN Restoration
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: binary_sensor.vpn_online
+    from: 'on'
+    to: 'off'
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "Good News! The VPN protecting our network has been restored."
+        target: !secret both_phones
+       

@@ -1,4 +1,5 @@
 - alias: Push Weather Updates to MQTT
+  hide_entity: true
   trigger:
     - platform: state
       entity_id: sensor.dark_sky_apparent_temperature
@@ -47,5 +48,8 @@
             "precip_probability" : {{ states('sensor.dark_sky_precip_probability') }},
             "temperature" : {{ states('sensor.dark_sky_temperature') }},
             "wind_speed" : {{ states('sensor.dark_sky_wind_speed') }},
-            "cloud_coverage" : {{ states('sensor.dark_sky_cloud_coverage') }}         
+            "cloud_coverage" : {{ states('sensor.dark_sky_cloud_coverage') }},
+            "sunset" : "{{ as_timestamp(states.sun.sun.attributes.next_setting)  | timestamp_custom("%I:%M %p") }}",
+            "sunrise" : "{{ as_timestamp(states.sun.sun.attributes.next_rising)  | timestamp_custom("%I:%M %p") }}",
+            "sun" : "{{ states('sun.sun') }}"     
           } 

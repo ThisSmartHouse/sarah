@@ -3,6 +3,7 @@ House:
     - sensor.home_temperature
     - sensor.main_floor_temperature
     - sensor.home_humidity
+    - binary_sensor.vpn_safety_warning
     - sensor.speedtest_download
     - sensor.speedtest_ping
     - sensor.speedtest_upload
@@ -19,6 +20,7 @@ Outdoors:
   control: hidden
   entities:
     - sun.sun
+    - light.front_porch
     - sensor.owm_temperature
     - sensor.owm_humidity
     - sensor.owm_condition

@@ -1,0 +1,17 @@
+- alias: Turn Porch Light On At Sunset
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:45:00" 
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.front_porch
+- alias: Turn Porch Light Off At Sunrise
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.front_porch

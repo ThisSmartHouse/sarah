@@ -1,4 +1,5 @@
 - alias: Push Octoprint Updates to MQTT
+  hide_entity: true
   trigger:
     - platform: state
       entity_id: sensor.3d_printer_current_state

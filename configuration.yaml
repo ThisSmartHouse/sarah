@@ -10,7 +10,7 @@ homeassistant:
 frontend:
 updater:
 history:
-logbook:
+logbook: !include ./configuration/logbook.yaml
 discovery:
 sun:
 
@@ -31,6 +31,7 @@ light: !include ./configuration/light.yaml
 remote: !include ./configuration/remote.yaml
 shell_command: !include_dir_merge_named ./configuration/shell_cmds
 emulated_hue: !include ./configuration/emulated-hue.yaml
+binary_sensor: !include_dir_merge_list ./configuration/binary-sensors
 
 zone:
   name: Bayley's Office

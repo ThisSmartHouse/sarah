@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\PollSmappeeCommand::class,
         Commands\PushToMQTTCommand::class,
-        Commands\CatBotSwitchCommand::class
+        Commands\CatBotSwitchCommand::class,
+        Commands\VPNOnlineCheckCommand::class
     ];
 
     /**

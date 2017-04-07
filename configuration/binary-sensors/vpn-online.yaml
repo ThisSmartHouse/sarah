@@ -1,0 +1,7 @@
+- platform: command_line
+  command: /home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:vpn-online-check
+  name: VPN Safety Warning
+  device_class: safety
+  payload_on: "offline"
+  payload_off: "online"
+  scan_interval: 360
