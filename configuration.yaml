@@ -13,10 +13,11 @@ history:
 logbook: !include ./configuration/logbook.yaml
 discovery:
 sun:
+#logger:
 
+alert: !include_dir_merge_named ./configuration/alerts
 recorder: !include ./configuration/recorder.yaml
 http: !include ./configuration/http.yaml
-octoprint: !include ./configuration/octoprint.yaml
 ecobee: !include ./configuration/ecobee.yaml
 tts: !include ./configuration/tts.yaml
 device_tracker: !include ./configuration/device_tracker.yaml
@@ -24,7 +25,6 @@ twilio: !include ./configuration/twilio.yaml
 group: !include_dir_merge_named ./configuration/groups
 switch: !include_dir_merge_list ./configuration/switches
 sensor: !include_dir_merge_list ./configuration/sensors
-notify: !include ./configuration/notify.yaml
 mqtt: !include ./configuration/mqtt.yaml
 automation: !include_dir_merge_list automation
 light: !include ./configuration/light.yaml
@@ -33,6 +33,14 @@ shell_command: !include_dir_merge_named ./configuration/shell_cmds
 emulated_hue: !include ./configuration/emulated-hue.yaml
 binary_sensor: !include_dir_merge_list ./configuration/binary-sensors
 
+notify: !include_dir_merge_list ./configuration/notifications
+
+notify john_sms:
+  platform: twilio_sms
+  from_number: !secret twilio_number
+  target:
+    - !secret john_phone
+    
 zone:
   name: Bayley's Office
   latitude: !secret office_latitude

@@ -1,0 +1,5 @@
+Upstairs Bathroom:
+  control: hidden
+  entities:
+    - light.bathroom
+    - light.bathtub

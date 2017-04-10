@@ -1,0 +1,9 @@
+Workshop:
+  control: hidden
+  entities:
+    - sensor.3dprinter1_state
+    - sensor.3dprinter1_percent_file
+    - sensor.3dprinter1_percent_complete
+    - sensor.3dprinter2_state
+    - sensor.3dprinter2_percent_file
+    - sensor.3dprinter2_percent_complete

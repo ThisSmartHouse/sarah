@@ -1,0 +1,6 @@
+- name : bayley-phone-sms
+  platform : group
+  services:
+    - service: twilio_sms
+      data:
+        target: !secret bayley_phone

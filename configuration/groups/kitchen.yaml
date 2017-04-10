@@ -1,0 +1,7 @@
+Kitchen:
+  control: hidden
+  entities:
+    - light.kitchen
+    - light.kitchen_center
+    - light.kitchen_doorway
+    - light.kitchen_sink

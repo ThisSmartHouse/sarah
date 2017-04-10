@@ -1,0 +1,18 @@
+- platform: mqtt
+  state_topic: "/status/3dprinters/1/progress/printing"
+  name: 3dprinter1_percent_complete
+  unit_of_measurement: '%'
+  expire_after: 30
+  value_template: "{{ value_json.progress }}"
+
+- platform: mqtt
+  state_topic: "/status/3dprinters/1/progress/printing"
+  name: 3dprinter1_percent_file
+  expire_after: 30
+  value_template: "{{ value_json.path.split('/') | last }}"
+
+- platform: command_line
+  name: 3dprinter1_state
+  command: /home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:poll-printer 3dprinter-1.coogle.local
+  value_template: "{{ value_json.state }}"
+  scan_interval: 10

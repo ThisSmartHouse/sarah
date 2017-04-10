@@ -1,0 +1,13 @@
+Living Room:
+  control: hidden
+  icon: mdi:television-guide
+  view: no
+  entities:
+    - light.living_room
+    - light.bar_light
+    - light.circle_chair
+    - light.couch
+    - light.living_room_wall
+    - light.stairwell
+    - switch.catbot
+    - sensor.living_room_tv

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "94fe5c5f0030655935a39d27f9550f11",
+    "content-hash": "d794520ee7c565ec282b76505cd0fda7",
     "packages": [
         {
             "name": "coogle/smappee",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coogle/smappee.git",
-                "reference": "a6298b1249456eba774d54d596c000542ae9c382"
+                "reference": "db4e247e8398ec526302e875055f5e71d60eed6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coogle/smappee/zipball/a6298b1249456eba774d54d596c000542ae9c382",
-                "reference": "a6298b1249456eba774d54d596c000542ae9c382",
+                "url": "https://api.github.com/repos/coogle/smappee/zipball/db4e247e8398ec526302e875055f5e71d60eed6d",
+                "reference": "db4e247e8398ec526302e875055f5e71d60eed6d",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 }
             ],
             "description": "A PHP 5.3+ API Library for accessing the Smappee power consumption API",
-            "time": "2016-08-17 15:25:14"
+            "time": "2017-04-08T04:09:33+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -191,12 +191,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "a1c4a74bf31d4e41d783fafb635c806cc19c2e9b"
+                "reference": "b517bd912afa5aa1033ce434d7138641fd6c31ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a1c4a74bf31d4e41d783fafb635c806cc19c2e9b",
-                "reference": "a1c4a74bf31d4e41d783fafb635c806cc19c2e9b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b517bd912afa5aa1033ce434d7138641fd6c31ab",
+                "reference": "b517bd912afa5aa1033ce434d7138641fd6c31ab",
                 "shasum": ""
             },
             "require": {
@@ -248,7 +248,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-03-22 11:33:29"
+            "time": "2017-04-07 20:03:48"
         },
         {
             "name": "guzzlehttp/promises",
@@ -459,12 +459,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3f8dff8279a10403dce1349e8c67463dc8cb1c1f"
+                "reference": "18013ccface480fb95f5e5ffddaf22f7e6b6c673"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3f8dff8279a10403dce1349e8c67463dc8cb1c1f",
-                "reference": "3f8dff8279a10403dce1349e8c67463dc8cb1c1f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/18013ccface480fb95f5e5ffddaf22f7e6b6c673",
+                "reference": "18013ccface480fb95f5e5ffddaf22f7e6b6c673",
                 "shasum": ""
             },
             "require": {
@@ -580,7 +580,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-04-05T14:48:32+00:00"
+            "time": "2017-04-09T23:07:52+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -904,12 +904,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d"
+                "reference": "c3cbf079466fad893e576d072c1f9daebfe04f95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
-                "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c3cbf079466fad893e576d072c1f9daebfe04f95",
+                "reference": "c3cbf079466fad893e576d072c1f9daebfe04f95",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-03-05T18:23:57+00:00"
+            "time": "2017-04-09T17:49:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1598,12 +1598,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "12559880243e8732e5cf831102cf424132e564c6"
+                "reference": "45720a3d2428d7c248979112f823d4fcfa668297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/12559880243e8732e5cf831102cf424132e564c6",
-                "reference": "12559880243e8732e5cf831102cf424132e564c6",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/45720a3d2428d7c248979112f823d4fcfa668297",
+                "reference": "45720a3d2428d7c248979112f823d4fcfa668297",
                 "shasum": ""
             },
             "require": {
@@ -1643,7 +1643,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-04T18:59:08+00:00"
+            "time": "2017-04-07T06:15:11+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -1651,12 +1651,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "0cfc51002cbc8112b018344d5577fc1f79d6dfb4"
+                "reference": "2ee104eefbbc601ace8b5f3669a43551900839b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/0cfc51002cbc8112b018344d5577fc1f79d6dfb4",
-                "reference": "0cfc51002cbc8112b018344d5577fc1f79d6dfb4",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/2ee104eefbbc601ace8b5f3669a43551900839b4",
+                "reference": "2ee104eefbbc601ace8b5f3669a43551900839b4",
                 "shasum": ""
             },
             "require": {
@@ -1728,7 +1728,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-03T22:52:28+00:00"
+            "time": "2017-04-07T16:56:33+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1922,12 +1922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "fc74a95c8aed8029e1311a9b6c177e94c338027d"
+                "reference": "90af9608e6ba4401feaa6f26fde62a66bcff8ff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/fc74a95c8aed8029e1311a9b6c177e94c338027d",
-                "reference": "fc74a95c8aed8029e1311a9b6c177e94c338027d",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/90af9608e6ba4401feaa6f26fde62a66bcff8ff2",
+                "reference": "90af9608e6ba4401feaa6f26fde62a66bcff8ff2",
                 "shasum": ""
             },
             "require": {
@@ -1979,7 +1979,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-21T21:44:47+00:00"
+            "time": "2017-04-05T21:43:54+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -2206,12 +2206,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "3366f1bcf7369e65fa2bf3d46bacf82ecc19d63f"
+                "reference": "bd5580a1ca86bd32a8f72f9b47f273aab3ef90f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/3366f1bcf7369e65fa2bf3d46bacf82ecc19d63f",
-                "reference": "3366f1bcf7369e65fa2bf3d46bacf82ecc19d63f",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/bd5580a1ca86bd32a8f72f9b47f273aab3ef90f7",
+                "reference": "bd5580a1ca86bd32a8f72f9b47f273aab3ef90f7",
                 "shasum": ""
             },
             "require": {
@@ -2248,7 +2248,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-04-05T15:14:56+00:00"
+            "time": "2017-04-07T07:05:49+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -2307,12 +2307,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "6fdb61243844dc924071d3404bb23994ea0b6856"
+                "reference": "483c43d92b6581ea7f8c330231d2dabf8b1ec51f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/6fdb61243844dc924071d3404bb23994ea0b6856",
-                "reference": "6fdb61243844dc924071d3404bb23994ea0b6856",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/483c43d92b6581ea7f8c330231d2dabf8b1ec51f",
+                "reference": "483c43d92b6581ea7f8c330231d2dabf8b1ec51f",
                 "shasum": ""
             },
             "require": {
@@ -2364,7 +2364,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-02-28T12:52:32+00:00"
+            "time": "2017-04-07T09:06:30+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3628,9 +3628,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "coogle/smappee": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -1,5 +1,0 @@
-- name : twilio_sms
-  platform : twilio_sms
-  from_number: !secret twilio_number 
-- name : ecobee
-  platform : ecobee

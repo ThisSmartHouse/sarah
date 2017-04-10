@@ -1,0 +1,6 @@
+Master Bedroom:
+  view: no
+  icon: mdi:bed
+  entities:
+    - light.bedroom
+    - light.master_closet

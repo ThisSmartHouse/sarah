@@ -2,3 +2,26 @@ sensor.grow_light_combined_state:
   hidden: true
 sensor.saltwater_uv_combined_state:
   hidden: true
+sensor.3dprinter1_percent_complete:
+  friendly_name: "3D Printer #1 Completion"
+sensor.3dprinter2_percent_complete:
+  friendly_name: "3D Printer #2 Completion"
+sensor.3dprinter1_percent_file:
+  friendly_name: "3D Printer #1 File"
+sensor.3dprinter2_percent_file:
+  friendly_name: "3D Printer #2 File"
+binary_sensor.freshwater_temperature_status:
+  friendly_name: "Freshwater Tank Temperature"
+  hidden: true
+sensor.breaches_jbayleyzitogmailcom:
+  hidden: true
+sensor.breaches_johncoggeshallorg:
+  hidden: true
+sensor.breaches_johncogggmailcom:
+  hidden: true
+sensor.breaches_johntestnoticecom:
+  hidden: true
+sensor.3dprinter1_state:
+  friendly_name: "3D Printer #1 State"
+sensor.3dprinter2_state:
+  friendly_name: "3D Printer #2 State"  

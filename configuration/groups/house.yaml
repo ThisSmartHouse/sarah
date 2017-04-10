@@ -1,0 +1,12 @@
+House:
+  entities:
+    - sensor.home_temperature
+    - sensor.main_floor_temperature
+    - sensor.home_humidity
+    - binary_sensor.vpn_safety_warning
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - sensor.home_power_consumption
+    - binary_sensor.main_floor_occupancy
+    - binary_sensor.home_occupancy

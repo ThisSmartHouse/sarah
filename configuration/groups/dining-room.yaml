@@ -1,0 +1,4 @@
+Dining Room:
+  control: hidden
+  entities:
+    - light.dining_room

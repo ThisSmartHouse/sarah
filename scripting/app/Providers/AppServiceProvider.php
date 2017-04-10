@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Smappee', function($app) {
-            $client = new \Coogle\SmappeeLocal(config('services.smappee.host'));
+            $client = new \Coogle\SmappeeLocal(config('services.smappee.host'), config('services.smappee.local_password'));
             return $client;
         });
         

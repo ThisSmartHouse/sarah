@@ -39,7 +39,8 @@ return [
         'client_secret' => env('SMAPPEE_CLIENT_SECRET'),
         'username' => env('SMAPPEE_USERNAME'),
         'password' => env('SMAPPEE_PASSWORD'),
-        'host' => env('SMAPPEE_HOST')
+        'host' => env('SMAPPEE_HOST'),
+        'local_password' => env('SMAPPEE_LOCAL_PASSWORD')
     ],
     'mqtt' => [
         'host' => 'localhost',
@@ -47,5 +48,8 @@ return [
     ],
     'catbot' => [
         'host' => env('CATBOT_HOST')
+    ],
+    'octoprint' => [
+        'api_key' => env('OCTOPRINT_API_KEY')
     ]
 ];

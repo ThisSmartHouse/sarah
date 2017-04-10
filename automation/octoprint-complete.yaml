@@ -1,11 +1,24 @@
-- alias: Send Notification when 3d print is complete
+- alias: 3D Printer 1 Completion Notification
   trigger:
     platform: state
-    entity_id: sensor.3d_printer_current_state
+    entity_id: sensor.3dprinter1_state
     from: "Printing"
     to: "Operational"
   action:
     - service: notify.twilio_sms
       data:
-        message: "The 3D Print Job Has Completed"
+        message: "The 3D Print Job on Printer #1 Has Completed"
         target: !secret john_phone
+
+- alias: 3D Printer 2 Completion Notification
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter2_state
+    from: "Printing"
+    to: "Operational"
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "The 3D Print Job on Printer #2 Has Completed"
+        target: !secret john_phone
+        

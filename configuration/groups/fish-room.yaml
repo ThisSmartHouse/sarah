@@ -1,0 +1,12 @@
+Fish Room:
+  control: hidden
+  entities:
+    - sensor.freshwater_tank_temperature
+    - switch.cloner_sprayer_14
+    - switch.freshwater_sump_light_7
+    - switch.grow_lights
+    - switch.protein_skimmer_3
+    - switch.saltwater_autotopoff_4
+    - switch.saltwater_return_pump_1
+    - switch.saltwater_sump_light_6
+    - switch.saltwater_uv

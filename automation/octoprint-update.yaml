@@ -1,19 +1,45 @@
-- alias: Push Octoprint Updates to MQTT
+- alias: Push Octoprint Updates to MQTT (Printer 1)
   hide_entity: true
   trigger:
     - platform: state
-      entity_id: sensor.3d_printer_current_state
+      entity_id: sensor.3dprinter1_state
     - platform: state
-      entity_id: sensor.3d_printer_job_percentage
+      entity_id: sensor.3dprinter1_percent_complete
+    - platform: state
+      entity_id: sensor.3dprinter1_percent_file
     - platform: event
       event_type: homeassistant_start
   action:
     - service: mqtt.publish
       data_template:
-        topic: '/status/octoprint'
+        topic: '/status/octoprint/1'
         retain: true
         payload: >
           {
-            "current_state" : "{{ states('sensor.3d_printer_current_state') }}",
-            "job_percentage" : {{ states('sensor.3d_printer_job_percentage') }}
+            "current_state" : "{{ states('sensor.3dprinter1_state') }}",
+            "job_percentage" : {{ states('sensor.3dprinter1_percent_complete') }}
+            "file" : "{{ states('sensor.3dprinter1_percent_file') }}"
           } 
+- alias: Push Octoprint Updates to MQTT (Printer 2)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.3dprinter2_state
+    - platform: state
+      entity_id: sensor.3dprinter2_percent_complete
+    - platform: state
+      entity_id: sensor.3dprinter2_percent_file
+    - platform: event
+      event_type: homeassistant_start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/octoprint/2'
+        retain: true
+        payload: >
+          {
+            "current_state" : "{{ states('sensor.3dprinter2_state') }}",
+            "job_percentage" : {{ states('sensor.3dprinter2_percent_complete') }}
+            "file" : "{{ states('sensor.3dprinter2_percent_file') }}"
+          } 
+          

@@ -16,7 +16,8 @@ class Kernel extends ConsoleKernel
         Commands\PollSmappeeCommand::class,
         Commands\PushToMQTTCommand::class,
         Commands\CatBotSwitchCommand::class,
-        Commands\VPNOnlineCheckCommand::class
+        Commands\VPNOnlineCheckCommand::class,
+        Commands\PollPrinterStatus::class
     ];
 
     /**
