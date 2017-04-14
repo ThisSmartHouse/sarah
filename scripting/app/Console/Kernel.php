@@ -17,7 +17,8 @@ class Kernel extends ConsoleKernel
         Commands\PushToMQTTCommand::class,
         Commands\CatBotSwitchCommand::class,
         Commands\VPNOnlineCheckCommand::class,
-        Commands\PollPrinterStatus::class
+        Commands\PollPrinterStatus::class,
+        Commands\KeyStoreCommand::class
     ];
 
     /**

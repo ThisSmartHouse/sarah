@@ -1,0 +1,21 @@
+LocateIntent:
+  action:
+    service: notify.notify
+    data_template:
+      message: The location of {{ User }} has been queried via Alexa.
+  speech:
+    type: plaintext
+    text: >
+      {%- for state in states.device_tracker -%}
+        {%- if state.name.lower() == User.lower() -%}
+          {{ state.name }} is at {{ state.state }}
+        {%- elif loop.last -%}
+          I am sorry, I do not know where {{ User }} is.
+        {%- endif -%}
+      {%- else -%}
+        Sorry, I don't have any trackers registered.
+      {%- endfor -%}
+  card:
+    type: simple
+    title: Sample title
+    content: Some more content

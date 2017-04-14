@@ -10,7 +10,7 @@ sensor.3dprinter1_percent_file:
   friendly_name: "3D Printer #1 File"
 sensor.3dprinter2_percent_file:
   friendly_name: "3D Printer #2 File"
-binary_sensor.freshwater_temperature_status:
+binary_sensor.freshwater_tank_temperature:
   friendly_name: "Freshwater Tank Temperature"
   hidden: true
 sensor.breaches_jbayleyzitogmailcom:
@@ -25,3 +25,9 @@ sensor.3dprinter1_state:
   friendly_name: "3D Printer #1 State"
 sensor.3dprinter2_state:
   friendly_name: "3D Printer #2 State"  
+sensor.freshwater_tank_temperature:
+  friendly_name: "Freshwater Tank Temp."
+sensor.saltwater_tank_temperature:
+  friendly_name: "Saltwater Tank Temp."
+sensor.diana_tank_temperature:
+  friendly_name: "Diana's Tank Temp."

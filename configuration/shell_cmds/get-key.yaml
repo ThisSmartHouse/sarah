@@ -1,0 +1,1 @@
+get_key: '/home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:keystore put "{{ key }}" "{{ value }}"'

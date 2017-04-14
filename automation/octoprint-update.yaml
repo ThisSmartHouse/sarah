@@ -17,7 +17,7 @@
         payload: >
           {
             "current_state" : "{{ states('sensor.3dprinter1_state') }}",
-            "job_percentage" : {{ states('sensor.3dprinter1_percent_complete') }}
+            "job_percentage" : "{{ states('sensor.3dprinter1_percent_complete') }}",
             "file" : "{{ states('sensor.3dprinter1_percent_file') }}"
           } 
 - alias: Push Octoprint Updates to MQTT (Printer 2)
@@ -39,7 +39,7 @@
         payload: >
           {
             "current_state" : "{{ states('sensor.3dprinter2_state') }}",
-            "job_percentage" : {{ states('sensor.3dprinter2_percent_complete') }}
+            "job_percentage" : "{{ states('sensor.3dprinter2_percent_complete') }}",
             "file" : "{{ states('sensor.3dprinter2_percent_file') }}"
           } 
           

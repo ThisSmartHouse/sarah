@@ -1,0 +1,31 @@
+sensor.dark_sky_apparent_temperature:
+  friendly_name: "Apparent Temperature"
+sensor.dark_sky_cloud_coverage:
+  friendly_name: "Cloud Coverage"
+sensor.dark_sky_daily_high_apparent_temperature:
+  friendly_name: "Apparent Temperature High"
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: "Temperature High"
+sensor.dark_sky_daily_low_apparent_temperature:
+  friendly_name: "Apparent Temperature Low"
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: "Temperature Low"
+sensor.dark_sky_daily_max_precip_intensity:
+  friendly_name: "Max Precipitation Intensity"
+sensor.dark_sky_hourly_summary:
+  friendly_name: "Hourly Summary"
+sensor.dark_sky_humidity:
+  friendly_name: "Humidity"
+sensor.dark_sky_precip:
+  friendly_name: "Precipitation"
+sensor.dark_sky_precip_intensity:
+  friendly_name: "Precipitation Intensity"
+sensor.dark_sky_precip_probability:
+  friendly_name: "Precipitation Probability"
+sensor.dark_sky_summary:
+  friendly_name: "Summary"
+sensor.dark_sky_temperature:
+  friendly_name: "Temperature"
+sensor.dark_sky_wind_speed:
+  friendly_name: "Wind Speed"
+  

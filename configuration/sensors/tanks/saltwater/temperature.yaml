@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "/status/tank/saltwater/temperature"
+  name: saltwater_tank_temperature
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json.water_temp }}"

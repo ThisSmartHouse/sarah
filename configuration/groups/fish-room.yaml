@@ -2,6 +2,8 @@ Fish Room:
   control: hidden
   entities:
     - sensor.freshwater_tank_temperature
+    - sensor.saltwater_tank_temperature
+    - sensor.diana_tank_temperature
     - switch.cloner_sprayer_14
     - switch.freshwater_sump_light_7
     - switch.grow_lights

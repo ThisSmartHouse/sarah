@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+use Coogle\SmappeeLocal;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
     }
 
     /**
@@ -24,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Smappee', function($app) {
-            $client = new \Coogle\SmappeeLocal(config('services.smappee.host'), config('services.smappee.local_password'));
+            $client = new SmappeeLocal(config('services.smappee.host'), config('services.smappee.local_password'));
             return $client;
         });
         

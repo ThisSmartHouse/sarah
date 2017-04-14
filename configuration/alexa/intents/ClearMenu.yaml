@@ -1,0 +1,41 @@
+ClearMenu:
+  action:
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-monday"
+        value: ""
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-tuesday"
+        value: ""
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-wednesday"
+        value: ""
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-thursday"
+        value: ""
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-friday"
+        value: ""
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-saturday"
+        value: ""
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-sunday"
+        value: ""
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "clear"
+          } 
+  speech:
+    type: plaintext
+    text: >
+      I have cleared the dinner menu of all items.

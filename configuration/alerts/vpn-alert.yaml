@@ -1,0 +1,14 @@
+vpn_alert:
+  name: "Warning: I've detected a failure in the VPN Network."
+  entity_id: binary_sensor.vpn_safety_warning
+  state: 'on'
+  repeat:
+    - 5
+    - 10
+    - 30
+    - 60
+  can_acknowledge: true
+  skip_first: false
+  notifiers:
+    - john_phone_sms
+    - bayley_phone_sms

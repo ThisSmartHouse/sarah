@@ -1,0 +1,19 @@
+SetMenuItem:
+  action:
+    - service: shell_command.put_key
+      data_template: 
+        key: "dinnermenu-{{ DayOfWeek }}"
+        value: "{{ MenuItem | title }}"
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "{{ DayOfWeek | lower }}",
+            "menu" : "{{ MenuItem | title }}"     
+          } 
+  speech:
+    type: plaintext
+    text: >
+      I have added {{ MenuItem }} to the dinner menu for {{ DayOfWeek }}

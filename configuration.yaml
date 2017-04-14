@@ -15,6 +15,9 @@ discovery:
 sun:
 #logger:
 
+alexa:
+  intents: !include_dir_merge_named ./configuration/alexa/intents
+  
 alert: !include_dir_merge_named ./configuration/alerts
 recorder: !include ./configuration/recorder.yaml
 http: !include ./configuration/http.yaml

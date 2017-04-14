@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    diana_temperature_status:
+      device_class: safety
+      value_template: "{% if (states('sensor.diana_tank_temperature')) is equalto 'unknown' or (float(states('sensor.diana_tank_temperature')) is greaterthan 60 and float(states('sensor.diana_tank_temperature')) is lessthan 65) %}false{% else %}true{% endif %}"
+      friendly_name: "Diana's Tank Temperature Status"
