@@ -2,5 +2,6 @@ Master Bedroom:
   view: no
   icon: mdi:bed
   entities:
+    - light.dimmer_7
     - light.bedroom
     - light.master_closet

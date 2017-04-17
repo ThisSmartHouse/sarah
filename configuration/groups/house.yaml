@@ -1,5 +1,7 @@
 House:
   entities:
+    - light.front_hall
+    - light.hallway
     - sensor.home_temperature
     - sensor.main_floor_temperature
     - sensor.home_humidity

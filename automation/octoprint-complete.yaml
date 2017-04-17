@@ -5,10 +5,9 @@
     from: "Printing"
     to: "Operational"
   action:
-    - service: notify.twilio_sms
+    - service: notify.john_phone_sms
       data:
         message: "The 3D Print Job on Printer #1 Has Completed"
-        target: !secret john_phone
 
 - alias: 3D Printer 2 Completion Notification
   trigger:
@@ -17,8 +16,6 @@
     from: "Printing"
     to: "Operational"
   action:
-    - service: notify.twilio_sms
+    - service: notify.john_phone_sms
       data:
         message: "The 3D Print Job on Printer #2 Has Completed"
-        target: !secret john_phone
-        

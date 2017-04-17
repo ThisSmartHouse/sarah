@@ -5,6 +5,5 @@ freshwater_temp_alert:
   repeat: 5
   can_acknowledge: true
   skip_first: false
-  notifiers:
-    - john_phone_sms
-    - bayley_phone_sms
+  notifiers: 
+    - house_phones_sms

@@ -1,0 +1,45 @@
+TankTemperature:
+    speech:
+      type: plaintext
+      text: >
+        {%- if (Tank.lower() == 'freshwater') or 
+               (Tank.lower() == 'aquaponics') or 
+               (Tank.lower() == 'hydropoincs') or
+               (Tank.lower() == 'upstairs') -%}
+               {%- if states('sensor.freshwater_tank_temperature') == 'unknown' -%}
+                 I'm sorry, I don't know what the fresh water tank water temperature is right now.
+               {%- else -%}
+                 The water temperature is {{ states('sensor.freshwater_tank_temperature') }} degrees.
+               {%- endif -%}
+               
+               {%- if states('binary_sensor.freshwater_temperature_status') == 'on' -%}
+                 This water temperature is not safe for the inhabitants, and needs to be addressed as soon as possible.
+               {%- endif -%}
+               
+        {%- elif (Tank.lower() == 'salt water') or
+                 (Tank.lower() == 'downstairs') -%}
+               {%- if states('sensor.saltwater_tank_temperature') == 'unknown' -%}
+                 I'm sorry, I don't know what the salt water tank water temperature is right now.
+               {%- else -%}
+                 The water temperature is {{ states('sensor.saltwater_tank_temperature') }} degrees.
+               {%- endif -%}
+               
+               {%- if states('binary_sensor.saltwater_temperature_status') == 'on' -%}
+                 This water temperature is not safe for the inhabitants, and needs to be addressed as soon as possible.
+               {%- endif -%}
+               
+        {%- elif (Tank.lower() == "diana's") or
+                 (Tank.lower() == 'axoltyl') -%}
+               {%- if states('sensor.diana_tank_temperature') == 'unknown' -%}
+                 I'm sorry, I don't know what Diana's tank water temperature is right now.
+               {%- else -%}
+                 The water temperature is {{ states('sensor.diana_tank_temperature') }} degrees.
+               {%- endif -%}
+               
+               {%- if states('binary_sensor.diana_temperature_status') == 'on' -%}
+                 This water temperature is not safe for the inhabitants, and needs to be addressed as soon as possible.
+               {%- endif -%}
+               
+        {%- else -%}
+               I'm sorry, I don't know what tank you are talking about.
+        {%- endif -%}

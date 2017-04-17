@@ -1,10 +1,15 @@
-freshwater_temp_alert:
+diana_temp_alert:
   name: "Warning: I have detected a problem with Diana's tank temperature"
   entity_id: binary_sensor.diana_temperature_status
   state: 'on'
-  repeat: 5
+  repeat:
+    - 5
+    - 10
+    - 15
+    - 30
+    - 60
+    - 120
   can_acknowledge: true
   skip_first: false
-  notifiers:
-    - john_phone_sms
-    - bayley_phone_sms
+  notifiers: 
+    - house_phones_sms

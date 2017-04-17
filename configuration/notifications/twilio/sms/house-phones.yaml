@@ -1,4 +1,4 @@
-- name : house-phones-sms
+- name : house_phones_sms
   platform : group
   services:
     - service: twilio_sms

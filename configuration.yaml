@@ -38,12 +38,6 @@ binary_sensor: !include_dir_merge_list ./configuration/binary-sensors
 
 notify: !include_dir_merge_list ./configuration/notifications
 
-notify john_sms:
-  platform: twilio_sms
-  from_number: !secret twilio_number
-  target:
-    - !secret john_phone
-    
 zone:
   name: Bayley's Office
   latitude: !secret office_latitude
@@ -55,3 +49,20 @@ zone 2:
   latitude: !secret office2_latitude
   longitude: !secret office2_longitude
   radius: 500
+
+zone 3:
+  name: Scottish Rite Valley of Detroit
+  latitude: !secret valley_latitude
+  longitude: !secret valley_longitude
+  radius: 500
+  
+zone 4:
+  name: Meijer (Royal Oak)
+  latitude: !secret meijer_ro_latitude
+  longitude: !secret meijer_ro_longitude
+  radius: 500
+  
+zone 5:
+  name: Meijer (Southfield)
+  latitude: !secret meijer_sf_latitude
+  longitude: !secret meijer_sf_longitude
