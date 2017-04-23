@@ -40,6 +40,7 @@ class PollSmappeeCommand extends Command
         try {
             
             $client = app('Smappee');
+            $client->login();
             $instant = $client->getInstantaneous();
             
             print round($instant['phase2ActivePower'] / 1000, 0, PHP_ROUND_HALF_UP);
