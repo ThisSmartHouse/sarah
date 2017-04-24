@@ -2,7 +2,13 @@ freshwater_temp_alert:
   name: "Warning: I have detected a problem with the freshwater tank temperature"
   entity_id: binary_sensor.freshwater_temperature_status
   state: 'on'
-  repeat: 5
+  repeat:
+    - 5
+    - 10
+    - 15
+    - 30
+    - 60
+    - 120
   can_acknowledge: true
   skip_first: false
   notifiers: 
