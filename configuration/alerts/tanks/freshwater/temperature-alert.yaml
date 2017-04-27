@@ -10,6 +10,6 @@ freshwater_temp_alert:
     - 60
     - 120
   can_acknowledge: true
-  skip_first: false
+  skip_first: true
   notifiers: 
     - house_phones_sms

@@ -8,7 +8,6 @@ vpn_alert:
     - 30
     - 60
   can_acknowledge: true
-  skip_first: false
+  skip_first: true
   notifiers:
-    - john_phone_sms
-    - bayley_phone_sms
+    - house_phones_sms
