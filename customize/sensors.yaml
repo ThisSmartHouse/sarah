@@ -1,5 +1,7 @@
 sensor.grow_light_combined_state:
   hidden: true
+sensor.saltwater_lights_combined_state:
+  hidden: true
 sensor.saltwater_uv_combined_state:
   hidden: true
 sensor.3dprinter1_percent_complete:

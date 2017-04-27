@@ -1,0 +1,10 @@
+Bar:
+  control: hidden
+  entities:
+    - switch.bar_lights
+    - switch.ice_machine
+    - switch.wavemaker_1
+    - switch.wavemaker_2
+    - switch.saltwater_lights
+    - switch.switch_6
+    - switch.switch_7

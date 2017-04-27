@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    saltwater_lights_combined_state:
+      value_template: '{{ "on" if (is_state("switch.saltwater_light_1", "on") and is_state("switch.saltwater_light_2", "on")) else "off" }}'
+      friendly_name: "Saltwater Lights Combined"

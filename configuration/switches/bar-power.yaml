@@ -1,0 +1,48 @@
+- platform: mqtt
+  name: Saltwater Light 1
+  command_topic: /coogle-bar-power/in/13
+  state_topic: /coogle-bar-power/state/13
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Saltwater Light 2
+  command_topic: /coogle-bar-power/in/19
+  state_topic: /coogle-bar-power/state/19
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Wavemaker 1
+  command_topic: /coogle-bar-power/in/26
+  state_topic: /coogle-bar-power/state/26
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Wavemaker 2
+  command_topic: /coogle-bar-power/in/4
+  state_topic: /coogle-bar-power/state/4
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Ice Machine
+  command_topic: /coogle-bar-power/in/6
+  state_topic: /coogle-bar-power/state/6
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Switch 6
+  command_topic: /coogle-bar-power/in/17
+  state_topic: /coogle-bar-power/state/17
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Switch 7
+  command_topic: /coogle-bar-power/in/22
+  state_topic: /coogle-bar-power/state/22
+  payload_on: "0"
+  payload_off: "1"
+- platform: mqtt
+  name: Bar Lights
+  command_topic: /coogle-bar-power/in/27
+  state_topic: /coogle-bar-power/state/27
+  payload_on: "0"
+  payload_off: "1"

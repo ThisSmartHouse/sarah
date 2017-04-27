@@ -1,0 +1,10 @@
+- alias: Wavemakers
+  trigger:
+    platform: time
+    minutes: "/2"
+    seconds: 00
+  action:
+    - service: switch.toggle
+      entity_id: switch.wavemaker_1
+    - service: switch.toggle
+      entity_id: switch.wavemaker_2

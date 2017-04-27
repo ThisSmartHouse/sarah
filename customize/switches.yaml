@@ -24,3 +24,7 @@ switch.saltwater_uv_light_5:
   hidden: true
 switch.saltwater_uv_pump_2:
   hidden: true
+switch.saltwater_light_1:
+  hidden: true
+switch.saltwater_light_2:
+  hidden: true
