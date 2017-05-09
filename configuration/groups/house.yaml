@@ -4,6 +4,8 @@ House:
     - light.hallway
     - sensor.home_temperature
     - sensor.main_floor_temperature
+    - sensor.bedroom_temperature
+    - sensor.office_temperature
     - sensor.home_humidity
     - binary_sensor.vpn_safety_warning
     - sensor.speedtest_download
@@ -12,3 +14,5 @@ House:
     - sensor.home_power_consumption
     - binary_sensor.main_floor_occupancy
     - binary_sensor.home_occupancy
+    - binary_sensor.bedroom_occupancy
+    - binary_sensor.office_occupancy
