@@ -2,5 +2,5 @@
   sensors:
     saltwater_temperature_status:
       device_class: safety
-      value_template: "{% if (states('sensor.saltwater_tank_temperature')) is equalto 'unknown' or (float(states('sensor.saltwater_tank_temperature')) is greaterthan 70 and float(states('sensor.saltwater_tank_temperature')) is lessthan 82) %}false{% else %}true{% endif %}"
+      value_template: "{% if (states('sensor.saltwater_tank_temperature')) is equalto 'unknown' or (float(states('sensor.saltwater_tank_temperature')) is greaterthan 70 and float(states('sensor.saltwater_tank_temperature')) is lessthan 85) %}false{% else %}true{% endif %}"
       friendly_name: "Saltwater Temperature Warning"
