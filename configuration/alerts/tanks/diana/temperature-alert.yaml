@@ -1,5 +1,6 @@
 diana_temp_alert:
-  name: "Warning: I have detected a problem with Diana's tank temperature"
+  name: >
+    Warning: Diana's tank temperature is currently {{ float(states('sensor.diana_tank_temperature')) }} degrees.
   entity_id: binary_sensor.diana_temperature_status
   state: 'on'
   repeat:

@@ -1,5 +1,6 @@
 saltwater_temp_alert:
-  name: "Warning: I have detected a problem with the saltwater tank temperature"
+name: >
+    Warning: The saltwater tank temperature is currently {{ float(states('sensor.saltwater_tank_temperature')) }} degrees.
   entity_id: binary_sensor.saltwater_temperature_status
   state: 'on'
   repeat:

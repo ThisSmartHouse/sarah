@@ -1,5 +1,6 @@
 freshwater_temp_alert:
-  name: "Warning: I have detected a problem with the freshwater tank temperature"
+  name: >
+    Warning: The freshwater tank temperature is currently {{ float(states('sensor.freshwater_tank_temperature')) }} degrees.
   entity_id: binary_sensor.freshwater_temperature_status
   state: 'on'
   repeat:
