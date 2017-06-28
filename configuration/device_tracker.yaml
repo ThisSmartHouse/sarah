@@ -1,7 +1,3 @@
-- platform: ddwrt
-  host: router.coogle.local
-  username: admin
-  password: !secret router_password
 - platform: aruba
   host: router-outside.coogle.local
   username: admin
@@ -10,3 +6,7 @@
   username: john@coggeshall.org
   password: !secret icloud_password
   account_name: Johns iCloud
+- platform: nmap_tracker
+  hosts:
+    -  192.168.1.52
+  home_interval: 5

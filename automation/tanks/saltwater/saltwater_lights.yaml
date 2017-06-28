@@ -1,4 +1,4 @@
-- alias: Saltwater Lights On
+- id: Saltwater Lights On
   hide_entity: true
   trigger:
     platform: time
@@ -6,7 +6,7 @@
   action:
     service: switch.turn_on
     entity_id: switch.saltwater_lights
-- alias: Saltwater Lights Off
+- id: Saltwater Lights Off
   hide_entity: true
   trigger:
     platform: time

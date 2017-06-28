@@ -1,4 +1,4 @@
-- alias: Grow Light Manager On
+- id: Grow Light Manager On
   hide_entity: true
   trigger:
     platform: time
@@ -6,7 +6,7 @@
   action:
     service: switch.turn_on
     entity_id: switch.grow_lights
-- alias: Grow Light Manager Off
+- id: Grow Light Manager Off
   hide_entity: true
   trigger:
     platform: time

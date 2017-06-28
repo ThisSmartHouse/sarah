@@ -1,4 +1,4 @@
-- alias: Icemaker Off
+- id: Icemaker Off
   hide_entity: true
   trigger:
     platform: time
@@ -6,7 +6,7 @@
   action:
     service: switch.turn_off
     entity_id: switch.ice_machine
-- alias: Icemaker On
+- id: Icemaker On
   hide_entity: true
   trigger:
     platform: time

@@ -1,4 +1,4 @@
-- alias: Protein Skimmer On
+- id: Protein Skimmer On
   hide_entity: true
   trigger:
     platform: time
@@ -6,7 +6,7 @@
   action:
     service: switch.turn_on
     entity_id: switch.protein_skimmer_3
-- alias: Protein Skimmer Off
+- id: Protein Skimmer Off
   hide_entity: true
   trigger:
     platform: time

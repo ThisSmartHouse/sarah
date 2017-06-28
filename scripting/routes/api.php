@@ -13,6 +13,23 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    'prefix' => 'aws'
+], function() {
+    
+    Route::group([
+        'prefix' => 'ses'
+    ], function() {
+        
+        Route::post('process-incoming', [
+            'as' => 'api.aws.ses.process-incoming',
+            'uses' => 'Api\Aws\SesController@processIncoming'
+        ]);
+        
+    });
+    
 });
+
+#Route::middleware('auth:api')->get('/user', function (Request $request) {
+#    return $request->user();
+#});

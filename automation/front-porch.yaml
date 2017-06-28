@@ -1,4 +1,4 @@
-- alias: Turn Porch Light On At Sunset
+- id: Turn Porch Light On At Sunset
   hide_entity: true
   trigger:
     platform: sun
@@ -7,7 +7,7 @@
   action:
     service: homeassistant.turn_on
     entity_id: light.front_porch
-- alias: Turn Porch Light Off At Sunrise
+- id: Turn Porch Light Off At Sunrise
   hide_entity: true
   trigger:
     platform: sun

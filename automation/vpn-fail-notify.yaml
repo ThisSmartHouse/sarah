@@ -1,4 +1,4 @@
-- alias: Notify if VPN Failure
+- id: Notify if VPN Failure
   hide_entity: true
   trigger:
     platform: state
@@ -11,7 +11,7 @@
         message: "I've detected the VPN is no longer protecting our network."
         target: !secret both_phones
 
-- alias: Notify of VPN Restoration
+- id: Notify of VPN Restoration
   hide_entity: true
   trigger:
     platform: state

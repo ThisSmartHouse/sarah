@@ -1,4 +1,4 @@
-- alias: Wavemakers
+- id: Wavemakers
   trigger:
     platform: time
     minutes: "/2"

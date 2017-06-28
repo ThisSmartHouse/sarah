@@ -3,6 +3,7 @@ Outdoors:
   entities:
     - sun.sun
     - light.front_porch
+    - sensor.grill_temperature
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_cloud_coverage
     - sensor.dark_sky_daily_high_apparent_temperature

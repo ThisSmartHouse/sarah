@@ -1,4 +1,4 @@
-- alias: Saltwater UV Purifier On
+- id: Saltwater UV Purifier On
   hide_entity: true
   trigger:
     platform: time
@@ -6,7 +6,7 @@
   action:
     service: switch.turn_on
     entity_id: switch.saltwater_uv
-- alias: Saltwater UV Purifier Off
+- id: Saltwater UV Purifier Off
   hide_entity: true
   trigger:
     platform: time

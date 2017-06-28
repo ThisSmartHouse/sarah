@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "/status/bbq/temperature"
+  name: grill_temperature
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json.probe_temp }}"

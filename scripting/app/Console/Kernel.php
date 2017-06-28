@@ -18,7 +18,8 @@ class Kernel extends ConsoleKernel
         Commands\CatBotSwitchCommand::class,
         Commands\VPNOnlineCheckCommand::class,
         Commands\PollPrinterStatus::class,
-        Commands\KeyStoreCommand::class
+        Commands\KeyStoreCommand::class,
+        Commands\CurrentPowerCostCommand::class
     ];
 
     /**

@@ -4,3 +4,6 @@ switch.catbot:
 switch.grow_lights:
   emulated_hue: true
   emulated_hue_name: "Grow Lights"
+switch.ice_machine:
+  emulated_hue: true
+  emulated_hue_name: "Ice Machine"

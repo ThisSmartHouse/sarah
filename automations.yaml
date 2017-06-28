@@ -1,0 +1,391 @@
+- id: Bar Lights On
+  alias: Bar Lights On
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00" 
+  action:
+    service: switch.turn_on
+    entity_id: switch.bar_lights
+
+- id: Bar Lights Off
+  alias: Bar Lights Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '04:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.bar_lights
+
+- id: Icemaker Off
+  alias: Icemaker Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '03:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.ice_machine
+
+- id: Icemaker On
+  alias: Icemaker On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '03:01:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.ice_machine
+
+- id: Diana Chiller On
+  alias: Diana Chiller On
+  hide_entity: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.diana_tank_temperature
+    above: 62
+  action:
+    - service: switch.turn_on
+      entity_id: switch.diana_chiller
+
+- id: Diana Chiller Off
+  alias: Diana Chiller Off
+  hide_entity: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.diana_tank_temperature
+    below: 62
+  action:
+    - service: switch.turn_off
+      entity_id: switch.diana_chiller
+
+- id: Freshwater Sump Light On
+  alias: Freshwater Sump Light On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '08:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.freshwater_sump_light_7
+
+- id: Freshwater Sump Light Off
+  alias: Freshwater Sump Light Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '23:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.freshwater_sump_light_7
+
+- id: Grow Light On
+  alias: Grow Lights On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '08:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.grow_lights
+
+- id: Grow Light Off
+  alias: Grow Lights Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '02:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.grow_lights
+
+- id: Protein Skimmer On
+  alias: Protein Skimmer On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '15:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.protein_skimmer_3
+
+- id: Protein Skimmer Off
+  alias: Protein Skimmer Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '18:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.protein_skimmer_3
+
+- id: Saltwater Lights On
+  alias: Saltwater Lights On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '08:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.saltwater_lights
+
+- id: Saltwater Lights Off
+  alias: Saltwater Lights Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '03:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.saltwater_lights
+
+- id: Saltwater Sump Light On
+  alias: Saltwater Sump Light On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '10:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.saltwater_sump_light_6
+
+- id: Saltwater Sump Light Off
+  alias: Saltwater Sump Light Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '22:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.saltwater_sump_light_6
+
+- id: Saltwater UV Purifier On
+  alias: Saltwater UV Purifier On
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '15:00:00' 
+  action:
+    service: switch.turn_on
+    entity_id: switch.saltwater_uv
+
+- id: Saltwater UV Purifier Off
+  alias: Saltwater UV Purifier Off
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '18:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.saltwater_uv
+
+- id: Wavemakers
+  alias: Wavemakers
+  trigger:
+    platform: time
+    minutes: "/2"
+    seconds: 00
+  action:
+    - service: switch.toggle
+      entity_id: switch.wavemaker_1
+    - service: switch.toggle
+      entity_id: switch.wavemaker_2
+
+- id: Turn Porch Light On At Sunset
+  alias: Porch Light On At Sunset
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:00:00" 
+  action:
+    service: homeassistant.turn_on
+    entity_id: light.front_porch
+
+- id: Turn Porch Light Off At Sunrise
+  alias: Porch Light Off At Sunrise
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.front_porch
+
+- id: Push Sun Updates to MQTT
+  alias: Push Sun Updates to MQTT
+  hide_entity: true
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: '+00:00:00'
+    - platform: sun
+      event: sunset
+      offset: '+00:00:00'
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/sun'
+        retain: true
+        payload: >
+          {
+            "sun" : "{{ states('sun.sun') }}"     
+          } 
+
+- id: Push Weather Updates to MQTT
+  alias: Push Weather Updates to MQTT
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_apparent_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_high_apparent_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_high_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_low_apparent_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_low_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_daily_max_precip_intensity
+    - platform: state
+      entity_id: sensor.dark_sky_humidity
+    - platform: state
+      entity_id: sensor.dark_sky_precip
+    - platform: state
+      entity_id: sensor.dark_sky_precip_intensity
+    - platform: state
+      entity_id: sensor.dark_sky_precip_probability
+    - platform: state
+      entity_id: sensor.dark_sky_temperature
+    - platform: state
+      entity_id: sensor.dark_sky_wind_speed
+    - platform: state
+      entity_id: sensor.dark_sky_cloud_coverage
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/weather'
+        retain: true
+        payload: >
+          {
+            "apparent_temperature" : {{ states('sensor.dark_sky_apparent_temperature') }},
+            "daily_high_apparent_temperature" : {{ states('sensor.dark_sky_daily_high_apparent_temperature') }},
+            "daily_high_temperature" : {{ states('sensor.dark_sky_daily_high_temperature') }},
+            "daily_low_apparent_temperature" : {{ states('sensor.dark_sky_daily_low_apparent_temperature') }},
+            "daily_low_temperature" : {{ states('sensor.dark_sky_daily_low_temperature') }},
+            "daily_max_precip_intensity" : {{ states('sensor.dark_sky_daily_max_precip_intensity') }},
+            "humidity" : {{ states('sensor.dark_sky_humidity') }},
+            "precip" : "{{ states('sensor.dark_sky_precip') }}",
+            "precip_intensity" : {{ states('sensor.dark_sky_precip_intensity') }},
+            "precip_probability" : {{ states('sensor.dark_sky_precip_probability') }},
+            "temperature" : {{ states('sensor.dark_sky_temperature') }},
+            "wind_speed" : {{ states('sensor.dark_sky_wind_speed') }},
+            "cloud_coverage" : {{ states('sensor.dark_sky_cloud_coverage') }},
+            "sunset" : "{{ as_timestamp(states.sun.sun.attributes.next_setting)  | timestamp_custom("%I:%M %p") }}",
+            "sunrise" : "{{ as_timestamp(states.sun.sun.attributes.next_rising)  | timestamp_custom("%I:%M %p") }}",
+            "sun" : "{{ states('sun.sun') }}"     
+          } 
+
+- id: 3D Printer 1 Completion Notification
+  alias: 3D Printer 1 Completion Notification
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    from: "Printing"
+    to: "Operational"
+  action:
+    - service: notify.john_phone_sms
+      data:
+        message: "The 3D Print Job on Printer #1 Has Completed"
+
+- id: 3D Printer 2 Completion Notification
+  alias: 3D Printer 2 Completion Notification
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter2_state
+    from: "Printing"
+    to: "Operational"
+  action:
+    - service: notify.john_phone_sms
+      data:
+        message: "The 3D Print Job on Printer #2 Has Completed"
+
+- id: Push Octoprint Updates to MQTT (Printer 1)
+  alias: Push Octoprint Updates to MQTT (Printer 1)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.3dprinter1_state
+    - platform: state
+      entity_id: sensor.3dprinter1_percent_complete
+    - platform: state
+      entity_id: sensor.3dprinter1_percent_file
+    - platform: event
+      event_type: homeassistant_start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/octoprint/1'
+        retain: true
+        payload: >
+          {
+            "current_state" : "{{ states('sensor.3dprinter1_state') }}",
+            "job_percentage" : "{{ states('sensor.3dprinter1_percent_complete') }}",
+            "file" : "{{ states('sensor.3dprinter1_percent_file') }}"
+          } 
+
+- id: Push Octoprint Updates to MQTT (Printer 2)
+  alias: Push Octoprint Updates to MQTT (Printer 2)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.3dprinter2_state
+    - platform: state
+      entity_id: sensor.3dprinter2_percent_complete
+    - platform: state
+      entity_id: sensor.3dprinter2_percent_file
+    - platform: event
+      event_type: homeassistant_start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/octoprint/2'
+        retain: true
+        payload: >
+          {
+            "current_state" : "{{ states('sensor.3dprinter2_state') }}",
+            "job_percentage" : "{{ states('sensor.3dprinter2_percent_complete') }}",
+            "file" : "{{ states('sensor.3dprinter2_percent_file') }}"
+          } 
+
+#- id: Notify if VPN Failure
+#  alias: VPN Failure Notification
+#  hide_entity: true
+#  trigger:
+#    platform: state
+#   entity_id: binary_sensor.vpn_safety_warning
+#    from: 'off'
+#    to: 'on'
+#  action:
+#    - service: notify.twilio_sms
+#      data:
+#        message: "I've detected the VPN is no longer protecting our network."
+#        target: !secret both_phones
+
+#- id: Notify of VPN Restoration
+#  alias: VPN Restoration Notification
+#  hide_entity: true
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.vpn_online
+#    from: 'on'
+#    to: 'off'
+#  action:
+#    - service: notify.twilio_sms
+#      data:
+#        message: "Good News! The VPN protecting our network has been restored."
+#        target: !secret both_phones
+    

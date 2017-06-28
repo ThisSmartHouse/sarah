@@ -1,4 +1,4 @@
-- alias: 3D Printer 1 Completion Notification
+- id: 3D Printer 1 Completion Notification
   trigger:
     platform: state
     entity_id: sensor.3dprinter1_state
@@ -9,7 +9,7 @@
       data:
         message: "The 3D Print Job on Printer #1 Has Completed"
 
-- alias: 3D Printer 2 Completion Notification
+- id: 3D Printer 2 Completion Notification
   trigger:
     platform: state
     entity_id: sensor.3dprinter2_state

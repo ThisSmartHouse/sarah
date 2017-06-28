@@ -1,4 +1,4 @@
-- alias: Push Weather Updates to MQTT
+- id: Push Weather Updates to MQTT
   hide_entity: true
   trigger:
     - platform: state
@@ -27,8 +27,6 @@
       entity_id: sensor.dark_sky_wind_speed
     - platform: state
       entity_id: sensor.dark_sky_cloud_coverage
-    - platform: event
-      event_type: homeassistant_start
   action:
     - service: mqtt.publish
       data_template:

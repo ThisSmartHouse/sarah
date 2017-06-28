@@ -1,0 +1,20 @@
+- id: Diana Chiller On
+  trigger:
+    platform: state
+    entity_id: binary_sensor.diana_temperature_status
+    from: 'off'
+    to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.diana_chiller
+- id: Diana Chiller Off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.diana_temperature_status
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 30
+    action:
+      - service: switch.turn_off
+        entity_id: switch.diana_chiller

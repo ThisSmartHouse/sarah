@@ -1,3 +1,7 @@
+sensor.freezer_temperature:
+  friendly_name: "Freezer Temperature"
+sensor.grill_temperature:
+  friendly_name: "Grill Temperature"
 sensor.grow_light_combined_state:
   hidden: true
 sensor.saltwater_lights_combined_state:

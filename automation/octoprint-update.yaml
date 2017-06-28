@@ -1,4 +1,4 @@
-- alias: Push Octoprint Updates to MQTT (Printer 1)
+- id: Push Octoprint Updates to MQTT (Printer 1)
   hide_entity: true
   trigger:
     - platform: state
@@ -20,7 +20,7 @@
             "job_percentage" : "{{ states('sensor.3dprinter1_percent_complete') }}",
             "file" : "{{ states('sensor.3dprinter1_percent_file') }}"
           } 
-- alias: Push Octoprint Updates to MQTT (Printer 2)
+- id: Push Octoprint Updates to MQTT (Printer 2)
   hide_entity: true
   trigger:
     - platform: state
