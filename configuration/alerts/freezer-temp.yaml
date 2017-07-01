@@ -4,8 +4,6 @@ freezer_temp_alert:
   entity_id: binary_sensor.freezer_temperature_status
   state: 'on'
   repeat:
-    - 5
-    - 10
     - 15
     - 30
     - 60

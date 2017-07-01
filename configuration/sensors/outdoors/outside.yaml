@@ -1,0 +1,15 @@
+- platform: mqtt
+  state_topic: "/status/outside"
+  name: outside_temperature
+  unit_of_measurement: '°C'
+  value_template: "{{ value_json.temperature }}"
+- platform: mqtt
+  state_topic: "/status/outside"
+  name: outside_humidity
+  unit_of_measurement: "%"
+  value_template: "{{ value_json.humidity }}"
+- platform: mqtt
+  state_topic: "/status/outside"
+  name: outside_heat_index
+  unit_of_measurement: "°C"
+  value_template: "{{ value_json.heat_index }}"

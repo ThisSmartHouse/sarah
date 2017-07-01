@@ -1,0 +1,6 @@
+- platform: mjpeg
+  mjpeg_url: http://192.168.1.70/videostream.cgi?rate=0
+  still_image_url: http://192.168.1.70/snapshot.cgi
+  username: !secret camera_user
+  password: !secret camera_password
+  name: Backyard

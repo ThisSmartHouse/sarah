@@ -1,0 +1,17 @@
+- id: Turn On Pond Lights At Sunset
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:00:00" 
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.pond_string_lights
+- id: Turn Off Pond Lights at 2am
+  hide_entity: true
+  trigger:
+    platform: time
+    after: '02:00:00'
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.pond_string_lights

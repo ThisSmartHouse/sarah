@@ -1,3 +1,11 @@
+sensor.outside_heat_index:
+  friendly_name: "Heat Index"
+sensor.outside_humidity:
+  friendly_name: "Humidity Outdoors"
+sensor.outside_temperature:
+  friendly_name: "Measured Outdoor Temp."
+sensor.pond_temperature:
+  friendly_name: "Pond Water Temperature"
 sensor.freezer_temperature:
   friendly_name: "Freezer Temperature"
 sensor.grill_temperature:
