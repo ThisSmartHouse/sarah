@@ -2,6 +2,7 @@ House:
   entities:
     - light.front_hall
     - light.hallway
+    - sensor.home_power_cost
     - binary_sensor.freezer_temperature_status
     - sensor.freezer_temperature
     - sensor.home_temperature

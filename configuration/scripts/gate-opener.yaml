@@ -1,0 +1,6 @@
+gate_open:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "/gate/activate"
+        payload: "1"

@@ -1,0 +1,5 @@
+script.gate_open:
+  friendly_name: Front Gate
+  icon: mdi:exit-to-app
+  emulated_hue: true
+  emulated_hue_name: "Front Gate"

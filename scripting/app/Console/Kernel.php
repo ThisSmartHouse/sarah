@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Carbon\Carbon;
 
 class Kernel extends ConsoleKernel
 {
@@ -19,7 +20,8 @@ class Kernel extends ConsoleKernel
         Commands\VPNOnlineCheckCommand::class,
         Commands\PollPrinterStatus::class,
         Commands\KeyStoreCommand::class,
-        Commands\CurrentPowerCostCommand::class
+        Commands\CurrentPowerCostCommand::class,
+        Commands\CameraSnapshotCommand::class
     ];
 
     /**
@@ -30,8 +32,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $time = Carbon::now();
+        
+        // This is, for the moment, just to capture data for machine learning of our backyard
+        // so let's put a time limit on it so it doesn't blow up S3 costs
+        if(($time->month == 7) && ($time->year = 2017)) {
+            $schedule->command('ha:camera-snapshot backyard backyard-camera')->everyMinute();
+        }
     }
 
     /**

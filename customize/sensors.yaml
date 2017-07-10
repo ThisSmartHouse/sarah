@@ -1,11 +1,63 @@
 sensor.outside_heat_index:
-  friendly_name: "Heat Index"
+  friendly_name: "Heat Index (measured)"
 sensor.outside_humidity:
-  friendly_name: "Humidity Outdoors"
+  friendly_name: "Outside Humidity (measured)"
 sensor.outside_temperature:
-  friendly_name: "Measured Outdoor Temp."
+  friendly_name: "Outside Temperature (measured)"
 sensor.pond_temperature:
-  friendly_name: "Pond Water Temperature"
+  friendly_name: "Pond Temperature"
+sensor.home_power_cost:
+  friendly_name: "Est. Current Power Cost"
+  
+sensor.ups_packages:
+  friendly_name: "UPS Packages Enroute"
+  entity_picture: http://home.coogle.org/images/ups-logo.png
+sensor.usps_departed_usps_destination_facility:
+  friendly_name: "Departed USPS Dest. Facility"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+sensor.usps_delivered:
+  friendly_name: "USPS Delivered"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  
+sensor.usps_packages_packages:
+  friendly_name: "Total USPS Packages Tracked"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+sensor.usps_packages_mail:
+  friendly_name: "Mail Arriving Today"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+sensor.usps_out_for_delivery:
+  friendly_name: "USPS Packages Arriving Today"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+sensor.usps_picked_up_by_shipping_partner:
+  friendly_name: "USPS Packages Picked Up By Partner"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+sensor.usps_arrived:
+  friendly_name: "Arrived at USPS Destination Facility"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+sensor.usps_departed_origin:
+  friendly_name: "Departed USPS Origin Facility"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+sensor.usps_departed:
+  friendly_name: "Departed Shipping Partner Facility"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+sensor.usps_departed_usps_facility:
+  friendly_name: "Departed USPS Facility"
+  icon: mdi:package-variant-closed
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+sensor.usps_item_accepted:
+  friendly_name: "Item Accepted"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+sensor.usps_departed_parter_facility:
+  friendly_name: "Departed Partner Facility"
+  entity_picture: http://home.coogle.org/images/usps_logo.jpg
+  icon: mdi:package-variant-closed
+
 sensor.freezer_temperature:
   friendly_name: "Freezer Temperature"
 sensor.grill_temperature:
@@ -18,12 +70,16 @@ sensor.saltwater_uv_combined_state:
   hidden: true
 sensor.3dprinter1_percent_complete:
   friendly_name: "3D Printer #1 Completion"
+  icon: mdi:printer-3d
 sensor.3dprinter2_percent_complete:
   friendly_name: "3D Printer #2 Completion"
+  icon: mdi:printer-3d
 sensor.3dprinter1_percent_file:
   friendly_name: "3D Printer #1 File"
+  icon: mdi:printer-3d
 sensor.3dprinter2_percent_file:
   friendly_name: "3D Printer #2 File"
+  icon: mdi:printer-3d
 binary_sensor.freshwater_tank_temperature:
   friendly_name: "Freshwater Tank Temperature"
   hidden: true
@@ -37,8 +93,10 @@ sensor.breaches_johntestnoticecom:
   hidden: true
 sensor.3dprinter1_state:
   friendly_name: "3D Printer #1 State"
+  icon: mdi:printer-3d
 sensor.3dprinter2_state:
-  friendly_name: "3D Printer #2 State"  
+  friendly_name: "3D Printer #2 State"
+  icon: mdi:printer-3d  
 sensor.freshwater_tank_temperature:
   friendly_name: "Freshwater Tank Temp."
 sensor.saltwater_tank_temperature:

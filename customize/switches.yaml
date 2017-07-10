@@ -1,3 +1,5 @@
+switch.pond_waterfall_pump:
+  hidden: true
 light.bathroom_1:
   hidden: true
 light.bathroom_2:

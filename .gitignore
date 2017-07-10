@@ -1,3 +1,4 @@
+*.pickle
 coogle-recipes
 ip_bans.yaml
 secrets.yaml

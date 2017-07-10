@@ -1,0 +1,5 @@
+enable_waterfall:
+  name: Pond Waterfall Enabled
+  initial: off
+  icon: mdi:water-pump
+  

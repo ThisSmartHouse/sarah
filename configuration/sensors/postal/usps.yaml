@@ -1,0 +1,28 @@
+- platform: usps
+  username: !secret usps_username
+  password: !secret usps_password
+  name: USPS Packages
+  
+- platform: template
+  sensors:
+    usps_departed:
+      value_template: '{{ states.sensor.usps_packages.attributes.departed_shipping_partner_facility }}'
+    usps_arrived:
+      value_template: '{{ states.sensor.usps_packages.attributes.arrived_at_usps_destination_facility }}'
+    usps_departed_origin:
+      value_template: '{{ states.sensor.usps_packages.attributes.departed_usps_origin_facility }}'
+    usps_out_for_delivery:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.out_for_delivery }}'
+    usps_picked_up_by_shipping_partner:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.picked_up_by_shipping_partner }}'
+    usps_departed_usps_facility:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.departed_usps_facility }}'
+    usps_item_accepted:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.item_acceptedpicked_up_for_initial_processing }}'
+    usps_departed_parter_facility:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.departed_shipping_partner_facility }}'
+    usps_departed_usps_destination_facility:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.departed_usps_destination_facility }}'
+    usps_delivered:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.delivered }}'
+      

@@ -6,10 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "aws/aws-sdk-php": "^3.0@dev",
+        "coogle/smappee": "*",
+        "graham-campbell/flysystem": "^3.7@dev",
+        "guzzlehttp/guzzle": "6.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "guzzlehttp/guzzle" : "6.*",
-        "coogle/smappee" : "*"
+        "league/flysystem": "^1.1@dev",
+        "league/flysystem-aws-s3-v3": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

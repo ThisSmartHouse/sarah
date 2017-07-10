@@ -14,7 +14,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '04:00:00'
+    at: '04:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.bar_lights
@@ -24,7 +24,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '03:00:00'
+    at: '03:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.ice_machine
@@ -34,7 +34,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '03:01:00'
+    at: '03:01:00'
   action:
     service: switch.turn_on
     entity_id: switch.ice_machine
@@ -66,7 +66,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '08:00:00' 
+    at: '08:00:00' 
   action:
     service: switch.turn_on
     entity_id: switch.freshwater_sump_light_7
@@ -76,7 +76,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '23:00:00'
+    at: '23:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.freshwater_sump_light_7
@@ -86,7 +86,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '08:00:00' 
+    at: '08:00:00' 
   action:
     service: switch.turn_on
     entity_id: switch.grow_lights
@@ -96,7 +96,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '02:00:00'
+    at: '02:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.grow_lights
@@ -106,7 +106,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '15:00:00' 
+    at: '15:00:00' 
   action:
     service: switch.turn_on
     entity_id: switch.protein_skimmer_3
@@ -116,7 +116,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '18:00:00'
+    at: '18:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.protein_skimmer_3
@@ -126,7 +126,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '08:00:00' 
+    at: '08:00:00' 
   action:
     service: switch.turn_on
     entity_id: switch.saltwater_lights
@@ -136,7 +136,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '03:00:00'
+    at: '03:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.saltwater_lights
@@ -146,7 +146,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '10:00:00' 
+    at: '10:00:00' 
   action:
     service: switch.turn_on
     entity_id: switch.saltwater_sump_light_6
@@ -156,7 +156,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '22:00:00'
+    at: '22:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.saltwater_sump_light_6
@@ -166,7 +166,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '15:00:00' 
+    at: '15:00:00' 
   action:
     service: switch.turn_on
     entity_id: switch.saltwater_uv
@@ -176,7 +176,7 @@
   hide_entity: true
   trigger:
     platform: time
-    after: '18:00:00'
+    at: '18:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.saltwater_uv
@@ -234,6 +234,52 @@
             "sun" : "{{ states('sun.sun') }}"     
           } 
 
+- id: Push Shipping Updates to MQTT
+  alias: Push Shipping Updates to MQTT
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.ups_packages
+    - platform: state
+      entity_id: sensor.usps_packages_packages
+    - platform: state
+      entity_id: sensor.usps_packages_mail
+    - platform: state
+      entity_id: sensor.usps_out_for_delivery
+    - platform: state
+      entity_id: sensor.usps_picked_up_by_shipping_partner
+    - platform: state
+      entity_id: sensor.usps_arrived
+    - platform: state
+      entity_id: sensor.usps_departed_origin 
+    - platform: state
+      entity_id: sensor.usps_departed 
+    - platform: state
+      entity_id: sensor.usps_departed_usps_facility
+    - platform: state
+      entity_id: sensor.usps_item_accepted
+    - platform: state
+      entity_id: sensor.usps_departed_parter_facility
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/status/shipments'
+        retain: true
+        payload: >
+          {
+            "total_ups_packages" : {{ states('sensor.ups_packages') }},
+            "total_usps_packages" : {{ states('sensor.usps_packages_packages') }},
+            "usps_mail" : {{ states('sensor.usps_packages_mail') }},
+            "usps_packages_out_for_delivery" : {{ states('sensor.usps_out_for_delivery') }},
+            "usps_packages_picked_up_by_shipping_partner" : {{ states('sensor.usps_picked_up_by_shipping_partner') }},
+            "usps_packages_arrived" : {{ states('sensor.usps_arrived') }},
+            "usps_packages_departed_origin" : {{ states('sensor.usps_departed_origin') }},
+            "usps_packages_departed" : {{ states('sensor.usps_departed') }},
+            "usps_packages_departed_usps_facility" : {{ states('sensor.usps_departed_usps_facility') }},
+            "usps_packages_item_accepted" : {{ states('sensor.usps_item_accepted') }},
+            "usps_packages_departed_partner_facility" : {{ states('sensor.usps_departed_parter_facility') }}
+          }
+          
 - id: Push Weather Updates to MQTT
   alias: Push Weather Updates to MQTT
   hide_entity: true
@@ -361,6 +407,119 @@
             "file" : "{{ states('sensor.3dprinter2_percent_file') }}"
           } 
 
+- id: Turn On Pond Lights At Sunset
+  alias: Turn On Pond Lights At Sunset
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:00:00" 
+  action:
+    - service: switch.turn_on
+      entity_id: switch.pond_string_lights
+    
+- id: Turn Off Pond Lights at 2am
+  alias: Turn Off Pond Lights at 2am
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '02:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.pond_string_lights
+    - service: switch.turn_off
+      entity_id: switch.back_porch_lights
+    - service: switch.turn_off
+      entity_id: switch.back_porch_power
+
+- id: Turn on Waterfall when enabled
+  alias: Turn on Waterfall when enabled
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.enable_waterfall
+    from: 'off'
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.pond_waterfall_pump
+
+- id: Turn off Waterfall when disabled
+  alias: Turn off Waterfall when disabled
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.enable_waterfall
+    from: 'on'
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.pond_waterfall_pump
+    
+- id: Automatically Turn Off Pond after 60 minutes
+  alias: Turn Off Pond After 60 minutes
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.enable_waterfall
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+  action:
+    service: homeassistant.turn_off
+    entity_id: input_boolean.enable_waterfall
+
+- id: Turn on the Garden Water at 5:00pm
+  alias: Turn on the Garden Water at 5:00pm
+  hide_entity: true
+  trigger:
+    - platform: time
+      at: '17:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.garden_soaker_pump
+    
+- id: Turn off the Garden Water at 5:20pm
+  alias: Turn off the Garden Water at 5:20pm
+  hide_entity: true
+  trigger:
+    - platform: time
+      at: '17:20:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.garden_soaker_pump
+
+- id: Automate Pond Turn On at 55 mins past hour
+  alias: Automatically Turn on at 55 mins past hour
+  hide_entity: true
+  trigger:
+    - platform: time
+      minutes: 55
+      seconds: 00
+  condition:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall
+      state: 'off'
+  action:
+    service: switch.turn_on
+    entity_id: switch.pond_waterfall_pump
+    
+- id: Automate Pond Turn off at 5 mins past hour
+  alias: Automatically Turn off at 5 mins past hour
+  hide_entity: true
+  trigger:
+    - platform: time
+      minutes: 05
+      seconds: 00
+  condition: 
+    - condition: state
+      entity_id: input_boolean.enable_waterfall
+      state: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.pond_waterfall_pump
+    
 #- id: Notify if VPN Failure
 #  alias: VPN Failure Notification
 #  hide_entity: true

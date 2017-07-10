@@ -2,3 +2,10 @@
   name: Home Power Consumption
   command: /home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:poll-smappee
   unit_of_measurement: "W"
+- platform: template
+  sensors:
+    home_power_cost:
+      value_template: "{{ states('sensor.home_power_consumption') | multiply(0.001) | multiply(0.13) | round(3)}}"
+      unit_of_measurement: '$/hr'
+      icon_template: mdi:currency-usd
+      
