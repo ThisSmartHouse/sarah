@@ -1,3 +1,15 @@
+script.reload_groups:
+  icon: mdi:refresh
+script.reload_automations:
+  icon: mdi:refresh
+script.restart_sarah:
+  icon: mdi:power-settings
+script.morning_mode:
+  friendly_name: Morning Mode
+  hidden: true
+script.bedtime_mode:
+  friendly_name: Bedtime Mode
+  hidden: true
 script.gate_open:
   friendly_name: Front Gate
   icon: mdi:exit-to-app

@@ -1,3 +1,6 @@
+sensor.backporch_lights_combined_state:
+  hidden: true
+
 sensor.outside_heat_index:
   friendly_name: "Heat Index (measured)"
 sensor.outside_humidity:

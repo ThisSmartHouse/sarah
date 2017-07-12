@@ -1,0 +1,7 @@
+Settings:
+  view: yes
+  icon: mdi:settings
+  control: hidden
+  entities:
+    - group.settings_outdoors
+    - group.settings_sarah

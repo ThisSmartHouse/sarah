@@ -1,0 +1,7 @@
+lighting_upstairs:
+  name: Upstairs
+  control: hidden
+  entities:
+    - light.front_hall
+    - light.hallway
+    - light.stairwell

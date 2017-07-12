@@ -1,3 +1,177 @@
+- id: Activate Morning Mode At Sunrise
+  alias: Activate Morning Mode At Sunrise
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: script.morning_mode
+    
+- id: Activate Bedtime Mode on Dash Buttton Push
+  alias: Activate Bedtime Mode on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/bedtime'
+    payload: 'active'
+  action:
+    - service: script.bedtime_mode
+    - service: automation.turn_off
+      entity_id: automation.activate_bedtime_mode_on_dash_button_push
+
+- id: Restore automation for Bedtime Mode From Dash Button
+  alias: Restore automation for Bedtime Mode From Dash Button
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.activate_bedtime_mode_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.activate_bedtime_mode_on_dash_button_push
+      
+- id: Toggle Grow Lights on Dash Button Push
+  alias: Toggle Grow Lights on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/grow-lights'
+    payload: 'active'
+  action:
+    - service: switch.toggle
+      entity_id: switch.grow_lights
+    - service: automation.turn_off
+      entity_id: automation.toggle_grow_lights_on_dash_button_push
+      
+- id: Restore automation for grow lights dash button
+  alias: Restore automation for grow lights dash button
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.toggle_grow_lights_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.toggle_grow_lights_on_dash_button_push
+  
+- id: Automatically Add to Poo Counter on Dash Button Push
+  alias: Automatically Add to Poo Counter on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/poo-tracker'
+    payload: 'active'
+  action:
+    - service: shell_command.send_to_google_sheets
+      data_template: 
+        sheet_id: !secret pet_tracker_sheet_id
+        key1: "poo"
+    - service: automation.turn_off
+      entity_id: automation.automatically_add_to_poo_counter_on_dash_button_push
+
+- id: Restore automatically_add_to_poo_counter_on_dash_button_push automation
+  alias: Restore automation.automatically_add_to_poo_counter_on_dash_button_push automation
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.automatically_add_to_poo_counter_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.automatically_add_to_poo_counter_on_dash_button_push
+      
+- id: Automatically Add to Pee Counter on Dash Button Push
+  alias: Automatically Add to Pee Counter on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/pee-tracker'
+    payload: 'active'
+  action:
+    - service: shell_command.send_to_google_sheets
+      data_template: 
+        sheet_id: !secret pet_tracker_sheet_id
+        key1: "pee"
+    - service: automation.turn_off
+      entity_id: automation.automatically_add_to_pee_counter_on_dash_button_push
+    
+- id: Restore automatically_add_to_pee_counter_on_dash_button_push automation
+  alias: Restore automation.automatically_add_to_pee_counter_on_dash_button_push automation
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.automatically_add_to_pee_counter_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.automatically_add_to_pee_counter_on_dash_button_push
+      
+- id: Automatically Activate Pond on Dash Button Push
+  alias: Automatically Activate Pond on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/waterfall-activate'
+    payload: 'active'
+  action:
+    - service: homeassistant.toggle
+      entity_id: input_boolean.enable_waterfall
+    - service: automation.turn_off
+      entity_id: automation.automatically_activate_pond_on_dash_button_push
+
+- id: Restore automatically_activate_pond_on_dash_button_push automation
+  alias: Restore automatically_activate_pond_on_dash_button_push automation
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.automatically_activate_pond_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.automatically_activate_pond_on_dash_button_push
+
+- id: Toggle Back Porch Lights on Dash Push
+  alias: Toggle Back Porch Lights on Dash Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/backyard-lights'
+    payload: 'active'
+  action:
+    - service: switch.toggle
+      entity_id: switch.back_porch
+    - service: automation.turn_off
+      entity_id: automation.toggle_back_porch_lights_on_dash_push
+
+- id: Restore toggle_back_porch_lights_on_dash_push automation
+  alias: Restore toggle_back_porch_lights_on_dash_push automation
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.toggle_back_porch_lights_on_dash_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.toggle_back_porch_lights_on_dash_push
+
 - id: Bar Lights On
   alias: Bar Lights On
   hide_entity: true

@@ -1,0 +1,5 @@
+lighting_upstairs_bathroom:
+  name: Upstairs Bathroom
+  entities:
+    - light.bathroom
+    - light.bathtub

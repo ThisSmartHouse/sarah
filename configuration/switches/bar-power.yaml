@@ -29,19 +29,19 @@
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Switch 6
+  name: Bar Switch 6
   command_topic: /coogle-bar-power/in/17
   state_topic: /coogle-bar-power/state/17
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Switch 7
+  name: Bar Switch 7
   command_topic: /coogle-bar-power/in/22
   state_topic: /coogle-bar-power/state/22
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Bar Lights
+  name: Accent Lighting
   command_topic: /coogle-bar-power/in/27
   state_topic: /coogle-bar-power/state/27
   payload_on: "0"

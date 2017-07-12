@@ -1,0 +1,40 @@
+bedtime_mode:
+  sequence:
+    - service: light.turn_off
+      entity_id: group.all_lights
+    - service: switch.turn_off
+      entity_id: switch.back_porch_lights
+    - service: switch.turn_off
+      entity_id: switch.saltwater_lights
+    - service: switch.turn_off
+      entity_id: switch.back_porch_power
+    - service: switch.turn_off
+      entity_id: switch.bar_lights
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.enable_waterfall
+    - service: remote.turn_off
+      entity_id: remote.living_room
+    - service: light.turn_on
+      entity_id: light.circle_chair
+      data:
+        brightness_pct: 40
+        rgb_color:
+          - 0
+          - 0
+          - 255
+    - service: light.turn_on
+      entity_id: light.kitchen_center
+      data:
+        brightness_pct: 40
+        rgb_color:
+          - 0
+          - 0
+          - 255
+    - service: light.turn_on
+      entity_id: light.bathroom_1
+      data:
+        brightness_pct: 40
+    - service: light.turn_on
+      entity_id: light.bathroom_2
+      data:
+        brightness_pct: 40

@@ -1,5 +1,0 @@
-Office:
-  control: hidden
-  view: no
-  entities:
-    - light.office

@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Detroit',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,6 +167,8 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        PulkitJalan\Google\GoogleServiceProvider::class,
+        GoogleSheets\Providers\SheetsServiceProvider::class,
         
         /*
          * Application Service Providers...
@@ -191,7 +193,8 @@ return [
     */
 
     'aliases' => [
-
+        'Google' => PulkitJalan\Google\Facades\Google::class,
+        'Sheets' => GoogleSheets\Facades\Sheets::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

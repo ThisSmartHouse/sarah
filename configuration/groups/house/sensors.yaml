@@ -1,0 +1,7 @@
+house_sensors:
+  name: Sensors
+  control: hidden
+  entities:
+    - sensor.home_power_cost
+    - sensor.freezer_temperature
+    - sensor.home_power_consumption

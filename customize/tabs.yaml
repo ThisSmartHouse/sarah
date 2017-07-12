@@ -1,0 +1,18 @@
+group.house:
+  order: 1
+group.outdoors:
+  order: 2
+group.lighting:
+  order: 3
+group.fish:
+  order: 4
+group.bar:
+  order: 5
+group.shipments:
+  order: 6
+group.workshop:
+  order: 7
+group.camera:
+  order: 8
+group.settings:
+  order: 9

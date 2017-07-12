@@ -1,0 +1,9 @@
+settings_sarah:
+  name: SARAH
+  control: hidden
+  entities:
+    - script.reload_groups
+    - script.reload_automations
+    - script.restart_sarah
+    
+    

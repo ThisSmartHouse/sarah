@@ -1,21 +1,9 @@
 House:
+  view: yes
+  icon: mdi:home-variant
   entities:
-    - light.front_hall
-    - light.hallway
-    - sensor.home_power_cost
-    - binary_sensor.freezer_temperature_status
-    - sensor.freezer_temperature
-    - sensor.home_temperature
-    - sensor.main_floor_temperature
-    - sensor.bedroom_temperature
-    - sensor.office_temperature
-    - sensor.home_humidity
-    - binary_sensor.vpn_safety_warning
-    - sensor.speedtest_download
-    - sensor.speedtest_ping
-    - sensor.speedtest_upload
-    - sensor.home_power_consumption
-    - binary_sensor.main_floor_occupancy
-    - binary_sensor.home_occupancy
-    - binary_sensor.bedroom_occupancy
-    - binary_sensor.office_occupancy
+    - group.house_locations
+    - group.house_internet
+    - group.house_status
+    - group.house_sensors
+    - group.house_temperature

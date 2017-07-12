@@ -1,0 +1,6 @@
+workshop_3dprinter_2:
+  name: "3D Printer #2"
+  entities:
+    - sensor.3dprinter2_state
+    - sensor.3dprinter2_percent_file
+    - sensor.3dprinter2_percent_complete

@@ -1,0 +1,7 @@
+lighting_kitchen:
+  name: Kitchen / Dining
+  entities:
+    - light.kitchen_center
+    - light.kitchen_doorway
+    - light.kitchen_sink
+    - light.dining_room

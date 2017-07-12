@@ -1,0 +1,5 @@
+outdoors_cooking:
+  icon: mdi:fire
+  name: Cooking
+  entities:
+    - sensor.grill_temperature

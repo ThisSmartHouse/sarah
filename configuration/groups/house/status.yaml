@@ -1,0 +1,10 @@
+house_status:
+  name: Status
+  control: hidden
+  entities:
+    - binary_sensor.freezer_temperature_status
+    - binary_sensor.vpn_safety_warning
+    - binary_sensor.main_floor_occupancy
+    - binary_sensor.home_occupancy
+    - binary_sensor.bedroom_occupancy
+    - binary_sensor.office_occupancy

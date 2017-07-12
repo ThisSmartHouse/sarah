@@ -1,33 +1,9 @@
 Outdoors:
+  view: yes
+  icon: mdi:tree
   control: hidden
   entities:
-    - script.gate_open
-    - input_boolean.enable_waterfall
-    - light.front_porch
-    - switch.back_porch_lights
-    - switch.back_porch_power
-    - switch.pond_string_lights
-    - switch.pond_waterfall_pump
-    - switch.garden_soaker_pump
-    - switch.outdoor_switch_4
-    - sun.sun
-    - sensor.grill_temperature
-    - sensor.outside_heat_index
-    - sensor.outside_humidity
-    - sensor.outside_temperature
-    - sensor.pond_temperature
-    - sensor.dark_sky_apparent_temperature
-    - sensor.dark_sky_cloud_coverage
-    - sensor.dark_sky_daily_high_apparent_temperature
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_apparent_temperature
-    - sensor.dark_sky_daily_low_temperature
-    - sensor.dark_sky_daily_max_precip_intensity
-    - sensor.dark_sky_hourly_summary
-    - sensor.dark_sky_humidity
-    - sensor.dark_sky_precip
-    - sensor.dark_sky_precip_intensity
-    - sensor.dark_sky_precip_probability
-    - sensor.dark_sky_summary
-    - sensor.dark_sky_temperature
-    - sensor.dark_sky_wind_speed
+    - group.outdoors_power
+    - group.outdoors_weather
+    - group.outdoors_cooking
+    - camera.local_radar

@@ -1,0 +1,6 @@
+fish_status:
+  name: Status
+  entities:
+    - binary_sensor.freshwater_temperature_status
+    - binary_sensor.saltwater_temperature_status
+    - binary_sensor.diana_temperature_status

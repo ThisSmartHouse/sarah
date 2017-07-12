@@ -1,0 +1,5 @@
+restart_sarah:
+  alias: Restart SARAH
+  sequence:
+    - alias: Restart SARAH
+      service: homeassistant.restart

@@ -1,16 +1,7 @@
 Shipments:
+  view: yes
   control: hidden
+  icon: mdi:package-variant
   entities:
-    - sensor.ups_packages
-    - sensor.usps_packages_packages
-    - sensor.usps_packages_mail
-    - sensor.usps_delivered
-    - sensor.usps_departed_usps_destination_facility
-    - sensor.usps_out_for_delivery
-    - sensor.usps_picked_up_by_shipping_partner
-    - sensor.usps_arrived
-    - sensor.usps_departed_origin
-    - sensor.usps_departed
-    - sensor.usps_departed_usps_facility
-    - sensor.usps_item_accepted
-    - sensor.usps_departed_parter_facility
+    - group.shipments_status
+    - group.shipments_details

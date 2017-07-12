@@ -1,3 +1,5 @@
+switch.back_porch:
+  hidden: true
 switch.pond_waterfall_pump:
   hidden: true
 light.bathroom_1:

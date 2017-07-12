@@ -1,0 +1,6 @@
+settings_outdoors:
+  name: Outdoors
+  icon: mdi:tree
+  control: hidden
+  entities:
+    - input_slider.pond_timeout

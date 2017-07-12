@@ -1,0 +1,11 @@
+lighting:
+  view: yes
+  icon: mdi:lightbulb-on
+  name: Lighting
+  entities:
+    - group.lighting_office
+    - group.lighting_upstairs_bathroom
+    - group.lighting_master_bedroom
+    - group.lighting_upstairs
+    - group.lighting_living_room
+    - group.lighting_kitchen

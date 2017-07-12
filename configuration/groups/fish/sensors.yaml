@@ -1,0 +1,6 @@
+fish_sensors:
+  name: Sensors
+  entities:
+    - sensor.freshwater_tank_temperature
+    - sensor.saltwater_tank_temperature
+    - sensor.diana_tank_temperature

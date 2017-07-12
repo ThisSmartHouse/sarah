@@ -1,0 +1,9 @@
+house_temperature:
+  name: Temperature
+  control: hidden
+  entities:
+    - sensor.home_temperature
+    - sensor.main_floor_temperature
+    - sensor.bedroom_temperature
+    - sensor.office_temperature
+    - sensor.home_humidity

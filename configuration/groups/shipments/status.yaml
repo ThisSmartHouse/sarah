@@ -1,0 +1,6 @@
+shipments_status:
+  name: Incoming Shipments
+  entities:
+    - sensor.ups_packages
+    - sensor.usps_packages_packages
+    - sensor.usps_packages_mail

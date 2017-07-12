@@ -1,7 +1,5 @@
-Living Room:
-  control: hidden
-  icon: mdi:television-guide
-  view: no
+lighting_living_room:
+  name: Living Room
   entities:
     - light.living_room
     - light.bar_light
@@ -10,4 +8,3 @@ Living Room:
     - light.living_room_wall
     - light.stairwell
     - switch.catbot
-    - sensor.living_room_tv

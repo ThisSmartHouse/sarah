@@ -1,0 +1,8 @@
+fish:
+  view: yes
+  icon: mdi:fish
+  name: Fish
+  entities:
+    - group.fish_status
+    - group.fish_sensors
+    - group.fish_power

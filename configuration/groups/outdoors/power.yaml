@@ -1,0 +1,14 @@
+outdoors_power:
+  name: Power Controls
+  icon: mdi:tree
+  control: hidden
+  entities:
+    - script.gate_open
+    - input_boolean.enable_waterfall
+    - light.front_porch
+    - switch.back_porch_lights
+    - switch.back_porch_power
+    - switch.pond_string_lights
+    - switch.pond_waterfall_pump
+    - switch.garden_soaker_pump
+    - switch.outdoor_switch_4

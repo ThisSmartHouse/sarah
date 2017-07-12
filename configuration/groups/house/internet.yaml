@@ -1,0 +1,7 @@
+house_internet:
+  name: Internet Status
+  control: hidden
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload

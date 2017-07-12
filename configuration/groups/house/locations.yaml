@@ -1,4 +1,6 @@
-Where Is Everyone:
+house_locations:
+  name: Locations
+  control: hidden
   entities:
     - device_tracker.bayleysiphone
     - device_tracker.johncoggeshallsiphone

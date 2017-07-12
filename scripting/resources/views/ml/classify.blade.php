@@ -22,7 +22,7 @@
 @stop
 
 @section('main')
-<div class="col-lg-8 col-lg-offset-2">
+<div class="col-md-8 col-md-offset-2">
     <form id="classifyForm" method="post" action="{{ route('ml.classify.submit', ['bucket' => $bucket]) }}">
         {{ csrf_field() }}
         <input type="hidden" name="image_key" value="{{ $image_key }}">

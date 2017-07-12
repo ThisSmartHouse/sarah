@@ -1,0 +1,5 @@
+reload_groups:
+  alias: Reload Groups
+  sequence:
+    - alias: Reload Groups
+      service: groups.reload

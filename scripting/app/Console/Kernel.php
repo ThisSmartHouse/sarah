@@ -21,7 +21,8 @@ class Kernel extends ConsoleKernel
         Commands\PollPrinterStatus::class,
         Commands\KeyStoreCommand::class,
         Commands\CurrentPowerCostCommand::class,
-        Commands\CameraSnapshotCommand::class
+        Commands\CameraSnapshotCommand::class,
+        Commands\RecordToGoogleSheetsCommand::class
     ];
 
     /**
