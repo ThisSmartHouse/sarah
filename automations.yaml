@@ -188,7 +188,7 @@
   hide_entity: true
   trigger:
     platform: time
-    at: '04:00:00'
+    at: '03:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.bar_lights
@@ -587,7 +587,7 @@
   trigger:
     platform: sun
     event: sunset
-    offset: "+00:00:00" 
+    offset: "+00:00:00"
   action:
     - service: switch.turn_on
       entity_id: switch.pond_string_lights
@@ -650,6 +650,10 @@
   trigger:
     - platform: time
       at: '17:00:00'
+  condition:
+    - condition: state
+      entity_id: sensor.is_raining
+      state: "not raining"
   action:
     service: switch.turn_on
     entity_id: switch.garden_soaker_pump
@@ -675,6 +679,9 @@
     - condition: state
       entity_id: input_boolean.enable_waterfall
       state: 'off'
+    - condition: state
+      entity_id: sensor.is_raining
+      state: "not raining"
   action:
     service: switch.turn_on
     entity_id: switch.pond_waterfall_pump
@@ -694,6 +701,40 @@
     service: switch.turn_off
     entity_id: switch.pond_waterfall_pump
     
+- id: Turn off Bedroom lights if no occupancy detected
+  alias: Turn off Bedroom lights if no occupancy detected
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_occupancy
+      from: 'on'
+      to: 'off'
+      for:
+        minutes: 2
+  action:
+    - service: light.turn_off
+      entity_id: light.bedroom_1
+    - service: light.turn_off
+      entity_id: light.bedroom_2
+    - service: light.turn_off
+      entity_id: light.master_closet
+
+- id: Turn off Office lights if no occupancy detected
+  alias: Turn off Office lights if no occupancy detected
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_occupancy
+      from: 'on'
+      to: 'off'
+      for:
+        minutes: 2
+  action:
+    - service: light.turn_off
+      entity_id: light.office_one
+    - service: light.turn_off
+      entity_id: light.office_two
+
 #- id: Notify if VPN Failure
 #  alias: VPN Failure Notification
 #  hide_entity: true

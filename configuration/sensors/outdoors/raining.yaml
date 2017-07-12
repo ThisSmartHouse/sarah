@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    is_raining:
+      value_template: '{% if is_state("sensor.dark_sky_precip", "rain") %}raining{% else %}not raining{% endif %}'
+      friendly_name: "Is It Raining?"

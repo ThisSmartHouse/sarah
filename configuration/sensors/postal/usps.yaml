@@ -25,4 +25,6 @@
       value_template: '{{ states.sensor.usps_packages_packages.attributes.departed_usps_destination_facility }}'
     usps_delivered:
       value_template: '{{ states.sensor.usps_packages_packages.attributes.delivered }}'
+    usps_arrived_at_post_office:
+      value_template: '{{ states.sensor.usps_packages_packages.attributes.arrived_at_post_office }}'
       

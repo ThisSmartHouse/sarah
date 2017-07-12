@@ -1,5 +1,5 @@
 shipments_details:
-  name: Tracking Details
+  name: USPS Tracking Details
   entities:
     - sensor.usps_delivered
     - sensor.usps_departed_usps_destination_facility
@@ -11,3 +11,4 @@ shipments_details:
     - sensor.usps_departed_usps_facility
     - sensor.usps_item_accepted
     - sensor.usps_departed_parter_facility
+    - sensor.usps_arrived_at_post_office
