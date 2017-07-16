@@ -18,6 +18,9 @@ sun:
 alexa:
   intents: !include_dir_merge_named ./configuration/alexa/intents
 
+weblink: 
+  entities: !include ./configuration/weblinks.yaml
+  
 camera: !include_dir_merge_list ./configuration/cameras
 
 alert: !include_dir_merge_named ./configuration/alerts

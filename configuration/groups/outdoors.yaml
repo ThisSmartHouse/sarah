@@ -4,6 +4,7 @@ Outdoors:
   control: hidden
   entities:
     - group.outdoors_power
+    - group.outdoors_temperature
     - group.outdoors_weather
     - group.outdoors_cooking
     - camera.local_radar

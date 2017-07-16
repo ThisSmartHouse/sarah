@@ -2,6 +2,9 @@ house_sensors:
   name: Sensors
   control: hidden
   entities:
+    - sensor.frontdoor
+    - sensor.sidedoor
+    - sensor.backdoor
     - sensor.home_power_cost
     - sensor.freezer_temperature
     - sensor.home_power_consumption

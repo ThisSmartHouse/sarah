@@ -1,3 +1,173 @@
+- id: Alert if Back door is left open for more than 15 minutes
+  hide_entity: true
+  alias: Alert if Back Door is Left Open
+  trigger:
+    - platform: state
+      entity_id: sensor.backdoor
+      to: 'open'
+      for:
+        minutes: 15
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "The Back door has been left open for 15 minutes. Please close the back door."
+        target: !secret both_phones
+
+- id: Alert if Front door is left open for more than 90 seconds
+  hide_entity: true
+  alias: Alert if Front Door is Left Open
+  trigger:
+    - platform: state
+      entity_id: sensor.frontdoor
+      to: 'open'
+      for:
+        seconds: 120
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "The Front door has been left open for 2 minutes. Please close the front door."
+        target: !secret both_phones
+
+- id: Alert if Side door is left open for more than 15 minutes
+  hide_entity: true
+  alias: Alert if Side Door is Left Open
+  trigger:
+    - platform: state
+      entity_id: sensor.sidedoor
+      to: 'open'
+      for:
+        minutes: 15
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "The Side door has been left open for 15 minutes. Please close the side door."
+        target: !secret both_phones
+
+      
+- id: Push Automatic Events to MQTT ignition:on
+  hide_entity: true
+  alias: Push Automatic Events to MQTT ignition:on
+  trigger:
+    - platform: event
+      event_type: automatic_update
+      event_data:
+        type: "ignition:on"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/car/ignition'
+        retain: true
+        payload: >
+          {
+              "type" : "{{ trigger.event.data['type'] }}",
+              "created_at" : "{{ trigger.event.data['created_at'] }}",
+              "location" : {
+                  "lat" : {{ trigger.event.data['location']['lat'] }}
+                  "lon" : {{ trigger.event.data['location']['lon'] }}
+                  "accuracy_m" : {{ trigger.event.data['location']['accuracy_m'] }}
+                  "created_at" : "{{ trigger.event.data['location']['created_at'] }}"
+              }
+          }
+        
+- id: Push Automatic Events to MQTT ignition:off
+  hide_entity: true
+  alias: Push Automatic Events to MQTT ignition:off
+  trigger:
+    - platform: event
+      event_type: automatic_update
+      event_data:
+        type: "ignition:off"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/car/ignition'
+        retain: true
+        payload: >
+          {
+              "type" : "{{ trigger.event.data['type'] }}",
+              "created_at" : "{{ trigger.event.data['created_at'] }}",
+              "location" : {
+                  "lat" : {{ trigger.event.data['location']['lat'] }}
+                  "lon" : {{ trigger.event.data['location']['lon'] }}
+                  "accuracy_m" : {{ trigger.event.data['location']['accuracy_m'] }}
+                  "created_at" : "{{ trigger.event.data['location']['created_at'] }}"
+              }
+          }
+          
+- id: Push Automatic Events to MQTT speeding
+  hide_entity: true
+  alias: Push Automatic Events to MQTT speeding
+  trigger:
+    - platform: event
+      event_type: automatic_update
+      event_data:
+        type: "notification:speeding"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/car/status'
+        payload: >
+          {
+              "type" : "{{ trigger.event.data['type'] }}",
+              "created_at" : "{{ trigger.event.data['created_at'] }}",
+              "location" : {
+                  "lat" : {{ trigger.event.data['location']['lat'] }}
+                  "lon" : {{ trigger.event.data['location']['lon'] }}
+                  "accuracy_m" : {{ trigger.event.data['location']['accuracy_m'] }}
+                  "created_at" : "{{ trigger.event.data['location']['created_at'] }}"
+              }
+          }
+          
+- id: Push Automatic Events to MQTT hard_brake
+  hide_entity: true
+  alias: Push Automatic Events to MQTT hard_brake
+  trigger:
+    - platform: event
+      event_type: automatic_update
+      event_data:
+        type: "notification:hard_brake"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/car/status'
+        retain: true
+        payload: >
+          {
+              "type" : "{{ trigger.event.data['type'] }}",
+              "created_at" : "{{ trigger.event.data['created_at'] }}",
+              "location" : {
+                  "lat" : {{ trigger.event.data['location']['lat'] }}
+                  "lon" : {{ trigger.event.data['location']['lon'] }}
+                  "accuracy_m" : {{ trigger.event.data['location']['accuracy_m'] }}
+                  "created_at" : "{{ trigger.event.data['location']['created_at'] }}"
+              }
+          }
+          
+- id: Push Automatic Events to MQTT hard_accel
+  hide_entity: true
+  alias: Push Automatic Events to MQTT hard_accel
+  trigger:
+    - platform: event
+      event_type: automatic_update
+      event_data:
+        type: "notification:hard_accel"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: '/car/status'
+        retain: true
+        payload: >
+          {
+              "type" : "{{ trigger.event.data['type'] }}",
+              "created_at" : "{{ trigger.event.data['created_at'] }}",
+              "location" : {
+                  "lat" : {{ trigger.event.data['location']['lat'] }}
+                  "lon" : {{ trigger.event.data['location']['lon'] }}
+                  "accuracy_m" : {{ trigger.event.data['location']['accuracy_m'] }}
+                  "created_at" : "{{ trigger.event.data['location']['created_at'] }}"
+              }
+          }
+          
 - id: Activate Morning Mode At Sunrise
   alias: Activate Morning Mode At Sunrise
   hide_entity: true

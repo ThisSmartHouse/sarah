@@ -1,3 +1,6 @@
+device_tracker.2017_subaru_outback:
+  friendly_name: "Subaru Outback"
+  
 sensor.backporch_lights_combined_state:
   hidden: true
 
@@ -9,6 +12,8 @@ sensor.outside_temperature:
   friendly_name: "Outside Temperature (measured)"
 sensor.pond_temperature:
   friendly_name: "Pond Temperature"
+  icon: mdi:oil-temperature
+
 sensor.home_power_cost:
   friendly_name: "Est. Current Power Cost"
   
@@ -105,7 +110,10 @@ sensor.3dprinter2_state:
   icon: mdi:printer-3d  
 sensor.freshwater_tank_temperature:
   friendly_name: "Freshwater Tank Temp."
+  icon: mdi:oil-temperature
 sensor.saltwater_tank_temperature:
   friendly_name: "Saltwater Tank Temp."
+  icon: mdi:oil-temperature
 sensor.diana_tank_temperature:
   friendly_name: "Diana's Tank Temp."
+  icon: mdi:oil-temperature

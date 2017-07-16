@@ -1,0 +1,10 @@
+sarah_weblinks:
+  name: SARAH Subsystems
+  control: hidden
+  entities:
+    - weblink.cookbook
+    - weblink.main_router
+    - weblink.downstairs_router
+    - weblink.outside_router
+    - weblink.backyard_camera
+    

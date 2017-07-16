@@ -1,0 +1,21 @@
+- name: Cookbook
+  url: "https://home.coogle.org/cookbook/"
+  icon: mdi:stove
+- name: Main Router
+  url: "http://home.coogle.org:81/"
+  icon: mdi:router-wireless
+- name: Downstairs Router
+  url: "http://router-downstairs.coogle.local/"
+  icon: mdi:router-wireless
+- name: Outside Router
+  url: "https://router-outside.coogle.local:4343"
+  icon: mdi:router-wireless
+- name: Backyard Camera
+  url: "http://backyard-camera.coogle.local/"
+  icon: mdi:webcam
+- name: "3D Printer #1"
+  url: "http://3dprinter-1.coogle.local/"
+  icon: mdi:printer-3d
+- name: "3D Printer #2"
+  url: "http://3dprinter-2.coogle.local/"
+  icon: mdi:printer-3d
