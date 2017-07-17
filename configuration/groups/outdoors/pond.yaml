@@ -1,0 +1,8 @@
+outdoors_pond:
+  name: Pond
+  icon: mdi:fish
+  entities:
+    - input_boolean.enable_waterfall
+    - binary_sensor.pond_temperature_status
+    - binary_sensor.pond_feeding_status
+    - sensor.pond_temperature

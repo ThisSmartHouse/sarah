@@ -2,3 +2,4 @@ lighting_office:
   name: Office
   entities:
     - light.office
+    - switch.office_desk_lamp

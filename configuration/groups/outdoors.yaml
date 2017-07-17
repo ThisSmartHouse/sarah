@@ -3,6 +3,7 @@ Outdoors:
   icon: mdi:tree
   control: hidden
   entities:
+    - group.outdoors_pond
     - group.outdoors_power
     - group.outdoors_temperature
     - group.outdoors_weather

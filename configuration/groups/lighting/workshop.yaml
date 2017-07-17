@@ -1,0 +1,4 @@
+lighting_workshop:
+  name: Workshop
+  entities:
+    - switch.workshop_lights

@@ -3,5 +3,6 @@ Workshop:
   icon: mdi:printer-3d
   name: Workshop
   entities:
+    - group.workshop_switches
     - group.workshop_3dprinter_1
     - group.workshop_3dprinter_2

@@ -3,11 +3,15 @@ bedtime_mode:
     - service: light.turn_off
       entity_id: group.all_lights
     - service: switch.turn_off
+      entity_id: switch.office_desk_lamp
+    - service: switch.turn_off
       entity_id: switch.back_porch_lights
     - service: switch.turn_off
       entity_id: switch.saltwater_lights
     - service: switch.turn_off
       entity_id: switch.back_porch_power
+    - service: switch.turn_off
+      entity_id: switch.workshop_lights
     - service: switch.turn_off
       entity_id: switch.bar_lights
     - service: homeassistant.turn_off

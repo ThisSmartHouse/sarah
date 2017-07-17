@@ -1,0 +1,16 @@
+pond_temp_alert:
+  name: >
+    Warning: The pond water temperature is currently {{ float(states('sensor.pond_temperature')) }} degrees.
+  entity_id: binary_sensor.pond_temperature_status
+  state: 'on'
+  repeat:
+    - 5
+    - 10
+    - 15
+    - 30
+    - 60
+    - 120
+  can_acknowledge: true
+  skip_first: true
+  notifiers: 
+    - house_phones_sms

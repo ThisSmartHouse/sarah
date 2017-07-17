@@ -1,0 +1,6 @@
+- platform: mqtt
+  state_topic: "/sensor/rtl433"
+  name: hallway_fire
+  qos: 0
+  device_class: smoke
+  value_template: '{% if (value_json.id is equalto 93761) and (value_json.event is equalto 192) %} on {% else %} off {% endif %}'

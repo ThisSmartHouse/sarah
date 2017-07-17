@@ -1,0 +1,5 @@
+enable_garden_irrigation:
+  name: Automatic Garden Irrigation
+  initial: on
+  icon: mdi:flower
+  

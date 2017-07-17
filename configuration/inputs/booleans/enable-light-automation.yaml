@@ -1,0 +1,5 @@
+enable_light_automation:
+  name: Automatic Indoor Lights
+  initial: on
+  icon: mdi:lightbulb
+  

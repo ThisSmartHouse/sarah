@@ -1,0 +1,12 @@
+- platform: mqtt
+  name: Workshop Exhaust
+  command_topic: /workshop/switch/2
+  state_topic: /workshop/switch/2/state
+  payload_on: "1"
+  payload_off: "0"
+- platform: mqtt
+  name: Workshop Lights
+  command_topic: /workshop/switch/1
+  state_topic: /workshop/switch/1/state
+  payload_on: "1"
+  payload_off: "0"

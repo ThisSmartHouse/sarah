@@ -1,12 +1,11 @@
-house_sensors:
+security_sensors:
   name: Sensors
   control: hidden
   entities:
     - sensor.frontdoor
     - sensor.sidedoor
     - sensor.backdoor
+    - sensor.workshop_door
     - sensor.kitchen_pir
+    - sensor.hallway_fire
     - sensor.hallway_pir
-    - sensor.home_power_cost
-    - sensor.freezer_temperature
-    - sensor.home_power_consumption

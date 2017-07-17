@@ -1,0 +1,8 @@
+Security:
+  view: yes
+  icon: mdi:security-home
+  control: hidden
+  entities:
+    - group.security_sensors
+    - camera.backyard
+    - camera.front_door

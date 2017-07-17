@@ -1,0 +1,6 @@
+- platform: mqtt
+  state_topic: "/sensor/rtl433"
+  name: hallway_pir
+  qos: 0
+  device_class: motion
+  value_template: '{% if (value_json.id is equalto 609132) and (value_json.event is equalto 128) %} on {% else %} off {% endif %}'

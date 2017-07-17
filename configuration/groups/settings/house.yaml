@@ -1,0 +1,7 @@
+settings_house:
+  name: House Settings
+  control: hidden
+  entities:
+    - input_boolean.enable_garden_irrigation
+    - input_boolean.enable_light_automation
+    - input_boolean.enable_waterfall_automation

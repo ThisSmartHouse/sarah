@@ -4,7 +4,6 @@ outdoors_power:
   control: hidden
   entities:
     - script.gate_open
-    - input_boolean.enable_waterfall
     - light.front_porch
     - switch.back_porch_lights
     - switch.back_porch_power

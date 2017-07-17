@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    is_freezing_outside:
+      value_template: '{% if states("sensor.dark_sky_apparent_temperature") is lessthan 35 %}freezing{% else %}not freezing{% endif %}'
+      friendly_name: "Is It Freezing Outside?"

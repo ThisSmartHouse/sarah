@@ -1,0 +1,6 @@
+- platform: mjpeg
+  mjpeg_url: http://192.168.1.71/videostream.cgi
+  still_image_url: http://192.168.1.71/snapshot.cgi
+  username: !secret camera_user
+  password: !secret camera_password
+  name: Front Door

@@ -9,3 +9,4 @@ lighting:
     - group.lighting_upstairs
     - group.lighting_living_room
     - group.lighting_kitchen
+    - group.lighting_workshop

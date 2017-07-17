@@ -1,6 +1,0 @@
-camera:
-  view: yes
-  name: Cameras
-  icon: mdi:webcam
-  entities:
-    - camera.backyard

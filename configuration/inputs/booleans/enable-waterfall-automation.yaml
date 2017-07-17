@@ -1,0 +1,5 @@
+enable_waterfall_automation:
+  name: Waterfall Automation
+  initial: on
+  icon: mdi:water-pump
+  

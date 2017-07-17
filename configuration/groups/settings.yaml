@@ -4,4 +4,5 @@ Settings:
   control: hidden
   entities:
     - group.settings_sarah
+    - group.settings_house
     

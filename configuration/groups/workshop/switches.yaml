@@ -1,0 +1,5 @@
+workshop_switches:
+  name: Controls
+  entities:
+    - switch.workshop_lights
+    - switch.workshop_exhaust
