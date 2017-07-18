@@ -1,3 +1,18 @@
+sensor.hallway_fire:
+  friendly_name: "Hallway Smoke Detector"
+sensor.hallway_pir:
+  friendly_name: "Hallway Movement"
+sensor.workshop_door:
+  friendly_name: "Workshop Door"
+sensor.frontdoor:
+  friendly_name: "Front Door"
+sensor.backdoor:
+  friendly_name: "Back Door"
+sensor.sidedoor:
+  friendly_name: "Side Door"
+sensor.kitchen_pir:
+  friendly_name: "Kitchen Movement"
+  
 device_tracker.2017_subaru_outback:
   friendly_name: "Subaru Outback"
   

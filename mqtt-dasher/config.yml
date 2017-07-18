@@ -8,3 +8,7 @@ buttons:
   40:B4:CD:F3:0B:F5: /button/pee-tracker
   40:B4:CD:20:8F:33: /button/grow-lights   
   68:54:FD:C1:3B:B1: /button/bedtime
+  68:54:FD:E9:93:C2: /button/workshop-light
+  FC:A6:67:51:AB:C6: /button/workshop-exhaust
+  50:F5:DA:E2:A8:66: /button/office-desklamp
+  B4:7C:9C:D6:58:C2: /button/backyard-lights

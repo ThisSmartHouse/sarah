@@ -1,3 +1,9 @@
+script.poo_tracker:
+  friendly_name: Record Hercules Poo
+  icon: mdi:emoticon-poop
+script.pee_tracker:
+  friendly_name: Record Hercules Pee
+  icon: mdi:water
 script.reload_groups:
   icon: mdi:refresh
 script.reload_automations:

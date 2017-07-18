@@ -14,5 +14,7 @@ group.workshop:
   order: 7
 group.camera:
   order: 8
-group.settings:
+group.security:
   order: 9
+group.settings:
+  order: 10

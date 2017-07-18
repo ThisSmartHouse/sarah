@@ -4,7 +4,10 @@ sarah_weblinks:
   entities:
     - weblink.cookbook
     - weblink.main_router
+    - weblink.att_router
     - weblink.downstairs_router
     - weblink.outside_router
     - weblink.backyard_camera
+    - weblink.frontdoor_camera
+    
     

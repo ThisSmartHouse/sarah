@@ -19,3 +19,9 @@
 - name: "3D Printer #2"
   url: "http://3dprinter-2.coogle.local/"
   icon: mdi:printer-3d
+- name: Frontdoor Camera
+  url: "http://frontdoor-camera.coogle.local/"
+  icon: mdi:webcam
+- name: "AT&T Router"
+  url: "http://172.16.0.1/"
+  icon: mdi:router-wireless

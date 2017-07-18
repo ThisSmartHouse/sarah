@@ -2,6 +2,7 @@ House:
   view: yes
   icon: mdi:home-variant
   entities:
+    - group.house_poo_tracker
     - group.house_locations
     - group.house_internet
     - group.house_status

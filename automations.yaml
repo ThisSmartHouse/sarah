@@ -1,3 +1,35 @@
+- id: Alert if it is time to stop feeding the Koi
+  hide_entity: true
+  alias: Alert if it is time to stop feeding the Koi
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.pond_feeding_status
+      from: 'off'
+      to: 'on'
+      for:
+        hours: 6
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "The water temperature is no longer safe to feed the Koi fish."
+        target: !secret both_phones
+
+- id: Alert if it is safe to feed the Koi
+  hide_entity: true
+  alias: Alert if it is safe to start feeding the Koi
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.pond_feeding_status
+      from: 'on'
+      to: 'off'
+      for:
+        hours: 6
+  action:
+    - service: notify.twilio_sms
+      data:
+        message: "Water temperatures indicate it is not safe to resume feeding the Koi fish."
+        target: !secret both_phones
+        
 - id: Alert if Back door is left open for more than 15 minutes
   hide_entity: true
   alias: Alert if Back Door is Left Open
@@ -176,7 +208,88 @@
     event: sunrise
   action:
     - service: script.morning_mode
-    
+
+- id: Activate Office Desk Lamp on Dash Button Push
+  alias: Activate Office Desk Lamp on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/office-desklamp'
+    payload: 'active'
+  action:
+    - service: switch.toggle
+      entity_id: switch.office_desk_lamp
+    - service: automation.turn_off
+      entity_id: automation.activate_office_desk_lamp_on_dash_button_push
+      
+- id: Restore automation for Office Desk Lamp From Dash Button
+  alias: Restore automation for Office Desk Lamp From Dash Button
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.activate_office_desk_lamp_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.activate_office_desk_lamp_on_dash_button_push
+
+- id: Activate Workshop Exhaust on Dash Button Push
+  alias: Activate Workshop Exhaust Mode on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/workshop-exhaust'
+    payload: 'active'
+  action:
+    - service: switch.toggle
+      entity_id: switch.workshop_exhaust
+    - service: automation.turn_off
+      entity_id: automation.activate_workshop_exhaust_mode_on_dash_button_push
+      
+- id: Restore automation for Workshop Exhaust From Dash Button
+  alias: Restore automation for Workshop Exhaust From Dash Button
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.activate_workshop_exhaust_mode_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.activate_workshop_exhaust_mode_on_dash_button_push
+      
+- id: Activate Workshop Light on Dash Button Push
+  alias: Activate Workshop Mode on Dash Button Push
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/workshop-light'
+    payload: 'active'
+  action:
+    - service: switch.toggle
+      entity_id: switch.workshop_lights
+    - service: automation.turn_off
+      entity_id: automation.activate_workshop_mode_on_dash_button_push
+      
+- id: Restore automation for Workshop Lights From Dash Button
+  alias: Restore automation for Workshop Lights From Dash Button
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.activate_workshop_mode_on_dash_button_push
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.activate_workshop_mode_on_dash_button_push
+      
 - id: Activate Bedtime Mode on Dash Buttton Push
   alias: Activate Bedtime Mode on Dash Button Push
   hide_entity: true
@@ -324,7 +437,7 @@
     payload: 'active'
   action:
     - service: switch.toggle
-      entity_id: switch.back_porch
+      entity_id: switch.back_porch_lights
     - service: automation.turn_off
       entity_id: automation.toggle_back_porch_lights_on_dash_push
 
@@ -679,6 +792,46 @@
             "sun" : "{{ states('sun.sun') }}"     
           } 
 
+- id: 3D Printer 1 Turn on Exhaust
+  alias: 3D Printer 1 Turn on Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    to: "Printing"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.workshop_exhaust
+      
+- id: 3D Printer 1 Turn Off Exhaust
+  alias: 3d Printer 1 Turn Off Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    to: "Operational"
+  action:
+    - service: switch.turn_off
+      entity_id: switch.workshop_exhaust
+
+- id: 3D Printer 2 Turn on Exhaust
+  alias: 3D Printer 2 Turn on Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter2_state
+    to: "Printing"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.workshop_exhaust
+      
+- id: 3D Printer 2 Turn Off Exhaust
+  alias: 3d Printer 2 Turn Off Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    to: "Operational"
+  action:
+    - service: switch.turn_off
+      entity_id: switch.workshop_exhaust
+
 - id: 3D Printer 1 Completion Notification
   alias: 3D Printer 1 Completion Notification
   trigger:
@@ -784,6 +937,16 @@
     entity_id: input_boolean.enable_waterfall
     from: 'off'
     to: 'on'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: "not freezing"
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: "unknown"
+        
   action:
     service: switch.turn_on
     entity_id: switch.pond_waterfall_pump
@@ -810,6 +973,12 @@
     to: 'on'
     for:
       hours: 1
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_waterfall_automation
+        state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: input_boolean.enable_waterfall
@@ -821,9 +990,27 @@
     - platform: time
       at: '17:00:00'
   condition:
-    - condition: state
-      entity_id: sensor.is_raining
-      state: "not raining"
+    condition: and
+    conditions:
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: sensor.is_raining
+            state: "unknown"
+          - condition: state
+            entity_id: sensor.is_raining
+            state: "not raining"
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: sensor.is_freezing_outside
+            state: "not freezing"
+          - condition: state
+            entity_id: sensor.is_freezing_outside
+            state: "unknown"
+      - condition: state
+        entity_id: input_boolean.enable_garden_irrigation
+        state: 'on'
   action:
     service: switch.turn_on
     entity_id: switch.garden_soaker_pump
@@ -846,12 +1033,25 @@
       minutes: 55
       seconds: 00
   condition:
-    - condition: state
-      entity_id: input_boolean.enable_waterfall
-      state: 'off'
-    - condition: state
-      entity_id: sensor.is_raining
-      state: "not raining"
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_waterfall
+        state: 'off'
+      - condition: state
+        entity_id: sensor.is_raining
+        state: "not raining"
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: sensor.is_freezing_outside
+            state: "not freezing"
+          - condition: state
+            entity_id: sensor.is_freezing_outside
+            state: "unknown"
+      - condition: state
+        entity_id: input_boolean.enable_waterfall_automation
+        state: 'on'
   action:
     service: switch.turn_on
     entity_id: switch.pond_waterfall_pump
@@ -864,13 +1064,152 @@
       minutes: 05
       seconds: 00
   condition: 
-    - condition: state
-      entity_id: input_boolean.enable_waterfall
-      state: 'off'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_waterfall
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.enable_waterfall_automation
+        state: 'on'
   action:
     service: switch.turn_off
     entity_id: switch.pond_waterfall_pump
-    
+
+- id: Turn on Kitchen Lights if motion is detected
+  alias: Turn on Kitchen Lights if motion is detected
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.kitchen_pir
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.kitchen_center
+    - service: light.turn_on
+      entity_id: light.kitchen_doorway
+    - service: light.turn_on
+      entity_id: light.kitchen_sink
+
+- id: Turn off Living Room if no occupancy detected for 60 minutes
+  alias: Turn off Living Room if no occupancy detected for 60 minutes
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.home_occupancy
+      to: 'off'
+      for:
+        minutes: 60
+  condition:
+    condition: and
+    conditions: 
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: remote.turn_off
+      entity_id: remote.living_room
+    - service: light.turn_off
+      entity_id: light.bar_light
+    - service: light.turn_off
+      entity_id: light.circle_chair
+    - service: light.turn_off
+      entity_id: light.couch
+
+- id: Turn off Kitchen Lights if no occupancy detected for 15 minutes
+  alias: Turn off Kitchen Lights if no occupancy detected for 15 minutes
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.kitchen_pir
+      to: 'off'
+      for:
+        minutes: 15
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.kitchen_center
+    - service: light.turn_off
+      entity_id: light.kitchen_doorway
+    - service: light.turn_off
+      entity_id: light.kitchen_sink
+    - service: light.turn_off
+      entity_id: light.dining_room_1
+    - service: light.turn_off
+      entity_id: light.dining_room_2
+    - service: light.turn_off
+      entity_id: light.dining_room_corner
+
+- id: Turn on Hallway if motion detected
+  alias: Turn on Hallway if motion detected
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.hallway_pir
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.hallway
+
+- id: Turn off Hallway if no motion detected for 5 minutes
+  alias: Turn off Hallway if no motion detected for 5 minutes
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.hallway_pir
+      to: 'off'
+      for:
+        minutes: 15
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.hallway
+
+- id: Turn off Upstairs Bathroom if no motion detected for 90 minutes in hallway
+  alias: Turn off Upstairs Bathroom if no motion detected for 90 minutes in hallway
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: sensor.hallway_pir
+      to: 'off'
+      for: 
+        minutes: 90
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.bathroom_1
+    - service: light.turn_off
+      entity_id: light.bathroom_2
+    - service: light.turn_off
+      entity_id: light.bathtub
+
 - id: Turn off Bedroom lights if no occupancy detected
   alias: Turn off Bedroom lights if no occupancy detected
   hide_entity: true
@@ -881,6 +1220,12 @@
       to: 'off'
       for:
         minutes: 2
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
   action:
     - service: light.turn_off
       entity_id: light.bedroom_1
@@ -888,6 +1233,26 @@
       entity_id: light.bedroom_2
     - service: light.turn_off
       entity_id: light.master_closet
+
+- id: Turn On Office lights if occupancy detected
+  alias: Turn on Office Lights if Occupancy Detected
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.office_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
+  action:
+    - service: light.turn_on
+      entity_id: light.office_one
+    - service: light.turn_on
+      entity_id: light.office_two
 
 - id: Turn off Office lights if no occupancy detected
   alias: Turn off Office lights if no occupancy detected
@@ -899,11 +1264,19 @@
       to: 'off'
       for:
         minutes: 2
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.enable_light_automation
+        state: 'on'
   action:
     - service: light.turn_off
       entity_id: light.office_one
     - service: light.turn_off
       entity_id: light.office_two
+    - service: switch.turn_off
+      entity_id: switch.office_desk_lamp
 
 #- id: Notify if VPN Failure
 #  alias: VPN Failure Notification
