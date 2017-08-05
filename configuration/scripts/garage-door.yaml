@@ -1,0 +1,6 @@
+garage_door:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "/garage-door/activate"
+        payload: "open"

@@ -21,3 +21,8 @@ script.gate_open:
   icon: mdi:exit-to-app
   emulated_hue: true
   emulated_hue_name: "Front Gate"
+script.garage_door:
+  friendly_name: Garage Door
+  icon: mdi:garage
+  emulated_hue: true
+  emulated_hue_name: "Garage Door"

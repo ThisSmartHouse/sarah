@@ -1,7 +1,7 @@
 homeassistant:
   name: Home
   latitude: !secret home_latitude
-  longitude: !secret home_longtiude
+  longitude: !secret home_longitude
   elevation: !secret home_elevation
   unit_system: imperial
   time_zone: America/Detroit
@@ -75,3 +75,8 @@ zone 5:
   name: Meijer (Southfield)
   latitude: !secret meijer_sf_latitude
   longitude: !secret meijer_sf_longitude
+  
+zone 6:
+  name: Physical Therapy
+  latitude: !secret physical_therapy_latitude
+  longitude: !secret physical_thearpy_longitude

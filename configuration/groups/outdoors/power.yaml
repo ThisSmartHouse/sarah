@@ -4,6 +4,8 @@ outdoors_power:
   control: hidden
   entities:
     - script.gate_open
+    - script.garage_door
+    - sensor.garage_door
     - light.front_porch
     - switch.back_porch_lights
     - switch.back_porch_power

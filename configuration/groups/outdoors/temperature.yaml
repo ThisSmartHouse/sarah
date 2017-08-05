@@ -2,12 +2,12 @@ outdoors_temperature:
   name: Temperature
   icon: mdi:thermometer-lines
   entities:
-    - sensor.dark_sky_temperature
+    - sensor.outdoor_temperature
     - sensor.pond_temperature
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_daily_high_apparent_temperature
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_apparent_temperature
     - sensor.dark_sky_daily_low_temperature
-    - sensor.dark_sky_humidity
+    - sensor.outdoor_humidity
     - sensor.is_raining

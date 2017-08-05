@@ -1,3 +1,11 @@
+sensor.outdoor_temperature:
+  friendly_name: "Temperature Outside"
+  icon: mdi:thermometer-lines
+sensor.outdoor_humidity:
+  friendly_name: "Humidity Outside"
+  icon: mdi:water-percent
+sensor.garage_door:
+  friendly_name: "Garage Door"
 sensor.hallway_fire:
   friendly_name: "Hallway Smoke Detector"
 sensor.hallway_pir:

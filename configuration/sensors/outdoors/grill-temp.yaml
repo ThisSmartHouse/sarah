@@ -2,4 +2,4 @@
   state_topic: "/status/bbq/temperature"
   name: grill_temperature
   unit_of_measurement: '°C'
-  value_template: "{{ value_json.probe_temp }}"
+  value_template: "{{ float(value_json.probe_temp) - 15.5 }}" # The temp seems to be 15.5 C degrees off from reality
