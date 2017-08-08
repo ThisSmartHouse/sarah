@@ -290,6 +290,37 @@
     - service: automation.turn_on
       entity_id: automation.activate_workshop_mode_on_dash_button_push
       
+- id: Activate Bedtime Mode on Dash Buttton Push After Sunrise
+  alias: Activate Bedtime Mode on Dash Button Push After Sunrise
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: '/button/bedtime'
+    payload: 'active'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunrise
+  action:
+    - service: script.all_off
+    - service: automation.turn_off
+      entity_id: automation.activate_bedtime_mode_on_dash_button_push_after_sunrise
+
+- id: Restore automation for Bedtime Mode From Dash Button After Sunrise
+  alias: Restore automation for Bedtime Mode From Dash Button After Sunrise
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.activate_bedtime_mode_on_dash_button_push_after_sunrise
+    from: 'on'
+    to: 'off'
+    for:
+      seconds: 8
+  action:
+    - service: automation.turn_on
+      entity_id: automation.activate_bedtime_mode_on_dash_button_push_after_sunrise
+      
 - id: Activate Bedtime Mode on Dash Buttton Push
   alias: Activate Bedtime Mode on Dash Button Push
   hide_entity: true
@@ -297,6 +328,11 @@
     platform: mqtt
     topic: '/button/bedtime'
     payload: 'active'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        before: sunrise
   action:
     - service: script.bedtime_mode
     - service: automation.turn_off
@@ -437,7 +473,7 @@
     payload: 'active'
   action:
     - service: switch.toggle
-      entity_id: switch.back_porch_lights
+      entity_id: switch.back_porch
     - service: automation.turn_off
       entity_id: automation.toggle_back_porch_lights_on_dash_push
 
