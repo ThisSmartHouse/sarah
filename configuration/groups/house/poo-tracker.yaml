@@ -1,6 +1,0 @@
-house_poo_tracker:
-  name: Poo Tracker
-  control: hidden
-  entities:
-    - script.poo_tracker
-    - script.pee_tracker
