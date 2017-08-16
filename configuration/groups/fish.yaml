@@ -6,3 +6,6 @@ fish:
     - group.fish_status
     - group.fish_sensors
     - group.fish_power
+    - group.fish_saltwater_controls
+    - group.fish_freshwater_controls
+    - group.fish_aquaponic_controls

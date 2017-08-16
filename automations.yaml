@@ -634,6 +634,44 @@
     service: switch.turn_off
     entity_id: switch.saltwater_lights
 
+- id: Freshwater Display Lights On
+  alias: Freshwater Display Lights On
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.freshwater_tank_lights
+
+- id: Freshwater Display Lights Off
+  alias: Freshwater Display Lights Off
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '02:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.freshwater_tank_lights
+
+- id: Turtle Heat Lamp On
+  alias: Turtle Heat Lamp On
+  trigger:
+    platform: time
+    at: '07:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.freshwater_turtle_lights
+
+- id: Turtle Heat Lamp Off
+  alias: Turtle Heat Lamp off
+  trigger:
+    platform: time
+    at: '18:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.freshwater_turtle_lights
+    
 - id: Saltwater Sump Light On
   alias: Saltwater Sump Light On
   hide_entity: true

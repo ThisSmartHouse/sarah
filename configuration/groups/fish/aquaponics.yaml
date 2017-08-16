@@ -1,0 +1,6 @@
+fish_aquaponic_controls:
+  name: Aquaponics
+  control: hidden
+  entities:
+    - switch.cloner_sprayer_14
+    - switch.grow_lights    

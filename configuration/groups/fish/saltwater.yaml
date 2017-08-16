@@ -1,0 +1,12 @@
+fish_saltwater_controls:
+  name: Saltwater
+  control: hidden
+  entities:
+    - switch.wavemaker_1
+    - switch.wavemaker_2
+    - switch.saltwater_lights
+    - switch.protein_skimmer_3
+    - switch.saltwater_autotopoff_4
+    - switch.saltwater_return_pump_1
+    - switch.saltwater_sump_light_6
+    - switch.saltwater_uv

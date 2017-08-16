@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    freshwater_tank_lights_combined_state:
+      value_template: '{{ "on" if (is_state("switch.freshwater_tank_light_1", "on") and is_state("switch.freshwater_tank_light_2", "on")) else "off" }}'
+      friendly_name: "Freshwater Tank Lights Combined"

@@ -1,0 +1,9 @@
+fish_freshwater_controls:
+  name: Freshwater
+  control: hidden
+  entities:
+    - switch.freshwater_sump_light_7
+    - switch.freshwater_turtle_lights
+    - switch.freshwater_tank_lights
+    - switch.freshwater_switch_1
+    - switch.freshwater_switch_2
