@@ -1,0 +1,36 @@
+- id: 3D Printer 1 Turn on Exhaust
+  alias: 3D Printer 1 Turn on Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    to: Printing
+  action:
+  - service: switch.turn_on
+    entity_id: switch.workshop_exhaust
+- id: 3D Printer 1 Turn Off Exhaust
+  alias: 3d Printer 1 Turn Off Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    to: Operational
+  action:
+  - service: switch.turn_off
+    entity_id: switch.workshop_exhaust
+- id: 3D Printer 2 Turn on Exhaust
+  alias: 3D Printer 2 Turn on Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter2_state
+    to: Printing
+  action:
+  - service: switch.turn_on
+    entity_id: switch.workshop_exhaust
+- id: 3D Printer 2 Turn Off Exhaust
+  alias: 3d Printer 2 Turn Off Exhaust
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter1_state
+    to: Operational
+  action:
+  - service: switch.turn_off
+    entity_id: switch.workshop_exhaust

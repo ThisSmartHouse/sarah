@@ -1,0 +1,43 @@
+- id: Turn On Office lights if occupancy detected
+  alias: Turn on Office Lights if Occupancy Detected
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_occupancy
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - service: light.turn_on
+    entity_id: light.office_one
+  - service: light.turn_on
+    entity_id: light.office_two
+    
+- id: Turn off Office lights if no occupancy detected
+  alias: Turn off Office lights if no occupancy detected
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_occupancy
+    from: 'on'
+    to: 'off'
+    for:
+      minutes: 2
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.office_one
+  - service: light.turn_off
+    entity_id: light.office_two
+  - service: switch.turn_off
+    entity_id: switch.office_desk_lamp

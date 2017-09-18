@@ -1,0 +1,19 @@
+- id: Alert Bad Saltwater Temperature
+  alias: alert_bad_saltwater_temp
+  trigger:
+    platform: time
+    minutes: /20
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.saltwater_temperature_status
+        state: 'on'
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: > 
+          {{ [
+               "The Saltwater Tank Temperature is {{ float(states('sensor.saltwater_tank_temperature')) }} degrees and needs your help!"
+             ] | random }}

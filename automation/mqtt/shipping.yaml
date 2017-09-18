@@ -1,0 +1,42 @@
+- id: Push Shipping Updates to MQTT
+  alias: Push Shipping Updates to MQTT
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: sensor.ups_packages
+  - platform: state
+    entity_id: sensor.usps_packages_packages
+  - platform: state
+    entity_id: sensor.usps_packages_mail
+  - platform: state
+    entity_id: sensor.usps_out_for_delivery
+  - platform: state
+    entity_id: sensor.usps_picked_up_by_shipping_partner
+  - platform: state
+    entity_id: sensor.usps_arrived
+  - platform: state
+    entity_id: sensor.usps_departed_origin
+  - platform: state
+    entity_id: sensor.usps_departed
+  - platform: state
+    entity_id: sensor.usps_departed_usps_facility
+  - platform: state
+    entity_id: sensor.usps_item_accepted
+  - platform: state
+    entity_id: sensor.usps_departed_parter_facility
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: /status/shipments
+      retain: true
+      payload: "{\n  \"total_ups_packages\" : {{ states('sensor.ups_packages') }},\n\
+        \  \"total_usps_packages\" : {{ states('sensor.usps_packages_packages') }},\n\
+        \  \"usps_mail\" : {{ states('sensor.usps_packages_mail') }},\n  \"usps_packages_out_for_delivery\"\
+        \ : {{ states('sensor.usps_out_for_delivery') }},\n  \"usps_packages_picked_up_by_shipping_partner\"\
+        \ : {{ states('sensor.usps_picked_up_by_shipping_partner') }},\n  \"usps_packages_arrived\"\
+        \ : {{ states('sensor.usps_arrived') }},\n  \"usps_packages_departed_origin\"\
+        \ : {{ states('sensor.usps_departed_origin') }},\n  \"usps_packages_departed\"\
+        \ : {{ states('sensor.usps_departed') }},\n  \"usps_packages_departed_usps_facility\"\
+        \ : {{ states('sensor.usps_departed_usps_facility') }},\n  \"usps_packages_item_accepted\"\
+        \ : {{ states('sensor.usps_item_accepted') }},\n  \"usps_packages_departed_partner_facility\"\
+        \ : {{ states('sensor.usps_departed_parter_facility') }}\n}\n"

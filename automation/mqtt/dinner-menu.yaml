@@ -1,0 +1,132 @@
+- id: Push Dinner Menu Updates to MQTT (Monday)
+  alias: Push Dinner Menu Updates to MQTT (Monday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_monday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "monday",
+            "menu" : "{{ states('input_text.dinner_monday') }}"     
+          } 
+
+- id: Push Dinner Menu Updates to MQTT (Tuesday)
+  alias: Push Dinner Menu Updates to MQTT (Tuesday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_tuesday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "tuesday",
+            "menu" : "{{ states('input_text.dinner_tuesday') }}"     
+          } 
+
+- id: Push Dinner Menu Updates to MQTT (Wednesday)
+  alias: Push Dinner Menu Updates to MQTT (Wednesday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_wednesday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "wednesday",
+            "menu" : "{{ states('input_text.dinner_wednesday') }}"     
+          } 
+
+- id: Push Dinner Menu Updates to MQTT (Thursday)
+  alias: Push Dinner Menu Updates to MQTT (Thursday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_thursday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "thursday",
+            "menu" : "{{ states('input_text.dinner_thursday') }}"     
+          } 
+
+- id: Push Dinner Menu Updates to MQTT (Friday)
+  alias: Push Dinner Menu Updates to MQTT (Friday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_friday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "friday",
+            "menu" : "{{ states('input_text.dinner_friday') }}"     
+          } 
+
+- id: Push Dinner Menu Updates to MQTT (Saturday)
+  alias: Push Dinner Menu Updates to MQTT (Saturday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_saturday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "saturday",
+            "menu" : "{{ states('input_text.dinner_saturday') }}"     
+          } 
+
+- id: Push Dinner Menu Updates to MQTT (Sunday)
+  alias: Push Dinner Menu Updates to MQTT (Sunday)
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_text.dinner_sunday
+    - platform: homeassistant
+      event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/dinner/update"
+        payload: >
+          {
+            "action" : "set",
+            "day" : "sunday",
+            "menu" : "{{ states('input_text.dinner_sunday') }}"     
+          } 

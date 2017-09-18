@@ -2,6 +2,8 @@ settings_house:
   name: House Settings
   control: hidden
   entities:
+    - script.bedtime_mode
     - input_boolean.enable_garden_irrigation
     - input_boolean.enable_light_automation
     - input_boolean.enable_waterfall_automation
+    - input_boolean.bedtime_mode

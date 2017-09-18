@@ -1,0 +1,20 @@
+- id: Bar Accent Lights On
+  alias: Bar Accent Lights On
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: -02:00:00
+  action:
+    service: switch.turn_on
+    entity_id: switch.bar_lights
+    
+- id: Bar Accent Lights Off
+  alias: Bar Accent Lights Off
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 03:00:00
+  action:
+    service: switch.turn_off
+    entity_id: switch.bar_lights

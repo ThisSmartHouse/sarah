@@ -1,0 +1,29 @@
+- id: Alert if it is time to stop feeding the Koi
+  hide_entity: true
+  alias: Alert if it is time to stop feeding the Koi
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.pond_feeding_status
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 6
+  action:
+  - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+    data_template:
+      message: "I just letting you know that the water temperature ({{ states('sensor.pond_temperature') }} F) of the pond indicates it is not safe to feed the fish."
+
+- id: Alert if it is safe to feed the Koi
+  hide_entity: true
+  alias: Alert if it is safe to start feeding the Koi
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.pond_feeding_status
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 6
+  action:
+  - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+    data_template:
+      message: "Based on water temperature ({{ states('sensor.pond_temperature') }} F), it should be safe to feed the Koi fish again."

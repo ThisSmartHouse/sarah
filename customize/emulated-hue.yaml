@@ -7,3 +7,9 @@ switch.grow_lights:
 switch.ice_machine:
   emulated_hue: true
   emulated_hue_name: "Ice Machine"
+switch.pond_string_lights:
+  emulated_hue: true
+  emulated_hue_name: "Pond Lights"
+script.gate_open:
+  emulated_hue: true
+  emulated_hue_name: "Gate"

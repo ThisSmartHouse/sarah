@@ -1,0 +1,13 @@
+- id: Turn Saltwater Tank Temperature Alert Back On
+  alias: restore_alert_bad_saltwater_temp
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.alert_bad_saltwater_temp
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 1
+  action:
+    - service: automation.turn_on
+      entity_id: automation.alert_bad_saltwater_temp

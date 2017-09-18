@@ -1,0 +1,10 @@
+- platform: template
+  sensors:
+    diana_location:
+      value_template: >
+        {% if(states('device_tracker.84100d1100fb') == 'home') %}
+        home
+        {% else %}
+        not_home
+        {% endif %}
+      friendly_name: "Diana's Location"

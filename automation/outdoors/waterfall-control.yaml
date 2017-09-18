@@ -1,0 +1,103 @@
+- id: Turn on Waterfall when enabled
+  alias: Turn on Waterfall when enabled
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.enable_waterfall
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.is_freezing_outside
+      state: not freezing
+    - condition: state
+      entity_id: sensor.is_freezing_outside
+      state: unknown
+  action:
+    service: switch.turn_on
+    entity_id: switch.pond_waterfall_pump
+    
+- id: Turn off Waterfall when disabled
+  alias: Turn off Waterfall when disabled
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.enable_waterfall
+    from: 'on'
+    to: 'off'
+  action:
+    service: switch.turn_off
+    entity_id: switch.pond_waterfall_pump
+    
+- id: Automatically Turn Off Pond after 60 minutes
+  alias: Turn Off Pond After 60 minutes
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: input_boolean.enable_waterfall
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall_automation
+      state: 'on'
+  action:
+    service: homeassistant.turn_off
+    entity_id: input_boolean.enable_waterfall
+    
+- id: Automate Pond Turn On at 55 mins past hour
+  alias: Automatically Turn on at 55 mins past hour
+  hide_entity: true
+  trigger:
+  - platform: time
+    minutes: 55
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall
+      state: 'off'
+    - condition: state
+      entity_id: sensor.is_raining
+      state: not raining
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: not freezing
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: unknown
+    - condition: state
+      entity_id: input_boolean.enable_waterfall_automation
+      state: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.pond_waterfall_pump
+    
+- id: Automate Pond Turn off at 5 mins past hour
+  alias: Automatically Turn off at 5 mins past hour
+  hide_entity: true
+  trigger:
+  - platform: time
+    minutes: 5
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.enable_waterfall_automation
+      state: 'on'
+  action:
+    service: switch.turn_off
+    entity_id: switch.pond_waterfall_pump

@@ -2,5 +2,13 @@ garage_door:
   sequence:
     - service: mqtt.publish
       data:
-        topic: "/garage-door/activate"
+        topic: "/garage-door/door"
         payload: "open"
+
+garage_door_light:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "/garage-door/light"
+        payload: "activate"
+        

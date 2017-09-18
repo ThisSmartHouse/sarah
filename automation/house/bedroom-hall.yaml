@@ -1,0 +1,38 @@
+- id: Turn on Hallway if motion detected
+  alias: Turn on Hallway if motion detected
+  hide_entity: true
+  trigger:
+  - entity_id: sensor.hallway_pir
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  - condition: state
+    entity_id: input_boolean.bedtime_mode
+    state: 'off'
+  action:
+  - entity_id: light.hallway
+    service: light.turn_on
+    
+- id: Turn off Hallway if no motion detected for 5 minutes
+  alias: Turn off Hallway if no motion detected for 5 minutes
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: sensor.hallway_pir
+    to: 'off'
+    for:
+      minutes: 15
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - service: light.turn_off
+    entity_id: light.hallway

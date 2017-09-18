@@ -1,17 +1,23 @@
 - id: Turn On Pond Lights At Sunset
+  alias: Turn On Pond Lights At Sunset
   hide_entity: true
   trigger:
     platform: sun
     event: sunset
-    offset: "+00:00:00" 
+    offset: +00:00:00
   action:
-    service: switch.turn_on
+  - service: switch.turn_on
     entity_id: switch.pond_string_lights
 - id: Turn Off Pond Lights at 2am
+  alias: Turn Off Pond Lights at 2am
   hide_entity: true
   trigger:
     platform: time
-    after: '02:00:00'
+    at: 02:00:00
   action:
-    service: switch.turn_off
+  - service: switch.turn_off
     entity_id: switch.pond_string_lights
+  - service: switch.turn_off
+    entity_id: switch.back_porch_lights
+  - service: switch.turn_off
+    entity_id: switch.back_porch_power

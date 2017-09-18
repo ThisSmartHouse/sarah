@@ -1,0 +1,24 @@
+- id: Alert Bad Axolotl Temperature
+  alias: alert_bad_axolotl_temp
+  trigger:
+    platform: time
+    minutes: /20
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.diana_temperature_status
+        state: 'on'
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+               "The Axolotl Tank Temperature is {{ float(states('sensor.diana_tank_temperature')) }} degrees and needs your help!",
+               "Don't Panic, but the Axolotl Temperature is {{ float(states('sensor.diana_tank_temperature')) }} degrees",
+               "Things are starting to heat up for Terry! The Axolotl tank is {{ float(states('sensor.diana_tank_temperature')) }} degrees",
+               "Psst.. Axolotl Tank... {{ float(states('sensor.diana_tank_temperature')) }} degrees.",
+               "Every year, poor Axolotl's die due to unsafe temperatures. Meet Terry, who is forced to live in a tank that is {{ float(states('sensor.diana_tank_temperature')) }} degrees. For just a single degree, you can save his life.",
+               "I'm giving the chiller all she's got capt'n! Axolotl tank is {{ float(states('sensor.diana_tank_temperature')) }} degrees, and she can't take much more!"
+             ] | random }}

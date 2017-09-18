@@ -5,3 +5,5 @@ lighting_upstairs:
     - light.front_hall
     - light.hallway
     - light.stairwell
+    - switch.hall_portrait
+    - switch.hall_lamp

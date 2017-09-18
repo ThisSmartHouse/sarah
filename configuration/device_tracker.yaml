@@ -2,14 +2,22 @@
   host: router-outside.coogle.local
   username: admin
   password: !secret router_outside_password
+
+- platform: ddwrt
+  host: 192.168.1.1
+  username: !secret router_username
+  password: !secret router_password
+
 - platform: icloud
   username: john@coggeshall.org
   password: !secret icloud_password
   account_name: Johns iCloud
+
 - platform: nmap_tracker
   hosts:
     -  192.168.1.52
   home_interval: 5
+  
 - platform: automatic
   client_id: !secret automatic_client_id
   secret: !secret automatic_client_secret

@@ -1,0 +1,5 @@
+settings_vacation:
+  name: Vacation / Extended Leave Settings
+  control: hidden
+  entities:
+    - input_text.guest_phone_number

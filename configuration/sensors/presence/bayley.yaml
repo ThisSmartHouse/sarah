@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    bayley_location:
+      value_template: "{{ states('device_tracker.bayleysiphone') }}"
+      friendly_name: "Bayley's Location"

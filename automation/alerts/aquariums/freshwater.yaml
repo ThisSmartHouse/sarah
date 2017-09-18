@@ -1,0 +1,20 @@
+- id: Alert Bad Freshwater Temperature
+  alias: alert_bad_freshwater_temp
+  trigger:
+    platform: time
+    minutes: /20
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.freshwater_temperature_status
+        state: 'on'
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: >
+          {{ [
+               "The Freshwater Tank Temperature is {{ float(states('sensor.freshwater_tank_temperature')) }} degrees and needs your help!",
+               "Crap, if the Freshwater Tank is {{ float(states('sensor.freshwater_tank_temperature')) }} degrees, you know it's hot!"
+             ] | random }}

@@ -1,0 +1,19 @@
+- id: Grow Light On
+  alias: Grow Lights On
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 08:00:00
+  action:
+    service: switch.turn_on
+    entity_id: switch.grow_lights
+    
+- id: Grow Light Off
+  alias: Grow Lights Off
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 02:00:00
+  action:
+    service: switch.turn_off
+    entity_id: switch.grow_lights

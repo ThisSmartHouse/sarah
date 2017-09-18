@@ -1,0 +1,12 @@
+- name : house_phones_guest_sms
+  platform : group
+  services:
+    - service: twilio_sms
+      data:
+        target: >
+         {{ [
+              !secret john_phone,
+              !secret bayley_phone,
+              "{{ states('input_text.guest_phone_number') }}"
+            ] }}
+    

@@ -7,6 +7,13 @@ homeassistant:
   time_zone: America/Detroit
   customize: !include_dir_merge_named customize
 
+usps:
+  username: !secret usps_username
+  password: !secret usps_password
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/avconv
+
 frontend:
 updater:
 history:
@@ -34,7 +41,7 @@ group: !include_dir_merge_named ./configuration/groups
 switch: !include_dir_merge_list ./configuration/switches
 sensor: !include_dir_merge_list ./configuration/sensors
 mqtt: !include ./configuration/mqtt.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list ./automation
 light: !include ./configuration/light.yaml
 remote: !include ./configuration/remote.yaml
 shell_command: !include_dir_merge_named ./configuration/shell_cmds
@@ -42,6 +49,7 @@ emulated_hue: !include ./configuration/emulated-hue.yaml
 binary_sensor: !include_dir_merge_list ./configuration/binary-sensors
 input_boolean: !include_dir_merge_named ./configuration/inputs/booleans
 input_slider: !include_dir_merge_named ./configuration/inputs/sliders
+input_text: !include_dir_merge_named ./configuration/inputs/text
 notify: !include_dir_merge_list ./configuration/notifications
 script: !include_dir_merge_named ./configuration/scripts
 

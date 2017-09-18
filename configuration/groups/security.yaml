@@ -4,5 +4,6 @@ Security:
   control: hidden
   entities:
     - group.security_sensors
+    - camera.living_room
     - camera.backyard
     - camera.front_door

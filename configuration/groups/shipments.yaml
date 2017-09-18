@@ -5,3 +5,4 @@ Shipments:
   entities:
     - group.shipments_status
     - group.shipments_details
+    - camera.usps_mail

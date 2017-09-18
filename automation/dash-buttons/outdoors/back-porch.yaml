@@ -1,0 +1,15 @@
+- id: Toggle Back Porch Lights on Dash Push
+  alias: dash_back_porch_lights
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: /button/backyard-lights
+    payload: active
+  action:
+  - service: automation.turn_off
+    entity_id: automation.dash_back_porch_lights
+  - service: switch.toggle
+    entity_id: switch.back_porch
+  - delay: "00:00:10"
+  - service: automation.turn_on
+    entity_id: automation.dash_back_porch_lights

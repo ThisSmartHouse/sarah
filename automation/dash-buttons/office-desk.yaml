@@ -1,0 +1,15 @@
+- id: Activate Office Desk Lamp on Dash Button Push
+  alias: dash_office_desk
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: /button/office-desklamp
+    payload: active
+  action:
+  - service: automation.turn_off
+    entity_id: automation.dash_office_desk
+  - service: switch.toggle
+    entity_id: switch.office_desk_lamp
+  - delay: "00:00:10"
+  - service: automation.turn_on
+    entity_id: automation.dash_office_desk

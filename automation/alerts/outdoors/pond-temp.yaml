@@ -1,0 +1,19 @@
+- id: Alert Pond Temperature
+  alias: alert_bad_pond_temp
+  trigger:
+    platform: time
+    minutes: /20
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.pond_temperature_status
+        state: 'on'
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "The Pond Temperature is {{ float(states('sensor.pond_temperature')) }} degrees and needs your help!"
+             ] | random }}

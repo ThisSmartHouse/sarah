@@ -1,0 +1,11 @@
+dinner_menu:
+  name: Dinner menu
+  control: hidden
+  entities:
+    - input_text.dinner_monday
+    - input_text.dinner_tuesday
+    - input_text.dinner_wednesday
+    - input_text.dinner_thursday
+    - input_text.dinner_friday
+    - input_text.dinner_saturday
+    - input_text.dinner_sunday

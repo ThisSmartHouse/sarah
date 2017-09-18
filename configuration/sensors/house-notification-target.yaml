@@ -1,0 +1,13 @@
+- platform: template
+  sensors:
+    house_notification_service_entity_id:
+      value_template: >
+        {% if(states('sensor.diana_location') == 'home') %}
+        notify.all_phones_sms
+        {% else %}
+          {% if(states('input_text.guest_phone_number') != '') %}
+             notify.house_phones_guest_sms
+          {% else %}
+             notify.house_phones_sms
+          {% endif %}
+        {% endif %}

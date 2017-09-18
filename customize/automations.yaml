@@ -1,0 +1,15 @@
+automation.alert_bad_axolotl_temp:
+  friendly_name: "Axolotl Tank Temperature Warning"
+  icon: mdi:comment-alert
+automation.alert_bad_freshwater_temp:
+  friendly_name: "Freshwater Tank Temperature Warning"
+  icon: mdi:comment-alert
+automation.alert_bad_saltwater_temp:
+  friendly_name: "Saltwater Tank Temperature Warning"
+  icon: mdi:comment-alert
+automation.alert_bad_pond_temp:
+  friendly_name: "Pond Temperature Warning"
+  icon: mdi:comment-alert
+automation.alert_bad_freezer_temp:
+  friendly_name: "Freezer Temperature Warning"
+  icon: mdi:comment-alert

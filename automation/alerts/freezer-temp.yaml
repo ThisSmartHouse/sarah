@@ -1,0 +1,20 @@
+- id: Alert Bad Freezer Temperature
+  alias: alert_bad_freezer_temp
+  trigger:
+    platform: time
+    minutes: /2
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.freezer_temperature_status
+        state: 'on'
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "I think someone forgot to make sure the Freezer was closed again. It's currently {{ float(states('sensor.freezer_temperature')) }} degrees.",
+                "I'm detecting the Freezer is {{ float(states('sensor.freezer_temperature')) }}F degrees, which doesn't seem right to me."
+             ] | random }}

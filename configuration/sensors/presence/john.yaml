@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    john_location:
+      value_template: "{{ states('device_tracker.johncoggeshallsiphone') }}"
+      friendly_name: "John's Location"

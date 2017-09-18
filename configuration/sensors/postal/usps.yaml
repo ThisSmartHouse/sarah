@@ -1,8 +1,3 @@
-- platform: usps
-  username: !secret usps_username
-  password: !secret usps_password
-  name: USPS Packages
-  
 - platform: template
   sensors:
     usps_departed:

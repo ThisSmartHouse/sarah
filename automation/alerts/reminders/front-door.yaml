@@ -1,0 +1,13 @@
+- id: Alert if Front door is left open for more than 120 seconds
+  hide_entity: true
+  alias: Alert if Front Door is Left Open
+  trigger:
+  - platform: state
+    entity_id: sensor.frontdoor
+    to: open
+    for:
+      seconds: 120
+  action:
+  - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+    data_template:
+      message: "The front door has been open for awhile, can you please shut it?"

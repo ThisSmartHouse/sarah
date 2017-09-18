@@ -1,5 +1,17 @@
 bedtime_mode:
   sequence:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.enable_waterfall
+    - service: switch.turn_off
+      entity_id: switch.pond_string_lights
+    - service: switch.turn_off
+      entity_id: switch.back_porch_lights
+    - service: switch.turn_off
+      entity_id: switch.back_porch_power
+    - service: switch.turn_off
+      entity_id: switch.hall_portrait
+    - service: switch.turn_off
+      entity_id: switch.hall_lamp
     - service: switch.turn_off
       entity_id: switch.freshwater_turtle_lights
     - service: switch.turn_off
@@ -48,3 +60,5 @@ bedtime_mode:
       entity_id: light.bathroom_2
       data:
         brightness_pct: 10
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.bedtime_mode

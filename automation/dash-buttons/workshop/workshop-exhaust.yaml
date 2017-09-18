@@ -1,0 +1,15 @@
+- id: Activate Workshop Exhaust on Dash Button Push
+  alias: dash_workshop_exhaust
+  hide_entity: true
+  trigger:
+    platform: mqtt
+    topic: /button/workshop-exhaust
+    payload: active
+  action:
+  - service: automation.turn_off
+    entity_id: automation.dash_workshop_exhaust
+  - service: switch.toggle
+    entity_id: switch.workshop_exhaust
+  - delay: "00:00:10"
+  - service: automation.turn_on
+    entity_id: automation.dash_workshop_exhaust

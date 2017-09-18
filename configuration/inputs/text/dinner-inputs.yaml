@@ -1,0 +1,34 @@
+dinner_monday:
+  name: "Monday"
+  min: 3
+  initial: "?????"
+
+dinner_tuesday:
+  name: "Tuesday"
+  min: 3
+  initial: "?????"
+
+dinner_wednesday:
+  name: "Wednesday"
+  min: 3
+  initial: "?????"
+
+dinner_thursday:
+  name: "Thursday"
+  min: 3
+  initial: "?????"
+
+dinner_friday:
+  name: "Friday"
+  min: 3
+  initial: "?????"
+
+dinner_saturday:
+  name: "Saturday"
+  min: 3
+  initial: "?????"
+
+dinner_sunday:
+  name: "Sunday"
+  min: 3
+  initial: "?????"

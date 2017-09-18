@@ -1,0 +1,6 @@
+- name : diana-phone-sms
+  platform : group
+  services:
+    - service: twilio_sms
+      data:
+        target: !secret diana_phone

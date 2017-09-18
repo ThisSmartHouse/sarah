@@ -1,3 +1,6 @@
 type: alexa
 host_ip: 192.168.1.23
 expose_by_default: false
+off_maps_to_on_domains:
+  - script
+  - scene
