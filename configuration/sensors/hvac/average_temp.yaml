@@ -1,0 +1,9 @@
+- platform: template
+  sensors:
+    hvac_average_temp:
+      unit_of_measurement: '°F'
+      value_template: >
+        {{ ((float(states('sensor.main_floor_temperature')) + 
+            float(states('sensor.office_temperature')) + 
+            float(states('sensor.home_temperature')) + 
+            float(states('sensor.bedroom_temperature'))) / 4) | round(2) }}

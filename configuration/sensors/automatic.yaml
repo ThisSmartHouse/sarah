@@ -1,4 +1,0 @@
-- platform: template
-  sensors:
-    car_fuel_level:
-      value_template: "{{ states.device_tracker['2017_subaru_outback'].attributes.fuel_level }}"

@@ -1,0 +1,10 @@
+- platform: template
+  sensors:
+    hvac_open_windows:
+      value_template: >
+        {% if( (states('sensor.outdoor_temperature') >= states('sensor.hvac_target_low_temp')) and
+               (states('sensor.outdoor_temperature') <= states('sensor.hvac_target_high_temp'))) %}
+        yes
+        {% else %}
+        no
+        {% endif %}

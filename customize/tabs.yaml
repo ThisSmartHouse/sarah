@@ -10,9 +10,9 @@ group.bar:
   order: 5
 group.shipments:
   order: 6
-group.workshop:
+group.car:
   order: 7
-group.camera:
+group.workshop:
   order: 8
 group.security:
   order: 9

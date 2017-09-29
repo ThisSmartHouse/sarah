@@ -7,3 +7,4 @@ settings_alerts:
     - automation.alert_bad_saltwater_temp
     - automation.alert_bad_pond_temp
     - automation.alert_bad_freezer_temp
+    - automation.alert_backroom_water_leak

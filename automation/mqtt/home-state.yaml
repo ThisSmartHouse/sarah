@@ -1,0 +1,29 @@
+- id: Publish Home State to MQTT
+  alias: publish_home_state_to_mqtt
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.home_state
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/home/state"
+        retain: true
+        payload: "{{ states('input_select.home_state') }}"
+
+- id: Load Home State at Startup
+  alias: load_home_state_startup
+  hide_entity: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: automation.turn_off
+      entity_id: automation.publish_home_state_to_mqtt
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.home_state
+        option: "{{ states('sensor.home_state') }}"
+    - service: automation.turn_on
+      entity_id: automation.publish_home_state_to_mqtt
+          

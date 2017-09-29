@@ -1,0 +1,44 @@
+- id: Notify when Bayley Leaving Work
+  alias: notify_when_bayley_leaves_work
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/ignition_on"
+  condition:
+    - condition: or
+      conditions:
+        - condition: zone
+          entity_id: device_tracker.2017_subaru_outback
+          zone: zone.authority_office
+        - condition: zone
+          entity_id: device_tracker.2017_subaru_outback
+          zone: zone.bayleys_office
+  action:
+    - service: notify.john_phone_sms
+      data_template:
+        message: >
+          {{ [
+               "Bayley is leaving {{ states('device_tracker.2017_subaru_outback') }}"
+             ] | random }}
+             
+
+- id: Notify when Bayley Arrives At Work
+  alias: notify_when_bayley_arrives_work
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/ignition_off"
+  condition:
+    - condition: or
+      conditions:
+        - condition: zone
+          entity_id: device_tracker.2017_subaru_outback
+          zone: zone.authority_office
+        - condition: zone
+          entity_id: device_tracker.2017_subaru_outback
+          zone: zone.bayleys_office
+  action:
+    - service: notify.john_phone_sms
+      data_template:
+        message: >
+          {{ [
+               "Bayley has arrived at {{ states('device_tracker.2017_subaru_outback') }}"
+             ] | random }}

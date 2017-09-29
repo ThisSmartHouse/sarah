@@ -1,0 +1,7 @@
+car_speeding:
+  name: Speeding Scoreboard
+  control: hidden
+  entities:
+    - counter.counter_car_speeding_bayley
+    - counter.counter_car_speeding_john
+    - counter.counter_car_speeding_unknown

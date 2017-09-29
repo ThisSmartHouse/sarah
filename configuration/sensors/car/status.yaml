@@ -1,0 +1,4 @@
+- platform: mqtt
+  state_topic: "/car/status"
+  name: car_status
+  expire_after: 604800

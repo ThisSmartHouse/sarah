@@ -2,6 +2,9 @@ house_temperature:
   name: Temperature
   control: hidden
   entities:
+    - sensor.hvac
+    - sensor.hvac_fan
+    - sensor.hvac_average_temp
     - sensor.home_temperature
     - sensor.main_floor_temperature
     - sensor.bedroom_temperature

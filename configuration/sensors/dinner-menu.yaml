@@ -1,0 +1,35 @@
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_monday
+  value_template: "{{ value_json.monday }}"
+
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_tuesday
+  value_template: "{{ value_json.tuesday }}"
+
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_wednesday
+  value_template: "{{ value_json.wednesday }}"
+  
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_thursday
+  value_template: "{{ value_json.thursday }}"
+  
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_friday
+  value_template: "{{ value_json.friday }}"
+
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_saturday
+  value_template: "{{ value_json.saturday }}"
+
+- platform: mqtt
+  state_topic: "/dinner/menu"
+  name: dinner_sunday
+  value_template: "{{ value_json.sunday }}"
+

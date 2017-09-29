@@ -1,0 +1,4 @@
+- platform: template
+  sensors:
+    hvac_operation:
+      value_template: "{{ states.climate.home.attributes.operation }}"

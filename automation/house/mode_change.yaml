@@ -1,0 +1,27 @@
+- id: Trigger action on house mode change to bedtime
+  alias: trigger_house_mode_change_bedtime
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.home_state
+      to: Bedtime
+  action:
+    - service: automation.turn_off
+      entity_id: automation.trigger_house_mode_change_bedtime
+    - service: script.house_mode_bedtime
+    - service: automation.turn_on
+      entity_id: automation.trigger_house_mode_change_bedtime
+      
+- id: Trigger action on house mode change to normal
+  alias: trigger_house_mode_change_normal
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.home_state
+      to: Normal
+  action:
+    - service: automation.turn_off
+      entity_id: automation.trigger_house_mode_change_normal
+    - service: script.house_mode_normal
+    - service: automation.turn_on
+      entity_id: automation.trigger_house_mode_change_normal

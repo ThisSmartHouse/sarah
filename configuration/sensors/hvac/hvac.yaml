@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    hvac:
+      value_template: >
+        {% if( (states('sensor.hvac_operation') == 'cool') and (states('sensor.hvac_fan') == 'on')) %}
+        cooling
+        {% elif ( (states('sensor.hvac_operation') == 'heat') and (states('sensor.hvac_fan') == 'on')) %}
+        heating
+        {% else %}
+        unknown
+        {% endif %}
+           

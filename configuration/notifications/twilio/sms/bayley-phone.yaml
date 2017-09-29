@@ -1,4 +1,4 @@
-- name : bayley-phone-sms
+- name : bayley_phone_sms
   platform : group
   services:
     - service: twilio_sms

@@ -1,0 +1,5 @@
+house_air:
+  name: Air Quality
+  control: hidden
+  entities:
+    - input_select.air_purifier

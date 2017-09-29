@@ -1,0 +1,67 @@
+- id: Change Air Purifier State
+  alias: trigger_air_purifier_state
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.air_purifier
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/switch/air-purifier"
+        payload: "{{ states('input_select.air_purifier') | lower }}"
+        
+- id: Honeywell Air Purifier Power
+  alias: honeywell_air_purifier_power
+  hide_entity: true
+  trigger:
+    - platform: mqtt
+      topic: /switch/air-purifier
+      payload: "off"
+  action:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.harmony_hub
+        command: PowerToggle
+        device: 47744075
+        
+- id: Honeywell Air Purifier Fan High
+  alias: honeywell_air_purifier_fan_high
+  hide_entity: true
+  trigger:
+    - platform: mqtt
+      topic: /switch/air-purifier
+      payload: high
+  action:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.harmony_hub
+        command: FanHigh
+        device: 47744075
+        
+- id: Honeywell Air Purifier Fan Medium
+  alias: honeywell_air_purifier_fan_medium
+  hide_entity: true
+  trigger:
+    - platform: mqtt
+      topic: /switch/air-purifier
+      payload: medium
+  action:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.harmony_hub
+        command: FanMed
+        device: 47744075
+        
+- id: Honeywell Air Purifier Fan Low
+  alias: honeywell_air_purifier_fan_low
+  hide_entity: true
+  trigger:
+    - platform: mqtt
+      topic: /switch/air-purifier
+      payload: low
+  action:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.harmony_hub
+        command: FanLow
+        device: 47744075

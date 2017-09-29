@@ -34,5 +34,19 @@ class AppServiceProvider extends ServiceProvider
             $client = new \Mosquitto\Client();
             return $client;
         });
+        
+        $this->app->bind('Lyric\OAuth2\Provider', function($app) {
+            $provider = new \App\Library\OAuth2\HoneywellProvider([
+                'clientId' => config('services.lyric.client_id'),
+                'clientSecret' => config('services.lyric.client_secret'),
+                'redirectUri' => 'http://home.coogle.org/oauth2/lyric',
+                'urlAuthorize' => 'https://api.honeywell.com/oauth2/authorize',
+                'urlAccessToken' => 'https://api.honeywell.com/oauth2/token',
+                'urlResourceOwnerDetails' => null
+            ]);
+            
+            return $provider;
+        });
+        
     }
 }

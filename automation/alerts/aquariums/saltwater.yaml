@@ -1,5 +1,6 @@
 - id: Alert Bad Saltwater Temperature
   alias: alert_bad_saltwater_temp
+  initial_state: true
   trigger:
     platform: time
     minutes: /20

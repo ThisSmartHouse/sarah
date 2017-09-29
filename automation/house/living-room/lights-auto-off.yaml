@@ -3,7 +3,7 @@
   hide_entity: true
   trigger:
   - platform: state
-    entity_id: binary_sensor.home_occupancy
+    entity_id: sensor.livingroom_pir
     to: 'off'
     for:
       minutes: 60

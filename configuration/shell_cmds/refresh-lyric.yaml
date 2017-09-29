@@ -1,0 +1,1 @@
+refresh_lyric: '/home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:lyric:refresh'

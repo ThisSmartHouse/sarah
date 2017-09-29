@@ -1,0 +1,133 @@
+- platform: mqtt
+  state_topic: "/coogleiot/devices/garage-door"
+  name: coogleiot_garage_door_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/garage-door"
+  name: coogleiot_garage_door_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/kitchen-sink"
+  name: coogleiot_kitchen_sink_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/kitchen-sink"
+  name: coogleiot_kitchen_sink_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/upstairs-hallway"
+  name: coogleiot_upstairs_hallway_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/upstairs-hallway"
+  name: coogleiot_upstairs_hallway_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/upstairs-hallway"
+  name: coogleiot_upstairs_hallway_last_updated
+  value_template: "{{ value_json.timestamp }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/workshop-power"
+  name: coogleiot_workshop_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/workshop-power"
+  name: coogleiot_workshop_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/workshop-power"
+  name: coogleiot_workshop_last_updated
+  value_template: "{{ value_json.timestamp }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/bbq-temp-probe"
+  name: coogleiot_bbq_temp_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/bbq-temp-probe"
+  name: coogleiot_bbq_temp_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/bbq-temp-probe"
+  name: coogleiot_bbq_temp_last_updated
+  value_template: "{{ value_json.timestamp }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-power"
+  name: coogleiot_freshwater_power_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-power"
+  name: coogleiot_freshwater_power_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-power"
+  name: coogleiot_freshwater_power_last_updated
+  value_template: "{{ value_json.timestamp }}"
+  expire_after: 600
+  
+- platform: template
+  sensors:
+    coogleiot_upstairs_hallway:
+      value_template: "{{ states('sensor.coogleiot_upstairs_hallway_ip') }} (v{{ states('sensor.coogleiot_upstairs_hallway_version') }})"
+      friendly_name: "Upstairs Hallway Power"
+      
+      
+- platform: template
+  sensors:
+    coogleiot_bbq_temp:
+      value_template: "{{ states('sensor.coogleiot_bbq_temp_ip') }} (v{{ states('sensor.coogleiot_bbq_temp_version') }})"
+      friendly_name: "BBQ Temperature Probe"
+      
+      
+- platform: template
+  sensors:
+    coogleiot_workshop:
+      value_template: "{{ states('sensor.coogleiot_workshop_ip') }} (v{{ states('sensor.coogleiot_workshop_version') }})"
+      friendly_name: "Workshop Power"
+      
+- platform: template
+  sensors:
+    coogleiot_freshwater_power:
+      value_template: "{{ states('sensor.coogleiot_freshwater_power_ip') }} (v{{ states('sensor.coogleiot_freshwater_power_version') }})"
+      friendly_name: "Freshwater Display Tank Power"
+      
+- platform: template
+  sensors:
+    coogleiot_kitchen_sink:
+      value_template: "{{ states('sensor.coogleiot_kitchen_sink_ip') }} (v{{ states('sensor.coogleiot_kitchen_sink_version') }})"
+      friendly_name: "Kitchen Sink Lighting"
+
+- platform: template
+  sensors:
+    coogleiot_garage_door:
+      value_template: "{{ states('sensor.coogleiot_garage_door_ip') }} (v{{ states('sensor.coogleiot_garage_door_version') }})"
+      friendly_name: "Garage Door"

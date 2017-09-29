@@ -1,0 +1,43 @@
+- id: Turn on Kitchen if motion detected (normal)
+  alias: Turn on Kitchen if motion detected (normal)
+  hide_entity: true
+  trigger:
+  - entity_id: sensor.kitchen_pir
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime_mode
+      state: 'off'
+  action:
+  - service: light.turn_on
+    entity_id: light.kitchen
+    data:
+      brightness_pct: 100
+    
+- id: Turn off Kitchen if no motion detected for 20 minutes
+  alias: Turn off Kitchen if no motion detected for 20 minutes
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: sensor.kitchen_pir
+    to: 'off'
+    for:
+      minutes: 20
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime_mode
+      state: 'off'
+  action:
+  - service: light.turn_off
+    entity_id: light.kitchen

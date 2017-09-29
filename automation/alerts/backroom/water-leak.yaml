@@ -1,0 +1,21 @@
+- id: Alert Backroom Water Leak
+  alias: alert_backroom_water_leak
+  initial_state: true
+  trigger:
+    platform: time
+    minutes: /5
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.leak_detected
+        state: 'unsafe'
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "I'm detecting water on the floor in the back room, could be nothing but someone needs to investigate this immediately!",
+                "Warning - Water detected in back room where it's not supposed to be! Please investigate immediately."
+             ] | random }}

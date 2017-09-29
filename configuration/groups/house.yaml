@@ -8,3 +8,4 @@ House:
     - group.house_status
     - group.house_sensors
     - group.house_temperature
+    - group.house_air

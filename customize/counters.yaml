@@ -1,0 +1,6 @@
+counter.counter_car_speeding_bayley:
+  friendly_name: "Bayley"
+counter.counter_car_speeding_john:
+  friendly_name: "John"
+counter.counter_car_speeding_unknown:
+  friendly_name: "Unknown / Both"

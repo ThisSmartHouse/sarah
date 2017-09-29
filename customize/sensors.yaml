@@ -1,3 +1,44 @@
+sensor.coogleiot_garage_door:
+  icon: mdi:garage
+sensor.coogleiot_kitchen_sink:
+  icon: mdi:power-socket-us
+  
+sensor.hvac_average_temp:
+  friendly_name: "Average Indoor Temperature"
+  icon: mdi:thermometer
+sensor.home_temperature:
+  friendly_name: "Living Room Temperature"
+sensor.hvac:
+  friendly_name: "HVAC"
+sensor.hvac_fan:
+  friendly_name: "HVAC Fan"
+  icon: mdi:fan
+sensor.hvac_operation:
+  friendly_name: "HVAC Operation"
+sensor.livingroom_pir:
+  friendly_name: "Living Room Movement"
+sensor.backroom_lyric_battery:
+  friendly_name: "Backroom Water Detector Batteries"
+  icon: mdi:battery-charging
+  
+binary_sensor.leak_detected:
+  friendly_name: "Backroom Water Leak Detection"
+  
+sensor.coogleiot_upstairs_hallway:
+  icon: mdi:power-socket-us
+sensor.coogleiot_freshwater_power:
+  icon: mdi:power-socket-us
+sensor.coogleiot_workshop:
+  icon: mdi:power-socket-us
+sensor.coogleiot_bbq_temp:
+  icon: mdi:thermometer-lines
+  
+sensor.car_fuel_level:
+  friendly_name: "Fuel Level"
+  icon: mdi:fuel
+sensor.car_status:
+  friendly_name: "Car Status"
+  icon: mdi:car-connected
 sensor.outdoor_temperature:
   friendly_name: "Temperature Outside"
   icon: mdi:thermometer-lines

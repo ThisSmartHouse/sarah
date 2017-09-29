@@ -1,0 +1,13 @@
+- id: Turn Backroom Water Leak Alert Back On
+  alias: restore_alert_backroom_water_leak
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: automation.alert_backroom_water_leak
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 1
+  action:
+    - service: automation.turn_on
+      entity_id: automation.alert_backroom_water_leak

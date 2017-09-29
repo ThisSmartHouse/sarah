@@ -1,3 +1,6 @@
+switch.kitchen_sink_light:
+  emulated_hue: true
+  emulated_hue_name: "Kitchen Sink"
 switch.catbot:
   emulated_hue: true
   emulated_hue_name: "Cat Bot"

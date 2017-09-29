@@ -1,4 +1,4 @@
-morning_mode:
+house_mode_normal:
   sequence:
     - service: light.turn_on
       entity_id: light.circle_chair
@@ -32,3 +32,7 @@ morning_mode:
       entity_id: light.bathroom_1
     - service: light.turn_off
       entity_id: light.bathroom_2
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_state
+        option: Normal

@@ -1,0 +1,9 @@
+- platform: template
+  sensors:
+    hvac_target_high_temp:
+      value_template: "{{ states.climate.home.attributes.target_temp_high }}"
+      
+- platform: template
+  sensors:
+    hvac_target_low_temp:
+      value_template: "{{ states.climate.home.attributes.target_temp_low }}"

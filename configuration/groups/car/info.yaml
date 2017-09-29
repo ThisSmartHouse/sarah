@@ -1,0 +1,6 @@
+car_info:
+  name: Car Information
+  control: hidden
+  entities:
+    - sensor.car_status
+    - sensor.car_fuel_level

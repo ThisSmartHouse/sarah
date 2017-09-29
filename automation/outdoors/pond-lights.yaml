@@ -8,6 +8,7 @@
   action:
   - service: switch.turn_on
     entity_id: switch.pond_string_lights
+    
 - id: Turn Off Pond Lights at 2am
   alias: Turn Off Pond Lights at 2am
   hide_entity: true

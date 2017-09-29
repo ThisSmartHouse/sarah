@@ -1,0 +1,9 @@
+air_purifier:
+  name: Living Room Air Purifier
+  options:
+    - "Off"
+    - "Low"
+    - "Medium"
+    - "High"
+  initial: "Off"
+  icon: mdi:weather-windy

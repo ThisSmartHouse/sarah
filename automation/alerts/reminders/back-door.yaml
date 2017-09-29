@@ -7,7 +7,20 @@
     to: open
     for:
       minutes: 15
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: sensor.hvac
+        state: cooling
+      - condition: state
+        entity_id: sensor.hvac
+        state: heating
   action:
-  - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
-    data_template:
-      message: "The back door has been open for awhile, can you please shut it?"
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+          message: >
+            {{ [
+                 "The back door has been open for awhile and we're {{ states('sensor.hvac') }} the entire town, can you please shut it?",
+                 "We are currently {{ states('sensor.hvac') }} the entire neighborhood because the back door is open. Please shut it."
+               ] | random }}

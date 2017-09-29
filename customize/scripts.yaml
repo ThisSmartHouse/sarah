@@ -1,28 +1,16 @@
-script.poo_tracker:
-  friendly_name: Record Hercules Poo
-  icon: mdi:emoticon-poop
-script.pee_tracker:
-  friendly_name: Record Hercules Pee
-  icon: mdi:water
 script.reload_groups:
   icon: mdi:refresh
 script.reload_automations:
   icon: mdi:refresh
 script.restart_sarah:
   icon: mdi:power-settings
-script.morning_mode:
-  friendly_name: Morning Mode
-  hidden: true
-script.bedtime_mode:
-  friendly_name: Bedtime Mode
-  hidden: true
-script.gate_open:
-  friendly_name: Front Gate
-  icon: mdi:exit-to-app
-  emulated_hue: true
-  emulated_hue_name: "Front Gate"
 script.garage_door:
   friendly_name: Garage Door
   icon: mdi:garage
   emulated_hue: true
   emulated_hue_name: "Garage Door"
+script.gate_open:
+  friendly_name: "Front Gate"
+  icon: mdi:exit-to-app
+  emulated_hue: true
+  emulated_hue_name: "Front Gate"

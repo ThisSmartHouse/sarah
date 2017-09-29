@@ -1,0 +1,10 @@
+settings_coogleiot:
+  name: CoogleIOT Devices
+  control: hidden
+  entities:
+    - sensor.coogleiot_upstairs_hallway
+    - sensor.coogleiot_workshop
+    - sensor.coogleiot_bbq_temp
+    - sensor.coogleiot_freshwater_power
+    - sensor.coogleiot_kitchen_sink
+    - sensor.coogleiot_garage_door

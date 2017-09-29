@@ -1,0 +1,7 @@
+car:
+  view: yes
+  icon: mdi:car-connected
+  name: Car
+  entities:
+    - group.car_info
+    - group.car_speeding

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4003f9b869bacaef43b1b22c11e40ba8",
+    "content-hash": "00a19e7e855f584cd0c29d872d6ddf63",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1181,6 +1181,73 @@
             ],
             "description": "Flysystem adapter for the AWS S3 SDK v3.x",
             "time": "2017-06-30 06:29:25"
+        },
+        {
+            "name": "league/oauth2-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-client.git",
+                "reference": "a887c33ff02ec7f92029903e9e7e0fc5a1c52583"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/a887c33ff02ec7f92029903e9e7e0fc5a1c52583",
+                "reference": "a887c33ff02ec7f92029903e9e7e0fc5a1c52583",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0",
+                "paragonie/random_compat": "^1|^2",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "eloquent/liberator": "^2.0",
+                "eloquent/phony": "^0.14.1",
+                "jakub-onderka/php-parallel-lint": "~0.9",
+                "phpunit/phpunit": "^5.0",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Bilbie",
+                    "email": "hello@alexbilbie.com",
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "homepage": "https://github.com/shadowhand",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "OAuth 2.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth2",
+                "single sign on"
+            ],
+            "time": "2017-08-16 14:13:15"
         },
         {
             "name": "monolog/monolog",
@@ -4382,6 +4449,7 @@
         "aws/aws-sdk-php": 20,
         "graham-campbell/flysystem": 20,
         "league/flysystem": 20,
+        "league/oauth2-client": 20,
         "revolution/laravel-google-sheets": 20
     },
     "prefer-stable": false,

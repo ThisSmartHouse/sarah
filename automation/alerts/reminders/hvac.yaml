@@ -1,0 +1,67 @@
+- id: Suggest Opening Windows when Temperatures Make sense
+  hide_entity: true
+  alias: suggest_opening_windows
+  trigger:
+    platform: time
+    minutes: /10
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'input_boolean.enable_hvac_automations'
+        state: 'on'
+      - condition: state
+        entity_id: sensor.hvac_operation
+        state: 'auto'
+      - condition: state
+        entity_id: sensor.hvac_open_windows
+        state: 'yes'
+        for:
+          hours: 1
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.home
+        operation_mode: 'off'
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+          message: >
+            {{ [
+                 "Since it's {{ states('sensor.outdoor_temperature') }} degrees outside I've turned off the HVAC, why not open the windows?",
+                 "I'm going to turn off the HVAC for awhile since it's perfect outside. You should open the windows!"
+               ] | random }}
+               
+- id: Suggest Closing Windows when Temperatures Make sense
+  hide_entity: true
+  alias: suggest_closing_windows
+  trigger:
+    platform: time
+    minutes: /10
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.hvac_open_windows
+        state: 'no'
+        for:
+          hours: 1
+      - condition: state
+        entity_id: sensor.hvac_operation
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.enable_hvac_automations
+        state: 'on'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.home
+        operation_mode: 'auto'
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+               "I've turned on the HVAC because it's {{ states('sensor.outside_temperature') }} degrees outside. Please close any open windows!",
+                 "The HVAC has been turned on because it's {{ states('sensor.outside_temperature') }} degrees. Please close any open windows!"
+               ] | random }}

@@ -1,4 +1,5 @@
 - id: Alert Pond Temperature
+  initial_state: true
   alias: alert_bad_pond_temp
   trigger:
     platform: time

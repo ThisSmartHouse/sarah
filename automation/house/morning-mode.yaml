@@ -1,8 +1,8 @@
-- id: Activate Morning Mode At Sunrise
-  alias: Activate Morning Mode At Sunrise
+- id: Activate Normal Mode At Sunrise
+  alias: Activate Normal Mode At Sunrise
   hide_entity: true
   trigger:
     platform: sun
     event: sunrise
   action:
-  - service: script.morning_mode
+  - service: script.house_mode_normal

@@ -1,0 +1,10 @@
+- platform: template
+  sensors:
+    car_fuel_level:
+      unit_of_measurement: '%'
+      value_template: >
+        {%- if states.device_tracker['2017_subaru_outback'].attributes.fuel_level is defined %}
+        {{ states.device_tracker['2017_subaru_outback'].attributes.fuel_level | round }}
+        {%- else %}
+        unknown
+        {%- endif %}

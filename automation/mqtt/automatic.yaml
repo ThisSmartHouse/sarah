@@ -1,0 +1,26 @@
+- id: Publish Automatic Car Data to MQTT
+  alias: publish_automatic_car_data
+  hide_entity: true
+  trigger:
+    - platform: event
+      event_type: automatic_update
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/car/event/{{ trigger.event.data.type | replace(':', '_') }}"
+        retain: true
+        payload: >
+            {
+               {%- for key, value in trigger.event.as_dict().items() recursive %}
+               "{{ key }}" :
+                  {%- if value is mapping %}
+                  {
+                    {{ loop(value.items()) }}
+                  }
+                  {%- else %}
+                    {%- if value is number %}{{ value }}{%- else %}"{{ value }}"{%- endif %}
+                  {%- endif %}
+                  {%- if not loop.last %},{%- endif %}
+                  
+               {%- endfor %}
+             }

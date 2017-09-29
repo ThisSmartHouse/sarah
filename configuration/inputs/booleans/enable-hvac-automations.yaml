@@ -1,0 +1,5 @@
+enable_hvac_automations:
+  name: HVAC Automations
+  initial: on
+  icon: mdi:thermometer
+  

@@ -1,0 +1,7 @@
+home_state:
+  name: Current House State
+  options:
+    - Normal
+    - Bedtime
+  initial: Normal
+  icon: mdi:home-circle

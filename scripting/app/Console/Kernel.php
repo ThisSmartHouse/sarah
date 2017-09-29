@@ -22,7 +22,8 @@ class Kernel extends ConsoleKernel
         Commands\KeyStoreCommand::class,
         Commands\CurrentPowerCostCommand::class,
         Commands\CameraSnapshotCommand::class,
-        Commands\RecordToGoogleSheetsCommand::class
+        Commands\RecordToGoogleSheetsCommand::class,
+        Commands\Lyric\RefreshCommand::class
     ];
 
     /**

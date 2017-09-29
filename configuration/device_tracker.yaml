@@ -24,3 +24,4 @@
   username: !secret automatic_username
   password: !secret automatic_password
   name: Subaru Outback
+  current_location: true

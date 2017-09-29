@@ -3,3 +3,4 @@
   name: pond_temperature
   unit_of_measurement: '°C'
   value_template: "{{ value_json.water_temp }}"
+  expire_after: 600

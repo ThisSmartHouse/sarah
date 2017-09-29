@@ -44,12 +44,18 @@ class PollPrinterStatus extends Command
         
         $httpClient = new Client();
         
-        $result = $httpClient->request('GET', $endpoint, [
-            'headers' => [
-                'X-Api-Key' => config('services.octoprint.api_key')
-            ]
-        ]);
+        try {
+            $result = $httpClient->request('GET', $endpoint, [
+                'headers' => [
+                    'X-Api-Key' => config('services.octoprint.api_key')
+                ]
+            ]);
+            
+            print (string)$result->getBody();
+        } catch(\Exception $e) {
+            print "{}";
+        }
         
-        print (string)$result->getBody();
+        return;
     }
 }

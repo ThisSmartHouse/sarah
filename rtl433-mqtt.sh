@@ -17,7 +17,7 @@ MQTT_HOST="localhost"
 # Start the listener and enter an endless loop
 #
 # /usr/local/bin/rtl_433 -f 344975000 -f 433920000 -R 40 -R 70 -H 0.2 -F json -q |  while read line
-/usr/local/bin/rtl_433 -f 344975000 -F json -q |  while read line
+{ /usr/local/bin/rtl_433 -d 0 -f 344975000 -R 40 -R 70 -F json -q & /usr/local/bin/rtl_433 -d 1 -f 433920000 -R 70 -R 40 -F json -q; } | while read line  
 do
 # Log to file if file exists.
 # Create file with touch /tmp/rtl_433.log if logging is needed

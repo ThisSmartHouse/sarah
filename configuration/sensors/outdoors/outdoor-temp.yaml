@@ -3,9 +3,11 @@
   name: outdoor_temperature
   unit_of_measurement: '°C'
   value_template: '{% if (value_json.id is equalto 9134) %} {{ value_json.temperature_C }} {% endif %}'
-
+  expire_after: 600
+  
 - platform: mqtt
   state_topic: "/sensor/rtl433"
   name: outdoor_humidity
   unit_of_measurement: '%'
   value_template: '{% if (value_json.id is equalto 9134) %} {{ value_json.humidity }} {% endif %}'
+  expire_after: 600

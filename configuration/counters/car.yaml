@@ -1,0 +1,11 @@
+counter_car_speeding_john:
+  initial: 0
+  step: 1
+  
+counter_car_speeding_bayley:
+  initial: 0
+  step: 1
+  
+counter_car_speeding_unknown:
+  initial: 0
+  step: 1

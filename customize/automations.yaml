@@ -1,3 +1,6 @@
+automation.alert_backroom_water_leak:
+  friendly_name: "Backroom Water Detection Warning"
+  icon: mdi:comment-alert
 automation.alert_bad_axolotl_temp:
   friendly_name: "Axolotl Tank Temperature Warning"
   icon: mdi:comment-alert

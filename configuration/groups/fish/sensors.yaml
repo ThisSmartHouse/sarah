@@ -4,3 +4,4 @@ fish_sensors:
     - sensor.freshwater_tank_temperature
     - sensor.saltwater_tank_temperature
     - sensor.diana_tank_temperature
+    - sensor.backroom_lyric_battery

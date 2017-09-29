@@ -1,5 +1,6 @@
 - id: Alert Bad Axolotl Temperature
   alias: alert_bad_axolotl_temp
+  initial_state: true
   trigger:
     platform: time
     minutes: /20

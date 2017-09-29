@@ -51,5 +51,9 @@ return [
     ],
     'octoprint' => [
         'api_key' => env('OCTOPRINT_API_KEY')
+    ],
+    'lyric' => [
+        'client_id' => env('LYRIC_CLIENT_ID'),
+        'client_secret' => env('LYRIC_CLIENT_SECRET')
     ]
 ];

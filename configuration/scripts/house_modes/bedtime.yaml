@@ -1,5 +1,7 @@
-bedtime_mode:
+house_mode_bedtime:
   sequence:
+    - service: switch.turn_off
+      entity_id: switch.kitchen_sink_light
     - service: homeassistant.turn_off
       entity_id: input_boolean.enable_waterfall
     - service: switch.turn_off
@@ -60,5 +62,7 @@ bedtime_mode:
       entity_id: light.bathroom_2
       data:
         brightness_pct: 10
-    - service: homeassistant.turn_on
-      entity_id: input_boolean.bedtime_mode
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.home_state
+        option: Bedtime

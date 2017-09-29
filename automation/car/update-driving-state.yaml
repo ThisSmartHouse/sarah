@@ -1,0 +1,23 @@
+- id: Update Car Driving State (driving)
+  alias: update_car_driving_state_driving
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/ignition_on"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/car/status"
+        retain: true
+        payload: "Driving"
+
+- id: Update Car Driving State (parked)
+  alias: update_car_driving_state_parked
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/ignition_off"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "/car/status"
+        retain: true
+        payload: "Parked"

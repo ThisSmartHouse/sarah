@@ -1,4 +1,5 @@
 - id: Alert if it is time to stop feeding the Koi
+  initial_state: true
   hide_entity: true
   alias: Alert if it is time to stop feeding the Koi
   trigger:
@@ -14,6 +15,7 @@
       message: "I just letting you know that the water temperature ({{ states('sensor.pond_temperature') }} F) of the pond indicates it is not safe to feed the fish."
 
 - id: Alert if it is safe to feed the Koi
+  initial_state: true
   hide_entity: true
   alias: Alert if it is safe to start feeding the Koi
   trigger:

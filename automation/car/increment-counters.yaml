@@ -1,0 +1,47 @@
+- id: Increment Bayley Speeding Counter
+  alias: Increment Bayley Speeding Counter
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/notification:speeding"
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: device_tracker.johncoggeshallsiphone
+          state: home
+  action:
+    - service: counter.increment
+      entity_id: counter.counter_car_speeding_bayley
+
+- id: Increment John Speeding Counter
+  alias: Increment John Speeding Counter
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/notification:speeding"
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: device_tracker.bayleysiphone
+          state: home
+  action:
+    - service: counter.increment
+      entity_id: counter.counter_car_speeding_john
+      
+- id: Increment Unknown Speeding Counter
+  alias: Increment Unknown Speeding Counter
+  trigger:
+    - platform: mqtt
+      topic: "/car/event/notification:speeding"
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: device_tracker.bayleysiphone
+          state: not_home
+        - condition: state
+          entity_id: device_tracker.johncoggeshallsiphone
+          state: not_home
+  action:
+    - service: counter.increment
+      entity_id: counter.counter_car_speeding_unknown

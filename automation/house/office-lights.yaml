@@ -27,7 +27,7 @@
     from: 'on'
     to: 'off'
     for:
-      minutes: 2
+      minutes: 30
   condition:
     condition: and
     conditions:
