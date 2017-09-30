@@ -9,5 +9,3 @@ outdoors_temperature:
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_apparent_temperature
     - sensor.dark_sky_daily_low_temperature
-    - sensor.outdoor_humidity
-    - sensor.is_raining

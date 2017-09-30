@@ -23,7 +23,8 @@ class Kernel extends ConsoleKernel
         Commands\CurrentPowerCostCommand::class,
         Commands\CameraSnapshotCommand::class,
         Commands\RecordToGoogleSheetsCommand::class,
-        Commands\Lyric\RefreshCommand::class
+        Commands\Lyric\RefreshCommand::class,
+        Commands\ClipMPerksCommand::class
     ];
 
     /**

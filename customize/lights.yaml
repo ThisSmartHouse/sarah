@@ -1,2 +1,4 @@
 light.dimmer_7:
   friendly_name: "Bedroom Dimmer"
+light.bedroom_jewelry:
+  friendly_name: "Jewelry Table"

@@ -10,3 +10,4 @@ outdoors_weather:
     - sensor.dark_sky_precip_probability
     - sensor.dark_sky_daily_max_precip_intensity
     - sensor.dark_sky_wind_speed
+    - sensor.outdoor_humidity
