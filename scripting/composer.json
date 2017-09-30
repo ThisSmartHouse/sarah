@@ -18,6 +18,7 @@
 		"league/flysystem": "^1.1@dev",
 		"league/flysystem-aws-s3-v3": "~1.0",
 		"league/oauth2-client": "dev-master",
+		"querypath/QueryPath": "dev-master",
 		"revolution/laravel-google-sheets": "dev-master"
 	},
 	"require-dev" : {

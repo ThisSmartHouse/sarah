@@ -29,3 +29,13 @@ Route::any('/oauth2/lyric', [
     'as' => 'oauth2.lyric',
     'uses' => '\App\Http\Controllers\Lyric\OAuth2Controller@authenticate'
 ]);
+
+Route::any('/mperks', [
+    'as' => 'mperks.keywords',
+    'uses' => '\App\Http\Controllers\MPerks\KeywordsController@showForm'
+]);
+
+Route::post('/mperks/submit', [
+    'as' => 'mperks.keywords.submit',
+    'uses' => '\App\Http\Controllers\MPerks\KeywordsController@saveKeywords'
+]);
