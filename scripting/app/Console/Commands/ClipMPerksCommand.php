@@ -429,6 +429,8 @@ class ClipMPerksCommand extends Command
         
         $this->info("Found " . count($clippableCoupons) . " coupons we can clip");
         
+        $successfulCoupons = [];
+        
         foreach($clippableCoupons as $coupon) {
             
             if($this->clippedCount >= self::MAX_CLIPS) {
@@ -467,11 +469,49 @@ class ClipMPerksCommand extends Command
                 
             } else {
                 $this->info("Clipped {$coupon['name']}");
+                $successfulCoupons[] = $coupon;
             }
             
             sleep(1);
         }
         
+        $this->sendClippedEmail($successfulCoupons);
+        
+    }
+        
+    protected function sendClippedEmail(array $coupons)
+    {
+        $this->info("Sending Clipped Coupons List via E-mail...");
+        
+        $sparkpost = app('SparkPost');
+        
+        $recipients = [
+            [
+                'address' => [
+                    'name' => 'The Coggeshalls',
+                    'email' => 'house@coggeshall.org'
+                ]
+            ]
+        ];
+        
+        $substitution_data = [
+            'coupons' => []
+        ];
+        
+        foreach($coupons as $coupon) {
+            $substitution_data['coupons'][] = $coupon['name'];
+        }
+        
+        $content = [
+            'template_id' => 'mperks-coupons'
+        ];
+        
+        try {
+            $promise = $sparkpost->transmissions->post(compact('recipients', 'substitution_data', 'content'));
+        } catch(\SparkPost\SparkPostException $e) {
+            $this->error("Failed to send Clipped Coupons E-mail! ({$e->getMessage()})");
+            return;
+        }
     }
     
     protected function fastForwardRequest(\GuzzleHttp\Psr7\Response $response) {

@@ -12,14 +12,16 @@
 		"aws/aws-sdk-php": "^3.0@dev",
 		"coogle/smappee": "*",
 		"graham-campbell/flysystem": "^3.7@dev",
-		"guzzlehttp/guzzle": "6.*",
+		"guzzlehttp/guzzle": "^6.2@dev",
 		"laravel/framework": "5.4.*",
 		"laravel/tinker": "~1.0",
 		"league/flysystem": "^1.1@dev",
 		"league/flysystem-aws-s3-v3": "~1.0",
 		"league/oauth2-client": "dev-master",
+		"php-http/guzzle6-adapter": "^1.2@dev",
 		"querypath/QueryPath": "dev-master",
-		"revolution/laravel-google-sheets": "dev-master"
+		"revolution/laravel-google-sheets": "dev-master",
+		"sparkpost/sparkpost": "dev-master"
 	},
 	"require-dev" : {
 		"fzaninotto/faker" : "~1.4",

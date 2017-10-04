@@ -55,5 +55,8 @@ return [
     'lyric' => [
         'client_id' => env('LYRIC_CLIENT_ID'),
         'client_secret' => env('LYRIC_CLIENT_SECRET')
+    ],
+    'sparkpost' => [
+        'secret' => env('SPARKPOST_API_KEY')
     ]
 ];

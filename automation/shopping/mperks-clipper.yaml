@@ -1,0 +1,8 @@
+- id: Clip MPerks Coupons
+  alias: clip_mperks_coupons
+  trigger:
+    platform: time
+    at: '08:00:00'
+  action:
+    - delay: "{{ '%02d'|format(range(0, 8) | random | int) }}:{{ '%02d'|format(range(1,59)|random|int) }}:{{ '%02d'|format(range(1,59)|random|int) }}"
+    - service: shell_command.clip_mperks
