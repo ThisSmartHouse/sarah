@@ -1,6 +1,10 @@
 house_mode_bedtime:
   sequence:
     - service: switch.turn_off
+      entity_id: switch.flag_spotlight
+    - service: switch.turn_off
+      entity_id: switch.dining_room_cabinet
+    - service: switch.turn_off
       entity_id: switch.kitchen_sink_light
     - service: homeassistant.turn_off
       entity_id: input_boolean.enable_waterfall
@@ -47,7 +51,7 @@ house_mode_bedtime:
           - 0
           - 255
     - service: light.turn_on
-      entity_id: light.kitchen_center
+      entity_id: light.kitchen_two
       data:
         brightness_pct: 40
         rgb_color:

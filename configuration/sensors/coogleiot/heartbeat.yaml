@@ -1,4 +1,16 @@
 - platform: mqtt
+  state_topic: "/coogleiot/devices/diningroom-cabinet"
+  name: coogleiot_diningroom_cabinet_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+
+- platform: mqtt
+  state_topic: "/coogleiot/devices/diningroom-cabinet"
+  name: coogleiot_diningroom_cabinet_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+
+- platform: mqtt
   state_topic: "/coogleiot/devices/garage-door"
   name: coogleiot_garage_door_ip
   value_template: "{{ value_json.ip }}"
@@ -131,3 +143,9 @@
     coogleiot_garage_door:
       value_template: "{{ states('sensor.coogleiot_garage_door_ip') }} (v{{ states('sensor.coogleiot_garage_door_version') }})"
       friendly_name: "Garage Door"
+
+- platform: template
+  sensors:
+    coogleiot_diningroom_cabinet:
+      value_template: "{{ states('sensor.coogleiot_diningroom_cabinet_ip') }} (v{{ states('sensor.coogleiot_diningroom_cabinet_version') }})"
+      friendly_name: "Dining Room Cabinet"

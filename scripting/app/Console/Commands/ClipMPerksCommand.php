@@ -9,6 +9,8 @@ use GuzzleHttp\TransferStats;
 class ClipMPerksCommand extends Command
 {
     
+    const MAX_CLIPS = 160;
+    
     /**
      * The name and signature of the console command.
      *
@@ -27,6 +29,8 @@ class ClipMPerksCommand extends Command
     protected $client;
     
     protected $keywords;
+    
+    protected $clippedCount;
     
     /**
      * Create a new command instance.
@@ -114,7 +118,46 @@ class ClipMPerksCommand extends Command
             return $this->doUnclipping();
         }
         
+        $this->clippedCount = $this->getTotalClipped();
+        
         $this->doCouponClipping();
+    }
+    
+    protected function getTotalClipped()
+    {
+        $response = $this->client->request('POST', 'https://mperks.meijer.com/mperks/api/CouponApi/PostFilteredClippedCustomerCoupons', [
+            'headers' => [
+                'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'
+            ],
+            'json' => [
+                'AdminFilter' => 2,
+                'CategoryId' => "",
+                'CouponsRetreivalDate' => '1/1/0001 12:00:00 AM',
+                'CurrentPage' => 1,
+                'HideAutoPopup' => false,
+                'IsDepartmentBundle' => true,
+                'IsPaginationClicked' => false,
+                'NoCouponsClipped' => 0,
+                'PageSize' => 48,
+                'RewardCouponId' => 0,
+                'RewardSourceId' => 0,
+                'SearchCriteria' => "",
+                'ShowClippedCoupons' => false,
+                'SortType' => 0,
+                'SubcategoryId' => '',
+                'Tab' => 0,
+                'TagName' => '',
+                'TargetType' => 3,
+                'displayFlag' => false,
+                'getCount' => true,
+                'isTabChanged' => true,
+                'showBannerRowCount' => 15
+            ]
+        ]);
+        
+        $couponResponse = json_decode($response->getBody()->__toString(), true);
+        
+        return $couponResponse['TotalCount'];
     }
     
     protected function doUnclipping() 
@@ -387,6 +430,12 @@ class ClipMPerksCommand extends Command
         $this->info("Found " . count($clippableCoupons) . " coupons we can clip");
         
         foreach($clippableCoupons as $coupon) {
+            
+            if($this->clippedCount >= self::MAX_CLIPS) {
+                $this->info("We have clipped the maximum number of coupons.");
+                return;
+            }
+            
             $response = $this->client->request('POST', 'https://mperks.meijer.com/mperks/api/CouponApi/PostClipCoupon', [
                 'headers' => [
                     'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'

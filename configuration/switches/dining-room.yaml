@@ -1,0 +1,12 @@
+- platform: mqtt
+  name: Dining Room Cabinet
+  command_topic: /diningroom-cabinet/switch/2
+  state_topic: /diningroom-cabinet/switch/2/state
+  payload_on: "1"
+  payload_off: "0"
+- platform: mqtt
+  name: Flag Spotlight
+  command_topic: /diningroom-cabinet/switch/1
+  state_topic: /diningroom-cabinet/switch/1/state
+  payload_on: "1"
+  payload_off: "0"
