@@ -1,10 +1,10 @@
-- id: Hallway Lights On
-  alias: Hallway Lights On
+- id: Turn Display Cabinet On At Sunset
+  alias: Turn Display Cabinet On At Sunset
   hide_entity: true
   trigger:
     platform: sun
     event: sunset
-    offset: -02:00:00
+    offset: +00:00:00
   condition:
     condition: and
     conditions:
@@ -12,17 +12,15 @@
       entity_id: input_boolean.enable_light_automation
       state: 'on'
   action:
-  - service: switch.turn_on
-    entity_id: switch.hall_portrait
-  - service: switch.turn_on
-    entity_id: switch.hall_lamp
+    service: switch.turn_on
+    entity_id: switch.dining_room_cabinet
     
-- id: Turn Hallway Off
-  alias: Turn Hallway Off
+- id: Turn Off Display Cabinet At 3am
+  alias: Turn Off Display Cabinet At 3am
   hide_entity: true
   trigger:
     platform: time
-    at: 02:00:00
+    at: 03:00:00
   condition:
     condition: and
     conditions:
@@ -30,7 +28,5 @@
       entity_id: input_boolean.enable_light_automation
       state: 'on'
   action:
-  - service: switch.turn_off
-    entity_id: switch.hall_portrait
-  - service: switch.turn_off
-    entity_id: switch.hall_lamp
+    service: switch.turn_off
+    entity_id: switch.dining_room_cabinet

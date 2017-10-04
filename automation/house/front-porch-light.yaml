@@ -5,6 +5,12 @@
     platform: sun
     event: sunset
     offset: +00:00:00
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
   action:
     service: homeassistant.turn_on
     entity_id: light.front_porch
@@ -15,6 +21,12 @@
   trigger:
     platform: sun
     event: sunrise
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
   action:
     service: homeassistant.turn_off
     entity_id: light.front_porch

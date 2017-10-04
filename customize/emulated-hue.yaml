@@ -1,3 +1,6 @@
+input_boolean.enable_waterfall:
+  emulated_hue: true
+  emulated_hue_name: "Waterfall"
 switch.kitchen_sink_light:
   emulated_hue: true
   emulated_hue_name: "Kitchen Sink"

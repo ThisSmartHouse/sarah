@@ -20,7 +20,11 @@ history:
 logbook: !include ./configuration/logbook.yaml
 discovery:
 sun:
-#logger:
+logger:
+  default: info
+  logs:
+    aioautomatic: debug
+    homeassistant.components.device_tracker.automatic: debug
 
 alexa:
   intents: !include_dir_merge_named ./configuration/alexa/intents
