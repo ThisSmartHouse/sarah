@@ -1,3 +1,6 @@
+automation.clip_mperks_coupons:
+  friendly_name: "Automatically Clip mPerks Coupons"
+  entity_picture: "http://home.coogle.org/images/icons/meijer.png"
 automation.alert_backroom_water_leak:
   friendly_name: "Backroom Water Detection Warning"
   icon: mdi:comment-alert

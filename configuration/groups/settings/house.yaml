@@ -7,3 +7,4 @@ settings_house:
     - input_boolean.enable_garden_irrigation
     - input_boolean.enable_light_automation
     - input_boolean.enable_waterfall_automation
+    - automation.clip_mperks_coupons
