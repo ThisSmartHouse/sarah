@@ -83,10 +83,10 @@ class ClipMPerksCommand extends Command
                 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36'
             ],
             'form_params' => [
-                'autoPopEmail' => 'john@coggeshall.org',
-                'email' => 'john@coggeshall.org',
-                'hideEmail' => 'john@coggeshall.org',
-                'password' => '***REMOVED***',
+                'autoPopEmail' => config('services.mperks.username'),
+                'email' => config('services.mperks.username'),
+                'hideEmail' => config('services.mperks.username'),
+                'password' => config('services.mperks.password'),
                 'pin' => '',
                 'rememberMe' => 'true',
                 'showSuccess' => 'false',
@@ -481,6 +481,10 @@ class ClipMPerksCommand extends Command
         
     protected function sendClippedEmail(array $coupons)
     {
+        if(empty($coupons)) {
+            return;
+        }
+
         $this->info("Sending Clipped Coupons List via E-mail...");
         
         $sparkpost = app('SparkPost');

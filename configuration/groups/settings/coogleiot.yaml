@@ -9,3 +9,4 @@ settings_coogleiot:
     - sensor.coogleiot_kitchen_sink
     - sensor.coogleiot_garage_door
     - sensor.coogleiot_diningroom_cabinet
+    - sensor.coogleiot_freshwater_sump_power

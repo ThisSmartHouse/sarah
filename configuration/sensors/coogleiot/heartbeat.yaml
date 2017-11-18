@@ -1,4 +1,16 @@
 - platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-sump-power"
+  name: coogleiot_freshwater_sump_power_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-sump-power"
+  name: coogleiot_freshwater_sump_power_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
   state_topic: "/coogleiot/devices/diningroom-cabinet"
   name: coogleiot_diningroom_cabinet_ip
   value_template: "{{ value_json.ip }}"
@@ -106,6 +118,12 @@
   value_template: "{{ value_json.timestamp }}"
   expire_after: 600
   
+- platform: template
+  sensors:
+    coogleiot_freshwater_sump_power:
+      value_template: "{{ states('sensor.coogleiot_freshwater_sump_power_ip') }} (v{{ states('sensor.coogleiot_freshwater_sump_power_version') }})"
+      friendly_name: "Freshwater Sump Power"
+      
 - platform: template
   sensors:
     coogleiot_upstairs_hallway:

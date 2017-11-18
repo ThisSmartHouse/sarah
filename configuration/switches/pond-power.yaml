@@ -17,7 +17,7 @@
   payload_on: "1"
   payload_off: "0"
 - platform: mqtt
-  name: Outdoor Switch 4
+  name: Pond Aerator
   command_topic: /pond/switch/4
   state_topic: /pond/switch/4/state
   payload_on: "1"

@@ -5,5 +5,10 @@ fish_freshwater_controls:
     - switch.freshwater_sump_light_7
     - switch.freshwater_turtle_lights
     - switch.freshwater_tank_lights
+    - switch.freshwater_return_pump
     - switch.freshwater_switch_1
     - switch.freshwater_switch_2
+    - switch.freshwater_sump_switch_1
+    - switch.freshwater_sump_switch_2
+    - switch.freshwater_sump_switch_4
+    

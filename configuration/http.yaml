@@ -1,6 +1,6 @@
 server_port: 8123
 api_password: !secret http_password
-ip_ban_enabled: true
+ip_ban_enabled: false
 use_x_forwarded_for: true
 login_attempts_threshold: 5
 base_url: https://home.coogle.org

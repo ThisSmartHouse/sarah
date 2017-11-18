@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'mperks' => [
+        'username' => env('MPERKS_USERNAME'),
+        'password' => env('MPERKS_PASSWORD')
+    ],
+    
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

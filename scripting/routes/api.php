@@ -21,7 +21,7 @@ Route::group([
         'prefix' => 'ses'
     ], function() {
         
-        Route::post('process-incoming', [
+        Route::any('process-incoming', [
             'as' => 'api.aws.ses.process-incoming',
             'uses' => 'Api\Aws\SesController@processIncoming'
         ]);

@@ -12,4 +12,4 @@ outdoors_power:
     - switch.pond_string_lights
     - switch.pond_waterfall_pump
     - switch.garden_soaker_pump
-    - switch.outdoor_switch_4
+    - switch.pond_aerator
