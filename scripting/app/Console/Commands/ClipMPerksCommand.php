@@ -86,7 +86,7 @@ class ClipMPerksCommand extends Command
                 'autoPopEmail' => 'john@coggeshall.org',
                 'email' => 'john@coggeshall.org',
                 'hideEmail' => 'john@coggeshall.org',
-                'password' => '4Ph0enix',
+                'password' => '***REMOVED***',
                 'pin' => '',
                 'rememberMe' => 'true',
                 'showSuccess' => 'false',
