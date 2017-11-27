@@ -1,0 +1,6 @@
+default_quick_sensors:
+  name: Information
+  control: hidden
+  entities:
+    - sensor.outdoor_temperature
+    - sensor.grill_temperature

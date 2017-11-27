@@ -25,3 +25,17 @@
     - service: script.house_mode_normal
     - service: automation.turn_on
       entity_id: automation.trigger_house_mode_change_normal
+      
+- id: Trigger action on house mode change to away
+  alias: trigger_house_mode_change_away
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.home_state
+      to: Away
+  action:
+    - service: automation.turn_off
+      entity_id: automation.trigger_house_mode_change_away
+    - service: script.house_mode_away
+    - service: automation.turn_on
+      entity_id: automation.trigger_house_mode_change_away

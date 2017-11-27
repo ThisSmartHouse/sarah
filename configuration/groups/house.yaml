@@ -2,10 +2,8 @@ House:
   view: yes
   icon: mdi:home-variant
   entities:
-    - group.dinner_menu
     - group.house_locations
     - group.house_internet
     - group.house_status
     - group.house_sensors
     - group.house_temperature
-    - group.house_air

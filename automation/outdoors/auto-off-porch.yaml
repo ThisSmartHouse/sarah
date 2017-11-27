@@ -1,0 +1,46 @@
+- id: Turn Off Back Porch Lights After 30 Mintues
+  alias: Turn Off Back Porch Lights After 30 Minutes
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: switch.back_porch_lights
+      from: 'off'
+      to: 'on'
+      for:
+        minutes: 30
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.enable_light_automation
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.enable_backporch_auto_off
+          state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.back_porch_lights
+
+- id: Turn Off Back Porch Power After 30 Mintues
+  alias: Turn Off Back Porch Power After 30 Minutes
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: switch.back_porch_power
+      from: 'off'
+      to: 'on'
+      for:
+        minutes: 30
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: input_boolean.enable_light_automation
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.enable_backporch_auto_off
+          state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.back_porch_power
+

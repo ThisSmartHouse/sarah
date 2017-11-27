@@ -1,6 +1,5 @@
 - id: Erase Menu On Sunday
   alias: auto_erase_dinner_menu
-  hide_entity: true
   trigger:
     platform: time
     at: '20:00:00'

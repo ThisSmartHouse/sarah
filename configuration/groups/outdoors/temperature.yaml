@@ -3,7 +3,6 @@ outdoors_temperature:
   icon: mdi:thermometer-lines
   entities:
     - sensor.outdoor_temperature
-    - sensor.pond_temperature
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_daily_high_apparent_temperature
     - sensor.dark_sky_daily_high_temperature

@@ -1,24 +1,24 @@
-- id: Turn off Living Room if no occupancy detected for 60 minutes
-  alias: Turn off Living Room if no occupancy detected for 60 minutes
-  hide_entity: true
-  trigger:
-  - platform: state
-    entity_id: sensor.livingroom_pir
-    to: 'off'
-    for:
-      minutes: 60
-  condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: input_boolean.enable_light_automation
-      state: 'on'
-  action:
-  - service: remote.turn_off
-    entity_id: remote.living_room
-  - service: light.turn_off
-    entity_id: light.bar_light
-  - service: light.turn_off
-    entity_id: light.circle_chair
-  - service: light.turn_off
-    entity_id: light.couch
+#- id: Turn off Living Room if no occupancy detected for 60 minutes
+#  alias: Turn off Living Room if no occupancy detected for 60 minutes
+#  hide_entity: true
+#  trigger:
+#  - platform: state
+#    entity_id: sensor.livingroom_pir
+#    to: 'off'
+#    for:
+#      minutes: 60
+#  condition:
+#    condition: and
+#    conditions:
+#    - condition: state
+#      entity_id: input_boolean.enable_light_automation
+#      state: 'on'
+#  action:
+#  - service: remote.turn_off
+#    entity_id: remote.living_room
+#  - service: light.turn_off
+#    entity_id: light.bar_light
+#  - service: light.turn_off
+#    entity_id: light.circle_chair
+#  - service: light.turn_off
+#    entity_id: light.couch

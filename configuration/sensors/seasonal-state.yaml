@@ -1,0 +1,3 @@
+- platform: mqtt
+  state_topic: "/home/seasonal/state"
+  name: seasonal_state

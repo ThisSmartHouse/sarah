@@ -1,0 +1,8 @@
+seasonal_state:
+  name: Current House Seasonal State
+  options:
+    - None
+    - Spring / Summer
+    - Fall / Winter
+  initial: None
+  icon: mdi:earth

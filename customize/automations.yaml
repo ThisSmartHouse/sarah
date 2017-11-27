@@ -1,3 +1,7 @@
+
+automation.auto_erase_dinner_menu:
+  friendly_name: "Reset Dinner Menu on Sunday"
+  icon: mdi:food-fork-drink
 automation.clip_mperks_coupons:
   friendly_name: "Automatically Clip mPerks Coupons"
   entity_picture: "http://home.coogle.org/images/icons/meijer.png"

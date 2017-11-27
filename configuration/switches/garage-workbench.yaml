@@ -1,0 +1,13 @@
+- platform: mqtt
+  name: Garage Workbench Light
+  command_topic: /garage-bench-power/switch/1
+  state_topic: /garage-bench-power/switch/1/state
+  payload_on: "1"
+  payload_off: "0"
+  
+- platform: mqtt
+  name: Garage Power 2
+  command_topic: /garage-bench-power/switch/2
+  state_topic: /garage-bench-power/switch/2/state
+  payload_on: "1"
+  payload_off: "0"

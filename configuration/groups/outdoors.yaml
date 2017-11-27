@@ -8,4 +8,5 @@ Outdoors:
     - group.outdoors_temperature
     - group.outdoors_weather
     - group.outdoors_cooking
+    - group.outdoors_settings
     - camera.local_radar

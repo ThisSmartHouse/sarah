@@ -1,0 +1,27 @@
+- id: Trigger action on house seasonal mode change to fall-winter
+  alias: trigger_house_seasonal_mode_change_fall_winter
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.seasonal_state
+      to: Fall / Winter
+  action:
+    - service: automation.turn_off
+      entity_id: automation.trigger_house_seasonal_mode_change_fall_winter
+    - service: script.seasonal_mode_fall_winter
+    - service: automation.turn_on
+      entity_id: automation.trigger_house_seasonal_mode_change_fall_winter
+      
+- id: Trigger action on house seasonal mode change to spring-summer
+  alias: trigger_house_seasonal_mode_change_spring_summer
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: input_select.seasonal_state
+      to: Spring / Summer
+  action:
+    - service: automation.turn_off
+      entity_id: automation.trigger_house_seasonal_mode_change_spring_summer
+    - service: script.seasonal_mode_spring_summer
+    - service: automation.turn_on
+      entity_id: automation.trigger_house_seasonal_mode_change_spring_summer

@@ -17,5 +17,5 @@
         message: >
           {{ [
                "The Freshwater Tank Temperature is {{ float(states('sensor.freshwater_tank_temperature')) }} degrees and needs your help!",
-               "Crap, if the Freshwater Tank is {{ float(states('sensor.freshwater_tank_temperature')) }} degrees, you know it's hot!"
+               "Crap, the Freshwater Tank is {{ float(states('sensor.freshwater_tank_temperature')) }} degrees, that's not great."
              ] | random }}

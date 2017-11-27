@@ -1,4 +1,4 @@
-house_mode_bedtime:
+house_mode_away:
   sequence:
     - service: switch.turn_off
       entity_id: switch.garage_workbench_light
@@ -22,18 +22,12 @@ house_mode_bedtime:
       entity_id: switch.hall_portrait
     - service: switch.turn_off
       entity_id: switch.hall_lamp
-    - service: switch.turn_off
-      entity_id: switch.freshwater_turtle_lights
-    - service: switch.turn_off
-      entity_id: switch.freshwater_tank_lights
     - service: light.turn_off
       entity_id: light.front_hall
     - service: light.turn_off
       entity_id: group.all_lights
     - service: switch.turn_off
       entity_id: switch.office_desk_lamp
-    - service: switch.turn_off
-      entity_id: switch.saltwater_lights
     - service: switch.turn_off
       entity_id: switch.workshop_lights
     - service: switch.turn_off
@@ -42,31 +36,7 @@ house_mode_bedtime:
       entity_id: input_boolean.enable_waterfall
     - service: remote.turn_off
       entity_id: remote.living_room
-    - service: light.turn_on
-      entity_id: light.circle_chair
-      data:
-        brightness_pct: 40
-        rgb_color:
-          - 0
-          - 0
-          - 255
-    - service: light.turn_on
-      entity_id: light.kitchen_two
-      data:
-        brightness_pct: 40
-        rgb_color:
-          - 0
-          - 0
-          - 255
-    - service: light.turn_on
-      entity_id: light.bathroom_1
-      data:
-        brightness_pct: 10
-    - service: light.turn_on
-      entity_id: light.bathroom_2
-      data:
-        brightness_pct: 10
     - service: input_select.select_option
       data:
         entity_id: input_select.home_state
-        option: Bedtime
+        option: Away

@@ -1,0 +1,26 @@
+- id: Turn On Backyard Lights After Dark When Someone Comes Home
+  alias: Turn On Backyard Lights After Dark When Someone Comes Home
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id: device_tracker.bayleysiphone
+      from: 'not_home'
+      to: 'home'
+    - platform: state
+      entity_id: device_tracker.johncoggeshallsiphone
+      from: 'not_home'
+      to: 'home'
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: sun.sun
+          state: 'below_horizon'
+        - condition: state
+          entity_id: input_boolean.enable_light_automation
+          state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.pond_string_lights
+    - service: switch.turn_on
+      entity_id: switch.back_porch_lights

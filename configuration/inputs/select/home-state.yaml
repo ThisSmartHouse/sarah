@@ -3,5 +3,6 @@ home_state:
   options:
     - Normal
     - Bedtime
+    - Away
   initial: Normal
   icon: mdi:home-circle

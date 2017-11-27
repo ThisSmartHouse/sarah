@@ -1,4 +1,16 @@
 - platform: mqtt
+  state_topic: "/coogleiot/devices/garage-workbench-power"
+  name: coogleiot_garage_workbench_power_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/garage-workbench-power"
+  name: coogleiot_garage_workbench_power_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+    
+- platform: mqtt
   state_topic: "/coogleiot/devices/freshwater-sump-power"
   name: coogleiot_freshwater_sump_power_ip
   value_template: "{{ value_json.ip }}"
@@ -23,13 +35,13 @@
   expire_after: 600
 
 - platform: mqtt
-  state_topic: "/coogleiot/devices/garage-door"
+  state_topic: "/coogleiot/devices/garagedoor-client"
   name: coogleiot_garage_door_ip
   value_template: "{{ value_json.ip }}"
   expire_after: 600
 
 - platform: mqtt
-  state_topic: "/coogleiot/devices/garage-door"
+  state_topic: "/coogleiot/devices/garagedoor-client"
   name: coogleiot_garage_door_version
   value_template: "{{ value_json.coogleiot_version }}"
   expire_after: 600
@@ -167,3 +179,9 @@
     coogleiot_diningroom_cabinet:
       value_template: "{{ states('sensor.coogleiot_diningroom_cabinet_ip') }} (v{{ states('sensor.coogleiot_diningroom_cabinet_version') }})"
       friendly_name: "Dining Room Cabinet"
+      
+- platform: template
+  sensors:
+    coogleiot_garage_workbench_power:
+      value_template: "{{ states('sensor.coogleiot_garage_workbench_power_ip') }} (v{{ states('sensor.coogleiot_garage_workbench_power_version') }})"
+      friendly_name: "Garage Workbench Power"

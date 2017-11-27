@@ -1,0 +1,12 @@
+seasonal_mode_spring_summer:
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.enable_garden_irrigation
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.enable_waterfall_automation
+    - service: switch.turn_off
+      entity_id: switch.pond_aerator
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.seasonal_state
+        option: Spring / Summer

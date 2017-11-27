@@ -1,4 +1,7 @@
 default_view:
   view: yes
   entities:
-    - group.sarah_weblinks
+    - group.default_quick_controls
+    - group.default_quick_sensors
+    - group.dinner_menu
+    - camera.local_radar

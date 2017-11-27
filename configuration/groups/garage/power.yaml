@@ -1,0 +1,7 @@
+garage_power:
+  name: Power Controls
+  control: hidden
+  entities:
+    - switch.garage_workbench_light
+    - switch.garage_power_2
+    

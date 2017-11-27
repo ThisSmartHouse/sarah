@@ -1,0 +1,5 @@
+enable_backporch_auto_off:
+  name: Back Porch Lights Auto-Off
+  initial: on
+  icon: mdi:lightbulb
+  

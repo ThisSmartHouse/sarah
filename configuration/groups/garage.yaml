@@ -1,0 +1,7 @@
+Garage:
+  view: yes
+  icon: mdi:garage
+  control: hidden
+  entities:
+    - group.garage_garage
+    - group.garage_power

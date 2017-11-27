@@ -1,3 +1,11 @@
+sensor.home_humidity:
+  icon: mdi:water-percent
+sensor.coogleiot_diningroom_cabinet:
+  icon: mdi:power-socket-us
+sensor.coogleiot_garage_workbench_power:
+  icon: mdi:power-socket-us
+sensor.coogleiot_freshwater_sump_power:
+  icon: mdi:power-socket-us
 sensor.coogleiot_garage_door:
   icon: mdi:garage
 sensor.coogleiot_kitchen_sink:
@@ -55,10 +63,13 @@ sensor.workshop_door:
   friendly_name: "Workshop Door"
 sensor.frontdoor:
   friendly_name: "Front Door"
+  icon: mdi:door
 sensor.backdoor:
   friendly_name: "Back Door"
+  icon: mdi:door
 sensor.sidedoor:
   friendly_name: "Side Door"
+  icon: mdi:door
 sensor.kitchen_pir:
   friendly_name: "Kitchen Movement"
   
@@ -80,6 +91,9 @@ sensor.pond_temperature:
 
 sensor.home_power_cost:
   friendly_name: "Est. Current Power Cost"
+sensor.home_power_consumption:
+  friendly_name: "Power Consumption"
+  icon: mdi:flash-circle
   
 sensor.ups_packages:
   friendly_name: "UPS Packages Enroute"

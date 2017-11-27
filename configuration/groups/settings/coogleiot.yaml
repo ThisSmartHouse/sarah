@@ -10,3 +10,4 @@ settings_coogleiot:
     - sensor.coogleiot_garage_door
     - sensor.coogleiot_diningroom_cabinet
     - sensor.coogleiot_freshwater_sump_power
+    - sensor.coogleiot_garage_workbench_power

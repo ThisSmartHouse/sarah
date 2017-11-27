@@ -1,0 +1,8 @@
+outdoors_settings:
+  name: Settings
+  icon: mdi:settings
+  control: hidden
+  entities:
+    - input_boolean.enable_backporch_auto_off
+    - input_boolean.enable_garden_irrigation
+    - input_boolean.enable_waterfall_automation
