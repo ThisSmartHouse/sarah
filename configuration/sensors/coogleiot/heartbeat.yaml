@@ -1,4 +1,16 @@
 - platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-doser"
+  name: coogleiot_freshwater_doser_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/freshwater-doser"
+  name: coogleiot_freshwater_doser_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
   state_topic: "/coogleiot/devices/garage-workbench-power"
   name: coogleiot_garage_workbench_power_ip
   value_template: "{{ value_json.ip }}"
@@ -185,3 +197,9 @@
     coogleiot_garage_workbench_power:
       value_template: "{{ states('sensor.coogleiot_garage_workbench_power_ip') }} (v{{ states('sensor.coogleiot_garage_workbench_power_version') }})"
       friendly_name: "Garage Workbench Power"
+      
+- platform: template
+  sensors:
+    coogleiot_freshwater_doser:
+      value_template: "{{ states('sensor.coogleiot_freshwater_doser_ip') }} (v{{ states('sensor.coogleiot_freshwater_doser_version') }})"
+      friendly_name: "Freshwater Doser"

@@ -1,6 +1,0 @@
-- platform: mqtt
-  name: Diana Chiller
-  command_topic: /diana-tank/chiller
-  state_topic: /status/tank/diana/chiller
-  payload_on: "1"
-  payload_off: "0"

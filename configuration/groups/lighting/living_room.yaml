@@ -1,10 +1,7 @@
 lighting_living_room:
   name: Living Room
   entities:
-    - light.living_room
-    - light.bar_light
-    - light.circle_chair
-    - light.couch
-    - light.living_room_wall
+    - light.living_room_lights
     - light.stairwell
     - switch.catbot
+    - switch.accent_lighting

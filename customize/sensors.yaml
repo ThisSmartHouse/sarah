@@ -1,3 +1,8 @@
+sensor.coogleiot_freshwater_doser:
+  icon: mdi:flask-outline
+sensor.doser_pump_percent_complete:
+  friendly_name: "Doser Completion"
+  icon: mdi:flask-outline  
 sensor.home_humidity:
   icon: mdi:water-percent
 sensor.coogleiot_diningroom_cabinet:
@@ -95,58 +100,6 @@ sensor.home_power_consumption:
   friendly_name: "Power Consumption"
   icon: mdi:flash-circle
   
-sensor.ups_packages:
-  friendly_name: "UPS Packages Enroute"
-  entity_picture: http://home.coogle.org/images/ups-logo.png
-sensor.usps_arrived_at_post_office:
-  friendly_name: "Arrived At Post Office"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-sensor.usps_departed_usps_destination_facility:
-  friendly_name: "Departed Dest. Facility"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-sensor.usps_delivered:
-  friendly_name: "Delivered"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  
-sensor.usps_packages_packages:
-  friendly_name: "Total Packages Tracked"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-sensor.usps_packages_mail:
-  friendly_name: "Mail Arriving Today"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-sensor.usps_out_for_delivery:
-  friendly_name: "Packages Arriving Today"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-sensor.usps_picked_up_by_shipping_partner:
-  friendly_name: "Packages Picked Up By Partner"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-sensor.usps_arrived:
-  friendly_name: "Arrived at Destination Facility"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-sensor.usps_departed_origin:
-  friendly_name: "Departed Origin Facility"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-sensor.usps_departed:
-  friendly_name: "Departed Shipping Partner Facility"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-sensor.usps_departed_usps_facility:
-  friendly_name: "Departed USPS Facility"
-  icon: mdi:package-variant-closed
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-sensor.usps_item_accepted:
-  friendly_name: "Item Accepted"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-sensor.usps_departed_parter_facility:
-  friendly_name: "Departed Partner Facility"
-  entity_picture: http://home.coogle.org/images/usps_logo.jpg
-  icon: mdi:package-variant-closed
-
 sensor.freezer_temperature:
   friendly_name: "Freezer Temperature"
 sensor.grill_temperature:

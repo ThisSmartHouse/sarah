@@ -9,4 +9,4 @@ Settings:
     - group.settings_vacation
     - group.settings_coogleiot
     - group.sarah_weblinks
-    
+    - configurator.philips_hue

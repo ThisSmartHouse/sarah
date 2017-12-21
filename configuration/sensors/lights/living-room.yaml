@@ -1,0 +1,4 @@
+- platform: template
+  sensors:
+    living_room_lights_brightness:
+      value_template: "{{ ((states.light.living_room_1.attributes.brightness + states.light.living_room_2.attributes.brightness + states.light.living_room_3.attributes.brightness + states.light.living_room_4.attributes.brightness) / 4) | int }}"

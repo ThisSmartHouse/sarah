@@ -15,8 +15,4 @@
       state: 'on'
   action:
   - service: light.turn_off
-    entity_id: light.bathroom_1
-  - service: light.turn_off
-    entity_id: light.bathroom_2
-  - service: light.turn_off
-    entity_id: light.bathtub
+    entity_id: light.upstairs_bathroom_lights

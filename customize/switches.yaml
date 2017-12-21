@@ -1,24 +1,11 @@
+switch.christmas_tree:
+  haaska_name: "Christmas Tree"
+  haaska_hidden: false
 switch.back_porch:
   hidden: true
+  haaska_name: "Back Porch"
+  haaska_hidden: false
 switch.pond_waterfall_pump:
-  hidden: true
-light.bathroom_1:
-  hidden: true
-light.bathroom_2:
-  hidden: true
-light.dining_room_1:
-  hidden: true
-light.dining_room_2:
-  hidden: true
-light.dining_room_corner:
-  hidden: true
-light.office_one:
-  hidden: true
-light.office_two:
-  hidden: true
-light.bedroom_1:
-  hidden: true
-light.bedroom_2:
   hidden: true
 switch.grow_lights_1_15:
   hidden: true
@@ -32,3 +19,9 @@ switch.saltwater_light_1:
   hidden: true
 switch.saltwater_light_2:
   hidden: true
+switch.grow_lights:
+  haaska_name: "Grow Lights"
+  haaska_hidden: false
+switch.workshop_lights:
+  haaska_hidden: false
+  

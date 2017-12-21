@@ -1,9 +1,9 @@
 lighting_kitchen:
   name: Kitchen / Dining
   entities:
+    - light.kitchen_lights
+    - light.dining_room_lights
     - switch.kitchen_sink_light
     - switch.kitchen_sink_power
-    - light.kitchen
-    - light.dining_room
     - switch.dining_room_cabinet
     - switch.flag_spotlight

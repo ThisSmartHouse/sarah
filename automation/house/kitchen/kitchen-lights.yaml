@@ -16,7 +16,7 @@
       state: 'off'
   action:
   - service: light.turn_on
-    entity_id: light.kitchen
+    entity_id: light.kitchen_lights
     data:
       brightness_pct: 100
     
@@ -40,4 +40,4 @@
       state: 'off'
   action:
   - service: light.turn_off
-    entity_id: light.kitchen
+    entity_id: light.kitchen_lights

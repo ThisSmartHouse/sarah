@@ -1,16 +1,19 @@
+script.doser_activate:
+  icon: mdi:flask-outline
+  friendly_name: "Activate Doser"
+  
 script.reload_groups:
   icon: mdi:refresh
 script.reload_automations:
   icon: mdi:refresh
 script.restart_sarah:
   icon: mdi:power-settings
-script.garage_door:
-  friendly_name: Garage Door
-  icon: mdi:garage
-  emulated_hue: true
-  emulated_hue_name: "Garage Door"
-script.gate_open:
-  friendly_name: "Front Gate"
-  icon: mdi:gate
-  emulated_hue: true
-  emulated_hue_name: "Gate"
+
+script.house_mode_normal:
+  haaska_hidden: false
+    
+script.house_mode_bedtime:
+  haaska_hidden: false
+  
+script.house_mode_away:
+  haaska_hidden: false

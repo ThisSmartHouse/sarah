@@ -1,0 +1,28 @@
+- id: Flash When Doorbell ring
+  alias: Flash Lights When Doorbell Rings
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ring_front_door_ding
+    from: 'off'
+    to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.doorbell_flasher_start
+    - delay:
+        seconds: 20
+    - service: script.turn_on
+      data:
+        entity_id: script.doorbell_flasher_stop
+
+- id: Turn off Flash When Ring Ding Reset
+  alias: Turn off Flash When Ring Ding Reset
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ring_front_door_ding
+    from: 'on'
+    to: 'off'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.doorbell_flasher_stop

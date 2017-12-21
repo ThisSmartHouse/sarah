@@ -1,37 +1,15 @@
 house_mode_normal:
   sequence:
-    - service: light.turn_on
-      entity_id: light.circle_chair
-      data:
-        brightness_pct: 100
-        rgb_color:
-          - 255
-          - 220
-          - 153
-    - service: light.turn_on
-      entity_id: light.kitchen_two
-      data:
-        brightness_pct: 100
-        rgb_color:
-          - 255
-          - 220
-          - 153
-    - service: light.turn_on
-      entity_id: light.bathroom_1
-      data:
-        brightness_pct: 100
-    - service: light.turn_on
-      entity_id: light.bathroom_2
-      data:
-        brightness_pct: 100
+    - service: scene.turn_on
+      entity_id: scene.kitchen_normal
+    - service: scene.turn_on
+      entity_id: scene.living_room_normal
+    - service: switch.turn_off
+      entity_id: switch.accent_lighting
     - service: light.turn_off
-      entity_id: light.circle_chair
+      entity_id: light.living_room_lights
     - service: light.turn_off
-      entity_id: light.kitchen_two
-    - service: light.turn_off
-      entity_id: light.bathroom_1
-    - service: light.turn_off
-      entity_id: light.bathroom_2
+      entity_id: light.kitchen_lights
     - service: input_select.select_option
       data:
         entity_id: input_select.home_state

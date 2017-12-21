@@ -1,2 +1,6 @@
 #purge_days: 30
 db_url: !secret database_dsn
+exclude:
+  entities:
+    - sensor.doser_pump_turns_remaining
+    - sensor.doser_pump_percent_complete

@@ -2,13 +2,13 @@
   state_topic: "/status/3dprinters/1/progress/printing"
   name: 3dprinter1_percent_complete
   unit_of_measurement: '%'
-  expire_after: 30
+  expire_after: 1300
   value_template: "{{ value_json.progress }}"
 
 - platform: mqtt
   state_topic: "/status/3dprinters/1/progress/printing"
   name: 3dprinter1_percent_file
-  expire_after: 30
+  expire_after: 1300
   value_template: "{{ value_json.path.split('/') | last }}"
 
 - platform: command_line

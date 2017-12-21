@@ -1,8 +1,0 @@
-Shipments:
-  view: yes
-  control: hidden
-  icon: mdi:package-variant
-  entities:
-    - group.shipments_status
-    - group.shipments_details
-    - camera.usps_mail

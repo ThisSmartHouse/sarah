@@ -1,0 +1,8 @@
+- platform: template
+  covers:
+    front_gate:
+      friendly_name: "Gate"
+      open_cover:
+        service: script.gate_open
+      close_cover:
+        service: script.gate_open

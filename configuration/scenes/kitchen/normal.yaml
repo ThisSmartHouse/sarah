@@ -1,0 +1,25 @@
+- name: Kitchen Normal
+  entities:
+    switch.kitchen_sink_light:
+      state: on
+    light.kitchen_1:
+      state: on
+      rgb_color:
+        - 255
+        - 220
+        - 153
+      brightness_pct: 100
+    light.kitchen_2:
+      state: on
+      rgb_color:
+        - 255
+        - 220
+        - 153
+      brightness_pct: 100
+    light.kitchen_3:
+      state: on
+      rgb_color:
+        - 255
+        - 220
+        - 153
+      brightness_pct: 100

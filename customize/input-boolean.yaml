@@ -1,0 +1,3 @@
+input_boolean.enable_waterfall:
+  haaska_hidden: false
+  haaska_name: "Waterfall"

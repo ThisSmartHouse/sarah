@@ -1,0 +1,17 @@
+- name: Living Room Bedtime
+  entities:
+    switch.accent_lighting:
+      state: off
+    light.living_room_1:
+      state: off
+    light.living_room_2:
+      state: on
+      rgb_color:
+        - 0
+        - 0
+        - 255
+      brightness_pct: 100
+    light.living_room_3:
+      state: off
+    light.living_room_4:
+      state: off

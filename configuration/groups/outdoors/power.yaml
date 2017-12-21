@@ -3,7 +3,6 @@ outdoors_power:
   icon: mdi:tree
   control: hidden
   entities:
-    - script.gate_open
     - light.front_porch
     - switch.back_porch_lights
     - switch.back_porch_power

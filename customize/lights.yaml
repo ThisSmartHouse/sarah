@@ -1,4 +1,23 @@
-light.dimmer_7:
+light.dimmer_2:
   friendly_name: "Bedroom Dimmer"
-light.bedroom_jewelry:
-  friendly_name: "Jewelry Table"
+
+light.master_bedroom_lights:
+  haaska_name: "Bedroom Lights"
+  haaska_hidden: false
+  
+light.living_room_lights:
+  haaska_name: "Living Room Lights"
+  haaska_hidden: false
+  
+light.kitchen_lights:
+  haaska_name: "Kitchen Lights"
+  haaska_hidden: false
+  
+light.office_lights:
+  haaska_name: "Office Lights"
+  haaska_hidden: false
+
+light.dining_room_lights:
+  haaska_name: "Dining Room Lights"
+  haaska_hidden: false
+  

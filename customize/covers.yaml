@@ -1,0 +1,8 @@
+cover.front_gate:
+  icon: mdi:gate
+  haaska_hidden: false
+  haaska_name: "Gate"
+  
+cover.garage_door:
+  haaska_hidden: false
+  haaska_name: "Garage"

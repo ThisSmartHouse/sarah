@@ -1,0 +1,4 @@
+- platform: template
+  sensors:
+    office_lights_brightness:
+      value_template: "{{ ((states.light.office_1.attributes.brightness + states.light.office_2.attributes.brightness) / 2) | int }}"

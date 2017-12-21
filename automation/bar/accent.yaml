@@ -7,7 +7,7 @@
     offset: -02:00:00
   action:
     service: switch.turn_on
-    entity_id: switch.bar_lights
+    entity_id: switch.accent_lighting
     
 - id: Bar Accent Lights Off
   alias: Bar Accent Lights Off
@@ -17,4 +17,4 @@
     at: 03:00:00
   action:
     service: switch.turn_off
-    entity_id: switch.bar_lights
+    entity_id: switch.accent_lighting

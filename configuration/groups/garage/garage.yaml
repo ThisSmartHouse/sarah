@@ -2,5 +2,4 @@ garage_garage:
   name: Garage Status
   control: hidden
   entities:
-    - script.garage_door
-    - sensor.garage_door
+    - cover.garage_door

@@ -1,0 +1,8 @@
+- id: Dose Freshwater Tank
+  alias: Dose Freshwater Tank
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+    service: script.doser_activate

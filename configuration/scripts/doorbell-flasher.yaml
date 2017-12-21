@@ -1,0 +1,60 @@
+doorbell_flasher_stop:
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.doorbell_flasher_start
+    - service: script.turn_off
+      data:
+        entity_id: script.doorbell_flasher_loop
+    - service: script.turn_off
+      data:
+        entity_id: script.doorbell_flasher_start
+    - service: script.turn_off
+      data:
+        entity_id: script.doorbell_flasher_loop
+        
+doorbell_flasher_start:
+  alias: Doorbell Flasher
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.office_1
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.office_2
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_2
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_2
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.master_bedroom_1
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.master_bedroom_2
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.upstairs_bathroom_1
+        flash: short
+    - service: light.turn_on
+      data:
+        entity_id: light.upstairs_bathroom_2
+        flash: short
+    - service: script.turn_on
+      data:
+        entity_id: script.doorbell_flasher_loop
+doorbell_flasher_loop:
+  sequence:
+    - delay:
+        seconds: 2
+    - service: script.turn_on
+      data:
+        entity_id: script.doorbell_flasher_start

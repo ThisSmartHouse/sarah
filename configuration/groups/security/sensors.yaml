@@ -2,6 +2,8 @@ security_sensors:
   name: Sensors
   control: hidden
   entities:
+    - binary_sensor.ring_front_door_motion
+    - binary_sensor.ring_front_door_ding
     - sensor.frontdoor
     - sensor.sidedoor
     - sensor.backdoor

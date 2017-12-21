@@ -1,3 +1,9 @@
 - platform: mqtt
   state_topic: "/status/garage-door"
   name: garage_door
+  
+- platform: template
+  sensors:
+    garage_door_position:
+      friendly_name: "Garage Door Position"
+      value_template: "{% if((states('sensor.garage_door') is equalto 'unknown')  or (states('sensor.garage_door') is equalto 'closed')) %}0{% elif((states('sensor.garage_door') is equalto 'closing') or (states('sensor.garage_door') is equalto 'opening')) %}50{% elif(states('sensor.garage_door') is equalto 'open') %}100{% endif %}"

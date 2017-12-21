@@ -1,6 +1,6 @@
 lighting_master_bedroom:
   name: Bedroom
   entities:
-    - light.bedroom
+    - light.master_bedroom_lights
     - light.master_closet
-    - light.bedroom_jewelry
+    - light.jewelry_table

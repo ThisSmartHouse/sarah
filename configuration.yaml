@@ -7,25 +7,23 @@ homeassistant:
   time_zone: America/Detroit
   customize: !include_dir_merge_named customize
 
-usps:
-  username: !secret usps_username
-  password: !secret usps_password
-
 ffmpeg:
   ffmpeg_bin: /usr/bin/avconv
 
 frontend:
   javascript_version: latest
 updater:
+scene: !include_dir_merge_list ./configuration/scenes
 history:
 logbook: !include ./configuration/logbook.yaml
 discovery:
+cover: !include_dir_merge_list ./configuration/covers
 sun:
+wemo:
 logger:
   default: info
-  logs:
-    aioautomatic: debug
-    homeassistant.components.device_tracker.automatic: debug
+#  logs:
+#    aioautomatic: debug
 
 alexa:
   intents: !include_dir_merge_named ./configuration/alexa/intents
@@ -47,16 +45,22 @@ switch: !include_dir_merge_list ./configuration/switches
 sensor: !include_dir_merge_list ./configuration/sensors
 mqtt: !include ./configuration/mqtt.yaml
 automation: !include_dir_merge_list ./automation
-light: !include ./configuration/light.yaml
+light: !include_dir_merge_list ./configuration/lights
 remote: !include ./configuration/remote.yaml
 shell_command: !include_dir_merge_named ./configuration/shell_cmds
-emulated_hue: !include ./configuration/emulated-hue.yaml
+#emulated_hue: !include ./configuration/emulated-hue.yaml
 binary_sensor: !include_dir_merge_list ./configuration/binary-sensors
 
 input_boolean: !include_dir_merge_named ./configuration/inputs/booleans
 input_number: !include_dir_merge_named ./configuration/inputs/numbers
 input_text: !include_dir_merge_named ./configuration/inputs/text
 input_select: !include_dir_merge_named ./configuration/inputs/select
+
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+
+map:
 
 feedreader: !include ./configuration/feedreader.yaml
 
@@ -100,3 +104,9 @@ zone 6:
   name: Physical Therapy
   latitude: !secret physical_therapy_latitude
   longitude: !secret physical_thearpy_longitude
+  
+zone 7:
+  name: Kristen's House
+  latitude: !secret kristens_house_latitude
+  longitude: !secret kristens_house_longitude
+  

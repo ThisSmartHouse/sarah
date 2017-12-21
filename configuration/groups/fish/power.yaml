@@ -2,6 +2,7 @@ fish_power:
   name: Power
   control: hidden
   entities:
+    - switch.tank_chiller
     - switch.unassigned_8
     - switch.unassigned_9
     - switch.unassigned_10

@@ -1,0 +1,17 @@
+- platform: template
+  covers:
+    garage_door:
+      friendly_name: "Garage Door"
+      position_template: "{{ states('sensor.garage_door_position') }}"
+      open_cover:
+        service: script.garage_door
+      close_cover:
+        service: script.garage_door
+      stop_cover:
+        service: script.garage_door
+      icon_template: >-
+          {% if states('sensor.garage_door_position') | float > 0 %}
+            mdi:garage-open
+          {% else %}
+            mdi:garage
+          {% endif %}

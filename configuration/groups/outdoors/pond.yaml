@@ -3,6 +3,7 @@ outdoors_pond:
   icon: mdi:fish
   entities:
     - input_boolean.enable_waterfall
+    - input_number.pond_timeout
     - binary_sensor.pond_temperature_status
     - binary_sensor.pond_feeding_status
     - sensor.pond_temperature

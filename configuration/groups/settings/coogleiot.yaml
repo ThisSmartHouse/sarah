@@ -2,6 +2,7 @@ settings_coogleiot:
   name: CoogleIOT Devices
   control: hidden
   entities:
+    - sensor.coogleiot_freshwater_doser
     - sensor.coogleiot_upstairs_hallway
     - sensor.coogleiot_workshop
     - sensor.coogleiot_bbq_temp

@@ -1,0 +1,3 @@
+- platform: hue
+  host: hue.coogle.local
+  allow_unreachable: true
