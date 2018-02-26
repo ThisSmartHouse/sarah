@@ -5,7 +5,7 @@
   payload_on: "1"
   payload_off: "0"
 - platform: mqtt
-  name: Freshwater Switch 2
+  name: Freshwater Spotlights
   command_topic: /freshwater-power/switch/2
   state_topic: /freshwater-power/switch/2/state
   payload_on: "1"

@@ -3,7 +3,7 @@ fish_aquaponic_controls:
   control: hidden
   entities:
     - script.doser_activate
-    - sensor.doser_pump_percent_complete
+    - sensor.doser_last_ran
     - switch.cloner_sprayer_14
     - switch.grow_lights
     - input_number.peristalic_doser_turns

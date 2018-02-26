@@ -19,6 +19,9 @@
 - name: "3D Printer #2"
   url: "http://3dprinter-2.coogle.local/"
   icon: mdi:printer-3d
+- name: "3D Printer #3"
+  url: "http://3dprinter-3.coogle.local/"
+  icon: mdi:printer-3d
 - name: Frontdoor Camera
   url: "http://frontdoor-camera.coogle.local/"
   icon: mdi:webcam

@@ -1,5 +1,5 @@
-exclude:
-  entities:
-    - automation.push_weather_updates_to_mqtt
-    - automation.push_sun_updates_to_mqtt
-    - automation.push_octoprint_updates_to_mqtt
+#exclude:
+#  entities:
+#    - automation.push_weather_updates_to_mqtt
+#    - automation.push_sun_updates_to_mqtt
+#    - automation.push_octoprint_updates_to_mqtt

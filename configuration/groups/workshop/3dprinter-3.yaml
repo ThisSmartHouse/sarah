@@ -1,0 +1,7 @@
+workshop_3dprinter_3:
+  name: "3D Printer #3"
+  entities:
+    - weblink.3d_printer_3
+    - sensor.3dprinter3_state
+    - sensor.3dprinter3_percent_file
+    - sensor.3dprinter3_percent_complete

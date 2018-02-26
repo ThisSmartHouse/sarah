@@ -1,15 +1,5 @@
-- platform: mqtt
-  state_topic: "/peristalic/freshwater/1/state"
-  name: doser_pump_turns_remaining
-  
 - platform: template
   sensors:
-    doser_pump_percent_complete:
-      unit_of_measurement: '%'
+    doser_last_ran:
       value_template: >
-        {% if is_state('sensor.doser_pump_turns_remaining', '0') %}
-        0
-        {% else %}
-        {{ (((float(states('input_number.peristalic_doser_turns')) - float(states('sensor.doser_pump_turns_remaining'))) / float(states('input_number.peristalic_doser_turns'))) * 100) | round(2) }}
-        {% endif %}
-        
+        {{ as_timestamp(states.script.doser_activate.attributes.last_triggered)  | timestamp_custom("%b %d %Y - %I:%M %p") }}

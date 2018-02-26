@@ -53,7 +53,7 @@ class PollPrinterStatus extends Command
             
             print (string)$result->getBody();
         } catch(\Exception $e) {
-            print "{}";
+            print "{ \"error\" : \"{$e->getMessage()}\"}";
         }
         
         return;

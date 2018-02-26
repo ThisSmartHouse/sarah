@@ -40,3 +40,24 @@
         ,\n  \"job_percentage\" : \"{{ states('sensor.3dprinter2_percent_complete')\
         \ }}\",\n  \"file\" : \"{{ states('sensor.3dprinter2_percent_file') }}\"\n\
         } \n"
+- id: Push Octoprint Updates to MQTT (Printer 3)
+  alias: Push Octoprint Updates to MQTT (Printer 3)
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: sensor.3dprinter3_state
+  - platform: state
+    entity_id: sensor.3dprinter3_percent_complete
+  - platform: state
+    entity_id: sensor.3dprinter3_percent_file
+  - platform: event
+    event_type: homeassistant_start
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: /status/octoprint/3
+      retain: true
+      payload: "{\n  \"current_state\" : \"{{ states('sensor.3dprinter3_state') }}\"\
+        ,\n  \"job_percentage\" : \"{{ states('sensor.3dprinter3_percent_complete')\
+        \ }}\",\n  \"file\" : \"{{ states('sensor.3dprinter3_percent_file') }}\"\n\
+        } \n"

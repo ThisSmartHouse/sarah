@@ -1,0 +1,6 @@
+fish_automations:
+  name: Automations
+  control: hidden
+  entities:
+    - automation.freshwater_return
+    - automation.dose_freshwater_tank

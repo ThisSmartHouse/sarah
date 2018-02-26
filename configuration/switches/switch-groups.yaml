@@ -8,11 +8,13 @@
         entity_id:
           - switch.freshwater_tank_light_1
           - switch.freshwater_tank_light_2
+          - switch.freshwater_spotlights
       turn_off:
         service: switch.turn_off
         entity_id:
           - switch.freshwater_tank_light_1
           - switch.freshwater_tank_light_2
+          - switch.freshwater_spotlights
           
 - platform: template
   switches:
