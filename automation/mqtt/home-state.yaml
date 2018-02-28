@@ -1,6 +1,7 @@
 - id: Publish Home State to MQTT
   alias: publish_home_state_to_mqtt
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.home_state
@@ -14,6 +15,7 @@
 - id: Load Home State at Startup
   alias: load_home_state_startup
   hide_entity: true
+  initial_state: true
   trigger:
     platform: homeassistant
     event: start

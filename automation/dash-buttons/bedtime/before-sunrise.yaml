@@ -1,6 +1,7 @@
 - id: Activate Bedtime Mode on Dash Buttton Push Before Sunrise
   alias: dash_bedtime_before_sunrise
   hide_entity: true
+  initial_state: true
   trigger:
     platform: mqtt
     topic: /button/bedtime

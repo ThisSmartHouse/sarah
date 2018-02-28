@@ -1,5 +1,6 @@
 - id: Increment Bayley Speeding Counter
   alias: Increment Bayley Speeding Counter
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/notification:speeding"
@@ -15,6 +16,7 @@
 
 - id: Increment John Speeding Counter
   alias: Increment John Speeding Counter
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/notification:speeding"
@@ -30,6 +32,7 @@
       
 - id: Increment Unknown Speeding Counter
   alias: Increment Unknown Speeding Counter
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/notification:speeding"

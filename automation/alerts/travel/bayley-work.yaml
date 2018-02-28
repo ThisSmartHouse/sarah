@@ -1,5 +1,6 @@
 - id: Notify when Bayley Leaving Work
   alias: notify_when_bayley_leaves_work
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/ignition_on"
@@ -23,6 +24,7 @@
 
 - id: Notify when Bayley Arrives At Work
   alias: notify_when_bayley_arrives_work
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/ignition_off"

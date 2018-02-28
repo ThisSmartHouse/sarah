@@ -1,6 +1,7 @@
 - id: Push Weather Updates to MQTT
   alias: Push Weather Updates to MQTT
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.dark_sky_apparent_temperature

@@ -1,6 +1,7 @@
 - id: Turn Display Cabinet On At Sunset
   alias: Turn Display Cabinet On At Sunset
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunset
@@ -18,6 +19,7 @@
 - id: Turn Off Display Cabinet At 3am
   alias: Turn Off Display Cabinet At 3am
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 03:00:00

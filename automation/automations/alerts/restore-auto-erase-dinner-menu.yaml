@@ -1,6 +1,7 @@
 - id: Turn on Dinner Menu Clearing after two days
   alias: restore_auto_erase_dinner_menu
   hide_entity: true
+  initial_state: true
   trigger:
     platform: state
     entity_id: automation.auto_erase_dinner_menu

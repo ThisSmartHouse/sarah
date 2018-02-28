@@ -1,6 +1,7 @@
 - id: Turn off Upstairs Bathroom if no motion detected for 90 minutes in hallway
   alias: Turn off Upstairs Bathroom if no motion detected for 90 minutes in hallway
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.hallway_pir

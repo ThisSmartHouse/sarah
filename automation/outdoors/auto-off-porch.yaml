@@ -1,6 +1,7 @@
 - id: Turn Off Back Porch Lights After 30 Mintues
   alias: Turn Off Back Porch Lights After 30 Minutes
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: switch.back_porch_lights
@@ -24,6 +25,7 @@
 - id: Turn Off Back Porch Power After 30 Mintues
   alias: Turn Off Back Porch Power After 30 Minutes
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: switch.back_porch_power

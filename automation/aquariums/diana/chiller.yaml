@@ -1,5 +1,6 @@
 - id: Turn on chiller when tank warms
   alias: Turn on chiller when tank warms
+  initial_state: true
   trigger:
     platform: numeric_state
     entity_id: sensor.diana_tank_temperature
@@ -12,6 +13,7 @@
     
 - id: Turn off chiller when tank cools
   alias: Turn off chiller when tank cools
+  initial_state: true
   trigger:
     platform: numeric_state
     entity_id: sensor.diana_tank_temperature

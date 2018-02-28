@@ -1,6 +1,7 @@
 - id: Turn on Kitchen if motion detected (normal)
   alias: Turn on Kitchen if motion detected (normal)
   hide_entity: true
+  initial_state: true
   trigger:
   - entity_id: sensor.kitchen_pir
     platform: state
@@ -23,6 +24,7 @@
 - id: Turn off Kitchen if no motion detected for 20 minutes
   alias: Turn off Kitchen if no motion detected for 20 minutes
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.kitchen_pir

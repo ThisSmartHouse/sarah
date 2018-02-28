@@ -1,6 +1,7 @@
 - id: Freshwater Display Lights On
   alias: Freshwater Display Lights On
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: '10:00:00'
@@ -9,6 +10,7 @@
     entity_id: switch.freshwater_tank_lights
 - id: Freshwater Display Lights Off
   alias: Freshwater Display Lights Off
+  initial_state: true
   hide_entity: true
   trigger:
     platform: time

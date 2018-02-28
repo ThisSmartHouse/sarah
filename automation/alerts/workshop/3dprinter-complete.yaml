@@ -1,5 +1,6 @@
 - id: 3D Printer 1 Completion Notification
   alias: 3D Printer 1 Completion Notification
+  initial_state: true
   trigger:
     platform: state
     entity_id: sensor.3dprinter1_state
@@ -9,8 +10,10 @@
   - service: notify.john_phone_sms
     data:
       message: 'The 3D Print Job on Printer #1 Has Completed'
+
 - id: 3D Printer 2 Completion Notification
   alias: 3D Printer 2 Completion Notification
+  initial_state: true
   trigger:
     platform: state
     entity_id: sensor.3dprinter2_state
@@ -20,3 +23,16 @@
   - service: notify.john_phone_sms
     data:
       message: 'The 3D Print Job on Printer #2 Has Completed'
+
+- id: 3D Printer 3 Completion Notification
+  alias: 3D Printer 3 Completion Notification
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter3_state
+    from: Printing
+    to: Operational
+  action:
+  - service: notify.john_phone_sms
+    data:
+      message: 'The 3D Print Job on Printer #3 Has Completed'

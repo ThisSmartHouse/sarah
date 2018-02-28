@@ -1,6 +1,7 @@
 - id: Activate Workshop Exhaust on Dash Button Push
   alias: dash_workshop_exhaust
   hide_entity: true
+  initial_state: true
   trigger:
     platform: mqtt
     topic: /button/workshop-exhaust

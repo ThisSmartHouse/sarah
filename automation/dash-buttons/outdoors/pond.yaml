@@ -1,6 +1,7 @@
 - id: Automatically Activate Pond on Dash Button Push
   alias: dash_pond_waterfall
   hide_entity: true
+  initial_state: true
   trigger:
     platform: mqtt
     topic: /button/waterfall-activate

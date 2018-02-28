@@ -1,6 +1,7 @@
 - id: Turn On Pond Lights At Sunset
   alias: Turn On Pond Lights At Sunset
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunset
@@ -18,6 +19,7 @@
 - id: Turn Off Pond Lights at 2am
   alias: Turn Off Pond Lights at 2am
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 02:00:00

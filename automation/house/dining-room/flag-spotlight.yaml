@@ -1,6 +1,7 @@
 - id: Turn Flag Spotlight On At Sunet
   alias: Turn Flag Spotlight On At Sunset
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunset
@@ -18,6 +19,7 @@
 - id: Turn Off Flag Spotlight At 3am
   alias: Turn Off Flag Spotlight At 3am
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 03:00:00

@@ -1,5 +1,6 @@
 - id: Toggle Grow Lights on Dash Button Push
   alias: dash_grow_lights
+  initial_state: true
   hide_entity: true
   trigger:
     platform: mqtt

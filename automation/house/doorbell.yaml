@@ -1,5 +1,6 @@
 - id: Flash When Doorbell ring
   alias: Flash Lights When Doorbell Rings
+  initial_state: true
   trigger:
     platform: state
     entity_id: binary_sensor.ring_front_door_ding
@@ -17,6 +18,7 @@
 
 - id: Turn off Flash When Ring Ding Reset
   alias: Turn off Flash When Ring Ding Reset
+  initial_state: true
   trigger:
     platform: state
     entity_id: binary_sensor.ring_front_door_ding

@@ -1,6 +1,7 @@
 - id: Push Octoprint Updates to MQTT (Printer 1)
   alias: Push Octoprint Updates to MQTT (Printer 1)
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.3dprinter1_state
@@ -22,6 +23,7 @@
 - id: Push Octoprint Updates to MQTT (Printer 2)
   alias: Push Octoprint Updates to MQTT (Printer 2)
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.3dprinter2_state
@@ -43,6 +45,7 @@
 - id: Push Octoprint Updates to MQTT (Printer 3)
   alias: Push Octoprint Updates to MQTT (Printer 3)
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.3dprinter3_state

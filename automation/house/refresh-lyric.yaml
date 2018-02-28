@@ -1,5 +1,6 @@
 - id: Refresh Lyric
   alias: refresh_lyric_data
+  initial_state: true
   trigger:
     platform: time
     seconds: /30

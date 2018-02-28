@@ -1,5 +1,6 @@
 - id: Freshwater Sump Grow Light On
   alias: Freshwater Sump Grow Light On
+  initial_state: true
   hide_entity: true
   trigger:
     platform: time
@@ -10,6 +11,7 @@
     
 - id: Freshwater Sump Grow Light Off
   alias: Freshwater Sump Grow Light Off
+  initial_state: true
   hide_entity: true
   trigger:
     platform: time

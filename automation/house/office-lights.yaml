@@ -1,6 +1,7 @@
 - id: Turn off Office lights if no occupancy detected
   alias: Turn off Office lights if no occupancy detected
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: binary_sensor.office_occupancy

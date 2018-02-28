@@ -1,5 +1,6 @@
 - id: Remind if no dinner plan tomorrow (mon)
   hide_entity: true
+  initial_state: true
   alias: Remind if no dinner plan tomorrow (mon)
   trigger:
     platform: time
@@ -24,6 +25,7 @@
              
 - id: Remind if no dinner plan tomorrow (tue)
   hide_entity: true
+  initial_state: true
   alias: Remind if no dinner plan tomorrow (tue)
   trigger:
     platform: time
@@ -48,6 +50,7 @@
 
 - id: Remind if no dinner plan tomorrow (wed)
   hide_entity: true
+  initial_state: true
   alias: Remind if no dinner plan tomorrow (wed)
   trigger:
     platform: time
@@ -72,6 +75,7 @@
 
 - id: Remind if no dinner plan tomorrow (thur)
   hide_entity: true
+  initial_state: true
   alias: Remind if no dinner plan tomorrow (thur)
   trigger:
     platform: time
@@ -96,6 +100,7 @@
 
 - id: Remind if no dinner plan tomorrow (fri)
   hide_entity: true
+  initial_state: true
   alias: Remind if no dinner plan tomorrow (fri)
   trigger:
     platform: time
@@ -120,6 +125,7 @@
 
 - id: Remind if no dinner plan tomorrow (sat)
   hide_entity: true
+  initial_state: true
   alias: Remind if no dinner plan tomorrow (sat)
   trigger:
     platform: time

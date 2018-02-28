@@ -1,5 +1,6 @@
 - id: 3D Printer 1 Turn on Exhaust
   alias: 3D Printer 1 Turn on Exhaust
+  initial_state: true
   trigger:
     platform: state
     entity_id: sensor.3dprinter1_state
@@ -9,6 +10,7 @@
     entity_id: switch.workshop_exhaust
 - id: 3D Printer 1 Turn Off Exhaust
   alias: 3d Printer 1 Turn Off Exhaust
+  initial_state: true
   trigger:
     platform: state
     entity_id: sensor.3dprinter1_state
@@ -18,6 +20,7 @@
     entity_id: switch.workshop_exhaust
 - id: 3D Printer 2 Turn on Exhaust
   alias: 3D Printer 2 Turn on Exhaust
+  initial_state: true
   trigger:
     platform: state
     entity_id: sensor.3dprinter2_state
@@ -27,6 +30,7 @@
     entity_id: switch.workshop_exhaust
 - id: 3D Printer 2 Turn Off Exhaust
   alias: 3d Printer 2 Turn Off Exhaust
+  initial_state: true
   trigger:
     platform: state
     entity_id: sensor.3dprinter1_state

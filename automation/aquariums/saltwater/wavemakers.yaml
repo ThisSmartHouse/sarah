@@ -1,5 +1,6 @@
 - id: Wavemakers
   alias: Wavemakers
+  initial_state: true
   trigger:
     platform: time
     minutes: /2

@@ -1,6 +1,7 @@
 - id: Turn on Waterfall when enabled
   alias: Turn on Waterfall when enabled
   hide_entity: true
+  initial_state: true
   trigger:
     platform: state
     entity_id: input_boolean.enable_waterfall
@@ -22,6 +23,7 @@
 - id: Turn off Waterfall when disabled
   alias: Turn off Waterfall when disabled
   hide_entity: true
+  initial_state: true
   trigger:
     platform: state
     entity_id: input_boolean.enable_waterfall
@@ -34,6 +36,7 @@
 - id: Automatically Turn Off Pond after 60 minutes
   alias: Turn Off Pond After 60 minutes
   hide_entity: true
+  initial_state: true
   trigger:
     platform: state
     entity_id: input_boolean.enable_waterfall
@@ -54,6 +57,7 @@
 - id: Automate Pond Turn On at 55 mins past hour
   alias: Automatically Turn on at 55 mins past hour
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: time
     minutes: 55
@@ -85,6 +89,7 @@
 - id: Automate Pond Turn off at 5 mins past hour
   alias: Automatically Turn off at 5 mins past hour
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: time
     minutes: 5

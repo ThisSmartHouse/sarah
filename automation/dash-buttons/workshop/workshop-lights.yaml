@@ -1,6 +1,7 @@
 - id: Activate Workshop Lights on Dash Button Push
   alias: dash_workshop_lights
   hide_entity: true
+  initial_state: true
   trigger:
     platform: mqtt
     topic: /button/workshop-light

@@ -1,6 +1,7 @@
 - id: Toggle Back Porch Lights on Dash Push
   alias: dash_back_porch_lights
   hide_entity: true
+  initial_state: true
   trigger:
     platform: mqtt
     topic: /button/backyard-lights

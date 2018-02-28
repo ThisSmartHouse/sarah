@@ -1,6 +1,7 @@
 - id: Saltwater Sump Light On
   alias: Saltwater Sump Light On
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: '10:00:00'
@@ -10,6 +11,7 @@
 - id: Saltwater Sump Light Off
   alias: Saltwater Sump Light Off
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: '22:00:00'

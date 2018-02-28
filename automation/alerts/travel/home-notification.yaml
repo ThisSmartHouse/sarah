@@ -1,5 +1,6 @@
 - id: Notify John when Bayley Arrives home
   alias: notify_john_when_bayley_arrives_home
+  initial_state: true
   trigger:
     - platform: state
       entity_id: device_tracker.bayleysiphone
@@ -21,6 +22,7 @@
              
 - id: Notify Bayley when John Arrives home
   alias: notify_bayley_when_john_arrives_home
+  initial_state: true
   trigger:
     - platform: state
       entity_id: device_tracker.johncoggeshallsiphone

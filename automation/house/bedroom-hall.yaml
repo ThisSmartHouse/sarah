@@ -1,6 +1,7 @@
 - id: Turn on Hallway if motion detected (bedtime)
   alias: Turn on Hallway if motion detected (bedtime)
   hide_entity: true
+  initial_state: true
   trigger:
   - entity_id: sensor.hallway_pir
     platform: state
@@ -23,6 +24,7 @@
 - id: Turn on Hallway if motion detected (normal)
   alias: Turn on Hallway if motion detected (normal)
   hide_entity: true
+  initial_state: true
   trigger:
   - entity_id: sensor.hallway_pir
     platform: state
@@ -45,6 +47,7 @@
 - id: Turn off Hallway if no motion detected for 5 minutes
   alias: Turn off Hallway if no motion detected for 5 minutes
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.hallway_pir

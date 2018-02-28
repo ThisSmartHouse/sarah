@@ -1,6 +1,7 @@
 - id: Dose Freshwater Tank
   alias: Dose Freshwater Tank
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: '10:00:00'

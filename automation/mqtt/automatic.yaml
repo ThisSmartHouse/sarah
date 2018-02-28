@@ -1,6 +1,7 @@
 - id: Publish Automatic Car Data to MQTT
   alias: publish_automatic_car_data
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: event
       event_type: automatic_update

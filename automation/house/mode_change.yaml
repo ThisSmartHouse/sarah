@@ -1,6 +1,7 @@
 - id: Trigger action on house mode change to bedtime
   alias: trigger_house_mode_change_bedtime
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.home_state
@@ -15,6 +16,7 @@
 - id: Trigger action on house mode change to normal
   alias: trigger_house_mode_change_normal
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.home_state
@@ -29,6 +31,7 @@
 - id: Trigger action on house mode change to away
   alias: trigger_house_mode_change_away
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.home_state

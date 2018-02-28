@@ -1,5 +1,6 @@
 - id: Alert if Front door is left open for more than 120 seconds
   hide_entity: true
+  initial_state: true
   alias: Alert if Front Door is Left Open
   trigger:
   - platform: state

@@ -1,6 +1,7 @@
 - id: Alert if Back door is left open for more than 15 minutes
   hide_entity: true
   alias: Alert if Back Door is Left Open
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.backdoor

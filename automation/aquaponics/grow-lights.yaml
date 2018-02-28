@@ -1,5 +1,6 @@
 - id: Grow Light On
   alias: Grow Lights On
+  initial_state: true
   hide_entity: true
   trigger:
     platform: time
@@ -11,6 +12,7 @@
 - id: Grow Light Off
   alias: Grow Lights Off
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 02:00:00

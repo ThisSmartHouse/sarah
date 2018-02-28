@@ -1,6 +1,7 @@
 - id: Saltwater Lights On
   alias: Saltwater Lights On
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 08:00:00
@@ -11,6 +12,7 @@
 - id: Saltwater Lights Off
   alias: Saltwater Lights Off
   hide_entity: true
+  initial_state: true  
   trigger:
     platform: time
     at: 03:00:00

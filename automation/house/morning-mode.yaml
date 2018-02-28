@@ -1,6 +1,7 @@
 - id: Activate Normal Mode At Sunrise
   alias: Activate Normal Mode At Sunrise
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunrise

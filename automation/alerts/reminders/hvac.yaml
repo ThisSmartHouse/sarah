@@ -1,5 +1,6 @@
 - id: Suggest Opening Windows when Temperatures Make sense
   hide_entity: true
+  initial_state: true
   alias: suggest_opening_windows
   trigger:
     platform: time
@@ -34,6 +35,7 @@
                
 - id: Suggest Closing Windows when Temperatures Make sense
   hide_entity: true
+  initial_state: true
   alias: suggest_closing_windows
   trigger:
     platform: time

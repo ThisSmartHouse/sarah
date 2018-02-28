@@ -1,6 +1,7 @@
 - id: Turn on Back Porch lights after sunset when door opens
   alias: Turn on Back Porch Lights after sunset when door opens
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: sensor.backdoor

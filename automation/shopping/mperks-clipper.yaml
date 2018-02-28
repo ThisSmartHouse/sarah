@@ -1,5 +1,6 @@
 - id: Clip MPerks Coupons
   alias: clip_mperks_coupons
+  initial_state: true
   trigger:
     platform: time
     at: '08:00:00'

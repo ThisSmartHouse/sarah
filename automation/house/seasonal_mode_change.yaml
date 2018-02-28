@@ -1,6 +1,7 @@
 - id: Trigger action on house seasonal mode change to fall-winter
   alias: trigger_house_seasonal_mode_change_fall_winter
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.seasonal_state
@@ -15,6 +16,7 @@
 - id: Trigger action on house seasonal mode change to spring-summer
   alias: trigger_house_seasonal_mode_change_spring_summer
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.seasonal_state

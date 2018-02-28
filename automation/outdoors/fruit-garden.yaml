@@ -1,6 +1,7 @@
 - id: Turn on the Garden Water at 5:00pm
   alias: Turn on the Garden Water at 5:00pm
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: time
     at: '17:00:00'

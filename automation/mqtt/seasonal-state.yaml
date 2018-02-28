@@ -1,6 +1,7 @@
 - id: Publish Seasonal State to MQTT
   alias: publish_home_seasonal_state_to_mqtt
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_select.seasonal_state
@@ -14,6 +15,7 @@
 - id: Load Home Seasonal State at Startup
   alias: load_home_seasonal_state_startup
   hide_entity: true
+  initial_state: true
   trigger:
     platform: homeassistant
     event: start

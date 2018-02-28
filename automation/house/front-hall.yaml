@@ -1,6 +1,7 @@
 - id: Hallway Lights On
   alias: Hallway Lights On
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunset
@@ -20,6 +21,7 @@
 - id: Turn Hallway Off
   alias: Turn Hallway Off
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 02:00:00

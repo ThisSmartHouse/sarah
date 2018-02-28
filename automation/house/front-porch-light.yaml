@@ -1,6 +1,7 @@
 - id: Turn Porch Light On At Sunset
   alias: Porch Light On At Sunset
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunset
@@ -18,6 +19,7 @@
 - id: Turn Porch Light Off At Sunrise
   alias: Porch Light Off At Sunrise
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunrise

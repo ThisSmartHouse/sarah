@@ -1,16 +1,19 @@
 - id: Turtle Heat Lamp On
   alias: Turtle Heat Lamp On
+  initial_state: true
   trigger:
     platform: time
-    at: 07:00:00
+    at: '11:00:00'
   action:
     service: switch.turn_on
     entity_id: switch.freshwater_turtle_lights
+    
 - id: Turtle Heat Lamp Off
   alias: Turtle Heat Lamp off
+  initial_state: true
   trigger:
     platform: time
-    at: '18:00:00'
+    at: '22:00:00'
   action:
     service: switch.turn_off
     entity_id: switch.freshwater_turtle_lights

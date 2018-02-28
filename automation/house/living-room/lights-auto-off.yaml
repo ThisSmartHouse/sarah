@@ -1,6 +1,7 @@
 #- id: Turn off Living Room if no occupancy detected for 60 minutes
 #  alias: Turn off Living Room if no occupancy detected for 60 minutes
 #  hide_entity: true
+#  initial_state: true
 #  trigger:
 #  - platform: state
 #    entity_id: sensor.livingroom_pir

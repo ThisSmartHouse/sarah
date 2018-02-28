@@ -1,6 +1,7 @@
 - id: Bar Accent Lights On
   alias: Bar Accent Lights On
   hide_entity: true
+  initial_state: true
   trigger:
     platform: sun
     event: sunset
@@ -12,6 +13,7 @@
 - id: Bar Accent Lights Off
   alias: Bar Accent Lights Off
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: 03:00:00

@@ -1,6 +1,7 @@
 - id: Turn On Backyard Lights After Dark When Someone Comes Home
   alias: Turn On Backyard Lights After Dark When Someone Comes Home
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: device_tracker.bayleysiphone

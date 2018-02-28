@@ -1,6 +1,7 @@
 - id: Protein Skimmer On
   alias: Protein Skimmer On
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: '15:00:00'
@@ -11,6 +12,7 @@
 - id: Protein Skimmer Off
   alias: Protein Skimmer Off
   hide_entity: true
+  initial_state: true
   trigger:
     platform: time
     at: '18:00:00'

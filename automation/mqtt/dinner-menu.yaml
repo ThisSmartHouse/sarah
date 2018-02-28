@@ -1,5 +1,6 @@
 - id: Erase Menu On Sunday
   alias: auto_erase_dinner_menu
+  initial_state: true
   trigger:
     platform: time
     at: '20:00:00'
@@ -48,6 +49,7 @@
 
 - id: Update Menu
   alias: pull_dinner_menu
+  initial_state: true
   hide_entity: true
   trigger:
     - platform: state
@@ -103,6 +105,7 @@
 - id: Push Complete Dinner Menu to MQTT
   alias: push_full_dinner_menu
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_monday
@@ -137,6 +140,7 @@
 - id: Push Dinner Menu Updates to MQTT (Monday)
   alias: Push Dinner Menu Updates to MQTT (Monday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_monday
@@ -154,6 +158,7 @@
 - id: Push Dinner Menu Updates to MQTT (Tuesday)
   alias: Push Dinner Menu Updates to MQTT (Tuesday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_tuesday
@@ -171,6 +176,7 @@
 - id: Push Dinner Menu Updates to MQTT (Wednesday)
   alias: Push Dinner Menu Updates to MQTT (Wednesday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_wednesday
@@ -188,6 +194,7 @@
 - id: Push Dinner Menu Updates to MQTT (Thursday)
   alias: Push Dinner Menu Updates to MQTT (Thursday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_thursday
@@ -205,6 +212,7 @@
 - id: Push Dinner Menu Updates to MQTT (Friday)
   alias: Push Dinner Menu Updates to MQTT (Friday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_friday
@@ -222,6 +230,7 @@
 - id: Push Dinner Menu Updates to MQTT (Saturday)
   alias: Push Dinner Menu Updates to MQTT (Saturday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_saturday
@@ -239,6 +248,7 @@
 - id: Push Dinner Menu Updates to MQTT (Sunday)
   alias: Push Dinner Menu Updates to MQTT (Sunday)
   hide_entity: true
+  initial_state: true
   trigger:
     - platform: state
       entity_id: input_text.dinner_sunday

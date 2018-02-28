@@ -1,5 +1,6 @@
 - id: Update Car Driving State (driving)
   alias: update_car_driving_state_driving
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/ignition_on"
@@ -12,6 +13,7 @@
 
 - id: Update Car Driving State (parked)
   alias: update_car_driving_state_parked
+  initial_state: true
   trigger:
     - platform: mqtt
       topic: "/car/event/ignition_off"

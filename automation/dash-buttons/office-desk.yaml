@@ -1,6 +1,7 @@
 - id: Activate Office Desk Lamp on Dash Button Push
   alias: dash_office_desk
   hide_entity: true
+  initial_state: true
   trigger:
     platform: mqtt
     topic: /button/office-desklamp

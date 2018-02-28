@@ -1,6 +1,7 @@
 - id: Push Shipping Updates to MQTT
   alias: Push Shipping Updates to MQTT
   hide_entity: true
+  initial_state: true
   trigger:
   - platform: state
     entity_id: sensor.ups_packages
