@@ -1,6 +1,8 @@
 house_mode_away:
   sequence:
     - service: switch.turn_off
+      entity_id: switch.diana_tank_lights
+    - service: switch.turn_off
       entity_id: switch.garage_workbench_light
     - service: switch.turn_off
       entity_id: switch.accent_lighting

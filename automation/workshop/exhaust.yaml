@@ -15,6 +15,15 @@
     platform: state
     entity_id: sensor.3dprinter1_state
     to: Operational
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.3dprinter2_state
+        state: Operational
+      - condition: state
+        entity_id: sensor.3dprinter3_state
+        state: Operational
   action:
   - service: switch.turn_off
     entity_id: switch.workshop_exhaust
@@ -35,6 +44,44 @@
     platform: state
     entity_id: sensor.3dprinter1_state
     to: Operational
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.3dprinter1_state
+        state: Operational
+      - condition: state
+        entity_id: sensor.3dprinter3_state
+        state: Operational
+  action:
+  - service: switch.turn_off
+    entity_id: switch.workshop_exhaust
+- id: 3D Printer 3 Turn on Exhaust
+  alias: 3D Printer 3 Turn on Exhaust
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter3_state
+    to: Printing
+  action:
+  - service: switch.turn_on
+    entity_id: switch.workshop_exhaust
+- id: 3D Printer 3 Turn Off Exhaust
+  alias: 3d Printer 3 Turn Off Exhaust
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: sensor.3dprinter3_state
+    to: Operational
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.3dprinter1_state
+        state: Operational
+      - condition: state
+        entity_id: sensor.3dprinter2_state
+        state: Operational
   action:
   - service: switch.turn_off
     entity_id: switch.workshop_exhaust

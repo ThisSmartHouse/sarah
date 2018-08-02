@@ -1,11 +1,11 @@
 - platform: mqtt
-  name: Freshwater Tank Light 2
+  name: Freshwater Display Lights
   command_topic: /freshwater-power/switch/1
   state_topic: /freshwater-power/switch/1/state
   payload_on: "1"
   payload_off: "0"
 - platform: mqtt
-  name: Freshwater Spotlights
+  name: Herb Growlights
   command_topic: /freshwater-power/switch/2
   state_topic: /freshwater-power/switch/2/state
   payload_on: "1"
@@ -17,7 +17,7 @@
   payload_on: "1"
   payload_off: "0"
 - platform: mqtt
-  name: Freshwater Tank Light 1
+  name: Herb Watering Pump
   command_topic: /freshwater-power/switch/4
   state_topic: /freshwater-power/switch/4/state
   payload_on: "1"

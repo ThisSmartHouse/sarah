@@ -25,3 +25,7 @@
   password: !secret automatic_password
   name: Subaru Outback
   current_location: true
+
+- platform: mqtt_json
+  devices:
+    hercules_collar: /status/pets/265889

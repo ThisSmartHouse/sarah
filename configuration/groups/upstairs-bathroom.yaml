@@ -1,0 +1,6 @@
+upstairs_bathroom:
+  view: yes
+  icon: mdi:hot-tub
+  name: Upstairs Bathroom
+  entities:
+    - group.upstairs_bathroom_power

@@ -1,6 +1,6 @@
 Bar:
   view: yes
   name: Bar Controls
-  icon: mdi:martini
+  icon: mdi:glass-cocktail
   entities:
     - group.bar_power

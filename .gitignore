@@ -1,4 +1,7 @@
 .automatic
+watchdog.log
+.storage
+entity_registry.yaml
 .project
 *.pickle
 coogle-recipes

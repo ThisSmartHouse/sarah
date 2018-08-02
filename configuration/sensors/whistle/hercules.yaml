@@ -1,0 +1,6 @@
+- platform: mqtt
+  state_topic: "/status/pets/265889"
+  name: hercules_collar_battery
+  value_template: "{{ value_json.battery_level }}"
+  unit_of_measurement: '%'
+  expire_after: 360

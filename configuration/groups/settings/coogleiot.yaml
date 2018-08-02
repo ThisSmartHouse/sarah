@@ -12,3 +12,5 @@ settings_coogleiot:
     - sensor.coogleiot_diningroom_cabinet
     - sensor.coogleiot_freshwater_sump_power
     - sensor.coogleiot_garage_workbench_power
+    - sensor.coogleiot_downstairs_bathroom
+    - sensor.coogleiot_garage_string_lights

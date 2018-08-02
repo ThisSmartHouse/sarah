@@ -1,0 +1,21 @@
+- id: Alert if the allergy index is high today
+  initial_state: true
+  hide_entity: true
+  alias: Alert if the allergy index is high today
+  trigger:
+    - platform: sun
+      event: sunrise
+  condition:
+    condition: numeric_state
+    entity_id: sensor.allergy_index_today
+    above: 2.5
+  action:
+  - service: notify.bayley_phone_sms
+    data_template:
+      message: > 
+          {{ [
+               "It appears that the allergy index for today is {{ states.sensor.allergy_index_today.attributes.rating }}, you might think about taking an allergy pill!",
+               "I know how bad your allergies can be, and today's rating is {{ states.sensor.allergy_index_today.attributes.rating }}. You should take an allergy pill.",
+               "Don't spend the day all clogged up. Allergy ratings are at {{ states.sensor.allergy_index_today.attributes.rating }}, might want to take something."
+             ] | random }}
+

@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    diana_feeder_last_ran:
+      value_template: >
+        {{ as_timestamp(states.script.diana_feeder_activate.attributes.last_triggered)  | timestamp_custom("%b %d %Y - %I:%M %p") }}

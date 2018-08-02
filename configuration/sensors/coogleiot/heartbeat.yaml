@@ -1,4 +1,28 @@
 - platform: mqtt
+  state_topic: "/coogleiot/devices/bathroom-switch"
+  name: coogleiot_downstairs_bathroom_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/bathroom-switch"
+  name: coogleiot_downstairs_bathroom_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/garage-stringlights"
+  name: coogleiot_garage_string_lights_ip
+  value_template: "{{ value_json.ip }}"
+  expire_after: 600
+  
+- platform: mqtt
+  state_topic: "/coogleiot/devices/garage-stringlights"
+  name: coogleiot_garage_string_lights_version
+  value_template: "{{ value_json.coogleiot_version }}"
+  expire_after: 600
+  
+- platform: mqtt
   state_topic: "/coogleiot/devices/freshwater-doser"
   name: coogleiot_freshwater_doser_ip
   value_template: "{{ value_json.ip }}"
@@ -142,6 +166,18 @@
   value_template: "{{ value_json.timestamp }}"
   expire_after: 600
   
+- platform: template
+  sensors:
+    coogleiot_downstairs_bathroom:
+      value_template: "{{ states('sensor.coogleiot_downstairs_bathroom_ip') }} (v{{ states('sensor.coogleiot_downstairs_bathroom_version') }})"
+      friendly_name: "Downstairs Bathroom"
+      
+- platform: template
+  sensors:
+    coogleiot_garage_string_lights:
+      value_template: "{{ states('sensor.coogleiot_garage_string_lights_ip') }} (v{{ states('sensor.coogleiot_garage_string_lights_version') }})"
+      friendly_name: "Garage String Lighting"
+      
 - platform: template
   sensors:
     coogleiot_freshwater_sump_power:

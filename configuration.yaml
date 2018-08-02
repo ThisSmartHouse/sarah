@@ -1,4 +1,7 @@
 homeassistant:
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
   name: Home
   latitude: !secret home_latitude
   longitude: !secret home_longitude
@@ -6,6 +9,10 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Detroit
   customize: !include_dir_merge_named customize
+
+ios:
+
+auth:
 
 ffmpeg:
   ffmpeg_bin: /usr/bin/avconv
@@ -21,7 +28,7 @@ cover: !include_dir_merge_list ./configuration/covers
 sun:
 wemo:
 logger:
-  default: info
+  default: error
 #  logs:
 #    aioautomatic: debug
 

@@ -3,9 +3,10 @@ fish:
   icon: mdi:fish
   name: Fish
   entities:
+    - group.fish_plant_nursery_controls
     - group.fish_status
-    - group.fish_sensors
     - group.fish_power
+    - group.fish_diana_controls
     - group.fish_saltwater_controls
     - group.fish_freshwater_controls
     - group.fish_aquaponic_controls

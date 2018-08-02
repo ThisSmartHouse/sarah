@@ -7,18 +7,18 @@
     entity_id: input_boolean.enable_waterfall
     from: 'off'
     to: 'on'
-  condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: sensor.is_freezing_outside
-      state: not freezing
-    - condition: state
-      entity_id: sensor.is_freezing_outside
-      state: unknown
+#  condition:
+#    condition: or
+#    conditions:
+#    - condition: state
+#      entity_id: sensor.is_freezing_outside
+#      state: not freezing
+#    - condition: state
+#      entity_id: sensor.is_freezing_outside
+#      state: unknown
   action:
     service: switch.turn_on
-    entity_id: switch.pond_waterfall_pump
+    entity_id: switch.pond_aerator
     
 - id: Turn off Waterfall when disabled
   alias: Turn off Waterfall when disabled
@@ -31,7 +31,7 @@
     to: 'off'
   action:
     service: switch.turn_off
-    entity_id: switch.pond_waterfall_pump
+    entity_id: switch.pond_aerator
     
 - id: Automatically Turn Off Pond after 60 minutes
   alias: Turn Off Pond After 60 minutes

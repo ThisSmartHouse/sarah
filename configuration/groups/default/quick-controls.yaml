@@ -2,7 +2,7 @@ default_quick_controls:
   name: Quick Controls
   control: hidden
   entities:
-    - cover.front_gate
+    #- cover.front_gate
     - cover.garage_door
     - input_select.air_purifier
     - input_select.home_state

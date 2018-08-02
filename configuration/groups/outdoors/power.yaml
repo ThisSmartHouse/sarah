@@ -6,6 +6,7 @@ outdoors_power:
     - light.front_porch
     - switch.back_porch_lights
     - switch.back_porch_power
+    - switch.garage_string_lights
     - switch.pond_string_lights
     - switch.pond_waterfall_pump
     - switch.garden_soaker_pump

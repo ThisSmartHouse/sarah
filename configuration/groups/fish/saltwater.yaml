@@ -2,6 +2,7 @@ fish_saltwater_controls:
   name: Saltwater
   control: hidden
   entities:
+    - sensor.saltwater_tank_temperature
     - switch.wavemaker_1
     - switch.wavemaker_2
     - switch.saltwater_lights
@@ -10,3 +11,7 @@ fish_saltwater_controls:
     - switch.saltwater_return_pump_1
     - switch.saltwater_sump_light_6
     - switch.saltwater_uv
+    - script.saltwater_feeder_activate
+    - sensor.saltwater_feeder_last_ran
+    - input_number.saltwater_feeder_turns
+

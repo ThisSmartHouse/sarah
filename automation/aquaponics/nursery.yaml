@@ -1,0 +1,38 @@
+- id: Nursery Grow Light On
+  alias: Nursery Grow Lights On
+  initial_state: true
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.nursery_grow_lights
+    
+- id: Nursery Grow Light Off
+  alias: Nursery Grow Lights Off
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+00:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.nursery_grow_lights
+    
+- id: Nursery Fan On
+  alias: Nursery Fan On
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: time
+    minutes: '/30'
+    seconds: 00
+  action:
+    - service: switch.turn_on
+      entity_id: switch.nursery_plant_fan
+    - delay: 00:00:05
+    - service: switch.turn_off
+      entity_id: switch.nursery_plant_fan

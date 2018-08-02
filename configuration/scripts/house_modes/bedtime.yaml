@@ -1,6 +1,14 @@
 house_mode_bedtime:
   sequence:
     - service: switch.turn_off
+      entity_id: switch.downstairs_bathroom
+    - service: switch.turn_off
+      entity_id: switch.garage_string_lights
+    - service: switch.turn_off
+      entity_id: switch.diana_tank_lights
+    - service: switch.turn_off
+      entity_id: switch.diana_grow_lights
+    - service: switch.turn_off
       entity_id: switch.christmas_tree
     - service: switch.turn_off
       entity_id: switch.garage_workbench_light

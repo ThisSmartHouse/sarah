@@ -1,0 +1,7 @@
+diana_feeder_activate:
+  sequence:
+    - service: mqtt.publish
+      data_template: 
+        topic: "/feeder/diana/1"
+        payload: >
+          {{ states('input_number.diana_feeder_turns') }}

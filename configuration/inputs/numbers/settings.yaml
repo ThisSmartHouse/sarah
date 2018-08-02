@@ -6,11 +6,34 @@ pond_timeout:
   step: 5
   icon: mdi:timer
 
+peristalic_doser_potassium_turns:
+  name: Potassium Doser Turns
+  initial: 100
+  min: 0
+  max: 360
+  step: 5
+  icon: mdi:settings
+
 peristalic_doser_turns:
   name: Doser Turns
   initial: 120
   min: 0
   max: 360
   step: 5
-  icon: mdi:flask-outline
+  icon: mdi:settings
+
+saltwater_feeder_turns:
+  name: Saltwater Feeder Turns
+  initial: 1
+  min: 0
+  max: 10
+  step: 1
+  icon: mdi:settings
   
+diana_feeder_turns:
+  name: Diana Feeder Turns
+  initial: 1
+  min: 0
+  max: 10
+  step: 1
+  icon: mdi:settings

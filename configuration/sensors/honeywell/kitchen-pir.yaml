@@ -2,5 +2,4 @@
   state_topic: "/sensor/rtl433"
   name: kitchen_pir
   qos: 0
-  device_class: motion
   value_template: '{% if (value_json.id is equalto 490804) and (value_json.state is equalto "open") %} on {% else %} off {% endif %}'

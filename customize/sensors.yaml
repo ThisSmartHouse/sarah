@@ -1,8 +1,25 @@
+sensor.diana_feeder_last_ran:
+  icon: mdi:timetable
+  friendly_name: "Last Axolotl Feeding"
+  
+sensor.doser_last_ran:
+  icon: mdi:timetable
+  friendly_name: "Doser Last Ran"
+sensor.saltwater_feeder_last_ran:
+  icon: mdi:timetable
+  friendly_name: "Last Saltwater Feeding"
+  
+sensor.allergy_primary_allergen_today:
+  icon: mdi:flower
+sensor.allergy_rating_today:
+  icon: mdi:speedometer
 sensor.coogleiot_freshwater_doser:
   icon: mdi:flask-outline
-sensor.doser_pump_percent_complete:
-  friendly_name: "Doser Completion"
-  icon: mdi:flask-outline  
+sensor.coogleiot_garage_string_lights:
+  icon: mdi:lightbulb-outline
+sensor.coogleiot_downstairs_bathroom:
+  icon: mdi:lightbulb-outline
+  
 sensor.home_humidity:
   icon: mdi:water-percent
 sensor.coogleiot_diningroom_cabinet:
@@ -15,6 +32,10 @@ sensor.coogleiot_garage_door:
   icon: mdi:garage
 sensor.coogleiot_kitchen_sink:
   icon: mdi:power-socket-us
+
+sensor.hercules_collar_battery:
+  icon: mdi:battery-charging
+  friendly_name: "Hercules' Collar Battery"
   
 sensor.hvac_average_temp:
   friendly_name: "Average Indoor Temperature"
@@ -77,6 +98,9 @@ sensor.sidedoor:
   icon: mdi:door
 sensor.kitchen_pir:
   friendly_name: "Kitchen Movement"
+
+device_tracker.hercules_collar:
+  friendly_name: "Hercules"
   
 device_tracker.2017_subaru_outback:
   friendly_name: "Subaru Outback"

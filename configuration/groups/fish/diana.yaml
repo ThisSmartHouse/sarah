@@ -1,0 +1,9 @@
+fish_diana_controls:
+  name: "Diana's Tank"
+  control: hidden
+  entities:
+    - sensor.diana_tank_temperature
+    - switch.diana_switch_1
+    - switch.diana_tank_chiller
+    - switch.diana_grow_lights
+    - switch.diana_tank_lights

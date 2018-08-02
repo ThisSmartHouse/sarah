@@ -5,3 +5,4 @@ house_locations:
     - device_tracker.bayleysiphone
     - device_tracker.johncoggeshallsiphone
     - device_tracker.84100d1100fb
+    - device_tracker.hercules_collar

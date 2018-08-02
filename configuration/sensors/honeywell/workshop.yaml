@@ -2,5 +2,4 @@
   state_topic: "/sensor/rtl433"
   name: workshop_door
   qos: 0
-  device_class: opening
   value_template: '{% if (value_json.id is equalto 298657) and (value_json.event is equalto 160) %} open {% elif (value_json.id is equalto 298657) and (value_json.event is equalto 128) %} closed {% else %} {{states.sensor.workshop_door.state}} {% endif %}'

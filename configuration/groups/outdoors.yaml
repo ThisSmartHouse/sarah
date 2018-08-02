@@ -9,4 +9,5 @@ Outdoors:
     - group.outdoors_weather
     - group.outdoors_cooking
     - group.outdoors_settings
+    - group.outdoors_allergy
     - camera.local_radar

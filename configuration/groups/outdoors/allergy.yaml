@@ -1,0 +1,6 @@
+outdoors_allergy:
+  icon: mdi:biohazard
+  name: Allergy and Cold/Flu
+  entities:
+    - sensor.allergy_primary_allergen_today
+    - sensor.allergy_rating_today

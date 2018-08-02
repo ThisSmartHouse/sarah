@@ -1,5 +1,11 @@
 - platform: template
   sensors:
+    doser_potassium_last_ran:
+      value_template: >
+        {{ as_timestamp(states.script.doser_potassium_activate.attributes.last_triggered) | timestamp_custom("%b %d %Y - %I:%M %p") }}
+
+- platform: template
+  sensors:
     doser_last_ran:
       value_template: >
         {{ as_timestamp(states.script.doser_activate.attributes.last_triggered)  | timestamp_custom("%b %d %Y - %I:%M %p") }}

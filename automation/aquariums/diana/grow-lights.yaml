@@ -1,0 +1,20 @@
+- id: Diana Grow Lights On
+  alias: Diana Grow Lights On
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.diana_grow_lights
+- id: Diana Grow Lights Off
+  alias: Diana Grow Lights Off
+  initial_state: true
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '18:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.diana_grow_lights

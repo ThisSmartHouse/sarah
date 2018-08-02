@@ -1,0 +1,8 @@
+upstairs_bathroom_power:
+  name: Power
+  control: hidden
+  entities:
+    - switch.bathroom_switch_1
+    - switch.bathroom_switch_2
+    - switch.bathroom_switch_3
+    - switch.bathroom_switch_4

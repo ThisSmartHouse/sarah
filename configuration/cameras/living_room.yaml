@@ -1,3 +1,4 @@
 - platform: ffmpeg
-  input: rtmp://192.168.1.73/live/ch1?uwd=c2FyYWg6aDBtZWFzczFzdA==
   name: Living Room
+  input: -rtsp_transport tcp -i rtsp://sarah:h0m3assist@192.168.1.73:554/live/ch1
+  extra_arguments: -pred 1 -q:v 2

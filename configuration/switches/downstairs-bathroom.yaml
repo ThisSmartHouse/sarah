@@ -1,0 +1,6 @@
+- platform: mqtt
+  name: Downstairs Bathroom
+  command_topic: /bathroom-switch/switch/1
+  state_topic: /bathroom-switch/switch/1/state
+  payload_on: "1"
+  payload_off: "0"

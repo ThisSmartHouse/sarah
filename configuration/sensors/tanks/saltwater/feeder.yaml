@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    saltwater_feeder_last_ran:
+      value_template: >
+        {{ as_timestamp(states.script.saltwater_feeder_activate.attributes.last_triggered)  | timestamp_custom("%b %d %Y - %I:%M %p") }}

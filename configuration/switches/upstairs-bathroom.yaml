@@ -1,0 +1,27 @@
+- platform: mqtt
+  name: Bathroom Switch 1
+  command_topic: /bathroom-power/switch/1
+  state_topic: /bathroom-power/switch/1/state
+  payload_on: "1"
+  payload_off: "0"
+  
+- platform: mqtt
+  name: Bathroom Switch 2
+  command_topic: /bathroom-power/switch/2
+  state_topic: /bathroom-power/switch/2/state
+  payload_on: "1"
+  payload_off: "0"
+  
+- platform: mqtt
+  name: Bathroom Switch 3
+  command_topic: /bathroom-power/switch/3
+  state_topic: /bathroom-power/switch/3/state
+  payload_on: "1"
+  payload_off: "0"
+
+- platform: mqtt
+  name: Bathroom Switch 4
+  command_topic: /bathroom-power/switch/4
+  state_topic: /bathroom-power/switch/4/state
+  payload_on: "1"
+  payload_off: "0"

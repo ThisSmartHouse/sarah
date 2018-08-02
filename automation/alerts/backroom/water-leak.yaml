@@ -19,3 +19,21 @@
                 "I'm detecting water on the floor in the back room, could be nothing but someone needs to investigate this immediately!",
                 "Warning - Water detected in back room where it's not supposed to be! Please investigate immediately."
              ] | random }}
+             
+- id: Alert Backroom Water Leak Batteries Low
+  alias: alert_backroom_water_leak_low_battery
+  initial_state: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.backroom_lyric_battery
+    below: 20
+    for:
+      hours: 1
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: >
+          {{ [
+                "The water leak sensor in the back room is down to {{ states('sensor.backroom_lyric_battery') }} and needs new batteries"
+             ] | random }}
+    

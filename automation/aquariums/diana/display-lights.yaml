@@ -1,0 +1,34 @@
+- id: Diana Display Lights On
+  alias: Diana Display Lights On
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: time
+    at: '10:00:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+      - sat
+      - sun
+      - wed
+  action:
+    service: switch.turn_on
+    entity_id: switch.diana_tank_lights
+- id: Diana Display Lights Off
+  alias: Diana Display Lights Off
+  initial_state: true
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '21:00:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+      - sat
+      - sun
+      - wed
+  action:
+    service: switch.turn_off
+    entity_id: switch.diana_tank_lights

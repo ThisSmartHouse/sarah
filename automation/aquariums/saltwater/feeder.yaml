@@ -1,0 +1,15 @@
+- id: Feed Saltwater Fish
+  alias: Feed Saltwater Fish
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: time
+    at: '20:30:00'
+  condition:
+    - condition: time
+      weekday:
+        - sun
+        - wed
+        - fri
+  action:
+    service: script.saltwater_feeder_activate

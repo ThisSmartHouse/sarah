@@ -9,7 +9,7 @@
       minutes: 10
   action:
     service: switch.turn_on
-    entity_id: switch.tank_chiller
+    entity_id: switch.diana_tank_chiller
     
 - id: Turn off chiller when tank cools
   alias: Turn off chiller when tank cools
@@ -22,4 +22,4 @@
       minutes: 10
   action:
     service: switch.turn_off
-    entity_id: switch.tank_chiller
+    entity_id: switch.diana_tank_chiller

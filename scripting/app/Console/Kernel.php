@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
         Commands\CameraSnapshotCommand::class,
         Commands\RecordToGoogleSheetsCommand::class,
         Commands\Lyric\RefreshCommand::class,
-        Commands\ClipMPerksCommand::class
+        Commands\ClipMPerksCommand::class,
+        Commands\PollPetWhistleCommand::class
     ];
 
     /**

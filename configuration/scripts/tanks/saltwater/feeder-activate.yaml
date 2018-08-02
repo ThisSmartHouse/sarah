@@ -1,0 +1,7 @@
+saltwater_feeder_activate:
+  sequence:
+    - service: mqtt.publish
+      data_template: 
+        topic: "/feeder/saltwater/1"
+        payload: >
+          {{ states('input_number.saltwater_feeder_turns') }}

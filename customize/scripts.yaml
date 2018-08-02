@@ -1,3 +1,11 @@
+script.diana_feeder_activate:
+  icon: mdi:fish
+  friendly_name: "Diana Tank Feeder"
+  
+script.saltwater_feeder_activate:
+  icon: mdi:fish
+  friendly_name: "Saltwater Feeder"
+  
 script.doser_activate:
   icon: mdi:flask-outline
   friendly_name: "Activate Doser"
