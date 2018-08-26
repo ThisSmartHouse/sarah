@@ -3,3 +3,4 @@ workshop_switches:
   entities:
     - switch.workshop_lights
     - switch.workshop_exhaust
+    - switch.soldering_iron

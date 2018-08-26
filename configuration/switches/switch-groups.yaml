@@ -54,13 +54,15 @@
       turn_on:
         service: switch.turn_on
         entity_id: 
-          - switch.grow_lights_1_15
-          - switch.grow_lights_2_13
+          - switch.grow_light_4
+          - switch.grow_light_5
+          - switch.grow_light_6
       turn_off:
         service: switch.turn_off
         entity_id:
-          - switch.grow_lights_1_15
-          - switch.grow_lights_2_13
+          - switch.grow_light_4
+          - switch.grow_light_5
+          - switch.grow_light_6
 
 - platform: template
   switches:

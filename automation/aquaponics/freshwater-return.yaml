@@ -1,9 +1,0 @@
-- id: Freshwater Return
-  alias: Freshwater Return
-  trigger:
-    platform: time
-    minutes: /15
-    seconds: 0
-  action:
-    - service: switch.toggle
-      entity_id: switch.freshwater_return_pump

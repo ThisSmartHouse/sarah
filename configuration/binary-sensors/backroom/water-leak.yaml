@@ -1,6 +1,6 @@
 - platform: mqtt
   state_topic: "/status/lyric/1e77af0d-2bcd-47cf-9f11-48a80e4ec171"
-  name: leak_detected
+  name: backroom_leak_detected
   payload_on: true
   payload_off: false
   device_class: safety

@@ -9,7 +9,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: binary_sensor.leak_detected
+        entity_id: binary_sensor.backroom_leak_detected
         state: 'unsafe'
   action:
     - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"

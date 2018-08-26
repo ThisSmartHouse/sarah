@@ -1,0 +1,7 @@
+- platform: mqtt
+  state_topic: "/status/lyric/951fea44-e682-4475-a8c0-4146ccaee185"
+  name: living_room_leak_detected
+  payload_on: true
+  payload_off: false
+  device_class: safety
+  value_template: "{{ value_json.waterPresent }}"

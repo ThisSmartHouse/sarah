@@ -1,0 +1,19 @@
+- id: Turn off Downstairs Bathroom after 20 minutes
+  alias: Turn off Downstairs Bathroom after 20 minutes
+  hide_entity: true
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: switch.downstairs_bathroom
+    to: 'on'
+    for:
+      minutes: 20
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - service: switch.turn_off
+    entity_id: switch.downstairs_bathroom

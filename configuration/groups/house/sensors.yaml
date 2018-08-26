@@ -11,3 +11,5 @@ house_sensors:
     - sensor.home_power_cost
     - sensor.freezer_temperature
     - sensor.home_power_consumption
+    - binary_sensor.backroom_leak_detected
+    - binary_sensor.living_room_leak_detected

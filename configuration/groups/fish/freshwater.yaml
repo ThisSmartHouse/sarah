@@ -3,16 +3,14 @@ fish_freshwater_controls:
   control: hidden
   entities:
     - sensor.freshwater_tank_temperature
-    - switch.freshwater_sump_light_7
+    - switch.freshwater_heater_1
+    - switch.freshwater_heater_2
+    - switch.freshwater_ato_3
     - switch.freshwater_turtle_lights
     - switch.freshwater_display_lights
     - switch.herb_growlights
-    - switch.herb_watering_pump
     - switch.freshwater_return_pump
     - switch.freshwater_sump_switch_1
     - switch.freshwater_sump_switch_2
     - switch.freshwater_sump_switch_4
-    - script.diana_feeder_activate
-    - sensor.diana_feeder_last_ran
-    - input_number.diana_feeder_turns
     

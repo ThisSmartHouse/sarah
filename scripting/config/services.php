@@ -63,5 +63,9 @@ return [
     ],
     'sparkpost' => [
         'secret' => env('SPARKPOST_API_KEY')
+    ],
+    'whistle' => [
+        'username' => env('WHISTLE_USERNAME'),
+        'password' => env('WHISTLE_PASSWORD')
     ]
 ];

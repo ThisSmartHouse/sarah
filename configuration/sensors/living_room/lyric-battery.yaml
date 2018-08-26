@@ -1,0 +1,5 @@
+- platform: mqtt
+  state_topic: "/status/lyric/951fea44-e682-4475-a8c0-4146ccaee185"
+  name: living_room_lyric_battery
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.batteryRemaining }}"

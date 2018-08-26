@@ -4,5 +4,4 @@ fish_status:
     - binary_sensor.freshwater_temperature_status
     - binary_sensor.saltwater_temperature_status
     - binary_sensor.diana_temperature_status
-    - binary_sensor.leak_detected
-    - sensor.backroom_lyric_battery
+    - binary_sensor.backroom_leak_detected

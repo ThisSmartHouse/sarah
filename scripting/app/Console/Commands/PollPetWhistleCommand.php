@@ -31,6 +31,36 @@ class PollPetWhistleCommand extends Command
         parent::__construct();
     }
 
+    protected function getAuthToken()
+    {
+        $httpClient = new Client();
+        
+        $authTokenObj = \App\Models\KeyStoreData::get('whistle_auth_token');
+        
+        if(!$authTokenObj instanceof \App\Models\KeyStoreData) {
+            $login = $httpClient->request('POST', 'https://app.whistle.com/api/login', [
+                'json' => [
+                    'email' => config('services.whistle.username'),
+                    'password' => config('services.whistle.password')
+                ]
+            ]);
+            
+            $loginInfo = json_decode((string)$login->getBody(), true);
+            
+            if(!isset($loginInfo['auth_token'])) {
+                throw new \Exception("Couldn't Login to Whistle!");
+            }
+            
+            \App\Models\KeyStoreData::set('whistle_auth_token', $loginInfo['auth_token']);
+            
+            $authToken = $loginInfo['auth_token'];
+            
+        } else {
+            $authToken = $authTokenObj->value;
+        }
+        
+        return $authToken;
+    }
     /**
      * Execute the console command.
      *
@@ -40,9 +70,11 @@ class PollPetWhistleCommand extends Command
     {
         $httpClient = new Client();
         
+        $authToken = $this->getAuthToken();
+        
         $pets = $httpClient->request('GET', 'https://app.whistle.com/api/pets', [
             'headers' => [
-                'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozMTUzNDEsImV4cCI6MTUzMzIzNzk3Mn0._VQVSgR31Mtpd3Y-Pd099K-bUxm-k0VXABYJB8njgXM',
+                'Authorization' => "Bearer {$authToken}",
                 'Accept' => 'application/vnd.whistle.com.v4+json',
                 'User-Agent' => 'Winston/2.4.0 (iPhone; iOS 11.1.1; Build:1066; Scale/2.0)'
             ]
@@ -72,6 +104,7 @@ class PollPetWhistleCommand extends Command
         $mqttClient->onConnect(function() use ($mqttClient, $retval) {
             
             foreach($retval as $deviceID => $payload) {
+                $this->info("Publishing Status Update to /status/pets/$deviceID");
                 $topic = "/status/pets/$deviceID";
                 $mqttClient->publish($topic, json_encode($payload), 0, true);
             }

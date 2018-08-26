@@ -51,11 +51,18 @@ sensor.hvac_operation:
   friendly_name: "HVAC Operation"
 sensor.livingroom_pir:
   friendly_name: "Living Room Movement"
+  
+sensor.living_room_lyric_battery:
+  friendly_name: "Living Room Water Detector Batteris"
+  icon: mdi:battery-charging
+  
 sensor.backroom_lyric_battery:
   friendly_name: "Backroom Water Detector Batteries"
   icon: mdi:battery-charging
   
-binary_sensor.leak_detected:
+binary_sensor.living_room_leak_detected:
+  friendly_name: "Living Room Water Leak Detection"
+binary_sensor.backroom_leak_detected:
   friendly_name: "Backroom Water Leak Detection"
   
 sensor.coogleiot_upstairs_hallway:

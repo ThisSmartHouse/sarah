@@ -1,41 +1,41 @@
 - platform: mqtt
-  name: Saltwater Return Pump (1)
+  name: Freshwater Heater (1)
   command_topic: /coogle-power/in/17
   state_topic: /coogle-power/state/17
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Saltwater U.V. Pump (2)
+  name: Freshwater Heater (2)
   command_topic: /coogle-power/in/18
   state_topic: /coogle-power/state/18
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Protein Skimmer (3)
+  name: Freshwater ATO (3)
   command_topic: /coogle-power/in/27
   state_topic: /coogle-power/state/27
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Saltwater Auto-Topoff (4)
+  name: Grow Light (4)
   command_topic: /coogle-power/in/22
   state_topic: /coogle-power/state/22
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Saltwater U.V. Light (5)
+  name: Grow Light (5)
   command_topic: /coogle-power/in/23
   state_topic: /coogle-power/state/23
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Saltwater Sump Light (6)
+  name: Grow Light (6)
   command_topic: /coogle-power/in/24
   state_topic: /coogle-power/state/24
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Freshwater Sump Light (7)
+  name: Unassigned (7)
   command_topic: /coogle-power/in/25
   state_topic: /coogle-power/state/25
   payload_on: "0"
@@ -65,31 +65,31 @@
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Unassigned (12)
+  name: Saltwater ATO (12)
   command_topic: /coogle-power/in/7
   state_topic: /coogle-power/state/7
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Grow Lights 2 (13)
+  name: Saltwater Heater (13)
   command_topic: /coogle-power/in/10
   state_topic: /coogle-power/state/10
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Cloner Sprayer (14)
+  name: Saltwater Heater (14)
   command_topic: /coogle-power/in/9
   state_topic: /coogle-power/state/9
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Grow Lights 1 (15)
+  name: Saltwater Return Pump (15)
   command_topic: /coogle-power/in/11
   state_topic: /coogle-power/state/11
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Unassigned (16)
+  name: Saltwater Protein Skimmer (16)
   command_topic: /coogle-power/in/14
   state_topic: /coogle-power/state/14
   payload_on: "0"

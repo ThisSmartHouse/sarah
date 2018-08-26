@@ -4,6 +4,7 @@ Settings:
   control: hidden
   entities:
     - group.settings_alerts
+    - group.settings_flooding
     - group.settings_sarah
     - group.settings_house
     - group.settings_vacation

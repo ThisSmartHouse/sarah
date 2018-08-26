@@ -7,5 +7,5 @@
 - platform: template
   sensors:
     grow_light_combined_state:
-      value_template: '{{ "on" if (is_state("switch.grow_lights_1_15", "on") and is_state("switch.grow_lights_2_13", "on")) else "off" }}'
+      value_template: '{{ "on" if (is_state("switch.grow_light_4", "on") and is_state("switch.grow_light_5", "on") and is_state("switch.grow_light_6", "on")) else "off" }}'
       friendly_name: "Grow Lights Combined"

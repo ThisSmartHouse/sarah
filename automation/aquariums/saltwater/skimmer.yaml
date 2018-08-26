@@ -7,7 +7,7 @@
     at: '15:00:00'
   action:
     service: switch.turn_on
-    entity_id: switch.protein_skimmer_3
+    entity_id: switch.saltwater_protein_skimmer_16
     
 - id: Protein Skimmer Off
   alias: Protein Skimmer Off
@@ -18,4 +18,4 @@
     at: '18:00:00'
   action:
     service: switch.turn_off
-    entity_id: switch.protein_skimmer_3
+    entity_id: switch.saltwater_protein_skimmer_16

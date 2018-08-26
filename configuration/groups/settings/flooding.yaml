@@ -1,0 +1,6 @@
+settings_flooding:
+  name: Flooding Protection
+  control: hidden
+  entities:
+    - sensor.backroom_lyric_battery
+    - sensor.living_room_lyric_battery

@@ -1,0 +1,13 @@
+- id: Turn off the Soldering Iron after 60 minutes
+  alias: Turn off the Soldering Iron after 60 minutes
+  hide_entity: true
+  initial_state: true
+  trigger:
+  - platform: state
+    entity_id: switch.soldering_iron
+    to: 'on'
+    for:
+      minutes: 60
+  action:
+  - service: switch.turn_off
+    entity_id: switch.soldering_iron
