@@ -1,5 +1,7 @@
 house_mode_bedtime:
   sequence:
+    - service: media_player.turn_off
+      entity_id: media_player.patio_tv
     - service: switch.turn_off
       entity_id: switch.downstairs_bathroom
     - service: switch.turn_off

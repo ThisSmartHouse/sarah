@@ -53,13 +53,13 @@
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Unassigned (10)
+  name: Saltwater Protein Skimmer (10)
   command_topic: /coogle-power/in/3
   state_topic: /coogle-power/state/3
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Unassigned (11)
+  name: Canister Filter (11)
   command_topic: /coogle-power/in/8
   state_topic: /coogle-power/state/8
   payload_on: "0"
@@ -89,7 +89,7 @@
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Saltwater Protein Skimmer (16)
+  name: Unassigned (16)
   command_topic: /coogle-power/in/14
   state_topic: /coogle-power/state/14
   payload_on: "0"

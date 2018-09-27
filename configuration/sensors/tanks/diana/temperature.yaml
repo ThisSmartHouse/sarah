@@ -1,6 +1,5 @@
 - platform: mqtt
-  state_topic: "/status/tank/diana/temperature"
+  state_topic: "/axy-tank/temp"
   name: diana_tank_temperature
-  unit_of_measurement: '°C'
-  value_template: "{{ value_json.water_temp }}"
+  unit_of_measurement: "°F"
   expire_after: 1200

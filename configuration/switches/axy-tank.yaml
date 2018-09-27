@@ -1,0 +1,28 @@
+- platform: mqtt
+  name: Axy Lights
+  command_topic: /axy-tank/controls/output/lights/set
+  state_topic: /axy-tank/controls/output/lights'
+  payload_on: "ON"
+  payload_off: "OFF"
+
+- platform: mqtt
+  name: Chiller A
+  command_topic: /axy-tank/controls/output/chiller_a/set
+  state_topic: /axy-tank/controls/output/chiller_a
+  payload_on: "ON"
+  payload_off: "OFF"
+  
+- platform: mqtt
+  name: Chiller B
+  command_topic: /axy-tank/controls/output/chiller_b/set
+  state_topic: /axy-tank/controls/output/chiller_b
+  payload_on: "ON"
+  payload_off: "OFF"
+  
+- platform: mqtt
+  name: Cooling Fans
+  command_topic: /axy-tank/controls/output/fan/set
+  state_topic: /axy-tank/controls/output/fan
+  payload_on: "ON"
+  payload_off: "OFF"
+  
