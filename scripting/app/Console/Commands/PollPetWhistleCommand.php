@@ -36,7 +36,11 @@ class PollPetWhistleCommand extends Command
         $httpClient = new Client();
         
         $authTokenObj = \App\Models\KeyStoreData::get('whistle_auth_token');
-        
+
+	if($authTokenObj->updated_at < \Carbon\Carbon::now()->subDay()) {
+		$authTokenObj = null;
+	}
+
         if(!$authTokenObj instanceof \App\Models\KeyStoreData) {
             $login = $httpClient->request('POST', 'https://app.whistle.com/api/login', [
                 'json' => [
