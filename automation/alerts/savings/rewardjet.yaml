@@ -1,0 +1,59 @@
+- id: Alert Amazon Reward Jet Price
+  alias: alert_amazon_reward_jet_price
+  initial_state: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.amazon_giftcard_discount
+    above: 5
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "Amazon Gift Cards are currently {{ float(states('sensor.amazon_giftcard_discount')) }}% savings!"
+              ] | random }}
+
+- id: Alert Target Reward Jet Price
+  alias: alert_target_reward_jet_price
+  initial_state: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.target_giftcard_discount
+    above: 5
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "Target Gift Cards are currently {{ float(states('sensor.target_giftcard_discount')) }}% savings!"
+              ] | random }}
+
+- id: Alert Home Depot Reward Jet Price
+  alias: alert_home_depot_reward_jet_price
+  initial_state: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.home_depot_giftcard_discount
+    above: 5
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "Home Depot Gift Cards are currently {{ float(states('sensor.home_depot_giftcard_discount')) }}% savings!"
+              ] | random }}
+              
+- id: Alert Lowes Reward Jet Price
+  alias: alert_lowes_reward_jet_price
+  initial_state: true
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.lowes_giftcard_discount
+    above: 5
+  action:
+    - service_template: "{{ states('sensor.house_notification_service_entity_id') }}"
+      data_template:
+        message: >
+          {{ [
+                "Lowes Gift Cards are currently {{ float(states('sensor.lowes_giftcard_discount')) }}% savings!"
+              ] | random }}
