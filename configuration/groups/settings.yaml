@@ -10,4 +10,5 @@ Settings:
     - group.settings_vacation
     - group.settings_coogleiot
     - group.sarah_weblinks
+    - group.settings_savings
     - configurator.philips_hue

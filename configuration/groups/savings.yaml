@@ -1,0 +1,6 @@
+Savings:
+  view: yes
+  icon: mdi:currency-usd
+  control: hidden
+  entities:
+    - group.savings_rewardjet

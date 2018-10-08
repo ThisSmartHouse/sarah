@@ -5,4 +5,3 @@ settings_house:
     - input_select.seasonal_state
     - input_boolean.enable_hvac_automations
     - input_boolean.enable_light_automation
-    - automation.clip_mperks_coupons

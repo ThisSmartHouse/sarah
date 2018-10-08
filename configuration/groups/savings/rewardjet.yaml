@@ -1,0 +1,14 @@
+savings_rewardjet:
+  name: Reward Jet
+  control: hidden
+  entities:
+    - sensor.amazon_giftcard_discount
+    - sensor.cvs_giftcard_discount
+    - sensor.sephora_giftcard_discount
+    - sensor.lowes_giftcard_discount
+    - sensor.whole_foods_giftcard_discount
+    - sensor.target_giftcard_discount
+    - sensor.bed_bath_and_beyond_giftcard_discount
+    - sensor.gap_giftcard_discount
+    - sensor.petco_giftcard_discount
+    - sensor.home_depot_giftcard_discount
