@@ -35,7 +35,7 @@
   payload_on: "0"
   payload_off: "1"
 - platform: mqtt
-  name: Unassigned (7)
+  name: Grow Light (7)
   command_topic: /coogle-power/in/25
   state_topic: /coogle-power/state/25
   payload_on: "0"
