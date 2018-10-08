@@ -5,7 +5,7 @@
   payload_on: "1"
   payload_off: "0"
 - platform: mqtt
-  name: Diana Tank Chiller
+  name: Diana Switch 2
   command_topic: /diana-power/switch/2
   state_topic: /diana-power/switch/2/state
   payload_on: "1"
