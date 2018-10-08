@@ -5,4 +5,3 @@ fish_plant_nursery_controls:
     - switch.nursery_plant_fan
     - switch.nursery_grow_lights
     - switch.plant_nursery_3
-    - switch.plant_nursery_4
