@@ -67,5 +67,10 @@ return [
     'whistle' => [
         'username' => env('WHISTLE_USERNAME'),
         'password' => env('WHISTLE_PASSWORD')
+    ],
+    'rewardjet' => [
+        'username' => env('REWARDJET_USERNAME'),
+        'password' => env('REWARDJET_PASSWORD'),
+        'base_url' => env('REWARDJET_BASEURL')
     ]
 ];
