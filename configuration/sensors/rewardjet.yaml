@@ -1,0 +1,69 @@
+- platform: mqtt
+  state_topic: "/status/rewardjet/amazon"
+  name: Amazon Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/cvs"
+  name: CVS Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/sephora"
+  name: Sephora Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/lowes"
+  name: Lowes Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/wholefoods"
+  name: Whole Foods Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/target"
+  name: Target Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/bedbathbeyond"
+  name: Bed Bath and Beyond Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+
+- platform: mqtt
+  state_topic: "/status/rewardjet/gap"
+  name: GAP Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/petco"
+  name: Petco Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
+  
+- platform: mqtt
+  state_topic: "/status/rewardjet/homedepot"
+  name: Home Depot Giftcard Discount
+  unit_of_measurement: '%'
+  value_template: "{{ value_json.discount_perc }}"
+  expire_after: 86400
