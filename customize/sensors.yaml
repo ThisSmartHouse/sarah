@@ -9,6 +9,27 @@ sensor.saltwater_feeder_last_ran:
   icon: mdi:timetable
   friendly_name: "Last Saltwater Feeding"
   
+sensor.amazon_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.cvs_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.sephora_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.lowes_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.whole_foods_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.target_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.bed_bath_and_beyond_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.gap_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.petco_giftcard_discount:
+  icon: mdi:currency-usd
+sensor.home_depot_giftcard_discount:
+  icon: mdi:currency-usd
+  
 sensor.allergy_primary_allergen_today:
   icon: mdi:flower
 sensor.allergy_rating_today:

@@ -16,5 +16,7 @@ group.workshop:
   order: 8
 group.security:
   order: 9
+group.savings:
+  order: 10 
 group.settings:
-  order: 10
+  order: 11

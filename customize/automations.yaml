@@ -1,3 +1,15 @@
+automation.alert_amazon_reward_jet_price:
+  friendly_name: "Alert When Amazon Gift Cards > 5%"
+  icon: mdi:currency-usd
+automation.alert_target_reward_jet_price:
+  friendly_name: "Alert When Target Gift Cards > 5%"
+  icon: mdi:currency-usd
+automation.alert_home_depot_reward_jet_price:
+  friendly_name: "Alert When Home Depot Gift Cards > 5%"
+  icon: mdi:currency-usd
+automation.alert_lowes_reward_jet_price:
+  friendly_name: "Alert When Lowes Gift Cards > 5%"
+  icon: mdi:currency-usd
 
 automation.auto_erase_dinner_menu:
   friendly_name: "Reset Dinner Menu on Sunday"
