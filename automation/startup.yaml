@@ -1,0 +1,36 @@
+- id: On Startup Turn on Things that should be on
+  alias: on_startup_turn_on
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: switch.turn_on
+      entity_id: switch.wavemaker_1
+    - service: switch.turn_off
+      entity_id: switch.wavemaker_2
+    - service: switch.turn_on
+      entity_id: switch.soda_compressor
+    - service: switch.turn_on
+      entity_id: switch.freshwater_ato_3
+    - service: switch.turn_on
+      entity_id: switch.freshwater_heater_1
+    - service: switch.turn_on
+      entity_id: switch.freshwater_heater_2
+    - service: switch.turn_on
+      entity_id: switch.freshwater_return_pump
+    - service: switch.turn_on
+      entity_id: switch.saltwater_ato_12
+    - service: switch.turn_on
+      entity_id: switch.saltwater_heater_13
+    - service: switch.turn_on
+      entity_id: switch.saltwater_heater_14
+    - service: switch.turn_on
+      entity_id: switch.saltwater_lights
+    - service: switch.turn_on
+      entity_id: switch.saltwater_protein_skimmer_10
+    - service: switch.turn_on
+      entity_id: switch.saltwater_return_pump_15 
+    - service: switch.turn_on
+      entity_id: switch.canister_filter_11
+    

@@ -58,6 +58,8 @@
           - switch.grow_light_5
           - switch.grow_light_6
           - switch.grow_light_7
+          - switch.grow_light_8
+          - switch.grow_light_9
       turn_off:
         service: switch.turn_off
         entity_id:
@@ -65,6 +67,8 @@
           - switch.grow_light_5
           - switch.grow_light_6
           - switch.grow_light_7
+          - switch.grow_light_8
+          - switch.grow_light_9
 
 - platform: template
   switches:
