@@ -4,6 +4,19 @@
 # Button 3 - 17
 # Button 4 - 18
 
+- alias: Toggle Workshop Soldering Iron on 3
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: sensor.workshop_tap_last_updated
+  condition:
+    condition: state
+    entity_id: sensor.workshop_tap
+    state: '17'
+  action:
+    - service: switch.toggle
+      entity_id: switch.soldering_iron
+
 - alias: Toggle  Workshop Lights on 1
   hide_entity: true
   trigger:
