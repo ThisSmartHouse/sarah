@@ -1,0 +1,31 @@
+# STATE VALUES FOR TAP
+# Button 1 - 34
+# Button 2 - 16
+# Button 3 - 17
+# Button 4 - 18
+
+- alias: Toggle  Workshop Lights on 1
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: sensor.workshop_tap_last_updated
+  condition:
+    condition: state
+    entity_id: sensor.workshop_tap
+    state: '34'
+  action:
+    - service: switch.toggle
+      entity_id: switch.workshop_lights
+
+- alias: Toggle on Workshop Exhaust on 2 
+  hide_entity: true
+  trigger:
+    platform: state
+    entity_id: sensor.workshop_tap_last_updated
+  condition:
+    condition: state
+    entity_id: sensor.workshop_tap
+    state: '16'
+  action:
+    - service: switch.toggle
+      entity_id: switch.workshop_exhaust

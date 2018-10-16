@@ -1,0 +1,12 @@
+- platform: rest
+  resource: !secret hue_tap_resource 
+  value_template: '{{ value_json.state.buttonevent }}'
+  name: 'Workshop Tap'
+  scan_interval: 1
+
+- platform: rest
+  resource: !secret hue_tap_resource
+  value_template: '{{ value_json.state.lastupdated }}'
+  name: 'Workshop Tap Last Updated'
+  scan_interval: 1
+
