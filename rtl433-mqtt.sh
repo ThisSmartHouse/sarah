@@ -23,7 +23,10 @@ do
 # Create file with touch /tmp/rtl_433.log if logging is needed
  [ -w /tmp/rtl_433.log ] && echo $line >> rtl_433.log
  
+SENSOR_ID=`echo $line | jq .id -`
+
+echo $line | /usr/bin/mosquitto_pub -h $MQTT_HOST -i RTL_433 -r -l -t "/sensor/rtl433/$SENSOR_ID"
 # Raw message to MQTT
- echo $line  | /usr/bin/mosquitto_pub -h $MQTT_HOST -i RTL_433 -l -t "/sensor/rtl433"
+# echo $line  | /usr/bin/mosquitto_pub -h $MQTT_HOST -i RTL_433 -l -t "/sensor/rtl433"
 done
 

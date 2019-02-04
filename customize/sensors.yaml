@@ -105,6 +105,10 @@ sensor.car_fuel_level:
 sensor.car_status:
   friendly_name: "Car Status"
   icon: mdi:car-connected
+sensor.doghouse_temperature:
+  friendly_name: "Dog House Temperature"
+  icon: mdi:thermometer-lines
+
 sensor.outdoor_temperature:
   friendly_name: "Temperature Outside"
   icon: mdi:thermometer-lines
