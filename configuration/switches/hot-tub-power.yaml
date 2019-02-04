@@ -1,0 +1,25 @@
+- platform: mqtt
+  name: Hot Tub 1
+  command_topic: /hot-tub/switch/1
+  state_topic: /hot-tub/switch/1/state
+  payload_on: "1"
+  payload_off: "0"
+- platform: mqtt
+  name: Hot Tub 2
+  command_topic: /hot-tub/switch/2
+  state_topic: /hot-tub/switch/2/state
+  payload_on: "1"
+  payload_off: "0"
+- platform: mqtt
+  name: Hot Tub 3
+  command_topic: /hot-tub/switch/3
+  state_topic: /hot-tub/switch/3/state
+  payload_on: "1"
+  payload_off: "0"
+- platform: mqtt
+  name: Hot Tub 4
+  command_topic: /hot-tub/switch/4
+  state_topic: /hot-tub/switch/4/state
+  payload_on: "1"
+  payload_off: "0"
+  
