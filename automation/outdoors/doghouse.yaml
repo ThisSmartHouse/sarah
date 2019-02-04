@@ -1,0 +1,14 @@
+- id: Turn of Dog House Heat after 4 hours
+  alias: Turn Off Dog House after 4 hours
+  hide_entity: true
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id: switch.dog_house
+      from: 'off'
+      to: 'on'
+      for:
+        hours: 4
+  action:
+    - service: switch.turn_off
+      entity_id: switch.dog_house
