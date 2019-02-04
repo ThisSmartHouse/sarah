@@ -3,6 +3,8 @@
   initial_state: true
   trigger:
     platform: time
-    hours: /6
+    hours: '/6'
+    minutes: 00
+    seconds: 00
   action:
     - service: shell_command.refresh_rewardjet
