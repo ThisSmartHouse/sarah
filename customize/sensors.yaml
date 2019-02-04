@@ -1,3 +1,7 @@
+sensor.laser_water_temp:
+  icon: mdi:thermometer
+  friendly_name: "Laser Coolant Temperature"
+
 sensor.diana_feeder_last_ran:
   icon: mdi:timetable
   friendly_name: "Last Axolotl Feeding"
