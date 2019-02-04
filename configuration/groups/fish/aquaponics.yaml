@@ -2,11 +2,11 @@ fish_aquaponic_controls:
   name: Aquaponics
   control: hidden
   entities:
-    - script.doser_activate
+    - script.nutrient_doser_activate
     - script.doser_potassium_activate
     - sensor.doser_potassium_last_ran
     - sensor.doser_last_ran
     - switch.cloner_sprayer_14
     - switch.grow_lights
-    - input_number.peristalic_doser_turns
-    - input_number.peristalic_doser_potassium_turns
+    - input_number.peristalic_doser_nutrient_runtime
+    - input_number.peristalic_doser_potassium_runtime

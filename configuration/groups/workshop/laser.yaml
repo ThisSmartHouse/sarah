@@ -1,0 +1,4 @@
+workshop_laser:
+  name: "Laser Cutter"
+  entities:
+    - sensor.laser_water_temp

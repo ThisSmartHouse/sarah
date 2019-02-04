@@ -1,0 +1,9 @@
+outdoors_hot_tub:
+  name: Hot Tub Controls
+  icon: mdi:hot-tub
+  control: hidden
+  entities:
+    - switch.hot_tub_1
+    - switch.hot_tub_2
+    - switch.hot_tub_3
+    - switch.hot_tub_4

@@ -4,6 +4,7 @@ Outdoors:
   control: hidden
   entities:
     - group.outdoors_pond
+    - group.outdoors_hot_tub
     - group.outdoors_power
     - group.outdoors_temperature
     - group.outdoors_weather

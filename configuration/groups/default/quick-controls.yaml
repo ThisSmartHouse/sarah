@@ -4,5 +4,6 @@ default_quick_controls:
   entities:
     #- cover.front_gate
     - cover.garage_door
+    - lock.front_door
     - input_select.air_purifier
     - input_select.home_state
