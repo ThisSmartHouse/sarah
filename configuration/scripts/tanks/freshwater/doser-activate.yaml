@@ -1,7 +1,7 @@
-doser_activate:
+nutrient_doser_activate:
   sequence:
     - service: mqtt.publish
       data_template: 
-        topic: "/peristalic/freshwater/1"
+        topic: "/doser/1"
         payload: >
-          {{ states('input_number.peristalic_doser_turns') }}
+          {{ states('input_number.peristalic_doser_nutrient_runtime') }}

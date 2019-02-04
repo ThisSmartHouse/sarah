@@ -2,6 +2,6 @@ doser_potassium_activate:
   sequence:
     - service: mqtt.publish
       data_template: 
-        topic: "/peristalic/freshwater/2"
+        topic: "/doser/2"
         payload: >
-          {{ states('input_number.peristalic_doser_potassium_turns') }}
+          {{ states('input_number.peristalic_doser_potassium_runtime') }}
