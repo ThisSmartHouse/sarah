@@ -1,0 +1,22 @@
+- id: Salt Lamp On
+  alias: Salt Lamp On
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: -02:00:00
+  action:
+    service: switch.turn_on
+    entity_id: switch.salt_lamp
+    
+- id: Salt Lamp Off
+  alias: Salt Lamp Off
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: time
+    at: 03:00:00
+  action:
+    service: switch.turn_off
+    entity_id: switch.salt_lamp
