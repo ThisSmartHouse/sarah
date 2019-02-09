@@ -1,0 +1,5 @@
+enable_doghouse:
+  name: Dog House
+  initial: off
+  icon: mdi:home
+  

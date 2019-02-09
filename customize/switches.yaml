@@ -1,15 +1,16 @@
 switch.christmas_tree:
   haaska_name: "Christmas Tree"
   haaska_hidden: false
+
+switch.wax_melt:  
+  haaska_name: "Wax Melt"
+  haaska_hidden: false
+
 switch.back_porch:
   hidden: true
   haaska_name: "Back Porch"
   haaska_hidden: false
 
-switch.dog_house:
-  haaska_name: "Dog House"
-  haaska_hidden: false
-  
 switch.pond_waterfall_pump:
   hidden: true
 switch.grow_lights_1_15:

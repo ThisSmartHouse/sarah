@@ -3,6 +3,7 @@ lighting_living_room:
   entities:
     - light.living_room_lights
     - light.stairwell
+    - switch.wax_melt
     - switch.downstairs_bathroom
     - switch.catbot
     - switch.accent_lighting

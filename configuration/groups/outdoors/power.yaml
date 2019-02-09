@@ -5,7 +5,7 @@ outdoors_power:
   entities:
     - light.front_porch
     - switch.back_porch_lights
-    - switch.dog_house
+    - input_boolean.enable_doghouse
     - switch.garage_string_lights
     - switch.pond_string_lights
     - switch.pond_waterfall_pump

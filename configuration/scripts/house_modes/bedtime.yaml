@@ -1,5 +1,9 @@
 house_mode_bedtime:
   sequence:
+    - service: switch.turn_off
+      entity_id: switch.wax_melt
+    - service: switch.turn_off
+      entity_id: switch.salt_lamp
     - service: media_player.turn_off
       entity_id: media_player.living_room_2
     - service: media_player.turn_off
@@ -26,6 +30,8 @@ house_mode_bedtime:
       entity_id: switch.kitchen_sink_light
     - service: homeassistant.turn_off
       entity_id: input_boolean.enable_waterfall
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.enable_doghouse
     - service: switch.turn_off
       entity_id: switch.pond_string_lights
     - service: switch.turn_off
