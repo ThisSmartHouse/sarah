@@ -24,7 +24,7 @@ peristalic_doser_nutrient_runtime:
 
 saltwater_feeder_turns:
   name: Saltwater Feeder Turns
-  initial: 1
+  initial: 2
   min: 0
   max: 10
   step: 1
