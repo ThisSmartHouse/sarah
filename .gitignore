@@ -9,6 +9,7 @@ ip_bans.yaml
 secrets.yaml
 deps
 icloud
+google_calendars.yaml
 home-assistant.db
 home-assistant_v2.db
 home-assistant.log

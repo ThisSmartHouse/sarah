@@ -2,5 +2,6 @@ default_quick_sensors:
   name: Information
   control: hidden
   entities:
+    - sensor.diana_next_pickup
     - sensor.outdoor_temperature
     - sensor.grill_temperature

@@ -1,0 +1,91 @@
+- id: Alert Diana When Pickup Approaching
+  alias: Alert Diana When Pickup Approaching
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: sensor.diana_pickup_approaching
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: >
+          {% set pick_up_time = strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %}
+          {% set pick_up_loc = state_attr('calendar.diana_pickup_schedule', 'location') %}
+          Hey Kiddo! Just letting you know the calendar says Dad will pick you up on {{ pick_up_time }} from {{ pick_up_loc }}, please shoot him or Bayley a text if that isn't right!
+
+- id: Alert Us When Pickup Approaching
+  alias: Alert Us When Pickup Approaching
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: sensor.diana_pickup_approaching
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 1
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        messsage: >
+          {% set pick_up_time = strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %}
+          {% set pick_up_loc = state_attr('calendar.diana_pickup_schedule', 'location') %}
+          DIANA PICKUP ALERT -  {{ pick_up_time }} from {{ pick_up_loc }}
+
+- id: Alert Diana On Day of Pickup
+  alias: Alert Diana On Day of Pickup
+  initial_state: true
+  trigger:
+    platform: time
+    at: '12:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.diana_pickup_today
+        state: 'on'
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: >
+          {% set pick_up_time = strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %}
+          {% set pick_up_loc = state_attr('calendar.diana_pickup_schedule', 'location') %}
+          Hey Kiddo, calendar says Dad is picking you up today at {{ pick_up_time }} from {{ pick_up_loc }}, please let him and/or Bayley know right away if that's wrong!
+
+- id: Alert Us On Day of Pickup
+  alias: Alert Us On Day of Pickup
+  initial_state: true
+  trigger:
+    platform: time
+    at: '8:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.diana_pickup_today
+        state: 'on'
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: >
+          {% set pick_up_time = strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %}
+          {% set pick_up_loc = state_attr('calendar.diana_pickup_schedule', 'location') %}
+          PICKUP DIANA TODAY - {{ pick_up_time }} from {{ pick_up_loc }}
+        
+- id: Alert Us 3 hrs from Pickup
+  alias: Alert Us 3 hrs from Pickup
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: sensor.diana_pickup_three_hrs
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.house_phones_sms
+      data_template:
+        message: >
+          {% set pick_up_time = strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %}
+          {% set pick_up_loc = state_attr('calendar.diana_pickup_schedule', 'location') %}
+          PICKUP DIANA IN 3 HOURS - {{ pick_up_time }} from {{ pick_up_loc }}

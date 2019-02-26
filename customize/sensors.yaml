@@ -1,3 +1,7 @@
+sensor.diana_next_pickup:
+  icon: mdi:car-hatchback
+  friendly_name: "Next Diana Pick Up"
+  
 sensor.laser_water_temp:
   icon: mdi:thermometer
   friendly_name: "Laser Coolant Temperature"

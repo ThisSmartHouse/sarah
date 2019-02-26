@@ -15,6 +15,10 @@ ios:
 
 auth:
 
+google:
+  client_id: !secret google_cal_client_id
+  client_secret: !secret google_cal_client_secret
+
 ffmpeg:
   ffmpeg_bin: /usr/bin/avconv
 

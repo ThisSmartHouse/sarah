@@ -1,0 +1,18 @@
+- platform: template
+  sensors:
+    diana_pickup_approaching:
+      value_template: >
+        {% if (as_timestamp(state_attr('calendar.diana_pickup_schedule', 'start_time')) - as_timestamp(now())) < 172800 %}on{% else %}off{% endif %}
+    diana_pickup_today:
+      value_template: >
+        {% if (strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").year == now().year) and (strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").month == now().month) and (strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").day == now().day) and (as_timestamp(state_attr('calendar.diana_pickup_schedule', 'start_time')) - as_timestamp(now()) > 0)%}on{% else %}off{% endif %}
+    diana_pickup_three_hrs:
+      value_template: >
+        {% if (as_timestamp(state_attr('calendar.diana_pickup_schedule', 'start_time')) - as_timestamp(now())) < 10800 %}on{% else %}off{% endif %}
+    diana_next_pickup:
+      value_template: >
+        {% if is_state('sensor.diana_pickup_today', 'on') %}
+          {{ strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("TODAY at %-I %p") }}
+        {% else %}
+          {{ strptime(state_attr('calendar.diana_pickup_schedule', 'start_time'), "%Y-%m-%d %H:%M:%S").strftime("%a. %b %-d at %-I %p") }}
+        {% endif %}
