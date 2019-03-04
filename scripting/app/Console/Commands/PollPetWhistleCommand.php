@@ -37,7 +37,8 @@ class PollPetWhistleCommand extends Command
         
         $authTokenObj = \App\Models\KeyStoreData::get('whistle_auth_token');
 
-	if($authTokenObj->updated_at < \Carbon\Carbon::now()->subDay()) {
+	
+	if(is_null($authTokenObj) || ($authTokenObj->updated_at < \Carbon\Carbon::now()->subDay())) {
 		$authTokenObj = null;
 	}
 

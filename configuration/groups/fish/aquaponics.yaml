@@ -6,7 +6,6 @@ fish_aquaponic_controls:
     - script.doser_potassium_activate
     - sensor.doser_potassium_last_ran
     - sensor.doser_last_ran
-    - switch.cloner_sprayer_14
     - switch.grow_lights
     - input_number.peristalic_doser_nutrient_runtime
     - input_number.peristalic_doser_potassium_runtime

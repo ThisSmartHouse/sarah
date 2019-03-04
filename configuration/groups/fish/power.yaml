@@ -2,20 +2,5 @@ fish_power:
   name: Misc Power
   control: hidden
   entities:
-    - switch.unassigned_1
-    - switch.unassigned_2
-    - switch.unassigned_3
-    - switch.unassigned_4
-    - switch.unassigned_5
-    - switch.unassigned_6
-    - switch.unassigned_7
-    - switch.unassigned_8
-    - switch.unassigned_9
-    - switch.unassigned_10
-    - switch.unassigned_11
-    - switch.unassigned_12
-    - switch.unassigned_13
-    - switch.unassigned_14
-    - switch.unassigned_15
     - switch.unassigned_16
     - switch.soda_compressor

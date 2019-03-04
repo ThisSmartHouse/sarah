@@ -19,8 +19,10 @@ google:
   client_id: !secret google_cal_client_id
   client_secret: !secret google_cal_client_secret
 
+system_health:
+
 ffmpeg:
-  ffmpeg_bin: /usr/bin/avconv
+  ffmpeg_bin: /usr/bin/ffmpeg
 
 frontend:
   javascript_version: latest
@@ -30,6 +32,8 @@ updater:
 scene: !include_dir_merge_list ./configuration/scenes
 
 history:
+
+speedtestdotnet: !include ./configuration/speedtestdotnet.yaml
 
 logbook: !include ./configuration/logbook.yaml
 
@@ -58,7 +62,6 @@ weblink:
 camera: !include_dir_merge_list ./configuration/cameras
 
 august: !include ./configuration/august.yaml
-alert: !include_dir_merge_named ./configuration/alerts
 recorder: !include ./configuration/recorder.yaml
 http: !include ./configuration/http.yaml
 ecobee: !include ./configuration/ecobee.yaml
@@ -69,7 +72,8 @@ group: !include_dir_merge_named ./configuration/groups
 switch: !include_dir_merge_list ./configuration/switches
 sensor: !include_dir_merge_list ./configuration/sensors
 mqtt: !include ./configuration/mqtt.yaml
-automation: !include_dir_merge_list ./automation
+automation: !include automations.yaml
+#automation old: !include_dir_merge_list ./automation
 light: !include_dir_merge_list ./configuration/lights
 remote: !include ./configuration/remote.yaml
 shell_command: !include_dir_merge_named ./configuration/shell_cmds

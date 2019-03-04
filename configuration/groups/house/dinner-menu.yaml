@@ -2,7 +2,7 @@ dinner_menu:
   name: Dinner menu
   control: hidden
   entities:
-    - automation.auto_erase_dinner_menu
+    - automation.home_automatically_erase_dinner_menu_on_sunday
     - input_text.dinner_monday
     - input_text.dinner_tuesday
     - input_text.dinner_wednesday

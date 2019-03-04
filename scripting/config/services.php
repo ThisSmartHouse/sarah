@@ -13,7 +13,9 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
-
+    'iphub' => [
+	'key' => env('IPHUB_KEY')
+    ],
     'mperks' => [
         'username' => env('MPERKS_USERNAME'),
         'password' => env('MPERKS_PASSWORD')

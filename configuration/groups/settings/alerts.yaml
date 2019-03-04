@@ -2,9 +2,9 @@ settings_alerts:
   name: System Alert Settings
   control: hidden
   entities:
-    - automation.alert_bad_axolotl_temp
-    - automation.alert_bad_freshwater_temp
-    - automation.alert_bad_saltwater_temp
-    - automation.alert_bad_pond_temp
-    - automation.alert_bad_freezer_temp
-    - automation.alert_backroom_water_leak
+    - automation.axolotl_alert_on_problem_temperature
+    - automation.freshwater_alert_on_bad_temperature
+    - automation.saltwater_alert_on_bad_water_temperature
+    - automation.outdoors_alert_on_bad_pond_temperature
+    - automation.backroom_alert_on_freezer_bad_temperature
+    - automation.backroom_alert_on_water_leak_detected

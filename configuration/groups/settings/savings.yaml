@@ -2,8 +2,9 @@ settings_savings:
   name: Savings Settings
   control: hidden
   entities:
-    - automation.clip_mperks_coupons
-    - automation.alert_amazon_reward_jet_price
-    - automation.alert_target_reward_jet_price
-    - automation.alert_home_depot_reward_jet_price
-    - automation.alert_lowes_reward_jet_price
+    - automation.home_automatically_clip_digital_mperks_coupons
+    - automation.savings_send_alert_for_amazon_gift_card_discount
+    - automation.savings_alert_when_target_gift_cards_are_5_off
+    - automation.savings_alert_when_home_depot_gift_cards_are_5
+    - automation.savings_alert_when_lowes_gift_cards_are_5_off
+

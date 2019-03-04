@@ -1,0 +1,2353 @@
+- id: Turn off the Soldering Iron after 60 minutes
+  alias: 'Workshop: Turn off the Soldering Iron after 60 minutes'
+  trigger:
+  - entity_id: switch.soldering_iron
+    for:
+      minutes: 60
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: switch.soldering_iron
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: feb3d9d8c21649dda7cd4818f0656f5c
+  alias: 'Workshop: Toggle Soldering Iron From Tap'
+  trigger:
+  - entity_id: sensor.workshop_tap_last_updated
+    platform: state
+  condition:
+  - condition: state
+    entity_id: sensor.workshop_tap
+    state: '17'
+  action:
+  - entity_id: switch.soldering_iron
+    service: switch.toggle
+  hide_entity: true
+- id: 5d589d8cc12347f49f3d1b8b5c6d5f92
+  alias: 'Workshop: Toggle Workshop Lights From Tap '
+  trigger:
+  - entity_id: sensor.workshop_tap_last_updated
+    platform: state
+  condition:
+  - condition: state
+    entity_id: sensor.workshop_tap
+    state: '34'
+  action:
+  - entity_id: switch.workshop_lights
+    service: switch.toggle
+  hide_entity: true
+- id: 81122ef0f9d945e58106212adc7ef6b3
+  alias: 'Workshop: Toggle Workshop Exhaust from Tap'
+  trigger:
+  - entity_id: sensor.workshop_tap_last_updated
+    platform: state
+  condition:
+  - condition: state
+    entity_id: sensor.workshop_tap
+    state: '16'
+  action:
+  - entity_id: switch.workshop_exhaust
+    service: switch.toggle
+  hide_entity: true
+- id: 3D Printer 1 Turn on Exhaust
+  alias: 'Workshop: Printer 1 Turn on Exhaust'
+  trigger:
+  - entity_id: sensor.3dprinter1_state
+    platform: state
+    to: Printing
+  action:
+  - entity_id: switch.workshop_exhaust
+    service: switch.turn_on
+  initial_state: true
+- id: 3D Printer 1 Turn Off Exhaust
+  alias: 'Workshop: Printer 1 Turn Off Exhaust'
+  trigger:
+  - entity_id: sensor.3dprinter1_state
+    platform: state
+    to: Operational
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.3dprinter2_state
+      state: Operational
+    - condition: state
+      entity_id: sensor.3dprinter3_state
+      state: Operational
+  action:
+  - entity_id: switch.workshop_exhaust
+    service: switch.turn_off
+  initial_state: true
+- id: 3D Printer 2 Turn on Exhaust
+  alias: 'Workshop: Printer 2 Turn on Exhaust'
+  trigger:
+  - entity_id: sensor.3dprinter2_state
+    platform: state
+    to: Printing
+  action:
+  - entity_id: switch.workshop_exhaust
+    service: switch.turn_on
+  initial_state: true
+- id: 3D Printer 2 Turn Off Exhaust
+  alias: 'Workshop: Printer 2 Turn Off Exhaust'
+  trigger:
+  - entity_id: sensor.3dprinter1_state
+    platform: state
+    to: Operational
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.3dprinter1_state
+      state: Operational
+    - condition: state
+      entity_id: sensor.3dprinter3_state
+      state: Operational
+  action:
+  - entity_id: switch.workshop_exhaust
+    service: switch.turn_off
+  initial_state: true
+- id: Turn Backroom Water Leak Alert Back On
+  alias: 'Internal: Turn Back On Backroom Water Leak Automations After 1 Hour'
+  trigger:
+  - entity_id: automation.alert_backroom_water_leak
+    for:
+      hours: 1
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: automation.alert_backroom_water_leak
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Freshwater Tank Temperature Alert Back On
+  alias: 'Internal: Turn back on Freshwater Temperature Alerts After 1 Hour'
+  trigger:
+  - entity_id: automation.alert_bad_freshwater_temp
+    for:
+      hours: 1
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: automation.alert_bad_freshwater_temp
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Axolotl Temperature Alert Back On
+  alias: 'Internal: Turn back on Axolotl Temperature Automations After 1 Hour'
+  trigger:
+  - entity_id: automation.alert_bad_axolotl_temp
+    for:
+      hours: 1
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: automation.alert_bad_axolotl_temp
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Pond Temperature Alert Back On
+  alias: 'Internal: Turn Back On Pond Temperature Alerts After 1 Hour'
+  trigger:
+  - entity_id: automation.alert_bad_pond_temp
+    for:
+      hours: 1
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: automation.alert_bad_pond_temp
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn on Dinner Menu Clearing after two days
+  alias: restore_auto_erase_dinner_menu
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: state
+    entity_id: automation.auto_erase_dinner_menu
+    from: 'on'
+    to: 'off'
+    for:
+      days: 2
+  action:
+  - service: automation.turn_on
+    entity_id: automation.auto_erase_dinner_menu
+- id: Turn Saltwater Tank Temperature Alert Back On
+  alias: 'Internal: Turn Back On Saltwater Temperature Alerts After 1 Hour'
+  trigger:
+  - entity_id: automation.alert_bad_saltwater_temp
+    for:
+      hours: 1
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: automation.alert_bad_saltwater_temp
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Icemaker Off
+  alias: 'Livingroom: Turn Icemaker Off At 3am'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  action:
+  - entity_id: switch.ice_machine
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Icemaker On
+  alias: 'Livingroom: Turn Icemaker On At 3:01am'
+  trigger:
+  - at: 03:01:00
+    platform: time
+  action:
+  - entity_id: switch.ice_machine
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Bar Accent Lights On
+  alias: 'Livingroom: Turn on Bar Accent Lights'
+  trigger:
+  - event: sunset
+    offset: -02:00:00
+    platform: sun
+  action:
+  - entity_id: switch.accent_lighting
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Bar Accent Lights Off
+  alias: 'Livingroom: Turn off Bar Accent Lights Off @ 3am'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  action:
+  - entity_id: switch.accent_lighting
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Publish Seasonal State to MQTT
+  alias: 'Internal: Publish Seasonal State to MQTT'
+  trigger:
+  - entity_id: input_select.seasonal_state
+    platform: state
+  action:
+  - data_template:
+      payload: '{{ states(''input_select.seasonal_state'') }}'
+      retain: true
+      topic: /home/seasonal/state
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Load Home Seasonal State at Startup
+  alias: 'Internal: Load Seasonal State On Startup'
+  trigger:
+  - event: start
+    platform: homeassistant
+  action:
+  - entity_id: automation.publish_home_seasonal_state_to_mqtt
+    service: automation.turn_off
+  - data_template:
+      entity_id: input_select.seasonal_state
+      option: '{{ states(''sensor.seasonal_state'') }}'
+    service: input_select.select_option
+  - entity_id: automation.publish_home_seasonal_state_to_mqtt
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Push Octoprint Updates to MQTT (Printer 1)
+  alias: 'Workshop: Push Octoprint Updates to MQTT (Printer 1)'
+  trigger:
+  - entity_id: sensor.3dprinter1_state
+    platform: state
+  - entity_id: sensor.3dprinter1_percent_complete
+    platform: state
+  - entity_id: sensor.3dprinter1_percent_file
+    platform: state
+  - event_type: homeassistant_start
+    platform: event
+  action:
+  - data_template:
+      payload: "{\n  \"current_state\" : \"{{ states('sensor.3dprinter1_state') }}\"\
+        ,\n  \"job_percentage\" : \"{{ states('sensor.3dprinter1_percent_complete')\
+        \ }}\",\n  \"file\" : \"{{ states('sensor.3dprinter1_percent_file') }}\"\n\
+        } \n"
+      retain: true
+      topic: /status/octoprint/1
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Octoprint Updates to MQTT (Printer 2)
+  alias: 'Workshop: Push Octoprint Updates to MQTT (Printer 2)'
+  trigger:
+  - entity_id: sensor.3dprinter2_state
+    platform: state
+  - entity_id: sensor.3dprinter2_percent_complete
+    platform: state
+  - entity_id: sensor.3dprinter2_percent_file
+    platform: state
+  - event_type: homeassistant_start
+    platform: event
+  action:
+  - data_template:
+      payload: "{\n  \"current_state\" : \"{{ states('sensor.3dprinter2_state') }}\"\
+        ,\n  \"job_percentage\" : \"{{ states('sensor.3dprinter2_percent_complete')\
+        \ }}\",\n  \"file\" : \"{{ states('sensor.3dprinter2_percent_file') }}\"\n\
+        } \n"
+      retain: true
+      topic: /status/octoprint/2
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Erase Menu On Sunday
+  alias: 'Home: Automatically Erase Dinner Menu on Sunday'
+  trigger:
+  - at: '20:00:00'
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday: sun
+  action:
+  - data:
+      entity_id: input_text.dinner_monday
+      value: ?????
+    service: input_text.set_value
+  - data:
+      entity_id: input_text.dinner_tuesday
+      value: ?????
+    service: input_text.set_value
+  - data:
+      entity_id: input_text.dinner_wednesday
+      value: ?????
+    service: input_text.set_value
+  - data:
+      entity_id: input_text.dinner_thursday
+      value: ?????
+    service: input_text.set_value
+  - data:
+      entity_id: input_text.dinner_friday
+      value: ?????
+    service: input_text.set_value
+  - data:
+      entity_id: input_text.dinner_saturday
+      value: ?????
+    service: input_text.set_value
+  - data:
+      entity_id: input_text.dinner_sunday
+      value: ?????
+    service: input_text.set_value
+  - data_template:
+      message: "{{ [\n     \"It's the start of a new week, time to come up with dinner\
+        \ plans!\",\n     \"I just cleared the dinner menu, better decide what you\
+        \ guys want to eat next week!\"\n   ] | random }}\n"
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Update Menu
+  alias: 'Internal: Update Home Assistant Dinner Menu from MQTT'
+  trigger:
+  - entity_id: sensor.dinner_monday
+    platform: state
+  - entity_id: sensor.dinner_tuesday
+    platform: state
+  - entity_id: sensor.dinner_wednesday
+    platform: state
+  - entity_id: sensor.dinner_thursday
+    platform: state
+  - entity_id: sensor.dinner_friday
+    platform: state
+  - entity_id: sensor.dinner_saturday
+    platform: state
+  - entity_id: sensor.dinner_sunday
+    platform: state
+  - event: start
+    platform: homeassistant
+  action:
+  - entity_id: automation.push_full_dinner_menu
+    service: automation.turn_off
+  - data_template:
+      entity_id: input_text.dinner_monday
+      value: '{{ states(''sensor.dinner_monday'') }}'
+    service: input_text.set_value
+  - data_template:
+      entity_id: input_text.dinner_tuesday
+      value: '{{ states(''sensor.dinner_tuesday'') }}'
+    service: input_text.set_value
+  - data_template:
+      entity_id: input_text.dinner_wednesday
+      value: '{{ states(''sensor.dinner_wednesday'') }}'
+    service: input_text.set_value
+  - data_template:
+      entity_id: input_text.dinner_thursday
+      value: '{{ states(''sensor.dinner_thursday'') }}'
+    service: input_text.set_value
+  - data_template:
+      entity_id: input_text.dinner_friday
+      value: '{{ states(''sensor.dinner_friday'') }}'
+    service: input_text.set_value
+  - data_template:
+      entity_id: input_text.dinner_saturday
+      value: '{{ states(''sensor.dinner_saturday'') }}'
+    service: input_text.set_value
+  - data_template:
+      entity_id: input_text.dinner_sunday
+      value: '{{ states(''sensor.dinner_sunday'') }}'
+    service: input_text.set_value
+  - entity_id: automation.push_full_dinner_menu
+    service: automation.turn_on
+  initial_state: true
+  hide_entity: true
+- id: Push Complete Dinner Menu to MQTT
+  alias: 'Internal: Push Dinner Menu to MQTT'
+  trigger:
+  - entity_id: input_text.dinner_monday
+    platform: state
+  - entity_id: input_text.dinner_tuesday
+    platform: state
+  - entity_id: input_text.dinner_wednesday
+    platform: state
+  - entity_id: input_text.dinner_thursday
+    platform: state
+  - entity_id: input_text.dinner_friday
+    platform: state
+  - entity_id: input_text.dinner_saturday
+    platform: state
+  - entity_id: input_text.dinner_sunday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"monday\" : \"{{ states('input_text.dinner_monday') }}\",\n\
+        \  \"tuesday\" : \"{{ states('input_text.dinner_tuesday') }}\",\n  \"wednesday\"\
+        \ : \"{{ states('input_text.dinner_wednesday') }}\",\n  \"thursday\" : \"\
+        {{ states('input_text.dinner_thursday') }}\",\n  \"friday\" : \"{{ states('input_text.dinner_friday')\
+        \ }}\",\n  \"saturday\" : \"{{ states('input_text.dinner_saturday') }}\",\n\
+        \  \"sunday\" : \"{{ states('input_text.dinner_sunday') }}\"\n}\n"
+      retain: true
+      topic: /dinner/menu
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Monday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Monday)'
+  trigger:
+  - entity_id: input_text.dinner_monday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"monday\",\n  \"menu\" :\
+        \ \"{{ states('input_text.dinner_monday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Tuesday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Tuesday)'
+  trigger:
+  - entity_id: input_text.dinner_tuesday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"tuesday\",\n  \"menu\" :\
+        \ \"{{ states('input_text.dinner_tuesday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Wednesday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Wednesday)'
+  trigger:
+  - entity_id: input_text.dinner_wednesday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"wednesday\",\n  \"menu\"\
+        \ : \"{{ states('input_text.dinner_wednesday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Thursday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Thursday)'
+  trigger:
+  - entity_id: input_text.dinner_thursday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"thursday\",\n  \"menu\"\
+        \ : \"{{ states('input_text.dinner_thursday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Friday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Friday)'
+  trigger:
+  - entity_id: input_text.dinner_friday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"friday\",\n  \"menu\" :\
+        \ \"{{ states('input_text.dinner_friday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Saturday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Saturday)'
+  trigger:
+  - entity_id: input_text.dinner_saturday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"saturday\",\n  \"menu\"\
+        \ : \"{{ states('input_text.dinner_saturday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Dinner Menu Updates to MQTT (Sunday)
+  alias: 'Internal: Push Dinner Menu Updates to MQTT (Sunday)'
+  trigger:
+  - entity_id: input_text.dinner_sunday
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"action\" : \"set\",\n  \"day\" : \"sunday\",\n  \"menu\" :\
+        \ \"{{ states('input_text.dinner_sunday') }}\"     \n} \n"
+      topic: /dinner/update
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Publish Automatic Car Data to MQTT
+  alias: 'Internal: Publish Car Data to MQTT'
+  trigger:
+  - event_type: automatic_update
+    platform: event
+  action:
+  - data_template:
+      payload: "{\n   {%- for key, value in trigger.event.as_dict().items() recursive\
+        \ %}\n   \"{{ key }}\" :\n      {%- if value is mapping %}\n      {\n    \
+        \    {{ loop(value.items()) }}\n      }\n      {%- else %}\n        {%- if\
+        \ value is number %}{{ value }}{%- else %}\"{{ value }}\"{%- endif %}\n  \
+        \    {%- endif %}\n      {%- if not loop.last %},{%- endif %}\n      \n  \
+        \ {%- endfor %}\n }\n"
+      retain: true
+      topic: /car/event/{{ trigger.event.data.type | replace(':', '_') }}
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Sun Updates to MQTT
+  alias: 'Internal: Push Sun Updates to MQTT'
+  trigger:
+  - event: sunrise
+    offset: +00:00:00
+    platform: sun
+  - event: sunset
+    offset: +00:00:00
+    platform: sun
+  action:
+  - data_template:
+      payload: "{\n  \"sun\" : \"{{ states('sun.sun') }}\"     \n} \n"
+      retain: true
+      topic: /status/sun
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Push Weather Updates to MQTT
+  alias: 'Internal: Push Weather Updates to MQTT'
+  trigger:
+  - entity_id: sensor.dark_sky_apparent_temperature
+    platform: state
+  - entity_id: sensor.dark_sky_daily_high_apparent_temperature
+    platform: state
+  - entity_id: sensor.dark_sky_daily_high_temperature
+    platform: state
+  - entity_id: sensor.dark_sky_daily_low_apparent_temperature
+    platform: state
+  - entity_id: sensor.dark_sky_daily_low_temperature
+    platform: state
+  - entity_id: sensor.dark_sky_daily_max_precip_intensity
+    platform: state
+  - entity_id: sensor.dark_sky_humidity
+    platform: state
+  - entity_id: sensor.dark_sky_precip
+    platform: state
+  - entity_id: sensor.dark_sky_precip_intensity
+    platform: state
+  - entity_id: sensor.dark_sky_precip_probability
+    platform: state
+  - entity_id: sensor.dark_sky_temperature
+    platform: state
+  - entity_id: sensor.dark_sky_wind_speed
+    platform: state
+  - entity_id: sensor.dark_sky_cloud_coverage
+    platform: state
+  action:
+  - data_template:
+      payload: "{\n  \"apparent_temperature\" : {{ states('sensor.dark_sky_apparent_temperature')\
+        \ }},\n  \"daily_high_apparent_temperature\" : {{ states('sensor.dark_sky_daily_high_apparent_temperature')\
+        \ }},\n  \"daily_high_temperature\" : {{ states('sensor.dark_sky_daily_high_temperature')\
+        \ }},\n  \"daily_low_apparent_temperature\" : {{ states('sensor.dark_sky_daily_low_apparent_temperature')\
+        \ }},\n  \"daily_low_temperature\" : {{ states('sensor.dark_sky_daily_low_temperature')\
+        \ }},\n  \"daily_max_precip_intensity\" : {{ states('sensor.dark_sky_daily_max_precip_intensity')\
+        \ }},\n  \"humidity\" : {{ states('sensor.dark_sky_humidity') }},\n  \"precip\"\
+        \ : \"{{ states('sensor.dark_sky_precip') }}\",\n  \"precip_intensity\" :\
+        \ {{ states('sensor.dark_sky_precip_intensity') }},\n  \"precip_probability\"\
+        \ : {{ states('sensor.dark_sky_precip_probability') }},\n  \"temperature\"\
+        \ : {{ states('sensor.dark_sky_temperature') }},\n  \"wind_speed\" : {{ states('sensor.dark_sky_wind_speed')\
+        \ }},\n  \"cloud_coverage\" : {{ states('sensor.dark_sky_cloud_coverage')\
+        \ }},\n  \"sunset\" : \"{{ as_timestamp(states.sun.sun.attributes.next_setting)\
+        \  | timestamp_custom(\"%I:%M %p\") }}\",\n  \"sunrise\" : \"{{ as_timestamp(states.sun.sun.attributes.next_rising)\
+        \  | timestamp_custom(\"%I:%M %p\") }}\",\n  \"sun\" : \"{{ states('sun.sun')\
+        \ }}\"     \n} \n"
+      retain: true
+      topic: /status/weather
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Publish Home State to MQTT
+  alias: 'Internal: Publish Home State to MQTT'
+  trigger:
+  - entity_id: input_select.home_state
+    platform: state
+  action:
+  - data_template:
+      payload: '{{ states(''input_select.home_state'') }}'
+      retain: true
+      topic: /home/state
+    service: mqtt.publish
+  hide_entity: true
+  initial_state: true
+- id: Load Home State at Startup
+  alias: 'Internal: Load Home State on Startup'
+  trigger:
+  - event: start
+    platform: homeassistant
+  action:
+  - entity_id: automation.publish_home_state_to_mqtt
+    service: automation.turn_off
+  - data_template:
+      entity_id: input_select.home_state
+      option: '{{ states(''sensor.home_state'') }}'
+    service: input_select.select_option
+  - entity_id: automation.publish_home_state_to_mqtt
+    service: automation.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn on Waterfall when enabled
+  alias: 'Outdoors: Turn on Waterfall when enabled'
+  trigger:
+  - entity_id: input_boolean.enable_waterfall
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: switch.pond_aerator
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn off Waterfall when disabled
+  alias: 'Outdoors: Turn off Waterfall when disabled'
+  trigger:
+  - entity_id: input_boolean.enable_waterfall
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: switch.pond_aerator
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Automatically Turn Off Pond after 60 minutes
+  alias: 'Outdoors: Turn Off Pond After 60 minutes'
+  trigger:
+  - entity_id: input_boolean.enable_waterfall
+    for:
+      hours: 1
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall_automation
+      state: 'on'
+  action:
+  - entity_id: input_boolean.enable_waterfall
+    service: homeassistant.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Automate Pond Turn On at 55 mins past hour
+  alias: 'Outdoors: Automatically Turn on Waterfall at 55 mins past hour'
+  trigger:
+  - minutes: 55
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall
+      state: 'off'
+    - condition: state
+      entity_id: sensor.is_raining
+      state: not raining
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: not freezing
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: unknown
+    - condition: state
+      entity_id: input_boolean.enable_waterfall_automation
+      state: 'on'
+  action:
+  - entity_id: switch.pond_waterfall_pump
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Automate Pond Turn off at 5 mins past hour
+  alias: 'Outdoors: Automatically Turn off Waterfall At 5 mins past hour'
+  trigger:
+  - minutes: 5
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_waterfall
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.enable_waterfall_automation
+      state: 'on'
+  action:
+  - entity_id: switch.pond_waterfall_pump
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn on the Garden Water at 5:00pm
+  alias: 'Outdoors: Turn on the Garden Water at 5:00pm'
+  trigger:
+  - at: '17:00:00'
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: sensor.is_raining
+        state: unknown
+      - condition: state
+        entity_id: sensor.is_raining
+        state: not raining
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: not freezing
+      - condition: state
+        entity_id: sensor.is_freezing_outside
+        state: unknown
+    - condition: state
+      entity_id: input_boolean.enable_garden_irrigation
+      state: 'on'
+  action:
+  - entity_id: switch.garden_soaker_pump
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn off the Garden Water at 5:20pm
+  alias: 'Outdoors: Turn off the Garden Water at 5:20pm'
+  trigger:
+  - at: '17:20:00'
+    platform: time
+  action:
+  - entity_id: switch.garden_soaker_pump
+    service: switch.turn_off
+  hide_entity: true
+- id: Enable Dog House Temp Automations
+  alias: 'Outdoors: Enable Dog House Temp Automations'
+  trigger:
+  - entity_id: input_boolean.enable_doghouse
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: automation.enable_doghouse_monitor_1
+    service: automation.turn_on
+  - entity_id: automation.enable_doghouse_monitor_2
+    service: automation.turn_on
+  - entity_id: switch.dog_house
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Disable Dog House Temp Automations
+  alias: 'Outdoors: Disable Dog House Temp Automations'
+  trigger:
+  - entity_id: input_boolean.enable_doghouse
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: automation.enable_doghouse_monitor_1
+    service: automation.turn_off
+  - entity_id: automation.enable_doghouse_monitor_2
+    service: automation.turn_off
+  - entity_id: switch.dog_house
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Enable Doghouse Monitor 1
+  alias: 'Outdoors: Enable Doghouse Monitor 1'
+  trigger:
+  - below: '40'
+    entity_id: sensor.doghouse_temperature
+    platform: numeric_state
+  action:
+  - entity_id: switch.dog_house
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: false
+- id: Enable Doghouse Monitor 2
+  alias: 'Outdoors: Enable Doghouse Monitor 2'
+  trigger:
+  - above: '60'
+    entity_id: sensor.doghouse_temperature
+    platform: numeric_state
+  action:
+  - entity_id: switch.dog_house
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: false
+- id: Turn Off Dog House System if enabled for more than four hours
+  alias: 'Outdoors: Turn Off Dog House System if enabled for more than four hours'
+  trigger:
+  - entity_id: input_boolean.enable_doghouse
+    for:
+      hours: 4
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: input_boolean.enable_doghouse
+    service: homeassistant.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn Off Dog House if Syistem Turned Off
+  alias: 'Outdoors: Turn Off Dog House if System Turned Off'
+  trigger:
+  - entity_id: input_boolean.enable_doghouse
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - entity_id: switch.dog_house
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn On Backyard Lights After Dark When Someone Comes Home
+  alias: 'Outdoors: Turn On Backyard Lights After Dark When Someone Comes Home'
+  trigger:
+  - entity_id: device_tracker.bayleysiphone
+    from: not_home
+    platform: state
+    to: home
+  - entity_id: device_tracker.johncoggeshallsiphone
+    from: not_home
+    platform: state
+    to: home
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.pond_string_lights
+    service: switch.turn_on
+  - entity_id: switch.back_porch_lights
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Off Back Porch Lights After 30 Mintues
+  alias: 'Outdoors: Automatically Turn Off Back Porch Lights After 30 Minutes'
+  trigger:
+  - entity_id: switch.back_porch_lights
+    for:
+      minutes: 30
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.enable_backporch_auto_off
+      state: 'on'
+  action:
+  - entity_id: switch.back_porch_lights
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn On Pond Lights At Sunset
+  alias: 'Outdoors: Turn On Pond Lights At Sunset'
+  trigger:
+  - event: sunset
+    offset: +00:00:00
+    platform: sun
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.pond_string_lights
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Off Pond Lights at 2am
+  alias: 'Outdoors: Turn Off Pond Lights at 2am'
+  trigger:
+  - at: 02:00:00
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.pond_string_lights
+    service: switch.turn_off
+  - entity_id: switch.back_porch_lights
+    service: switch.turn_off
+  - entity_id: switch.back_porch_power
+    service: switch.turn_off
+  - entity_id: switch.garage_string_lights
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: On Startup Turn on Things that should be on
+  alias: 'Internal: Set IoT States on Startup'
+  trigger:
+  - event: start
+    platform: homeassistant
+  action:
+  - entity_id: switch.wavemaker_1
+    service: switch.turn_on
+  - entity_id: switch.wavemaker_2
+    service: switch.turn_off
+  - entity_id: switch.soda_compressor
+    service: switch.turn_on
+  - entity_id: switch.freshwater_ato_3
+    service: switch.turn_on
+  - entity_id: switch.freshwater_heater_1
+    service: switch.turn_on
+  - entity_id: switch.freshwater_heater_2
+    service: switch.turn_on
+  - entity_id: switch.freshwater_return_pump
+    service: switch.turn_on
+  - entity_id: switch.saltwater_ato_12
+    service: switch.turn_on
+  - entity_id: switch.saltwater_heater_13
+    service: switch.turn_on
+  - entity_id: switch.saltwater_heater_14
+    service: switch.turn_on
+  - entity_id: switch.saltwater_lights
+    service: switch.turn_on
+  - entity_id: switch.saltwater_protein_skimmer_10
+    service: switch.turn_on
+  - entity_id: switch.saltwater_return_pump_15
+    service: switch.turn_on
+  - entity_id: switch.canister_filter_11
+    service: switch.turn_on
+  initial_state: true
+- id: Clip MPerks Coupons
+  alias: 'Home: Automatically Clip Digital Mperks Coupons'
+  trigger:
+  - at: 08:00:00
+    platform: time
+  action:
+  - delay: '{{ ''%02d''|format(range(0, 8) | random | int) }}:{{ ''%02d''|format(range(1,59)|random|int)
+      }}:{{ ''%02d''|format(range(1,59)|random|int) }}'
+  - service: shell_command.clip_mperks
+  initial_state: true
+- id: Wavemakers
+  alias: 'Saltwater: Alternate Wavemakers'
+  trigger:
+  - minutes: /2
+    platform: time_pattern
+    seconds: '0'
+  action:
+  - entity_id: switch.wavemaker_1
+    service: switch.toggle
+  - entity_id: switch.wavemaker_2
+    service: switch.toggle
+  initial_state: true
+- id: Saltwater Sump Light On
+  alias: 'Saltwater: Turn Sump Light On'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  action:
+  - entity_id: switch.saltwater_sump_light_6
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Saltwater Sump Light Off
+  alias: 'Saltwater: Turn Sump Light Off'
+  trigger:
+  - at: '22:00:00'
+    platform: time
+  action:
+  - entity_id: switch.saltwater_sump_light_6
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Feed Saltwater Fish
+  alias: 'Saltwater: Feed Saltwater Fish'
+  trigger:
+  - at: '12:30:00'
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - sun
+    - wed
+    - fri
+  action:
+  - service: script.saltwater_feeder_activate
+  hide_entity: true
+  initial_state: true
+- id: Saltwater Lights On
+  alias: 'Saltwater: Display Lights On At 8am'
+  trigger:
+  - at: 08:00:00
+    platform: time
+  action:
+  - entity_id: switch.saltwater_lights
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Saltwater Lights Off
+  alias: 'Saltwater: Display Lights Off at 3am'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  action:
+  - entity_id: switch.saltwater_lights
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Protein Skimmer On
+  alias: 'Saltwater: Protein Skimmer On'
+  trigger:
+  - at: '15:00:00'
+    platform: time
+  action:
+  - entity_id: switch.saltwater_protein_skimmer_16
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Protein Skimmer Off
+  alias: 'Saltwater: Turn Protein Skimmer Off'
+  trigger:
+  - at: '18:00:00'
+    platform: time
+  action:
+  - entity_id: switch.saltwater_protein_skimmer_16
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn on chiller when tank warms
+  alias: 'Axolotl: Turn on chiller when tank warms'
+  trigger:
+  - above: '65.5'
+    entity_id: sensor.diana_tank_temperature
+    for:
+      minutes: 10
+    platform: numeric_state
+  action:
+  - entity_id: switch.chiller_a
+    service: switch.turn_on
+  - entity_id: switch.chiller_b
+    service: switch.turn_on
+  initial_state: true
+- id: Turn off chiller when tank cools
+  alias: 'Axolotl: Turn off chiller when tank cools'
+  trigger:
+  - below: '65'
+    entity_id: sensor.diana_tank_temperature
+    for:
+      minutes: 10
+    platform: numeric_state
+  action:
+  - entity_id: switch.chiller_a
+    service: switch.turn_off
+  - entity_id: switch.chiller_b
+    service: switch.turn_off
+  initial_state: true
+- id: Diana Grow Lights On
+  alias: 'Diana: Grow Lights On'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  action:
+  - entity_id: switch.diana_grow_lights
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Diana Grow Lights Off
+  alias: 'Diana: Grow Lights Off'
+  trigger:
+  - at: '18:00:00'
+    platform: time
+  action:
+  - entity_id: switch.diana_grow_lights
+    service: switch.turn_off
+  initial_state: true
+  hide_entity: true
+- id: Turtle Heat Lamp On
+  alias: 'Freshwater: Turtle Heat Lamp On'
+  trigger:
+  - at: '11:00:00'
+    platform: time
+  action:
+  - entity_id: switch.freshwater_turtle_lights
+    service: switch.turn_on
+  initial_state: true
+- id: Turtle Heat Lamp Off
+  alias: Freshwater Turtle Heat Lamp off
+  trigger:
+  - at: '22:00:00'
+    platform: time
+  action:
+  - entity_id: switch.freshwater_turtle_lights
+    service: switch.turn_off
+  initial_state: true
+- id: Freshwater Display Lights On
+  alias: Freshwater Display Lights On
+  hide_entity: true
+  initial_state: true
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.freshwater_tank_lights
+- id: Freshwater Display Lights Off
+  alias: Freshwater Display Lights Off
+  initial_state: true
+  hide_entity: true
+  trigger:
+    platform: time
+    at: 02:00:00
+  action:
+    service: switch.turn_off
+    entity_id: switch.freshwater_tank_lights
+- id: Turn on Back Porch lights after sunset when door opens
+  alias: 'Outdoors: Turn on Back Porch Lights after sunset when door opens'
+  trigger:
+  - entity_id: sensor.backdoor
+    platform: state
+    to: open
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.pond_string_lights
+    service: switch.turn_on
+  - entity_id: switch.back_porch
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn on Kitchen if motion detected (normal)
+  alias: 'Home: Turn on Kitchen if motion detected (normal)'
+  trigger:
+  - entity_id: sensor.kitchen_pir
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime_mode
+      state: 'off'
+  action:
+  - data:
+      brightness_pct: 100
+    entity_id: light.kitchen_lights
+    service: light.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn off Kitchen if no motion detected for 20 minutes
+  alias: 'Home: Turn off Kitchen if no motion detected for 20 minutes'
+  trigger:
+  - entity_id: sensor.kitchen_pir
+    for:
+      minutes: 20
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime_mode
+      state: 'off'
+  action:
+  - entity_id: light.kitchen_lights
+    service: light.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn off Upstairs Bathroom if no motion detected for 90 minutes in hallway
+  alias: 'Home: Turn off Upstairs Bathroom if no motion detected for 90 minutes in
+    hallway'
+  trigger:
+  - entity_id: sensor.hallway_pir
+    for:
+      minutes: 90
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: light.upstairs_bathroom_lights
+    service: light.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Hallway Lights On
+  alias: 'Home: Hallway Lights On'
+  trigger:
+  - event: sunset
+    offset: -02:00:00
+    platform: sun
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.hall_portrait
+    service: switch.turn_on
+  - entity_id: switch.hall_lamp
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Hallway Off
+  alias: 'Home: Turn Hallway Off At 2am'
+  trigger:
+  - at: 02:00:00
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.hall_portrait
+    service: switch.turn_off
+  - entity_id: switch.hall_lamp
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Activate Normal Mode At Sunrise
+  alias: 'Home: Normal Mode At Sunrise'
+  trigger:
+  - event: sunrise
+    platform: sun
+  action:
+  - service: script.house_mode_normal
+  hide_entity: true
+  initial_state: true
+- id: Turn off Wax Melter after 2 hours
+  alias: 'Living Room: Turn off Wax Melter after 2 hours'
+  trigger:
+  - entity_id: switch.wax_melt
+    for:
+      hours: 2
+    platform: state
+    to: 'on'
+  action:
+  - entity_id: switch.wax_melt
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Salt Lamp On
+  alias: 'Livingroom: Turn Salt Lamp On'
+  trigger:
+  - event: sunset
+    offset: -02:00:00
+    platform: sun
+  action:
+  - entity_id: switch.salt_lamp
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Salt Lamp Off
+  alias: 'Livingroom: Turn Salt Lamp Off at 3am'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  action:
+  - entity_id: switch.salt_lamp
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Trigger action on house seasonal mode change to fall-winter
+  alias: 'Internal: React When House is set to Fall/Winter Mode'
+  trigger:
+  - entity_id: input_select.seasonal_state
+    platform: state
+    to: Fall / Winter
+  action:
+  - service: automation.turn_off
+    entity_id: automation.trigger_house_seasonal_mode_change_fall_winter
+  - service: script.seasonal_mode_fall_winter
+  - service: automation.turn_on
+    entity_id: automation.trigger_house_seasonal_mode_change_fall_winter
+  hide_entity: true
+  initial_state: true
+- id: Trigger action on house seasonal mode change to spring-summer
+  alias: 'Internal: React When House is Set to Spring/Summer'
+  trigger:
+  - entity_id: input_select.seasonal_state
+    platform: state
+    to: Spring / Summer
+  action:
+  - service: automation.turn_off
+    entity_id: automation.trigger_house_seasonal_mode_change_spring_summer
+  - service: script.seasonal_mode_spring_summer
+  - service: automation.turn_on
+    entity_id: automation.trigger_house_seasonal_mode_change_spring_summer
+  hide_entity: true
+  initial_state: true
+- id: Trigger action on house mode change to bedtime
+  alias: 'Internal: React When House is set to Bedtime Mode'
+  trigger:
+  - entity_id: input_select.home_state
+    platform: state
+    to: Bedtime
+  action:
+  - service: automation.turn_off
+    entity_id: automation.trigger_house_mode_change_bedtime
+  - service: script.house_mode_bedtime
+  - service: automation.turn_on
+    entity_id: automation.trigger_house_mode_change_bedtime
+
+  hide_entity: true
+  initial_state: true
+- id: Trigger action on house mode change to normal
+  alias: 'Internal: React When House is set to Normal Mode'
+  trigger:
+  - entity_id: input_select.home_state
+    platform: state
+    to: Normal
+  action:
+  - service: automation.turn_off
+    entity_id: automation.trigger_house_mode_change_normal
+  - service: script.house_mode_normal
+  - service: automation.turn_on
+    entity_id: automation.trigger_house_mode_change_normal
+  hide_entity: true
+  initial_state: true
+
+- id: Trigger action on house mode change to away
+  alias: 'Internal: React when House is set to Away Mode'
+  trigger:
+  - entity_id: input_select.home_state
+    platform: state
+    to: Away
+  action:
+  - service: automation.turn_off
+    entity_id: automation.trigger_house_mode_change_away
+  - service: script.house_mode_away
+  - service: automation.turn_on
+    entity_id: automation.trigger_house_mode_change_away
+  hide_entity: true
+  initial_state: true
+- id: Turn on Hallway if motion detected (bedtime)
+  alias: 'Home: Turn on Hallway if motion detected (bedtime)'
+  trigger:
+  - entity_id: sensor.hallway_pir
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime_mode
+      state: 'on'
+  action:
+  - data:
+      brightness_pct: 20
+    entity_id: light.hallway
+    service: light.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn on Hallway if motion detected (normal)
+  alias: 'Home: Turn on Hallway if motion detected (normal)'
+  trigger:
+  - entity_id: sensor.hallway_pir
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime_mode
+      state: 'off'
+  action:
+  - data:
+      brightness_pct: 100
+    entity_id: light.hallway
+    service: light.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn off Hallway if no motion detected for 5 minutes
+  alias: 'Home: Turn off Hallway if no motion detected for 5 minutes'
+  trigger:
+  - entity_id: sensor.hallway_pir
+    for:
+      minutes: 5
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: light.hallway
+    service: light.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn off Downstairs Bathroom after 20 minutes
+  alias: 'Living Room: Turn off Downstairs Bathroom after 20 minutes'
+  trigger:
+  - entity_id: switch.downstairs_bathroom
+    for:
+      minutes: 20
+    platform: state
+    to: 'on'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.downstairs_bathroom
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn off Office lights if no occupancy detected
+  alias: 'Office: Turn off Office lights if no occupancy detected'
+  trigger:
+  - entity_id: binary_sensor.office_occupancy
+    for:
+      minutes: 90
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: light.office_lights
+    service: light.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Refresh RewardJet
+  alias: 'Internal: Refresh RewardJet Discount Data'
+  trigger:
+  - hours: /6
+    minutes: 0
+    platform: time_pattern
+    seconds: '0'
+  action:
+  - service: shell_command.refresh_rewardjet
+  initial_state: true
+- id: Turn Porch Light On At Sunset
+  alias: 'Outdoors: Porch Light On At Sunset'
+  trigger:
+  - event: sunset
+    offset: +00:00:00
+    platform: sun
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: light.front_porch
+    service: homeassistant.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Porch Light Off At Sunrise
+  alias: 'Outdoors: Turn Porch Light Off At Sunrise'
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: light.front_porch
+    service: homeassistant.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Refresh Lyric
+  alias: 'Internal: Refresh Lyric Sensor Data'
+  trigger:
+  - platform: time_pattern
+    seconds: /30
+  action:
+  - service: shell_command.refresh_lyric
+  initial_state: true
+- id: Refresh Pets
+  alias: 'Internal: Refresh Whistle Sensor Data'
+  trigger:
+  - platform: time_pattern
+    seconds: /30
+  action:
+  - service: shell_command.refresh_whistle
+  initial_state: true
+- id: Turn off Bedroom lights if no occupancy detected
+  alias: 'Bedroom: Turn off Bedroom lights if no occupancy detected'
+  trigger:
+  - entity_id: binary_sensor.bedroom_occupancy
+    for:
+      minutes: 2
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: light.master_bedroom_lights
+    service: light.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn Flag Spotlight On At Sunet
+  alias: 'Dining Room: Turn Flag Spotlight On At Sunset'
+  trigger:
+  - event: sunset
+    offset: +00:00:00
+    platform: sun
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.flag_spotlight
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Off Flag Spotlight At 3am
+  alias: 'Dining Room: Turn Off Flag Spotlight At 3am'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.flag_spotlight
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Turn Display Cabinet On At Sunset
+  alias: 'Dining Room: Turn Display Cabinet On At Sunset'
+  trigger:
+  - event: sunset
+    offset: +00:00:00
+    platform: sun
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.dining_room_cabinet
+    service: switch.turn_on
+  hide_entity: true
+  initial_state: true
+- id: Turn Off Display Cabinet At 3am
+  alias: 'Dining Room: Turn Off Display Cabinet At 3am'
+  trigger:
+  - at: 03:00:00
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_light_automation
+      state: 'on'
+  action:
+  - entity_id: switch.dining_room_cabinet
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Grow Light On
+  alias: 'Aquaponics: Grow Lights On'
+  trigger:
+  - at: 08:00:00
+    platform: time
+  action:
+  - entity_id: switch.grow_lights
+    service: switch.turn_on
+  initial_state: true
+  hide_entity: true
+- id: Grow Light Off
+  alias: 'Aquaponics: Grow Lights Off'
+  trigger:
+  - at: 02:00:00
+    platform: time
+  action:
+  - entity_id: switch.grow_lights
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Dose Freshwater Tank Nutrients
+  alias: 'Freshwater: Dose Freshwater Tank Nutrients'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  action:
+  - service: script.nutrient_doser_activate
+  hide_entity: true
+  initial_state: true
+- id: Dose Freshwater Tank Potassium
+  alias: 'Freshwater: Dose Freshwater Tank Potassium'
+  trigger:
+  - at: '20:00:00'
+    platform: time
+  action:
+  - service: script.doser_potatssium_activate
+  hide_entity: true
+  initial_state: true
+- id: Nursery Grow Light On
+  alias: 'Aquaponics: Turn Nursery Grow Lights On'
+  trigger:
+  - event: sunrise
+    offset: +00:00:00
+    platform: sun
+  action:
+  - entity_id: switch.nursery_grow_lights
+    service: switch.turn_on
+  initial_state: true
+  hide_entity: true
+- id: Nursery Grow Light Off
+  alias: 'Aquaponics: Turn Nursery Grow Lights Off'
+  trigger:
+  - event: sunset
+    offset: +00:00:00
+    platform: sun
+  action:
+  - entity_id: switch.nursery_grow_lights
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Nursery Fan On
+  alias: 'Aquaponics: Turn Nursery Fan On'
+  trigger:
+  - minutes: /30
+    platform: time_pattern
+    seconds: '0'
+  action:
+  - entity_id: switch.nursery_plant_fan
+    service: switch.turn_on
+  - delay: 00:00:05
+  - entity_id: switch.nursery_plant_fan
+    service: switch.turn_off
+  hide_entity: true
+  initial_state: true
+- id: Update Car Driving State (driving)
+  alias: 'Internal: Publish Car Driving State to MQTT'
+  trigger:
+  - platform: mqtt
+    topic: /car/event/ignition_on
+  action:
+  - data_template:
+      payload: Driving
+      retain: true
+      topic: /car/status
+    service: mqtt.publish
+  initial_state: true
+- id: Update Car Driving State (parked)
+  alias: 'Internal: Publish Car Parked State to MQTT'
+  trigger:
+  - platform: mqtt
+    topic: /car/event/ignition_off
+  action:
+  - data_template:
+      payload: Parked
+      retain: true
+      topic: /car/status
+    service: mqtt.publish
+  initial_state: true
+- id: 3D Printer 1 Completion Notification
+  alias: 'Workshop: Printer 1 Completion Notification'
+  trigger:
+  - entity_id: sensor.3dprinter1_state
+    from: Printing
+    platform: state
+    to: Operational
+  action:
+  - data:
+      message: 'The 3D Print Job on Printer #1 Has Completed'
+    service: notify.john_phone_sms
+  initial_state: true
+- id: 3D Printer 2 Completion Notification
+  alias: 'Workshop: Printer 2 Completion Notification'
+  trigger:
+  - entity_id: sensor.3dprinter2_state
+    from: Printing
+    platform: state
+    to: Operational
+  action:
+  - data:
+      message: 'The 3D Print Job on Printer #2 Has Completed'
+    service: notify.john_phone_sms
+  initial_state: true
+- id: Alert Bad Freezer Temperature
+  alias: 'Backroom: Alert On Freezer Bad Temperature'
+  trigger:
+  - minutes: /2
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.freezer_temperature_status
+      state: 'on'
+  action:
+  - entity_id: automation.alert_bad_freezer_temp
+    service: automation.turn_off
+  - data_template:
+      message: "{{ [\n      \"I think someone forgot to make sure the Freezer was\
+        \ closed again. It's currently {{ float(states('sensor.freezer_temperature'))\
+        \ }} degrees.\",\n      \"I'm detecting the Freezer is {{ float(states('sensor.freezer_temperature'))\
+        \ }}F degrees, which doesn't seem right to me.\"\n   ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  - delay: 00:00:08
+  - entity_id: automation.alert_bad_freezer_temp
+    service: automation.turn_on
+  initial_state: true
+- id: Alert if the allergy index is high today
+  alias: 'Home: Alert If the Allergy Index Is High'
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition:
+  - above: '2.5'
+    condition: numeric_state
+    entity_id: sensor.allergy_index_today
+  action:
+  - data_template:
+      message: "{{ [\n     \"It appears that the allergy index for today is {{ states.sensor.allergy_index_today.attributes.rating\
+        \ }}, you might think about taking an allergy pill!\",\n     \"I know how\
+        \ bad your allergies can be, and today's rating is {{ states.sensor.allergy_index_today.attributes.rating\
+        \ }}. You should take an allergy pill.\",\n     \"Don't spend the day all\
+        \ clogged up. Allergy ratings are at {{ states.sensor.allergy_index_today.attributes.rating\
+        \ }}, might want to take something.\"\n   ] | random }}\n"
+    service: notify.bayley_phone_sms
+  initial_state: true
+  hide_entity: true
+- id: Alert if it is time to stop feeding the Koi
+  alias: 'Outdoors: Alert When It is Time to Stop Feeding the Koi'
+  trigger:
+  - entity_id: binary_sensor.pond_feeding_status
+    for:
+      hours: 6
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data_template:
+      message: I just letting you know that the water temperature ({{ states('sensor.pond_temperature')
+        }} F) of the pond indicates it is not safe to feed the fish.
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+  hide_entity: true
+- id: Alert if it is safe to feed the Koi
+  alias: 'Outdoors: Alert When It Becomes Safe to Feed the Koi'
+  trigger:
+  - entity_id: binary_sensor.pond_feeding_status
+    for:
+      hours: 6
+    from: 'on'
+    platform: state
+    to: 'off'
+  action:
+  - data_template:
+      message: Based on water temperature ({{ states('sensor.pond_temperature') }}
+        F), it should be safe to feed the Koi fish again.
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+  hide_entity: true
+- id: Alert Pond Temperature
+  alias: 'Outdoors: Alert On Bad Pond Temperature'
+  trigger:
+  - minutes: /20
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.pond_temperature_status
+      state: 'on'
+  action:
+  - data_template:
+      message: "{{ [\n      \"The Pond Temperature is {{ float(states('sensor.pond_temperature'))\
+        \ }} degrees and needs your help!\"\n   ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert if Front door is left open for more than 120 seconds
+  alias: 'Home: Alert if Front Door is Left Open'
+  trigger:
+  - entity_id: sensor.frontdoor
+    for:
+      seconds: 120
+    platform: state
+    to: open
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.hvac
+      state: cooling
+    - condition: state
+      entity_id: sensor.hvac
+      state: heating
+  action:
+  - data_template:
+      message: "{{ [\n     \"The front door has been open for awhile and we're {{\
+        \ states('sensor.hvac') }} the entire town, can you please shut it?\",\n \
+        \    \"We are currently {{ states('sensor.hvac') }} the entire neighborhood\
+        \ because the front door is open. Please shut it.\"\n   ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  hide_entity: true
+  initial_state: true
+- id: Alert if Back door is left open for more than 15 minutes
+  alias: 'Home: Alert If Back Door is Left Open'
+  trigger:
+  - entity_id: sensor.backdoor
+    for:
+      minutes: 15
+    platform: state
+    to: open
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.hvac
+      state: cooling
+    - condition: state
+      entity_id: sensor.hvac
+      state: heating
+  action:
+  - data_template:
+      message: "{{ [\n     \"The back door has been open for awhile and we're {{ states('sensor.hvac')\
+        \ }} the entire town, can you please shut it?\",\n     \"We are currently\
+        \ {{ states('sensor.hvac') }} the entire neighborhood because the back door\
+        \ is open. Please shut it.\"\n   ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  hide_entity: true
+  initial_state: true
+- id: Suggest Opening Windows when Temperatures Make sense
+  alias: 'Home: Suggest Opening Windows When Nice Outside'
+  trigger:
+  - minutes: /10
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.enable_hvac_automations
+      state: 'on'
+    - condition: state
+      entity_id: sensor.hvac_operation
+      state: auto
+    - condition: state
+      entity_id: sensor.hvac_open_windows
+      for:
+        hours: 1
+      state: 'yes'
+  action:
+  - data:
+      entity_id: climate.home
+      operation_mode: 'off'
+    service: climate.set_operation_mode
+  - data_template:
+      message: "{{ [\n     \"Since it's {{ states('sensor.outdoor_temperature') }}\
+        \ degrees outside I've turned off the HVAC, why not open the windows?\",\n\
+        \     \"I'm going to turn off the HVAC for awhile since it's perfect outside.\
+        \ You should open the windows!\"\n   ] | random }}\n   \n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  hide_entity: true
+  initial_state: true
+- id: Suggest Closing Windows when Temperatures Make sense
+  alias: 'Home: Suggest Closing Windows When Heat Turns On'
+  trigger:
+  - minutes: /10
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.hvac_open_windows
+      for:
+        hours: 1
+      state: 'no'
+    - condition: state
+      entity_id: sensor.hvac_operation
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.enable_hvac_automations
+      state: 'on'
+  action:
+  - data:
+      entity_id: climate.home
+      operation_mode: auto
+    service: climate.set_operation_mode
+  - data_template:
+      message: "{{ [\n     \"I've turned on the HVAC because it's {{ states('sensor.outside_temperature')\
+        \ }} degrees outside. Please close any open windows!\",\n       \"The HVAC\
+        \ has been turned on because it's {{ states('sensor.outside_temperature')\
+        \ }} degrees. Please close any open windows!\"\n     ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  hide_entity: true
+  initial_state: true
+- id: Alert Bad Axolotl Temperature
+  alias: 'Axolotl: Alert On Problem Temperature'
+  trigger:
+  - minutes: /20
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.diana_temperature_status
+      state: 'on'
+  action:
+  - data_template:
+      message: "{{ [\n     \"The Axolotl Tank Temperature is {{ float(states('sensor.diana_tank_temperature'))\
+        \ }} degrees and needs your help!\",\n     \"Don't Panic, but the Axolotl\
+        \ Temperature is {{ float(states('sensor.diana_tank_temperature')) }} degrees\"\
+        ,\n     \"Things are starting to heat up for Terry! The Axolotl tank is {{\
+        \ float(states('sensor.diana_tank_temperature')) }} degrees\",\n     \"Psst..\
+        \ Axolotl Tank... {{ float(states('sensor.diana_tank_temperature')) }} degrees.\"\
+        ,\n     \"Every year, poor Axolotl's die due to unsafe temperatures. Meet\
+        \ Terry, who is forced to live in a tank that is {{ float(states('sensor.diana_tank_temperature'))\
+        \ }} degrees. For just a single degree, you can save his life.\",\n     \"\
+        I'm giving the chiller all she's got capt'n! Axolotl tank is {{ float(states('sensor.diana_tank_temperature'))\
+        \ }} degrees, and she can't take much more!\"\n   ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert Bad Saltwater Temperature
+  alias: 'Saltwater: Alert On Bad Water Temperature'
+  trigger:
+  - minutes: /20
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.saltwater_temperature_status
+      state: 'on'
+  action:
+  - data_template:
+      message: "{{ [\n     \"The Saltwater Tank Temperature is {{ float(states('sensor.saltwater_tank_temperature'))\
+        \ }} degrees and needs your help!\"\n   ] | random }}\n"
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Alert Bad Freshwater Temperature
+  alias: 'Freshwater: Alert On Bad Temperature'
+  trigger:
+  - minutes: /20
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.freshwater_temperature_status
+      state: 'on'
+  action:
+  - data_template:
+      message: "{{ [\n     \"The Freshwater Tank Temperature is {{ float(states('sensor.freshwater_tank_temperature'))\
+        \ }} degrees and needs your help!\",\n     \"Crap, the Freshwater Tank is\
+        \ {{ float(states('sensor.freshwater_tank_temperature')) }} degrees, that's\
+        \ not great.\"\n   ] | random }}\n"
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Notify when Bayley Leaving Work
+  alias: 'Home: Notify John When Bayley Leaves Work'
+  trigger:
+  - platform: mqtt
+    topic: /car/event/ignition_on
+  condition:
+  - condition: or
+    conditions:
+    - condition: zone
+      entity_id: device_tracker.2017_subaru_outback
+      zone: zone.authority_office
+    - condition: zone
+      entity_id: device_tracker.2017_subaru_outback
+      zone: zone.bayleys_office
+  action:
+  - data_template:
+      message: "{{ [\n     \"Bayley is leaving {{ states('device_tracker.2017_subaru_outback')\
+        \ }}\"\n   ] | random }}\n   \n"
+    service: notify.john_phone_sms
+  initial_state: true
+- id: Notify when Bayley Arrives At Work
+  alias: 'Home: Notify John When Bayley Arrives At Work'
+  trigger:
+  - platform: mqtt
+    topic: /car/event/ignition_off
+  condition:
+  - condition: or
+    conditions:
+    - condition: zone
+      entity_id: device_tracker.2017_subaru_outback
+      zone: zone.authority_office
+    - condition: zone
+      entity_id: device_tracker.2017_subaru_outback
+      zone: zone.bayleys_office
+  action:
+  - data_template:
+      message: "{{ [\n     \"Bayley has arrived at {{ states('device_tracker.2017_subaru_outback')\
+        \ }}\"\n   ] | random }}\n"
+    service: notify.john_phone_sms
+  initial_state: true
+- id: Alert Diana When Pickup Approaching
+  alias: 'Calendar: Alert Diana When Pickup Approaching'
+  trigger:
+  - entity_id: sensor.diana_pickup_approaching
+    for:
+      hours: 1
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data_template:
+      message: '{% set pick_up_time = strptime(state_attr(''calendar.diana_pickup_schedule'',
+        ''start_time''), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %} {% set
+        pick_up_loc = state_attr(''calendar.diana_pickup_schedule'', ''location'')
+        %} Hey Kiddo! Just letting you know the calendar says Dad will pick you up
+        on {{ pick_up_time }} from {{ pick_up_loc }}, please shoot him or Bayley a
+        text if that isn''t right!
+
+        '
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Alert Us When Pickup Approaching
+  alias: 'Calendar: Alert When Diana Pickup is Approaching'
+  trigger:
+  - entity_id: sensor.diana_pickup_approaching
+    for:
+      hours: 1
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data_template:
+      messsage: '{% set pick_up_time = strptime(state_attr(''calendar.diana_pickup_schedule'',
+        ''start_time''), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %} {% set
+        pick_up_loc = state_attr(''calendar.diana_pickup_schedule'', ''location'')
+        %} DIANA PICKUP ALERT -  {{ pick_up_time }} from {{ pick_up_loc }}
+
+        '
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Alert Diana On Day of Pickup
+  alias: 'Calendar: Alert Diana On Day of Pickup'
+  trigger:
+  - at: '12:00:00'
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.diana_pickup_today
+      state: 'on'
+  action:
+  - data_template:
+      message: '{% set pick_up_time = strptime(state_attr(''calendar.diana_pickup_schedule'',
+        ''start_time''), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %} {% set
+        pick_up_loc = state_attr(''calendar.diana_pickup_schedule'', ''location'')
+        %} Hey Kiddo, calendar says Dad is picking you up today at {{ pick_up_time
+        }} from {{ pick_up_loc }}, please let him and/or Bayley know right away if
+        that''s wrong!
+
+        '
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Alert Us On Day of Pickup
+  alias: 'Calendar: Alert On Day of Diana Pickup'
+  trigger:
+  - at: '8:00:00'
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.diana_pickup_today
+      state: 'on'
+  action:
+  - data_template:
+      message: '{% set pick_up_time = strptime(state_attr(''calendar.diana_pickup_schedule'',
+        ''start_time''), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %} {% set
+        pick_up_loc = state_attr(''calendar.diana_pickup_schedule'', ''location'')
+        %} PICKUP DIANA TODAY - {{ pick_up_time }} from {{ pick_up_loc }}
+
+        '
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Alert Us 3 hrs from Pickup
+  alias: 'Calendar: Alert When Diana is 3hrs From being picked up'
+  trigger:
+  - entity_id: sensor.diana_pickup_three_hrs
+    from: 'off'
+    platform: state
+    to: 'on'
+  action:
+  - data_template:
+      message: '{% set pick_up_time = strptime(state_attr(''calendar.diana_pickup_schedule'',
+        ''start_time''), "%Y-%m-%d %H:%M:%S").strftime("%a. at %-I %p") %} {% set
+        pick_up_loc = state_attr(''calendar.diana_pickup_schedule'', ''location'')
+        %} PICKUP DIANA IN 3 HOURS - {{ pick_up_time }} from {{ pick_up_loc }}
+
+        '
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Alert Amazon Reward Jet Price
+  alias: 'Savings: Send Alert For Amazon Gift Card Discount'
+  trigger:
+  - above: '5'
+    entity_id: sensor.amazon_giftcard_discount
+    platform: numeric_state
+  action:
+  - data_template:
+      message: "{{ [\n      \"Amazon Gift Cards are currently {{ float(states('sensor.amazon_giftcard_discount'))\
+        \ }}% savings!\"\n    ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert Target Reward Jet Price
+  alias: 'Savings: Alert When Target Gift Cards are > 5% Off'
+  trigger:
+  - above: '5'
+    entity_id: sensor.target_giftcard_discount
+    platform: numeric_state
+  action:
+  - data_template:
+      message: "{{ [\n      \"Target Gift Cards are currently {{ float(states('sensor.target_giftcard_discount'))\
+        \ }}% savings!\"\n    ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert Home Depot Reward Jet Price
+  alias: 'Savings: Alert When Home Depot Gift Cards Are > 5%'
+  trigger:
+  - above: '5'
+    entity_id: sensor.home_depot_giftcard_discount
+    platform: numeric_state
+  action:
+  - data_template:
+      message: "{{ [\n      \"Home Depot Gift Cards are currently {{ float(states('sensor.home_depot_giftcard_discount'))\
+        \ }}% savings!\"\n    ] | random }}\n    \n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert Lowes Reward Jet Price
+  alias: 'Savings: Alert When Lowes Gift Cards are > 5% Off'
+  trigger:
+  - above: '5'
+    entity_id: sensor.lowes_giftcard_discount
+    platform: numeric_state
+  action:
+  - data_template:
+      message: "{{ [\n      \"Lowes Gift Cards are currently {{ float(states('sensor.lowes_giftcard_discount'))\
+        \ }}% savings!\"\n    ] | random }}\n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert Backroom Water Leak
+  alias: 'Backroom: Alert On Water Leak Detected'
+  trigger:
+  - minutes: /5
+    platform: time_pattern
+    seconds: '0'
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: binary_sensor.backroom_leak_detected
+      state: unsafe
+  action:
+  - data_template:
+      message: "{{ [\n      \"I'm detecting water on the floor in the back room, could\
+        \ be nothing but someone needs to investigate this immediately!\",\n     \
+        \ \"Warning - Water detected in back room where it's not supposed to be! Please\
+        \ investigate immediately.\"\n   ] | random }}\n   \n"
+    service_template: '{{ states(''sensor.house_notification_service_entity_id'')
+      }}'
+  initial_state: true
+- id: Alert Backroom Water Leak Batteries Low
+  alias: 'Backroom: Alert On Water Leak Detector Low Battery'
+  trigger:
+  - below: '20'
+    entity_id: sensor.backroom_lyric_battery
+    for:
+      hours: 1
+    platform: numeric_state
+  action:
+  - data_template:
+      message: "{{ [\n      \"The water leak sensor in the back room is down to {{\
+        \ states('sensor.backroom_lyric_battery') }} and needs new batteries\"\n \
+        \  ] | random }}\n"
+    service: notify.house_phones_sms
+  initial_state: true
+- id: Change Air Purifier State
+  alias: 'Internal: Publish Air Purifier State to MQTT'
+  trigger:
+  - entity_id: input_select.air_purifier
+    platform: state
+  action:
+  - data_template:
+      payload: '{{ states(''input_select.air_purifier'') | lower }}'
+      topic: /switch/air-purifier
+    service: mqtt.publish
+  hide_entity: true
+- id: Honeywell Air Purifier Power
+  alias: 'Livingroom: Turn Off Air Purifier'
+  trigger:
+  - payload: 'off'
+    platform: mqtt
+    topic: /switch/air-purifier
+  action:
+  - data_template:
+      command: PowerToggle
+      device: 47744075
+      entity_id: remote.harmony_hub
+    service: remote.send_command
+  hide_entity: true
+- id: Honeywell Air Purifier Fan High
+  alias: 'Livingroom: Set Air Purifier to High'
+  trigger:
+  - payload: high
+    platform: mqtt
+    topic: /switch/air-purifier
+  action:
+  - data_template:
+      command: FanHigh
+      device: 47744075
+      entity_id: remote.harmony_hub
+    service: remote.send_command
+  hide_entity: true
+- id: Honeywell Air Purifier Fan Medium
+  alias: 'Livingroom: Set Air Purifier to Medium'
+  trigger:
+  - payload: medium
+    platform: mqtt
+    topic: /switch/air-purifier
+  action:
+  - data_template:
+      command: FanMed
+      device: 47744075
+      entity_id: remote.harmony_hub
+    service: remote.send_command
+  hide_entity: true
+- id: Honeywell Air Purifier Fan Low
+  alias: 'Livingroom: Set Air Purifier to Low'
+  trigger:
+  - payload: low
+    platform: mqtt
+    topic: /switch/air-purifier
+  action:
+  - data_template:
+      command: FanLow
+      device: 47744075
+      entity_id: remote.harmony_hub
+    service: remote.send_command
+  hide_entity: true

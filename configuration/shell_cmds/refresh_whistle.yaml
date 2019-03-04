@@ -1,1 +1,1 @@
-refresh_whistle: '/home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:poll-whistle'
+refresh_whistle: '/home/john/.homeassistant/scripting/ha_exec.sh ha:poll-whistle'

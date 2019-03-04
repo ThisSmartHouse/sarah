@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /home/homeassistant/.homeassistant/scripting
+cd /home/john/.homeassistant/scripting
 
 /usr/bin/php artisan "$@"

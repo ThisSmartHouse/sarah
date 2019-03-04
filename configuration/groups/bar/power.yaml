@@ -1,7 +1,6 @@
 bar_power:
   name: Power & Lighting
   entities:
-    - light.bar_light
     - switch.accent_lighting
     - switch.ice_machine
     - switch.bar_switch_6

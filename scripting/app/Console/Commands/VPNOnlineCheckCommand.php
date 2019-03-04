@@ -38,15 +38,18 @@ class VPNOnlineCheckCommand extends Command
     public function handle()
     {
         $ipAddress = file_get_contents('http://ipv4bot.whatismyipaddress.com/');
-        
-        $vpnCheckParams = [
-            'ip' => $ipAddress,
-            'showtype' => 4, // JSON
-            'email' => 'john@coggeshall.org'
-        ];
-        
-        $result = json_decode(file_get_contents('http://legacy.iphub.info/api.php?' . http_build_query($vpnCheckParams)), true);
-        
-        print $result['proxy'] ? "online" : "offline";
+
+	$opts = [
+	    'http' => [
+                'method' => 'GET',
+		'header' => 'X-Key: ' . config('services.iphub.key') . "\r\n"
+	    ]
+	];
+
+	$context = stream_context_create($opts);
+
+        $result = json_decode(file_get_contents("http://v2.api.iphub.info/ip/$ipAddress", false, $context), true);
+
+	print  ($result['block'] == 1) ? "online" : "offline";
     }
 }

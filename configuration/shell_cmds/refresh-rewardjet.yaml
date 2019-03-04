@@ -1,1 +1,1 @@
-refresh_rewardjet: '/home/homeassistant/.homeassistant/scripting/ha_exec.sh ha:pull-rewardjet'
+refresh_rewardjet: '/home/john/.homeassistant/scripting/ha_exec.sh ha:pull-rewardjet'
