@@ -1371,7 +1371,6 @@
   - service: script.house_mode_bedtime
   - service: automation.turn_on
     entity_id: automation.trigger_house_mode_change_bedtime
-
   hide_entity: true
   initial_state: true
 - id: Trigger action on house mode change to normal
@@ -1388,7 +1387,6 @@
     entity_id: automation.trigger_house_mode_change_normal
   hide_entity: true
   initial_state: true
-
 - id: Trigger action on house mode change to away
   alias: 'Internal: React when House is set to Away Mode'
   trigger:
@@ -2351,3 +2349,23 @@
       entity_id: remote.harmony_hub
     service: remote.send_command
   hide_entity: true
+- id: '1551686798129'
+  alias: 'Freshwater: Turn on Grow Lights at 10am'
+  trigger:
+  - at: '10:00:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: switch.herb_growlights
+    service: switch.turn_on
+- id: '1551686901518'
+  alias: 'Freshwater: Turn Off Grow Lights at 10:00pm'
+  trigger:
+  - at: '22:00:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: switch.herb_growlights
+    service: switch.turn_off

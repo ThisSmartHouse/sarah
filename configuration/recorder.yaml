@@ -1,4 +1,5 @@
 db_url: !secret database_dsn
+purge_interval: 0
 include:
   domains:
     - sensor
