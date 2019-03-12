@@ -30,4 +30,5 @@ switch.grow_lights:
   haaska_hidden: false
 switch.workshop_lights:
   haaska_hidden: false
-  
+switch.workshop_exhaust:
+  haaska_hidden: false 
