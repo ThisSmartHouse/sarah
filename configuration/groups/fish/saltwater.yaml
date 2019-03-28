@@ -8,7 +8,6 @@ fish_saltwater_controls:
     - switch.saltwater_lights
     - switch.saltwater_protein_skimmer_10
     - switch.canister_filter_11
-    - switch.saltwater_autotopoff_4
     - switch.saltwater_return_pump_15
     - switch.saltwater_heater_13
     - switch.saltwater_heater_14

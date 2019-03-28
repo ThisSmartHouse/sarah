@@ -5,7 +5,3 @@ outdoors_temperature:
     - sensor.outdoor_temperature
     - sensor.doghouse_temperature
     - sensor.dark_sky_apparent_temperature
-    - sensor.dark_sky_daily_high_apparent_temperature
-    - sensor.dark_sky_daily_high_temperature
-    - sensor.dark_sky_daily_low_apparent_temperature
-    - sensor.dark_sky_daily_low_temperature
